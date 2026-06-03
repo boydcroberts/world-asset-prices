@@ -1076,7 +1076,24 @@ button.coin-card {
   font: inherit;
 }
 
-.interactive-card { cursor: pointer; }
+@keyframes card-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.interactive-card {
+  cursor: pointer;
+  /* Staggered fade-in (replaces framer-motion's entrance). `backwards` holds the
+     from-state through the delay so cards don't flash before animating. */
+  animation: card-enter 0.24s ease-out backwards;
+  animation-delay: calc(min(var(--card-index, 0) * 0.03, 0.18) * 1s);
+  /* useTilt writes the pointer-tilt transform inline; a faster transform
+     transition than the base card lets the tilt track the cursor and ease back. */
+  transition:
+    transform 140ms ease-out,
+    box-shadow 320ms ease,
+    background 320ms ease;
+}
 
 /* Shimmer sweep on hover */
 .coin-card::before {
@@ -1908,6 +1925,7 @@ html:not(.dark) .skeleton-line {
   .status.live::before,
   .status.loading::before { animation: none; }
   .skeleton-line { animation: none; }
+  .interactive-card { animation: none; }
   .detail-overlay,
   .asset-detail-drawer { animation: none; }
 }

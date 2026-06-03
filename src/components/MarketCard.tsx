@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { motion } from "framer-motion";
 import { memo, useEffect, useMemo, useRef, type CSSProperties, type ReactNode } from "react";
 
 import { useTilt } from "../hooks/useTilt";
@@ -199,14 +198,11 @@ export const MarketCard = memo(function MarketCard({
   }
 
   return (
-    <motion.article
+    <article
       ref={tilt.ref as React.RefObject<HTMLElement>}
       key={id}
       className={clsx("coin-card", "interactive-card", active && "active", assetStyle && "asset-card")}
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: Math.min(index * 0.03, 0.18), duration: 0.22 }}
-      style={{ ...cardStyle, ...tilt.style }}
+      style={cardStyle}
       onClick={onSelect ? () => onSelect(id) : undefined}
       onMouseMove={tilt.onMouseMove}
       onMouseLeave={tilt.onMouseLeave}
@@ -222,6 +218,6 @@ export const MarketCard = memo(function MarketCard({
       aria-label={`Show ${name} details`}
     >
       {content}
-    </motion.article>
+    </article>
   );
 });
