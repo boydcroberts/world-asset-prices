@@ -1,5 +1,5 @@
 {
-  "version": "2026-05-16",
+  "version": "2026-06-03",
   "generatedAt": "2026-05-16T00:00:00.000Z",
   "sources": [
     {
@@ -221,14 +221,14 @@
       "assetId": "private-openai",
       "category": "Private Company",
       "valueUsd": 852000000000,
-      "valueAsOf": "2026-04-14",
-      "sourceUrl": "https://www.investing.com/news/stock-market-news/openai-investors-question-852-billion-valuation-as-strategy-shifts-ft-reports-4611649",
-      "sourceTitle": "Reuters via Investing.com: OpenAI valuation report",
-      "sourceType": "recognized-market-data",
-      "confidence": "medium",
+      "valueAsOf": "2026-03-31",
+      "sourceUrl": "https://openai.com/index/accelerating-the-next-phase-ai/",
+      "sourceTitle": "OpenAI $122B round at $852B post-money",
+      "sourceType": "reported-transaction",
+      "confidence": "high",
       "updateCadence": "event-driven",
-      "lastCheckedAt": "2026-05-19",
-      "notes": "Reuters reported the FT valuation and stated it could not immediately verify the report."
+      "lastCheckedAt": "2026-06-03",
+      "notes": "A $122B round (committed capital) closed March 31, 2026 at an $852B post-money valuation, anchored by Amazon, Nvidia and SoftBank — now #2 behind Anthropic. OpenAI confidentially filed an S-1 around May 2026 (targeting roughly September 2026) but remains private."
     },
     {
       "assetId": "private-bytedance",
@@ -246,15 +246,15 @@
     {
       "assetId": "private-anthropic",
       "category": "Private Company",
-      "valueUsd": 380000000000,
-      "valueAsOf": "2026-02-12",
-      "sourceUrl": "https://www.investing.com/news/economy-news/anthropic-valued-at-380-billion-in-latest-funding-round-4503855",
-      "sourceTitle": "Reuters via Investing.com: Anthropic funding round",
+      "valueUsd": 965000000000,
+      "valueAsOf": "2026-05-28",
+      "sourceUrl": "https://www.anthropic.com/news/series-h",
+      "sourceTitle": "Anthropic Series H ($965B post-money)",
       "sourceType": "reported-transaction",
       "confidence": "high",
       "updateCadence": "event-driven",
-      "lastCheckedAt": "2026-05-19",
-      "notes": "Primary value uses the latest reported funding-round valuation; secondary-market chatter is intentionally excluded."
+      "lastCheckedAt": "2026-06-03",
+      "notes": "Series H ($65B raise) closed May 28, 2026 at a $965B post-money valuation, led by Altimeter, Dragoneer, Greenoaks and Sequoia — now the most valuable AI startup ahead of OpenAI. Anthropic filed a confidential draft S-1 on June 1, 2026 but remains private."
     },
     {
       "assetId": "private-stripe",
@@ -527,19 +527,6 @@
       "notes": "Live quote path scales a May 2026 public share-count baseline (~2.716B shares)."
     },
     {
-      "assetId": "private-xai",
-      "category": "Private Company",
-      "valueUsd": 230000000000,
-      "valueAsOf": "2026-01-06",
-      "sourceUrl": "https://www.cnbc.com/2026/01/06/elon-musk-xai-raises-20-billion-from-nvidia-cisco-investors.html",
-      "sourceTitle": "CNBC xAI Series E $230B valuation",
-      "sourceType": "reported-transaction",
-      "confidence": "high",
-      "updateCadence": "event-driven",
-      "lastCheckedAt": "2026-05-28",
-      "notes": "Series E ($20B raise) closed January 2026 at a $230B valuation led by NVIDIA and Cisco."
-    },
-    {
       "assetId": "private-revolut",
       "category": "Private Company",
       "valueUsd": 75000000000,
@@ -590,6 +577,19 @@
       "updateCadence": "event-driven",
       "lastCheckedAt": "2026-05-28",
       "notes": "Series D ($2.3B raise, November 2025) at a $29.3B post-money valuation."
+    },
+    {
+      "assetId": "private-figure-ai",
+      "category": "Private Company",
+      "valueUsd": 39000000000,
+      "valueAsOf": "2025-09-16",
+      "sourceUrl": "https://www.figure.ai/news/series-c",
+      "sourceTitle": "Figure AI Series C ($39B post-money)",
+      "sourceType": "reported-transaction",
+      "confidence": "high",
+      "updateCadence": "event-driven",
+      "lastCheckedAt": "2026-06-03",
+      "notes": "Series C (more than $1B in committed capital) at a $39B post-money valuation announced September 16, 2025, led by Parkway Venture Capital with NVIDIA, Brookfield, Intel Capital, Salesforce, Qualcomm and T-Mobile."
     }
   ]
 }

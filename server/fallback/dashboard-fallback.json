@@ -1012,8 +1012,18 @@
       "fallbackLogoUrls": []
     },
     {
-      "id": "private-openai",
+      "id": "private-anthropic",
       "rank": 2,
+      "name": "Anthropic",
+      "symbol": "ANTHROPIC",
+      "category": "Private Company",
+      "marketCapUsd": 965000000000,
+      "logoUrl": null,
+      "fallbackLogoUrls": []
+    },
+    {
+      "id": "private-openai",
+      "rank": 3,
       "name": "OpenAI",
       "symbol": "OPENAI",
       "category": "Private Company",
@@ -1023,7 +1033,7 @@
     },
     {
       "id": "private-bytedance",
-      "rank": 3,
+      "rank": 4,
       "name": "ByteDance",
       "symbol": "BYTEDANCE",
       "category": "Private Company",
@@ -1032,28 +1042,8 @@
       "fallbackLogoUrls": []
     },
     {
-      "id": "private-anthropic",
-      "rank": 4,
-      "name": "Anthropic",
-      "symbol": "ANTHROPIC",
-      "category": "Private Company",
-      "marketCapUsd": 380000000000,
-      "logoUrl": null,
-      "fallbackLogoUrls": []
-    },
-    {
-      "id": "private-xai",
-      "rank": 5,
-      "name": "xAI",
-      "symbol": "XAI",
-      "category": "Private Company",
-      "marketCapUsd": 230000000000,
-      "logoUrl": null,
-      "fallbackLogoUrls": []
-    },
-    {
       "id": "private-stripe",
-      "rank": 6,
+      "rank": 5,
       "name": "Stripe",
       "symbol": "STRIPE",
       "category": "Private Company",
@@ -1063,7 +1053,7 @@
     },
     {
       "id": "private-databricks",
-      "rank": 7,
+      "rank": 6,
       "name": "Databricks",
       "symbol": "DATABRICKS",
       "category": "Private Company",
@@ -1073,7 +1063,7 @@
     },
     {
       "id": "private-waymo",
-      "rank": 8,
+      "rank": 7,
       "name": "Waymo",
       "symbol": "WAYMO",
       "category": "Private Company",
@@ -1083,7 +1073,7 @@
     },
     {
       "id": "private-revolut",
-      "rank": 9,
+      "rank": 8,
       "name": "Revolut",
       "symbol": "REVOLUT",
       "category": "Private Company",
@@ -1093,7 +1083,7 @@
     },
     {
       "id": "private-anduril",
-      "rank": 10,
+      "rank": 9,
       "name": "Anduril",
       "symbol": "ANDURIL",
       "category": "Private Company",
@@ -1103,11 +1093,21 @@
     },
     {
       "id": "private-canva",
-      "rank": 11,
+      "rank": 10,
       "name": "Canva",
       "symbol": "CANVA",
       "category": "Private Company",
       "marketCapUsd": 42000000000,
+      "logoUrl": null,
+      "fallbackLogoUrls": []
+    },
+    {
+      "id": "private-figure-ai",
+      "rank": 11,
+      "name": "Figure AI",
+      "symbol": "FIGURE",
+      "category": "Private Company",
+      "marketCapUsd": 39000000000,
       "logoUrl": null,
       "fallbackLogoUrls": []
     },
