@@ -9,6 +9,12 @@ type DurableRecord = {
 
 const DEFAULT_DASHBOARD_CACHE_KEY = "wap:dashboard:payload";
 
+// Bound every durable-cache round-trip. Without this, an unresponsive Upstash
+// REST endpoint would hang the bare fetch to the OS socket timeout (tens of
+// seconds), burning the serverless function budget and risking a 504 instead of
+// failing fast to the next fallback tier.
+const DURABLE_CACHE_TIMEOUT_MS = 2_500;
+
 function getEnvValue(...keys: string[]): string | null {
   for (const key of keys) {
     const value = process.env[key];
@@ -43,22 +49,30 @@ async function callRedisCommand<T>(args: (string | number)[]): Promise<T | null>
     return null;
   }
 
-  const response = await fetch(config.url, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${config.token}`,
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify(args),
-  });
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), DURABLE_CACHE_TIMEOUT_MS);
 
-  if (!response.ok) {
-    throw new Error(`Durable cache request failed (${response.status})`);
+  try {
+    const response = await fetch(config.url, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${config.token}`,
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(args),
+      signal: controller.signal,
+    });
+
+    if (!response.ok) {
+      throw new Error(`Durable cache request failed (${response.status})`);
+    }
+
+    const data = (await response.json()) as { result?: T };
+    return data.result ?? null;
+  } finally {
+    clearTimeout(timeout);
   }
-
-  const data = (await response.json()) as { result?: T };
-  return data.result ?? null;
 }
 
 export async function readDurableDashboard(maxAgeSec: number): Promise<DashboardPayload | null> {

@@ -553,6 +553,9 @@ html:not(.dark) .hero-segment-health-item--warning {
 }
 
 .market-search input::placeholder { color: var(--text-muted); opacity: 0.72; }
+/* Light mode needs a stronger placeholder for AA contrast; the dark theme's
+   subtler 0.72 is fine against the dark field. */
+html:not(.dark) .market-search input::placeholder { opacity: 0.95; }
 
 .market-select select {
   appearance: none;
