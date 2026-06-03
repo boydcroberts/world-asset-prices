@@ -33,13 +33,44 @@ function isIpv4Private(hostname: string): boolean {
   return false;
 }
 
+// URL.hostname wraps IPv6 literals in brackets (e.g. "[::1]"); strip them so the
+// literal-IP checks below see the bare address. Without this, "[::1]" / "[fc00::1]"
+// slip past the private-range checks.
+function stripIpv6Brackets(hostname: string): string {
+  return hostname.replace(/^\[/, "").replace(/\]$/, "");
+}
+
 function isIpv6Private(hostname: string): boolean {
-  const normalized = hostname.toLowerCase();
-  return normalized === "::1" || normalized.startsWith("fc") || normalized.startsWith("fd") || normalized.startsWith("fe80:");
+  const normalized = stripIpv6Brackets(hostname.toLowerCase());
+  // Only IPv6 literals are relevant here, and they always contain a colon. Gating
+  // on this avoids false positives like "fc.example.com" being read as a ULA.
+  if (!normalized.includes(":")) {
+    return false;
+  }
+
+  if (
+    normalized === "::1" || // loopback
+    normalized === "::" || // unspecified
+    normalized.startsWith("fc") || // unique-local fc00::/7
+    normalized.startsWith("fd") || // unique-local fc00::/7
+    normalized.startsWith("fe80:") || // link-local
+    normalized.startsWith("fec0:") || // deprecated site-local
+    normalized.startsWith("ff") // multicast ff00::/8
+  ) {
+    return true;
+  }
+
+  // IPv4-mapped IPv6 (e.g. ::ffff:127.0.0.1) — validate the embedded IPv4.
+  const mapped = normalized.match(/^::ffff:(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})$/);
+  if (mapped) {
+    return isIpv4Private(mapped[1]);
+  }
+
+  return false;
 }
 
 export function isPrivateHost(hostname: string): boolean {
-  const normalized = hostname.trim().toLowerCase();
+  const normalized = stripIpv6Brackets(hostname.trim().toLowerCase());
   if (!normalized) {
     return true;
   }

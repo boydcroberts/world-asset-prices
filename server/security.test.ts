@@ -15,6 +15,23 @@ describe("security helpers", () => {
     expect(isAllowedLogoHost("localhost")).toBe(false);
   });
 
+  it("rejects bracketed and extended IPv6 private literals", () => {
+    expect(isPrivateHost("[::1]")).toBe(true);
+    expect(isPrivateHost("::1")).toBe(true);
+    expect(isPrivateHost("[fc00::1]")).toBe(true);
+    expect(isPrivateHost("[fe80::1]")).toBe(true);
+    expect(isPrivateHost("[fec0::1]")).toBe(true);
+    expect(isPrivateHost("[ff02::1]")).toBe(true);
+    expect(isPrivateHost("[::ffff:127.0.0.1]")).toBe(true);
+    expect(isPrivateHost("[192.168.1.1]")).toBe(true);
+  });
+
+  it("does not treat lookalike public hostnames as private", () => {
+    expect(isPrivateHost("fc.example.com")).toBe(false);
+    expect(isPrivateHost("ff.example.com")).toBe(false);
+    expect(isPrivateHost("static.coinpaprika.com")).toBe(false);
+  });
+
   it("rejects invalid protocols and unlisted domains", () => {
     expect(parseAndValidateLogoUrl("file:///tmp/a.png").reason).toBe("invalid_protocol");
     expect(parseAndValidateLogoUrl("https://evil.example.com/logo.png").reason).toBe("host_not_allowed");
