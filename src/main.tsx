@@ -13,7 +13,9 @@ const queryClient = new QueryClient({
     queries: {
       retry: 2,
       staleTime: 20_000,
-      refetchOnWindowFocus: true,
+      // The dashboard already polls on refreshInSec; refetching on every window
+      // focus just adds redundant fetches and re-renders ~90 cards.
+      refetchOnWindowFocus: false,
     },
   },
 });

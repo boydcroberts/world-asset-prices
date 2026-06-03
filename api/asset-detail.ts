@@ -47,7 +47,9 @@ export default async function handler(request: ApiRequest, response: ApiResponse
   try {
     const payload = await buildAssetDetailPayload({ id, range });
     response.setHeader("X-Wap-Request-Id", requestId);
-    response.setHeader("Cache-Control", "no-store");
+    // Asset detail is dominated by stable historical series; let the CDN/browser
+    // cache it briefly so re-opening an asset or switching ranges doesn't refetch.
+    response.setHeader("Cache-Control", "public, max-age=30, s-maxage=120, stale-while-revalidate=300");
     response.status(200).json({ ...payload, requestId });
   } catch (error) {
     const message = error instanceof Error ? error.message : "unknown error";

@@ -111,10 +111,14 @@ export const MarketCard = memo(function MarketCard({
     if (isInitial) return;
     const el = priceRef.current;
     if (!el) return;
-    el.classList.remove("coin-price--pulse");
-    // Force reflow so the class re-addition re-triggers the animation
-    void el.offsetWidth;
-    el.classList.add("coin-price--pulse");
+    // Web Animations API restarts cleanly with no forced layout reflow. Unlike a
+    // CSS animation it isn't auto-suppressed by the reduced-motion UA stylesheet,
+    // so gate it ourselves.
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    el.animate(
+      [{ backgroundColor: "rgba(34, 197, 94, 0.25)" }, { backgroundColor: "transparent" }],
+      { duration: 600, easing: "ease-out" },
+    );
   }, [value]);
 
   const cardStyle = {
