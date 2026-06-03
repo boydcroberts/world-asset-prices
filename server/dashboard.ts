@@ -6,6 +6,7 @@ import { fetchNightFromCoinpaprika, fetchTopCryptosFromCoinpaprika } from "./pro
 import { fetchTopCurrenciesFromFrankfurter } from "./providers/frankfurter.js";
 import { EQUITY_FUNDAMENTALS_AS_OF, EQUITY_QUOTE_PROVIDERS, fetchTopEtfsFromStooq, fetchTopStocksFromStooq } from "./providers/stooq.js";
 import { toFiniteNumber } from "./sanitize.js";
+import { withTimeout } from "./request.js";
 import { isDashboardPayload } from "./dashboard-schema.js";
 import { ASSET_VALUE_SOURCE_VERSION, assetValueSourcesById } from "./value-sources.js";
 import type {
@@ -39,6 +40,7 @@ export type DashboardBuildOptions = {
   fallbackTtlSec?: number;
   timeoutMs?: number;
   retries?: number;
+  segmentBudgetMs?: number;
   coinpaprikaBaseUrl?: string;
 };
 
@@ -354,6 +356,7 @@ async function resolveSegment<T>(options: {
   cacheTtlSec: number;
   fallbackTtlSec: number;
   logger: Logger;
+  segmentBudgetMs?: number;
 }): Promise<SegmentResult<T>> {
   const fresh = options.cache.getFreshEntry<T>(options.key, options.cacheTtlSec, options.nowMs);
   if (fresh) {
@@ -369,7 +372,12 @@ async function resolveSegment<T>(options: {
 
   const startedAt = Date.now();
   try {
-    const live = await options.fetcher();
+    // Bound the whole segment (incl. the fetcher's own internal retries) so one
+    // slow provider can't push the parallel Promise.all toward the 10s function
+    // cap. A timeout here flows into the catch below → stale-cache → fallback.
+    const live = options.segmentBudgetMs
+      ? await withTimeout(options.fetcher(), options.segmentBudgetMs, options.label)
+      : await options.fetcher();
     options.cache.set(options.key, live, options.nowMs);
     const latencyMs = Date.now() - startedAt;
     recordProviderSuccess(options.metricKey, latencyMs);
@@ -422,6 +430,10 @@ export async function buildDashboardPayload(options: DashboardBuildOptions = {})
   const staleAlertSec = envInt("STALE_ALERT_SEC", 300, 60, 86_400);
   const timeoutMs = options.timeoutMs ?? 4_500;
   const retries = options.retries ?? 1;
+  // Per-segment wall-clock ceiling. Segments run in parallel, so this also caps
+  // the overall build; kept under the 10s function cap with headroom for durable
+  // writes + serialization.
+  const segmentBudgetMs = options.segmentBudgetMs ?? envInt("SEGMENT_BUDGET_MS", 7_000, 1_000, 9_000);
   const fallbackUpdatedAtMs = Number.isFinite(FALLBACK_GENERATED_AT_MS) ? FALLBACK_GENERATED_AT_MS : nowMs;
   const priorStocksCache = cache.getStaleEntry<DashboardStock[]>(CACHE_KEY_STOCKS, fallbackTtlSec, nowMs);
   const priorEtfsCache = cache.getStaleEntry<DashboardEtf[]>(CACHE_KEY_ETFS, fallbackTtlSec, nowMs);
@@ -438,6 +450,7 @@ export async function buildDashboardPayload(options: DashboardBuildOptions = {})
       cacheTtlSec,
       fallbackTtlSec,
       logger,
+      segmentBudgetMs,
       fetcher: () =>
         fetchTopCryptosFromCoinpaprika({
           limit: 15,
@@ -457,6 +470,7 @@ export async function buildDashboardPayload(options: DashboardBuildOptions = {})
       cacheTtlSec,
       fallbackTtlSec,
       logger,
+      segmentBudgetMs,
       fetcher: () =>
         fetchTopStocksFromStooq({
           timeoutMs,
@@ -473,6 +487,7 @@ export async function buildDashboardPayload(options: DashboardBuildOptions = {})
       cacheTtlSec,
       fallbackTtlSec,
       logger,
+      segmentBudgetMs,
       fetcher: () =>
         fetchTopEtfsFromStooq({
           timeoutMs,
@@ -489,6 +504,7 @@ export async function buildDashboardPayload(options: DashboardBuildOptions = {})
       cacheTtlSec,
       fallbackTtlSec,
       logger,
+      segmentBudgetMs,
       fetcher: () =>
         fetchTopCurrenciesFromFrankfurter({
           timeoutMs,
@@ -506,6 +522,7 @@ export async function buildDashboardPayload(options: DashboardBuildOptions = {})
       cacheTtlSec,
       fallbackTtlSec,
       logger,
+      segmentBudgetMs,
       fetcher: () =>
         fetchNightFromCoinpaprika({
           baseUrl: options.coinpaprikaBaseUrl,

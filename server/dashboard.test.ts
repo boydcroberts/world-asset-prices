@@ -244,6 +244,32 @@ describe("buildDashboardPayload", () => {
     expect(payload.segmentMeta.topStocks.source).toBe("fallback");
   });
 
+  it("falls back a segment whose provider exceeds the per-segment budget", async () => {
+    const cache = new MemoryCache();
+    const now = 4_500_000;
+
+    // Stocks provider hangs indefinitely; the wall-clock budget must cut it off
+    // and route the segment through the existing fallback path.
+    mockedFetchTopStocksFromStooq.mockReturnValue(new Promise<DashboardStock[]>(() => {}));
+    mockedFetchTopCryptosFromCoinpaprika.mockResolvedValue(sampleCryptos);
+    mockedFetchNightFromCoinpaprika.mockResolvedValue(sampleNight);
+    mockedFetchTopEtfsFromStooq.mockResolvedValue(sampleEtfs);
+    mockedFetchTopCurrenciesFromFrankfurter.mockResolvedValue(sampleCurrencies);
+
+    const payload = await buildDashboardPayload({
+      cache,
+      now: () => now,
+      cacheTtlSec: 60,
+      fallbackTtlSec: 600,
+      segmentBudgetMs: 30,
+      logger,
+    });
+
+    expect(payload.segmentMeta.topStocks.source).toBe("fallback");
+    expect(payload.segmentMeta.topCryptos.source).toBe("live");
+    expect(payload.degradedSegments).toContain("topStocks");
+  });
+
   it("includes topEtfs in the assembled payload", async () => {
     mockedFetchTopStocksFromStooq.mockResolvedValue(sampleStocks);
     mockedFetchTopCryptosFromCoinpaprika.mockResolvedValue(sampleCryptos);
