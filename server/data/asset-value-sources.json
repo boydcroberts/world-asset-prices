@@ -17,14 +17,15 @@
     {
       "assetId": "commodity-silver",
       "category": "Commodity",
-      "valueUsd": 5038000000000,
-      "valueAsOf": "2026-05-14",
+      "valueUsd": 4123000000000,
+      "valueAsOf": "2026-06-03",
       "sourceUrl": "https://companiesmarketcap.com/silver/marketcap/",
       "sourceTitle": "CompaniesMarketCap silver market cap",
       "sourceType": "recognized-market-data",
       "confidence": "medium",
       "updateCadence": "monthly",
-      "notes": "Cross-asset context only; commodity market value methodology differs from equity market capitalization."
+      "notes": "Approximate total above-ground silver market value (spot price x estimated above-ground supply); price-timing snapshot, cross-asset context only.",
+      "lastCheckedAt": "2026-06-03"
     },
     {
       "assetId": "stock-nvda",
@@ -233,15 +234,15 @@
     {
       "assetId": "private-bytedance",
       "category": "Private Company",
-      "valueUsd": 500000000000,
-      "valueAsOf": "2025-12-22",
-      "sourceUrl": "https://www.scmp.com/tech/big-tech/article/3337343/tiktok-owner-bytedances-valuation-hits-us500-billion-us-survival-plan-advances",
-      "sourceTitle": "SCMP ByteDance private-market valuation",
+      "valueUsd": 550000000000,
+      "valueAsOf": "2026-02-25",
+      "sourceUrl": "https://www.investing.com/news/stock-market-news/exclusivebytedance-valued-at-550-billion-in-proposed-share-sale-by-general-atlantic-sources-say-4523409",
+      "sourceTitle": "Investing.com: ByteDance $550B proposed secondary (General Atlantic)",
       "sourceType": "recognized-market-data",
       "confidence": "medium",
       "updateCadence": "event-driven",
-      "lastCheckedAt": "2026-05-19",
-      "notes": "Reported private-market valuation; not a live traded price."
+      "lastCheckedAt": "2026-06-03",
+      "notes": "Proposed secondary share sale led by General Atlantic at a $550B valuation (Feb 2026), targeting a 2026 close; supersedes the $500B SCMP mark but not yet a closed round."
     },
     {
       "assetId": "private-anthropic",
@@ -311,15 +312,15 @@
     {
       "assetId": "private-epic-games",
       "category": "Private Company",
-      "valueUsd": 31500000000,
-      "valueAsOf": "2022-04-01",
-      "sourceUrl": "https://stockanalysis.com/article/invest-in-epic-games-stock/",
-      "sourceTitle": "StockAnalysis Epic Games private valuation context",
+      "valueUsd": 22500000000,
+      "valueAsOf": "2024-02-06",
+      "sourceUrl": "https://www.theinformation.com/articles/disneys-epic-deal-values-fortnite-maker-at-22-5-billion-a-sharp-cut",
+      "sourceTitle": "The Information: Disney round values Epic Games at $22.5B",
       "sourceType": "reported-transaction",
-      "confidence": "low",
+      "confidence": "medium",
       "updateCadence": "event-driven",
-      "lastCheckedAt": "2026-05-19",
-      "notes": "Oldest primary value in the private-company set; retained with low confidence until a newer verified mark is found."
+      "lastCheckedAt": "2026-06-03",
+      "notes": "Disney $1.5B strategic investment (Feb 2024) reset Epic post-money to $22.5B, down from the $31.5B 2022 Series E peak; latest priced round (later secondaries imply lower)."
     },
     {
       "assetId": "private-shein",
@@ -337,14 +338,15 @@
     {
       "assetId": "etf-voo",
       "category": "ETF",
-      "valueUsd": 935760000000,
-      "valueAsOf": "2026-05-14",
+      "valueUsd": 1000000000000,
+      "valueAsOf": "2026-06-02",
       "sourceUrl": "https://www.etfcentral.com/fund/VOO",
       "sourceTitle": "ETF Central VOO profile",
       "sourceType": "issuer",
       "confidence": "medium",
       "updateCadence": "daily",
-      "notes": "AUM is treated as a sourced snapshot, not derived from ETF market price."
+      "notes": "AUM is treated as a sourced snapshot, not derived from ETF market price. VOO became the first ETF to surpass $1 trillion in net assets (June 2026).",
+      "lastCheckedAt": "2026-06-03"
     },
     {
       "assetId": "etf-ivv",

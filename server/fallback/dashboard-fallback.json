@@ -598,7 +598,7 @@
       "name": "Vanguard S&P 500 ETF",
       "symbol": "VOO",
       "category": "ETF",
-      "aumUsd": 935760000000,
+      "aumUsd": 1000000000000,
       "priceUsd": 698.26,
       "changePercent": 0.3160647070654894,
       "logoUrl": "https://financialmodelingprep.com/image-stock/VOO.png",
@@ -1037,7 +1037,7 @@
       "name": "ByteDance",
       "symbol": "BYTEDANCE",
       "category": "Private Company",
-      "marketCapUsd": 500000000000,
+      "marketCapUsd": 550000000000,
       "logoUrl": null,
       "fallbackLogoUrls": []
     },
@@ -1122,18 +1122,8 @@
       "fallbackLogoUrls": []
     },
     {
-      "id": "private-epic-games",
-      "rank": 13,
-      "name": "Epic Games",
-      "symbol": "EPIC",
-      "category": "Private Company",
-      "marketCapUsd": 31500000000,
-      "logoUrl": null,
-      "fallbackLogoUrls": []
-    },
-    {
       "id": "private-shein",
-      "rank": 14,
+      "rank": 13,
       "name": "Shein",
       "symbol": "SHEIN",
       "category": "Private Company",
@@ -1143,11 +1133,21 @@
     },
     {
       "id": "private-anysphere",
-      "rank": 15,
+      "rank": 14,
       "name": "Cursor",
       "symbol": "CURSOR",
       "category": "Private Company",
       "marketCapUsd": 29300000000,
+      "logoUrl": null,
+      "fallbackLogoUrls": []
+    },
+    {
+      "id": "private-epic-games",
+      "rank": 15,
+      "name": "Epic Games",
+      "symbol": "EPIC",
+      "category": "Private Company",
+      "marketCapUsd": 22500000000,
       "logoUrl": null,
       "fallbackLogoUrls": []
     }
@@ -1181,7 +1181,7 @@
       "name": "Silver",
       "symbol": "XAG",
       "category": "Commodity",
-      "marketCapUsd": 5038000000000,
+      "marketCapUsd": 4123000000000,
       "logoUrl": null,
       "fallbackLogoUrls": []
     },

@@ -22,7 +22,7 @@ const REQUIRED_PUBLIC_COMPANIES = [
 const REQUIRED_PRIVATE_VALUES = new Map([
   ["private-spacex", 1_250_000_000_000],
   ["private-openai", 852_000_000_000],
-  ["private-bytedance", 500_000_000_000],
+  ["private-bytedance", 550_000_000_000],
   ["private-anthropic", 965_000_000_000],
   ["private-stripe", 159_000_000_000],
   ["private-databricks", 134_000_000_000],
