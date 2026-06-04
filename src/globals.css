@@ -62,6 +62,13 @@
   --space-3: 0.75rem;
   --space-4: 1rem;
   --space-6: 1.5rem;
+
+  /* Type scale — only the 4 most-used exact sizes tokenized; fine-tuned
+     one-off values (0.68/0.78/0.95rem etc.) stay as authored literals */
+  --fs-xs: 0.62rem;   /* labels, eyebrows, badge text  */
+  --fs-sm: 0.72rem;   /* secondary labels, small body  */
+  --fs-base: 0.82rem; /* primary small body            */
+  --fs-body: 0.92rem; /* standard body / tagline       */
 }
 
 /* Light theme overrides */
@@ -348,6 +355,8 @@ h1 {
   line-height: 1.08;
   font-weight: 800;
   letter-spacing: 0;
+  /* Solid fallback if background-clip:text is unsupported */
+  color: #fff;
   background: linear-gradient(110deg, #fff 0%, #22c0ff 18%, #a855f7 38%, #ff28cc 58%, #ff7a10 78%, #22c0ff 100%);
   background-size: 220% auto;
   -webkit-background-clip: text;
@@ -362,6 +371,7 @@ h1 {
 }
 
 html:not(.dark) h1 {
+  color: #1e1b4b;
   background: linear-gradient(110deg, #1e1b4b 0%, #4f46e5 18%, #7c3aed 38%, #db2777 58%, #ea580c 78%, #4f46e5 100%);
   background-size: 220% auto;
   -webkit-background-clip: text;
@@ -380,6 +390,7 @@ html:not(.dark) h1 {
 }
 
 h1 span {
+  color: #a855f7;
   background: linear-gradient(135deg, #a855f7 0%, #ff28cc 58%, #ff7a10 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -387,6 +398,7 @@ h1 span {
 }
 
 html:not(.dark) h1 span {
+  color: #7c3aed;
   background: linear-gradient(135deg, #7c3aed 0%, #db2777 55%, #ea580c 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -396,7 +408,7 @@ html:not(.dark) h1 span {
 .tagline {
   margin: 0.64rem 0 0;
   color: var(--text-muted);
-  font-size: 0.92rem;
+  font-size: var(--fs-body);
   line-height: 1.5;
 }
 
@@ -446,7 +458,7 @@ html:not(.dark) .hero-insight {
 
 .hero-insight dt {
   color: var(--text-muted);
-  font-size: 0.62rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -571,7 +583,7 @@ html:not(.dark) .hero-segment-health-item--warning {
 .market-search span,
 .market-select span {
   color: var(--text-muted);
-  font-size: 0.62rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.11em;
   text-transform: uppercase;
@@ -588,7 +600,7 @@ html:not(.dark) .hero-segment-health-item--warning {
   background: transparent;
   color: var(--text);
   font: inherit;
-  font-size: 0.82rem;
+  font-size: var(--fs-base);
 }
 
 .market-search input::placeholder { color: var(--text-muted); opacity: 0.72; }
@@ -637,7 +649,7 @@ html:not(.dark) .market-search input::placeholder { opacity: 0.95; }
   color: var(--text-muted);
   cursor: pointer;
   font: inherit;
-  font-size: 0.72rem;
+  font-size: var(--fs-sm);
   font-weight: 700;
   line-height: 1;
   min-height: 2.75rem;
@@ -970,7 +982,7 @@ html:not(.dark) .status.stale {
 
 .surface-head p {
   margin: 0;
-  font-size: 0.82rem;
+  font-size: var(--fs-base);
   color: var(--text-muted);
 }
 
@@ -1237,7 +1249,7 @@ html:not(.dark) .coin-card::before {
   display: flex;
   justify-content: space-between;
   color: var(--text-muted);
-  font-size: 0.72rem;
+  font-size: var(--fs-sm);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 500;
@@ -1360,7 +1372,7 @@ html:not(.dark) .asset-category[data-category="private company"] {
   color: var(--text-dim);
   padding: 0.22rem 0.52rem;
   font-family: "Sora", sans-serif;
-  font-size: 0.62rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.09em;
   text-transform: uppercase;
@@ -1411,7 +1423,7 @@ html:not(.dark) .coin-card:focus-visible .symbol-pill {
 
 .coin-change {
   margin: 0.22rem 0 0;
-  font-size: 0.82rem;
+  font-size: var(--fs-base);
   font-weight: 600;
 }
 
@@ -1531,7 +1543,7 @@ html:not(.dark) .card-chip.active {
 }
 
 .shell-compact .coin-head {
-  font-size: 0.62rem;
+  font-size: var(--fs-xs);
 }
 
 .shell-compact .coin-card h3 {
@@ -1638,7 +1650,7 @@ html:not(.dark) .skeleton-line {
   display: block;
   margin-bottom: var(--space-1);
   color: var(--text-muted);
-  font-size: 0.62rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1683,7 +1695,7 @@ html:not(.dark) .skeleton-line {
   background: rgba(77, 240, 224, 0.1);
   color: var(--text);
   font: inherit;
-  font-size: 0.72rem;
+  font-size: var(--fs-sm);
   font-weight: 700;
   cursor: pointer;
 }
@@ -1707,7 +1719,7 @@ html:not(.dark) .skeleton-line {
 
 .portfolio-position span {
   color: var(--text-muted);
-  font-size: 0.72rem;
+  font-size: var(--fs-sm);
 }
 
 .portfolio-transfer {
@@ -1779,7 +1791,7 @@ html:not(.dark) .skeleton-line {
 .detail-eyebrow {
   margin: 0 0 0.2rem;
   color: var(--text-muted);
-  font-size: 0.62rem;
+  font-size: var(--fs-xs);
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1904,7 +1916,7 @@ html:not(.dark) .skeleton-line {
   justify-content: space-between;
   gap: var(--space-4);
   color: var(--text-muted);
-  font-size: 0.72rem;
+  font-size: var(--fs-sm);
   font-weight: 700;
 }
 
@@ -1921,7 +1933,7 @@ html:not(.dark) .skeleton-line {
 .detail-degraded {
   margin: 0.8rem 0 0;
   color: var(--text-muted);
-  font-size: 0.82rem;
+  font-size: var(--fs-base);
   line-height: 1.5;
 }
 
@@ -2032,7 +2044,7 @@ html:not(.dark) .watchlist-surface {
 }
 
 .watchlist-grid .coin-card h3 {
-  font-size: 0.82rem;
+  font-size: var(--fs-base);
 }
 
 .watchlist-grid .coin-price {
@@ -2197,6 +2209,7 @@ html:not(.dark) .footer-glow {
   font-family: "Sora", sans-serif;
   font-weight: 800;
   font-size: var(--space-4);
+  color: var(--accent-blue);
   background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple), var(--accent-cyan));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2204,7 +2217,7 @@ html:not(.dark) .footer-glow {
 }
 
 .footer-tagline {
-  font-size: 0.72rem;
+  font-size: var(--fs-sm);
   color: var(--text-muted);
   letter-spacing: 0.02em;
 }
@@ -2218,7 +2231,7 @@ html:not(.dark) .footer-glow {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  font-size: 0.72rem;
+  font-size: var(--fs-sm);
   color: var(--text-dim);
 }
 
@@ -2267,6 +2280,12 @@ html:not(.dark) .footer-glow {
   .dashboard-toolbar .toolbar-updated { margin-left: 0; }
 }
 
+/* Tablet portrait & narrow landscape — bridge the 4→2 col cliff */
+@media (max-width: 900px) {
+  .coin-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .shell-compact .coin-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
 @media (max-width: 768px) {
   .shell { width: 96vw; margin: 0.6rem auto 2rem; gap: 0.7rem; }
   .coin-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; }
@@ -2297,6 +2316,8 @@ html:not(.dark) .footer-glow {
   .section-nav {
     flex-wrap: nowrap;
     overflow-x: auto;
+    /* Allow focus rings to paint outside the scroll container */
+    overflow-clip-margin: 6px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     top: 0.35rem;
@@ -2308,21 +2329,21 @@ html:not(.dark) .footer-glow {
     white-space: nowrap;
     flex-shrink: 0;
     padding: 0.3rem 0.6rem;
-    font-size: 0.72rem;
+    font-size: var(--fs-sm);
   }
 
   /* Denser cards */
   .coin-card { padding: 0.7rem 0.7rem 0.6rem; }
   .coin-price { font-size: 1.05rem; }
-  .coin-value-label { font-size: 0.62rem; }
-  .coin-head { font-size: 0.62rem; }
+  .coin-value-label { font-size: var(--fs-xs); }
+  .coin-head { font-size: var(--fs-xs); }
 
   .hero { padding: var(--space-4) 0.9rem 0.8rem; }
   h1 { font-size: clamp(var(--space-6), 6vw, 2.2rem); }
   .tagline { font-size: 0.78rem; }
   .hero-insights { gap: 0.42rem; }
   .hero-insight { padding: 0.58rem; }
-  .hero-insight dd { font-size: 0.92rem; }
+  .hero-insight dd { font-size: var(--fs-body); }
   .portfolio-summary,
   .portfolio-form,
   .portfolio-transfer {
@@ -2364,10 +2385,10 @@ html:not(.dark) .footer-glow {
 
   .coin-card { padding: 0.6rem 0.55rem 0.55rem; }
   .coin-price { font-size: 0.95rem; }
-  .coin-title-row h3 { font-size: 0.82rem; }
-  .symbol-pill { font-size: 0.62rem; padding: 0.12rem 0.4rem; }
+  .coin-title-row h3 { font-size: var(--fs-base); }
+  .symbol-pill { font-size: var(--fs-xs); padding: 0.12rem 0.4rem; }
   .card-sparkline { height: 18px; }
-  .card-chip { font-size: 0.62rem; padding: 0.26rem var(--space-2); }
+  .card-chip { font-size: var(--fs-xs); padding: 0.26rem var(--space-2); }
 
   .section-nav a { padding: 0.26rem 0.52rem; font-size: 0.7rem; }
   .segmented-button,

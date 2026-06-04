@@ -95,6 +95,11 @@ export function AssetDetailDrawer({ detail, isLoading, error, range, onRangeChan
     const previousBodyOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
+    // Mark the main content as inert so background elements are fully removed
+    // from the accessibility tree — keyboard and SR focus stays inside the modal.
+    const mainEl = document.querySelector<HTMLElement>("main");
+    if (mainEl) mainEl.inert = true;
+
     function handleTab(event: KeyboardEvent) {
       if (event.key !== "Tab" || !drawer) return;
       const focusables = Array.from(drawer.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR));
@@ -115,6 +120,7 @@ export function AssetDetailDrawer({ detail, isLoading, error, range, onRangeChan
     return () => {
       document.removeEventListener("keydown", handleTab, true);
       document.body.style.overflow = previousBodyOverflow;
+      if (mainEl) mainEl.inert = false;
       previouslyFocused?.focus?.();
     };
   }, []);
