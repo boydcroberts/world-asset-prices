@@ -1349,6 +1349,7 @@ html:not(.dark) .asset-category[data-category="private company"] {
   align-items: center;
   gap: 0.52rem;
   min-width: 0;
+  flex: 1 1 auto;
 }
 
 .coin-card h3 {
@@ -1356,13 +1357,24 @@ html:not(.dark) .asset-category[data-category="private company"] {
   font-weight: 700;
   min-width: 0;
   line-height: 1.16;
-  overflow-wrap: anywhere;
+  /* break-word keeps company names whole and only breaks a word that genuinely
+     can't fit — unlike `anywhere`, which shrank the box and split names like
+     "Anthropic" mid-word. hyphens makes any unavoidable break (e.g. a very long
+     single word) land on a clean syllable boundary rather than mid-character. */
+  overflow-wrap: break-word;
+  hyphens: auto;
   white-space: normal;
 }
 
 /* ── Symbol Pill ── */
 .symbol-pill {
-  flex-shrink: 0;
+  /* Yield width to the company name when the "symbol" is a long redundant name
+     (private companies use the full name, e.g. ANTHROPIC); ellipsize if needed. */
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 7.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
   display: inline-flex;
   align-items: center;
   justify-content: center;

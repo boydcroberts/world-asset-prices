@@ -163,6 +163,15 @@ export const MarketCard = memo(function MarketCard({
     </div>
   );
 
+  // Private companies have no real ticker — their "symbol" is just the name
+  // repeated (ANTHROPIC) or an arbitrary abbreviation (SSI), which only repeats
+  // or squeezes the title. Drop the pill for that category; for everything else
+  // (real tickers like NVDA/BTC) keep it, guarding against any redundant repeat.
+  const normalizeLabel = (label: string) => label.replace(/[^a-z0-9]/gi, "").toLowerCase();
+  const isPrivateCompany = meta.toLowerCase() === "private company";
+  const showSymbolPill =
+    !isPrivateCompany && normalizeLabel(symbol).length > 0 && normalizeLabel(symbol) !== normalizeLabel(name);
+
   const content: ReactNode = (
     <>
       <div className="coin-head">
@@ -175,7 +184,7 @@ export const MarketCard = memo(function MarketCard({
           <LogoMark name={name} symbol={symbol} logoUrl={logoUrl} fallbackLogoUrls={fallbackLogoUrls} />
           <h3>{name}</h3>
         </div>
-        <span className="symbol-pill">{symbol}</span>
+        {showSymbolPill ? <span className="symbol-pill">{symbol}</span> : null}
       </div>
 
       {valueLabel ? <p className="coin-value-label">{valueLabel}</p> : null}
