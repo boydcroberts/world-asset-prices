@@ -54,6 +54,14 @@
   --dur-slow: 300ms;
   --dur-slower: 700ms;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Spacing scale (conservative — only exact-match clean values tokenized;
+     hand-tuned off-grid values intentionally left as literals) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
 }
 
 /* Light theme overrides */
@@ -282,7 +290,7 @@ html:not(.dark) .section-nav a.nav-active {
 }
 
 .hero {
-  padding: 1.3rem 1.5rem 1.1rem;
+  padding: 1.3rem var(--space-6) 1.1rem;
   position: relative;
   overflow: hidden;
 }
@@ -313,7 +321,7 @@ html:not(.dark) .hero::after {
   background: radial-gradient(ellipse, rgba(168, 85, 247, 0.15), transparent 70%);
 }
 
-.surface { padding: 0.85rem 1rem; }
+.surface { padding: 0.85rem var(--space-4); }
 
 /* ── Hero Text ── */
 .eyebrow {
@@ -331,7 +339,7 @@ html:not(.dark) .hero::after {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 h1 {
@@ -398,7 +406,7 @@ html:not(.dark) h1 span {
   z-index: 1;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.5rem;
+  gap: var(--space-2);
   margin: 0.95rem 0 0;
 }
 
@@ -480,7 +488,7 @@ html:not(.dark) .hero-insight--warning dd { color: #b45309; }
 .hero-segment-health-item {
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--radius-pill);
-  padding: 0.25rem 0.5rem;
+  padding: var(--space-1) var(--space-2);
   font-size: 0.66rem;
   font-weight: 500;
   letter-spacing: 0.01em;
@@ -552,7 +560,7 @@ html:not(.dark) .hero-segment-health-item--warning {
 .market-select {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-2);
   min-width: 0;
   border: 1px solid var(--surface-border);
   border-radius: var(--radius-pill);
@@ -808,13 +816,13 @@ html:not(.dark) .theme-toggle:focus-visible {
 }
 
 .theme-toggle svg {
-  width: 1rem;
-  height: 1rem;
+  width: var(--space-4);
+  height: var(--space-4);
 }
 
 /* ── Status Badge ── */
 .status {
-  margin-top: 0.75rem;
+  margin-top: var(--space-3);
   width: fit-content;
   border-radius: var(--radius-pill);
   border: 1px solid transparent;
@@ -922,7 +930,7 @@ html:not(.dark) .status.stale {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 .surface-title-row {
@@ -941,7 +949,7 @@ html:not(.dark) .status.stale {
 .surface-head h2 {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-2);
   font-size: clamp(1rem, 2vw, 1.32rem);
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -970,7 +978,7 @@ html:not(.dark) .status.stale {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.75rem;
+  gap: var(--space-3);
   width: 100%;
   margin-top: 0.15rem;
   flex-wrap: wrap;
@@ -981,7 +989,7 @@ html:not(.dark) .status.stale {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.18rem 0.5rem;
+  padding: 0.18rem var(--space-2);
   border-radius: var(--radius-pill);
   font-size: 0.68rem;
   font-weight: 500;
@@ -1056,7 +1064,7 @@ html:not(.dark) .freshness-badge {
 /* ── Price Pulse (data update flash) ── */
 /* ── Card Grid ── */
 .coin-grid {
-  margin-top: 0.75rem;
+  margin-top: var(--space-3);
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0.52rem;
@@ -1420,7 +1428,7 @@ html:not(.dark) .coin-card:focus-visible .symbol-pill {
 .muted { color: var(--text-muted); font-size: 0.9rem; margin: 0.6rem 0; }
 
 .filter-empty {
-  margin: 0.75rem 0 0;
+  margin: var(--space-3) 0 0;
   border: 1px dashed var(--surface-border);
   border-radius: var(--radius-md);
   padding: 0.85rem 0.95rem;
@@ -1464,7 +1472,7 @@ html:not(.dark) .filter-empty {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 0.5rem;
+  gap: var(--space-2);
   min-height: 30px;
 }
 
@@ -1531,7 +1539,7 @@ html:not(.dark) .card-chip.active {
 }
 
 .shell-compact .coin-price {
-  font-size: 1rem;
+  font-size: var(--space-4);
 }
 
 .shell-compact .coin-foot {
@@ -1585,7 +1593,7 @@ html:not(.dark) .card-sparkline {
   background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.04) 75%);
   background-size: 200% 100%;
   animation: skeleton-shimmer 1.4s ease-in-out infinite;
-  height: 0.75rem;
+  height: var(--space-3);
   margin-top: 0.6rem;
 }
 
@@ -1609,7 +1617,7 @@ html:not(.dark) .skeleton-line {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.6rem;
-  margin-top: 0.75rem;
+  margin-top: var(--space-3);
 }
 
 .portfolio-summary > div,
@@ -1628,7 +1636,7 @@ html:not(.dark) .skeleton-line {
 .detail-metrics span,
 .detail-provenance span {
   display: block;
-  margin-bottom: 0.25rem;
+  margin-bottom: var(--space-1);
   color: var(--text-muted);
   font-size: 0.62rem;
   font-weight: 700;
@@ -1639,7 +1647,7 @@ html:not(.dark) .skeleton-line {
 .portfolio-summary strong,
 .detail-metrics strong {
   font-family: "Sora", sans-serif;
-  font-size: 1rem;
+  font-size: var(--space-4);
 }
 
 .portfolio-form {
@@ -1647,7 +1655,7 @@ html:not(.dark) .skeleton-line {
   grid-template-columns: minmax(180px, 1.4fr) repeat(2, minmax(110px, 0.7fr)) auto;
   gap: 0.55rem;
   align-items: end;
-  margin-top: 0.75rem;
+  margin-top: var(--space-3);
 }
 
 .portfolio-form label { min-width: 0; }
@@ -1671,7 +1679,7 @@ html:not(.dark) .skeleton-line {
   border: 1px solid var(--surface-border);
   border-radius: var(--radius-pill);
   min-height: 2.35rem;
-  padding: 0.45rem 0.75rem;
+  padding: 0.45rem var(--space-3);
   background: rgba(77, 240, 224, 0.1);
   color: var(--text);
   font: inherit;
@@ -1682,16 +1690,16 @@ html:not(.dark) .skeleton-line {
 
 .portfolio-positions {
   display: grid;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
 }
 
 .portfolio-position {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto auto;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.65rem 0.75rem;
+  gap: var(--space-3);
+  padding: 0.65rem var(--space-3);
 }
 
 .portfolio-position strong,
@@ -1706,7 +1714,7 @@ html:not(.dark) .skeleton-line {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 0.6rem;
-  margin-top: 0.75rem;
+  margin-top: var(--space-3);
   align-items: end;
 }
 
@@ -1743,7 +1751,7 @@ html:not(.dark) .skeleton-line {
   border-left: 1px solid var(--surface-border);
   background: var(--surface-bg);
   box-shadow: -24px 0 80px rgba(0, 0, 0, 0.38);
-  padding: 1rem;
+  padding: var(--space-4);
   animation: detail-drawer-in var(--dur-slow) var(--ease-out);
 }
 
@@ -1765,7 +1773,7 @@ html:not(.dark) .skeleton-line {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 .detail-eyebrow {
@@ -1809,7 +1817,7 @@ html:not(.dark) .skeleton-line {
 .detail-provenance {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.5rem;
+  gap: var(--space-2);
   margin-top: 0.9rem;
 }
 
@@ -1830,7 +1838,7 @@ html:not(.dark) .skeleton-line {
   margin-top: 0.65rem;
   border: 1px solid rgba(77, 240, 224, 0.28);
   border-radius: var(--radius-pill);
-  padding: 0.35rem 0.75rem;
+  padding: 0.35rem var(--space-3);
   color: var(--accent-cyan);
   font-size: 0.78rem;
   font-weight: 800;
@@ -1838,7 +1846,7 @@ html:not(.dark) .skeleton-line {
 }
 
 .detail-alternates {
-  margin-top: 0.75rem;
+  margin-top: var(--space-3);
   border: 1px solid var(--surface-border);
   border-radius: 10px;
   padding: 0.7rem;
@@ -1869,7 +1877,7 @@ html:not(.dark) .skeleton-line {
   border: 1px solid var(--surface-border);
   border-radius: var(--radius-pill);
   min-height: 2.75rem;
-  padding: 0.35rem 0.75rem;
+  padding: 0.35rem var(--space-3);
   background: var(--input-bg);
   color: var(--text-muted);
   font: inherit;
@@ -1883,7 +1891,7 @@ html:not(.dark) .skeleton-line {
 }
 
 .detail-panel {
-  margin-top: 0.75rem;
+  margin-top: var(--space-3);
   border: 1px solid var(--surface-border);
   border-radius: var(--radius-md);
   padding: 0.8rem;
@@ -1894,7 +1902,7 @@ html:not(.dark) .skeleton-line {
 .detail-chart-meta {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--space-4);
   color: var(--text-muted);
   font-size: 0.72rem;
   font-weight: 700;
@@ -2188,7 +2196,7 @@ html:not(.dark) .footer-glow {
 .footer-logo {
   font-family: "Sora", sans-serif;
   font-weight: 800;
-  font-size: 1rem;
+  font-size: var(--space-4);
   background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple), var(--accent-cyan));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2226,7 +2234,7 @@ html:not(.dark) .footer-glow {
 .footer-bottom {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-2);
   padding-top: 0.8rem;
   border-top: 1px solid var(--surface-border);
   font-size: 0.68rem;
@@ -2247,7 +2255,7 @@ html:not(.dark) .footer-glow {
     gap: 1.2rem;
   }
   .footer-links {
-    gap: 1.5rem;
+    gap: var(--space-6);
   }
 }
 
@@ -2309,8 +2317,8 @@ html:not(.dark) .footer-glow {
   .coin-value-label { font-size: 0.62rem; }
   .coin-head { font-size: 0.62rem; }
 
-  .hero { padding: 1rem 0.9rem 0.8rem; }
-  h1 { font-size: clamp(1.5rem, 6vw, 2.2rem); }
+  .hero { padding: var(--space-4) 0.9rem 0.8rem; }
+  h1 { font-size: clamp(var(--space-6), 6vw, 2.2rem); }
   .tagline { font-size: 0.78rem; }
   .hero-insights { gap: 0.42rem; }
   .hero-insight { padding: 0.58rem; }
@@ -2341,25 +2349,25 @@ html:not(.dark) .footer-glow {
 }
 
 @media (max-width: 480px) {
-  .coin-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+  .coin-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
   .hero-insights { grid-template-columns: 1fr; }
 
   .surface-head {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.25rem;
+    gap: var(--space-1);
   }
 
   h1 { font-size: clamp(1.35rem, 7vw, 1.9rem); }
   .hero { padding: 0.9rem 0.8rem 0.7rem; }
-  .surface { padding: 0.75rem; }
+  .surface { padding: var(--space-3); }
 
   .coin-card { padding: 0.6rem 0.55rem 0.55rem; }
   .coin-price { font-size: 0.95rem; }
   .coin-title-row h3 { font-size: 0.82rem; }
   .symbol-pill { font-size: 0.62rem; padding: 0.12rem 0.4rem; }
   .card-sparkline { height: 18px; }
-  .card-chip { font-size: 0.62rem; padding: 0.26rem 0.5rem; }
+  .card-chip { font-size: 0.62rem; padding: 0.26rem var(--space-2); }
 
   .section-nav a { padding: 0.26rem 0.52rem; font-size: 0.7rem; }
   .segmented-button,
