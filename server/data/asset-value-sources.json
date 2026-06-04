@@ -12,7 +12,7 @@
       "sourceType": "recognized-market-data",
       "confidence": "medium",
       "updateCadence": "monthly",
-      "notes": "Cross-asset context only; commodity market value methodology differs from equity market capitalization. Source figure ≈216,265 t above-ground gold × ~$4,540/oz."
+      "notes": "Cross-asset context only; commodity market value methodology differs from equity market capitalization. Source figure \u2248216,265 t above-ground gold \u00d7 ~$4,540/oz."
     },
     {
       "assetId": "commodity-silver",
@@ -229,7 +229,7 @@
       "confidence": "high",
       "updateCadence": "event-driven",
       "lastCheckedAt": "2026-06-03",
-      "notes": "A $122B round (committed capital) closed March 31, 2026 at an $852B post-money valuation, anchored by Amazon, Nvidia and SoftBank — now #2 behind Anthropic. OpenAI confidentially filed an S-1 around May 2026 (targeting roughly September 2026) but remains private."
+      "notes": "A $122B round (committed capital) closed March 31, 2026 at an $852B post-money valuation, anchored by Amazon, Nvidia and SoftBank \u2014 now #2 behind Anthropic. OpenAI confidentially filed an S-1 around May 2026 (targeting roughly September 2026) but remains private."
     },
     {
       "assetId": "private-bytedance",
@@ -255,7 +255,7 @@
       "confidence": "high",
       "updateCadence": "event-driven",
       "lastCheckedAt": "2026-06-03",
-      "notes": "Series H ($65B raise) closed May 28, 2026 at a $965B post-money valuation, led by Altimeter, Dragoneer, Greenoaks and Sequoia — now the most valuable AI startup ahead of OpenAI. Anthropic filed a confidential draft S-1 on June 1, 2026 but remains private."
+      "notes": "Series H ($65B raise) closed May 28, 2026 at a $965B post-money valuation, led by Altimeter, Dragoneer, Greenoaks and Sequoia \u2014 now the most valuable AI startup ahead of OpenAI. Anthropic filed a confidential draft S-1 on June 1, 2026 but remains private."
     },
     {
       "assetId": "private-stripe",
@@ -387,10 +387,10 @@
     {
       "assetId": "etf-qqq",
       "category": "ETF",
-      "valueUsd": 447120000000,
-      "valueAsOf": "2026-05-14",
-      "sourceUrl": "https://www.etfcentral.com/fund/QQQ",
-      "sourceTitle": "ETF Central QQQ profile",
+      "valueUsd": 495180000000,
+      "valueAsOf": "2026-06-03",
+      "sourceUrl": "https://stockanalysis.com/etf/qqq/",
+      "sourceTitle": "Stock Analysis \u2014 QQQ ETF profile",
       "sourceType": "issuer",
       "confidence": "medium",
       "updateCadence": "daily",
@@ -471,10 +471,10 @@
     {
       "assetId": "etf-vea",
       "category": "ETF",
-      "valueUsd": 155580000000,
-      "valueAsOf": "2026-05-14",
-      "sourceUrl": "https://www.etfcentral.com/fund/VEA",
-      "sourceTitle": "ETF Central VEA profile",
+      "valueUsd": 231840000000,
+      "valueAsOf": "2026-06-03",
+      "sourceUrl": "https://stockanalysis.com/etf/vea/",
+      "sourceTitle": "Stock Analysis \u2014 VEA ETF profile",
       "sourceType": "issuer",
       "confidence": "medium",
       "updateCadence": "daily",
@@ -483,10 +483,10 @@
     {
       "assetId": "etf-iefa",
       "category": "ETF",
-      "valueUsd": 150000000000,
-      "valueAsOf": "2026-05-14",
-      "sourceUrl": "https://www.etfcentral.com/fund/IEFA",
-      "sourceTitle": "ETF Central IEFA profile",
+      "valueUsd": 185920000000,
+      "valueAsOf": "2026-06-03",
+      "sourceUrl": "https://stockanalysis.com/etf/iefa/",
+      "sourceTitle": "Stock Analysis \u2014 IEFA ETF profile",
       "sourceType": "issuer",
       "confidence": "medium",
       "updateCadence": "daily",
@@ -495,10 +495,10 @@
     {
       "assetId": "etf-vwo",
       "category": "ETF",
-      "valueUsd": 112000000000,
-      "valueAsOf": "2026-05-14",
-      "sourceUrl": "https://www.etfcentral.com/fund/VWO",
-      "sourceTitle": "ETF Central VWO profile",
+      "valueUsd": 121700000000,
+      "valueAsOf": "2026-06-03",
+      "sourceUrl": "https://advisors.vanguard.com/investments/products/vwo/vanguard-ftse-emerging-markets-etf",
+      "sourceTitle": "Vanguard \u2014 VWO product page",
       "sourceType": "issuer",
       "confidence": "medium",
       "updateCadence": "daily",
@@ -507,10 +507,10 @@
     {
       "assetId": "etf-iwf",
       "category": "ETF",
-      "valueUsd": 110000000000,
-      "valueAsOf": "2026-05-14",
-      "sourceUrl": "https://www.etfcentral.com/fund/IWF",
-      "sourceTitle": "ETF Central IWF profile",
+      "valueUsd": 133240000000,
+      "valueAsOf": "2026-06-03",
+      "sourceUrl": "https://stockanalysis.com/etf/iwf/",
+      "sourceTitle": "Stock Analysis \u2014 IWF ETF profile",
       "sourceType": "issuer",
       "confidence": "medium",
       "updateCadence": "daily",

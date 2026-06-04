@@ -38,6 +38,11 @@ const AssetDetailDrawer = lazy(() =>
   import("./components/AssetDetailDrawer").then((module) => ({ default: module.AssetDetailDrawer })),
 );
 
+// Code-split the search modal: only mounts when user opens cmd+K.
+const SearchModal = lazy(() =>
+  import("./components/SearchModal").then((module) => ({ default: module.SearchModal })),
+);
+
 const EMPTY_CRYPTOS: DashboardCrypto[] = [];
 const EMPTY_STOCKS: DashboardStock[] = [];
 const EMPTY_ETFS: DashboardEtf[] = [];
@@ -68,6 +73,7 @@ function App() {
   const [activeCryptoId, setActiveCryptoId] = useState<string>("");
   const [activeSection, setActiveSection] = useState<string>("");
   const [selectedAssetId, setSelectedAssetId] = useState<string | null>(null);
+  const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [detailRange, setDetailRange] = useState<HistoricalRange>("30D");
   const observerRef = useRef<IntersectionObserver | null>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -141,10 +147,20 @@ function App() {
         !!target &&
         (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.tagName === "SELECT" || target.isContentEditable);
 
+      // ⌘K / Ctrl+K — open search modal
+      if ((event.metaKey || event.ctrlKey) && event.key === "k") {
+        event.preventDefault();
+        setSearchModalOpen((open) => !open);
+        return;
+      }
       if (event.key === "/" && !isEditable && !event.metaKey && !event.ctrlKey && !event.altKey) {
         event.preventDefault();
         searchInputRef.current?.focus();
         searchInputRef.current?.select();
+        return;
+      }
+      if (event.key === "Escape" && searchModalOpen) {
+        setSearchModalOpen(false);
         return;
       }
       if (event.key === "Escape" && selectedAssetId) {
@@ -163,7 +179,7 @@ function App() {
     }
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [searchTerm, selectedAssetId, setSearchTerm]);
+  }, [searchModalOpen, searchTerm, selectedAssetId, setSearchTerm]);
 
   const openAssetDetail = useCallback((id: string) => {
     setSelectedAssetId(id);
@@ -203,13 +219,16 @@ function App() {
     [normalizedSearchTerm, sortMode, topPrivateCompanies],
   );
 
+  const allEntries = useMemo(
+    () => [...topStocks, ...topEtfs, ...topCurrencies, ...topCryptos, ...topPrivateCompanies, ...topAssets],
+    [topAssets, topCryptos, topCurrencies, topEtfs, topPrivateCompanies, topStocks],
+  );
+
   const entriesById = useMemo(() => {
     const byId = new Map<string, DashboardEntry>();
-    for (const entry of [...topStocks, ...topEtfs, ...topCurrencies, ...topCryptos, ...topPrivateCompanies, ...topAssets]) {
-      byId.set(entry.id, entry);
-    }
+    for (const entry of allEntries) byId.set(entry.id, entry);
     return byId;
-  }, [topAssets, topCryptos, topCurrencies, topEtfs, topPrivateCompanies, topStocks]);
+  }, [allEntries]);
 
   const pinnedEntries = useMemo(
     () => pinnedIds.map((id) => entriesById.get(id)).filter((entry): entry is DashboardEntry => Boolean(entry)),
@@ -242,6 +261,7 @@ function App() {
       <DashboardShell
         theme={theme}
         onToggleTheme={toggleTheme}
+        onOpenSearch={() => setSearchModalOpen(true)}
         insights={dashboardInsights}
         segmentHealthSummaries={segmentHealthSummaries}
         density={density}
@@ -313,6 +333,16 @@ function App() {
           <PortfolioLab candidates={portfolioCandidates} holdings={holdings} onChange={setHoldings} />
         ) : null}
       </DashboardShell>
+
+      {searchModalOpen ? (
+        <Suspense fallback={null}>
+          <SearchModal
+            entries={allEntries}
+            onSelect={(id) => { openAssetDetail(id); }}
+            onClose={() => setSearchModalOpen(false)}
+          />
+        </Suspense>
+      ) : null}
 
       {selectedAssetId ? (
         <Suspense fallback={null}>

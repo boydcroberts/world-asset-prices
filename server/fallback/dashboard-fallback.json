@@ -654,7 +654,7 @@
       "name": "Invesco QQQ Trust",
       "symbol": "QQQ",
       "category": "ETF",
-      "aumUsd": 447120000000,
+      "aumUsd": 495180000000,
       "priceUsd": 746.16,
       "changePercent": 0.5064655172413781,
       "logoUrl": "https://financialmodelingprep.com/image-stock/QQQ.png",
@@ -677,8 +677,22 @@
       ]
     },
     {
-      "id": "etf-vtv",
+      "id": "etf-vea",
       "rank": 7,
+      "name": "Vanguard FTSE Developed Markets ETF",
+      "symbol": "VEA",
+      "category": "ETF",
+      "aumUsd": 231840000000,
+      "priceUsd": 72.32,
+      "changePercent": 0.6121313299944321,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/VEA.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/VEA.png"
+      ]
+    },
+    {
+      "id": "etf-vtv",
+      "rank": 8,
       "name": "Vanguard Value ETF",
       "symbol": "VTV",
       "category": "ETF",
@@ -691,8 +705,22 @@
       ]
     },
     {
+      "id": "etf-iefa",
+      "rank": 9,
+      "name": "iShares Core MSCI EAFE ETF",
+      "symbol": "IEFA",
+      "category": "ETF",
+      "aumUsd": 185920000000,
+      "priceUsd": 98.15,
+      "changePercent": 0.35787321063395555,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/IEFA.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/IEFA.png"
+      ]
+    },
+    {
       "id": "etf-gld",
-      "rank": 8,
+      "rank": 10,
       "name": "SPDR Gold Shares",
       "symbol": "GLD",
       "category": "ETF",
@@ -705,22 +733,8 @@
       ]
     },
     {
-      "id": "etf-vea",
-      "rank": 9,
-      "name": "Vanguard FTSE Developed Markets ETF",
-      "symbol": "VEA",
-      "category": "ETF",
-      "aumUsd": 155580000000,
-      "priceUsd": 72.32,
-      "changePercent": 0.6121313299944321,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/VEA.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/VEA.png"
-      ]
-    },
-    {
       "id": "etf-bnd",
-      "rank": 10,
+      "rank": 11,
       "name": "Vanguard Total Bond Market ETF",
       "symbol": "BND",
       "category": "ETF",
@@ -730,20 +744,6 @@
       "logoUrl": "https://financialmodelingprep.com/image-stock/BND.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/BND.png"
-      ]
-    },
-    {
-      "id": "etf-iefa",
-      "rank": 11,
-      "name": "iShares Core MSCI EAFE ETF",
-      "symbol": "IEFA",
-      "category": "ETF",
-      "aumUsd": 150000000000,
-      "priceUsd": 98.15,
-      "changePercent": 0.35787321063395555,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/IEFA.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/IEFA.png"
       ]
     },
     {
@@ -775,31 +775,31 @@
       ]
     },
     {
-      "id": "etf-vwo",
-      "rank": 14,
-      "name": "Vanguard FTSE Emerging Markets ETF",
-      "symbol": "VWO",
-      "category": "ETF",
-      "aumUsd": 112000000000,
-      "priceUsd": 61.19,
-      "changePercent": 0.4102395799146702,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/VWO.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/VWO.png"
-      ]
-    },
-    {
       "id": "etf-iwf",
-      "rank": 15,
+      "rank": 14,
       "name": "iShares Russell 1000 Growth ETF",
       "symbol": "IWF",
       "category": "ETF",
-      "aumUsd": 110000000000,
+      "aumUsd": 133240000000,
       "priceUsd": 128.29,
       "changePercent": -0.13233691421455387,
       "logoUrl": "https://financialmodelingprep.com/image-stock/IWF.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/IWF.png"
+      ]
+    },
+    {
+      "id": "etf-vwo",
+      "rank": 15,
+      "name": "Vanguard FTSE Emerging Markets ETF",
+      "symbol": "VWO",
+      "category": "ETF",
+      "aumUsd": 121700000000,
+      "priceUsd": 61.19,
+      "changePercent": 0.4102395799146702,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/VWO.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/VWO.png"
       ]
     }
   ],
@@ -1352,7 +1352,7 @@
       "sourceType": "recognized-market-data",
       "confidence": "medium",
       "updateCadence": "monthly",
-      "notes": "Cross-asset context only; commodity market value methodology differs from equity market capitalization. Source figure ≈216,265 t above-ground gold × ~$4,540/oz."
+      "notes": "Cross-asset context only; commodity market value methodology differs from equity market capitalization. Source figure \u2248216,265 t above-ground gold \u00d7 ~$4,540/oz."
     },
     "commodity-silver": {
       "assetId": "commodity-silver",
