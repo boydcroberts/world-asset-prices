@@ -6,6 +6,10 @@ A market dashboard showing the top 15 assets in every major category — stocks,
 
 No API key required. Works without one, degrades gracefully when providers fail, and tells you exactly which segments are stale.
 
+![World Asset Prices dashboard — dark-glass UI showing the top 15 global assets ranked by market cap, with live data-health badges](docs/screenshot.jpg)
+
+> Screenshot of the current build. To refresh it: `npm run dev`, open `http://localhost:5188` in dark mode at 1440px, and save a viewport capture to `docs/screenshot.jpg`.
+
 ---
 
 ## Who it's for

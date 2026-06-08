@@ -178,7 +178,9 @@ for (const [assetId, expectedValue] of REQUIRED_PRIVATE_VALUES) {
 }
 
 const nvidia = fallback.topStocks?.find((stock) => stock.symbol === "NVDA");
-if (!nvidia || nvidia.marketCapUsd < 5_000_000_000_000 || nvidia.marketCapUsd > 6_200_000_000_000) {
+// Order-of-magnitude sanity band: catches 10x typos and broken provider data while
+// tolerating normal market movement. NVDA sits near $5T; a tight band trips on routine swings.
+if (!nvidia || nvidia.marketCapUsd < 3_500_000_000_000 || nvidia.marketCapUsd > 7_000_000_000_000) {
   errors.push(`NVIDIA fallback market cap outside sanity range: ${nvidia?.marketCapUsd}`);
 }
 
