@@ -95,7 +95,7 @@ export const DashboardShell = memo(function DashboardShell({
             </dl>
           ) : null}
           {segmentHealthSummaries.length ? (
-            <div className="hero-segment-health" aria-label="Degraded segments">
+            <div className="hero-segment-health" aria-label="Degraded segments" aria-live="polite">
               {segmentHealthSummaries.map((segment) => (
                 <span
                   key={segment.segment}

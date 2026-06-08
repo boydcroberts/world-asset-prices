@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { memo, useMemo, useState } from "react";
 
 import { buildPortfolioSummary, parsePositiveDecimal, type PortfolioEntry } from "../lib/portfolio";
 import { formatCompactCurrency, formatCurrency, formatPercent, trendClass } from "../lib/formatters";
@@ -14,7 +14,7 @@ function nowIso(): string {
   return new Date().toISOString();
 }
 
-export function PortfolioLab({ candidates, holdings, onChange }: PortfolioLabProps) {
+export const PortfolioLab = memo(function PortfolioLab({ candidates, holdings, onChange }: PortfolioLabProps) {
   const [assetId, setAssetId] = useState(candidates[0]?.id ?? "");
   const [quantity, setQuantity] = useState("");
   const [costBasisUsd, setCostBasisUsd] = useState("");
@@ -152,4 +152,4 @@ export function PortfolioLab({ candidates, holdings, onChange }: PortfolioLabPro
       </div>
     </section>
   );
-}
+});

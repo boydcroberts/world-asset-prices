@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from "react";
 
 import { SectionGrid } from "./SectionGrid";
+import { useCardServices } from "../context/card-services";
 import type { SectionFilter } from "../lib/dashboard-filters";
 import type {
   DashboardAsset,
@@ -22,15 +23,11 @@ type SegmentMetaMap = {
 
 type MarketSectionsProps = {
   shouldShowSection: (filter: Exclude<SectionFilter, "all">) => boolean;
-  generatedAt: string | undefined;
   isBooting: boolean;
   normalizedSearchTerm: string;
   pinnedIdSet: ReadonlySet<string>;
-  onTogglePin: (id: string) => void;
   selectedAssetId: string | null;
-  onOpenAssetDetail: (id: string) => void;
   segmentMeta: SegmentMetaMap | undefined;
-  equityEstimateLabel: string;
 
   topAssets: DashboardAsset[];
   visibleTopAssets: DashboardAsset[];
@@ -62,32 +59,27 @@ type MarketSectionsProps = {
 export function MarketSections(props: MarketSectionsProps) {
   const {
     shouldShowSection,
-    generatedAt,
     isBooting,
     normalizedSearchTerm,
     pinnedIdSet,
-    onTogglePin,
     selectedAssetId,
-    onOpenAssetDetail,
     segmentMeta,
-    equityEstimateLabel,
     activeCryptoId,
     onCryptoActivate,
   } = props;
+  const { onOpenAssetDetail, equityEstimateLabel } = useCardServices();
 
-  // Stable shared card-context so memoized SectionGrids don't re-render when an
-  // unrelated section's props change.
+  // Stable shared per-section state so memoized SectionGrids don't re-render
+  // when an unrelated section's props change. (The app-level services —
+  // pin/select handlers, generatedAt — now come from CardServicesContext.)
   const common = useMemo(
     () => ({
-      generatedAt,
       isBooting,
       normalizedSearchTerm,
       pinnedIdSet,
-      onTogglePin,
       selectedAssetId,
-      onOpenAssetDetail,
     }),
-    [generatedAt, isBooting, normalizedSearchTerm, pinnedIdSet, onTogglePin, selectedAssetId, onOpenAssetDetail],
+    [isBooting, normalizedSearchTerm, pinnedIdSet, selectedAssetId],
   );
 
   // Clicking a crypto card both marks it active and opens its detail drawer.

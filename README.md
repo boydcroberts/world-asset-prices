@@ -1,14 +1,19 @@
 # World Asset Prices
 
-**Live site:** [world-asset-prices.vercel.app](https://world-asset-prices.vercel.app)
+> The top 15 of every major market — stocks, ETFs, crypto, FX, private companies, and commodities — ranked by market cap, with live prices and honest, per-segment data provenance. No API key required.
 
-A market dashboard showing the top 15 assets in every major category — stocks, ETFs, crypto, currencies, private companies, and commodities — ranked by market cap, with live prices and transparent data provenance.
+![React 19](https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white)
+![TypeScript 5.9](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)
+![Vite 7](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
+![Tailwind CSS v4](https://img.shields.io/badge/Tailwind-v4-38BDF8?logo=tailwindcss&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-Serverless-000000?logo=vercel&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-22c55e)
 
-No API key required. Works without one, degrades gracefully when providers fail, and tells you exactly which segments are stale.
+**🔗 [Live demo → world-asset-prices.vercel.app](https://world-asset-prices.vercel.app)**
 
-![World Asset Prices dashboard — dark-glass UI showing the top 15 global assets ranked by market cap, with live data-health badges](docs/screenshot.jpg)
+[![World Asset Prices dashboard — dark-glass UI showing the top 15 global assets ranked by market cap, with live data-health badges](docs/screenshot.jpg)](https://world-asset-prices.vercel.app)
 
-> Screenshot of the current build. To refresh it: `npm run dev`, open `http://localhost:5188` in dark mode at 1440px, and save a viewport capture to `docs/screenshot.jpg`.
+<sub>Screenshot of the current build. To refresh it: `npm run dev`, open `http://localhost:5188` in dark mode at 1440px, and save a viewport capture to `docs/screenshot.jpg`.</sub>
 
 ---
 
@@ -76,6 +81,22 @@ Key behaviors:
 - Theme toggle in the top-right; system preference respected on first load
 
 ---
+
+## Resilient by design
+
+The dashboard never shows a blank screen, even when everything upstream is down. Data degrades through four tiers, and the UI labels exactly which one you're seeing:
+
+```
+1. Live providers      CoinPaprika · Stooq · Yahoo · Frankfurter   (server, per-request timeouts + retry)
+        │ any segment fails ↓
+2. Durable cache       Upstash KV — last good payload, TTL-bounded  (server)
+        │ unset / expired ↓
+3. Bundled fallback    server/fallback/dashboard-fallback.json      (ships in the deploy, always present)
+        │ API route unreachable (offline / outage) ↓
+4. Client last-known-good   localStorage snapshot from the last visit  (browser)
+```
+
+Tiers 1–3 are server-side; tier 4 is what lets a **cold, fully-offline load** still paint real (clearly-aged) data. Every segment is resolved independently, so a crypto outage never blanks the stock table.
 
 ## Data model
 

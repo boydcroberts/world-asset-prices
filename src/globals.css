@@ -1461,7 +1461,10 @@ html:not(.dark) .coin-card:focus-visible .symbol-pill {
   border-color: rgba(37, 99, 235, 0.4);
 }
 
-/* ── Coin Price & Change ── */
+/* ── Coin Price & Change ──
+   Numeric lines are right-aligned with tabular figures so values form a clean
+   right-edge column down each card (a quiet trading-terminal read) and never
+   jitter on live price pulses. */
 .coin-value-label {
   margin: 0.44rem 0 0;
   font-size: 0.58rem;
@@ -1469,6 +1472,7 @@ html:not(.dark) .coin-card:focus-visible .symbol-pill {
   text-transform: uppercase;
   color: var(--text-dim);
   font-weight: 600;
+  text-align: right;
 }
 
 .coin-value-label + .coin-price {
@@ -1482,12 +1486,14 @@ html:not(.dark) .coin-card:focus-visible .symbol-pill {
   font-family: "Sora", sans-serif;
   color: var(--text);
   letter-spacing: 0;
+  text-align: right;
 }
 
 .coin-change {
   margin: 0.22rem 0 0;
   font-size: var(--fs-base);
   font-weight: 600;
+  text-align: right;
 }
 
 .asset-note {
@@ -1495,11 +1501,28 @@ html:not(.dark) .coin-card:focus-visible .symbol-pill {
   font-size: 0.78rem;
   color: var(--text-muted);
   font-weight: 400;
+  text-align: right;
 }
 
 .is-up { color: var(--green); }
 .is-down { color: var(--red); }
 .is-flat { color: var(--flat); }
+
+/* Color-independent direction cue so gains/losses aren't conveyed by hue alone
+   (the signed % text remains the screen-reader truth; the glyph is decorative). */
+.coin-change.is-up::before {
+  content: "\25B2";
+  margin-right: 0.3em;
+  font-size: 0.72em;
+  vertical-align: 0.08em;
+}
+
+.coin-change.is-down::before {
+  content: "\25BC";
+  margin-right: 0.3em;
+  font-size: 0.72em;
+  vertical-align: 0.08em;
+}
 .muted { color: var(--text-muted); font-size: 0.9rem; margin: 0.6rem 0; }
 
 .filter-empty {
@@ -1514,6 +1537,77 @@ html:not(.dark) .coin-card:focus-visible .symbol-pill {
 
 html:not(.dark) .filter-empty {
   background: rgba(255, 255, 255, 0.56);
+}
+
+/* No-data empty state: centered with a small drawn bar-chart glyph (no font
+   dependency) so an empty section reads as intentional, not broken. */
+.filter-empty--nodata {
+  text-align: center;
+}
+
+.filter-empty--nodata::before {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 14px;
+  margin: 0 auto 0.5rem;
+  opacity: 0.55;
+  background:
+    linear-gradient(var(--text-muted), var(--text-muted)) 0 100% / 4px 8px no-repeat,
+    linear-gradient(var(--text-muted), var(--text-muted)) 9px 100% / 4px 14px no-repeat,
+    linear-gradient(var(--text-muted), var(--text-muted)) 18px 100% / 4px 5px no-repeat;
+}
+
+/* Whole-dashboard error state (no live data and no cached snapshot). */
+.dashboard-error {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.dashboard-error h2 {
+  margin: 0;
+}
+
+.dashboard-error p {
+  margin: 0;
+  max-width: 46ch;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.retry-button {
+  margin-top: 0.4rem;
+  border: 1px solid var(--surface-border-strong);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.86rem;
+  padding: 0.5rem 1.15rem;
+  min-height: 2.75rem;
+  cursor: pointer;
+  transition: border-color var(--dur-base) ease, background var(--dur-base) ease, transform var(--dur-fast) ease;
+}
+
+.retry-button:hover {
+  border-color: var(--accent-blue);
+  background: rgba(96, 184, 255, 0.12);
+}
+
+.retry-button:active {
+  transform: translateY(1px);
+}
+
+.retry-button:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+html:not(.dark) .retry-button {
+  background: rgba(15, 23, 42, 0.04);
 }
 
 /* ── Logo + Monogram ── */
@@ -2206,6 +2300,10 @@ html:not(.dark) .search-result-name { color: #111; }
 /* Tabular figures so stacked prices align and don't jitter on value pulses. */
 .coin-price,
 .coin-change,
+.coin-value-label,
+.hero-insight dd,
+.portfolio-summary strong,
+.portfolio-position strong,
 .detail-metrics strong {
   font-variant-numeric: tabular-nums;
 }

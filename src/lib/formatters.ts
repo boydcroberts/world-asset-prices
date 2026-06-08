@@ -2,6 +2,44 @@ export function isFiniteNumber(value: unknown): value is number {
   return typeof value === "number" && Number.isFinite(value);
 }
 
+// Intl.NumberFormat construction is the expensive part — instances are immutable
+// and reusable, so we build each configuration once and reuse it across every
+// cell/render instead of allocating ~90 formatters per full dashboard paint.
+const exactCurrencyFormatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 10,
+});
+
+const exactNumberFormatter = new Intl.NumberFormat("en-US", {
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 10,
+});
+
+const compactCurrencyFormatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  notation: "compact",
+  maximumFractionDigits: 2,
+});
+
+// formatCurrency varies its fraction digits by magnitude, so cache one formatter
+// per distinct digit count (2/4/6/8) the first time each is needed.
+const currencyFormatters = new Map<number, Intl.NumberFormat>();
+function currencyFormatter(maxDigits: number): Intl.NumberFormat {
+  let formatter = currencyFormatters.get(maxDigits);
+  if (!formatter) {
+    formatter = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: maxDigits,
+    });
+    currencyFormatters.set(maxDigits, formatter);
+  }
+  return formatter;
+}
+
 export function formatCurrency(value: unknown): string {
   if (!isFiniteNumber(value)) {
     return "—";
@@ -20,11 +58,7 @@ export function formatCurrency(value: unknown): string {
     maxDigits = 4;
   }
 
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: maxDigits,
-  }).format(value);
+  return currencyFormatter(maxDigits).format(value);
 }
 
 export function formatExactCurrency(value: unknown): string {
@@ -32,12 +66,7 @@ export function formatExactCurrency(value: unknown): string {
     return "—";
   }
 
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 10,
-  }).format(value);
+  return exactCurrencyFormatter.format(value);
 }
 
 export function formatExactNumber(value: unknown): string {
@@ -45,10 +74,7 @@ export function formatExactNumber(value: unknown): string {
     return "—";
   }
 
-  return new Intl.NumberFormat("en-US", {
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 10,
-  }).format(value);
+  return exactNumberFormatter.format(value);
 }
 
 export function formatCompactCurrency(value: unknown): string {
@@ -56,12 +82,7 @@ export function formatCompactCurrency(value: unknown): string {
     return "—";
   }
 
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    notation: "compact",
-    maximumFractionDigits: 2,
-  }).format(value);
+  return compactCurrencyFormatter.format(value);
 }
 
 export function formatPercent(value: unknown): string {

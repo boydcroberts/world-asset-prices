@@ -1,8 +1,10 @@
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import clsx from "clsx";
 import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { fetchAssetDetail, fetchDashboard } from "./api";
+import { CardServicesContext, type CardServices } from "./context/card-services";
+import { readCachedDashboard, writeCachedDashboard } from "./lib/dashboard-cache";
 import { DashboardShell } from "./components/DashboardShell";
 import { MarketControls } from "./components/MarketControls";
 import { MarketSections } from "./components/MarketSections";
@@ -100,6 +102,11 @@ function App() {
 
   useEffect(() => setupSectionObserver(), [setupSectionObserver]);
 
+  // Seed the query with the last successful payload from a prior visit so a cold
+  // load (including a fully offline one) paints real, clearly-aged data instead
+  // of a blank screen while the live fetch runs.
+  const cachedDashboard = useMemo(() => readCachedDashboard(), []);
+
   const dashboardQuery = useQuery({
     queryKey: ["dashboard"],
     queryFn: fetchDashboard,
@@ -107,13 +114,30 @@ function App() {
       const refreshInSec = query.state.data?.refreshInSec ?? DEFAULT_REFRESH_SEC;
       return refreshInSec * 1_000;
     },
+    // The dynamic refetchInterval drives live updates; staleTime just stops
+    // window-focus from triggering a redundant refetch within the same window.
+    staleTime: 15_000,
+    initialData: cachedDashboard?.payload,
+    initialDataUpdatedAt: cachedDashboard?.cachedAt,
   });
 
   const assetDetailQuery = useQuery({
     queryKey: ["asset-detail", selectedAssetId, detailRange],
     queryFn: () => fetchAssetDetail(selectedAssetId ?? "", detailRange),
     enabled: Boolean(selectedAssetId),
+    // Keep the previous range's chart on screen while the next range loads so
+    // switching 7D/30D/1Y never flashes an empty drawer.
+    placeholderData: keepPreviousData,
   });
+
+  // Persist every successful payload as the client-side last-known-good cache.
+  // Keyed on dataUpdatedAt so we store the data's true fetch time (idempotent
+  // when the query is seeded from cache).
+  useEffect(() => {
+    if (dashboardQuery.isSuccess && dashboardQuery.data) {
+      writeCachedDashboard(dashboardQuery.data, dashboardQuery.dataUpdatedAt);
+    }
+  }, [dashboardQuery.isSuccess, dashboardQuery.dataUpdatedAt, dashboardQuery.data]);
 
   const dashboard = dashboardQuery.data;
   const topCryptos = dashboard?.topCryptos ?? EMPTY_CRYPTOS;
@@ -188,6 +212,19 @@ function App() {
     setSelectedAssetId(null);
   }, []);
 
+  // Stable, app-level card services provided via context so they don't have to
+  // be threaded App → MarketSections → SectionGrid → MarketCard. Memoized so
+  // card consumers only re-render when one of these actually changes.
+  const cardServices = useMemo<CardServices>(
+    () => ({
+      onTogglePin: togglePinned,
+      onOpenAssetDetail: openAssetDetail,
+      generatedAt,
+      equityEstimateLabel,
+    }),
+    [togglePinned, openAssetDetail, generatedAt, equityEstimateLabel],
+  );
+
   const dashboardInsights = useMemo(() => (dashboard ? buildDashboardInsights(dashboard) : []), [dashboard]);
   const segmentHealthSummaries = useMemo(
     () => (dashboard ? getWorstSegmentHealthSummaries(dashboard) : []),
@@ -258,81 +295,91 @@ function App() {
 
   return (
     <>
-      <DashboardShell
-        theme={theme}
-        onToggleTheme={toggleTheme}
-        onOpenSearch={() => setSearchModalOpen(true)}
-        insights={dashboardInsights}
-        segmentHealthSummaries={segmentHealthSummaries}
-        density={density}
-      >
-        <MarketControls
-          searchTerm={searchTerm}
-          onSearchChange={setSearchTerm}
-          searchInputRef={searchInputRef}
-          sectionFilter={sectionFilter}
-          onSectionFilterChange={setSectionFilter}
-          sortMode={sortMode}
-          onSortChange={setSortMode}
+      <CardServicesContext.Provider value={cardServices}>
+        <DashboardShell
+          theme={theme}
+          onToggleTheme={toggleTheme}
+          onOpenSearch={() => setSearchModalOpen(true)}
+          insights={dashboardInsights}
+          segmentHealthSummaries={segmentHealthSummaries}
           density={density}
-          onDensityToggle={toggleDensity}
-          isFetching={dashboardQuery.isFetching}
-          generatedAt={generatedAt}
-        />
+        >
+          <MarketControls
+            searchTerm={searchTerm}
+            onSearchChange={setSearchTerm}
+            searchInputRef={searchInputRef}
+            sectionFilter={sectionFilter}
+            onSectionFilterChange={setSectionFilter}
+            sortMode={sortMode}
+            onSortChange={setSortMode}
+            density={density}
+            onDensityToggle={toggleDensity}
+            isFetching={dashboardQuery.isFetching}
+            generatedAt={generatedAt}
+          />
 
-        <nav className="section-nav" aria-label="Dashboard sections">
-          {navLinks.map((link) => (
-            <a
-              key={link.id}
-              href={`#${link.id}`}
-              className={clsx(activeSection === link.id && "nav-active")}
-              aria-current={activeSection === link.id ? "true" : undefined}
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+          {dashboardQuery.isError && !dashboard ? (
+            <section className="surface dashboard-error" role="alert">
+              <h2>Live data is unavailable</h2>
+              <p>
+                We couldn&apos;t reach the markets service, and no cached snapshot is stored on this
+                device yet. Your watchlist and portfolio are safe.
+              </p>
+              <button type="button" className="retry-button" onClick={() => void dashboardQuery.refetch()}>
+                Try again
+              </button>
+            </section>
+          ) : (
+            <>
+              <nav className="section-nav" aria-label="Dashboard sections">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.id}
+                    href={`#${link.id}`}
+                    className={clsx(activeSection === link.id && "nav-active")}
+                    aria-current={activeSection === link.id ? "true" : undefined}
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </nav>
 
-        <WatchlistSection
-          entries={pinnedEntries}
-          pinnedIdSet={pinnedIdSet}
-          onTogglePin={togglePinned}
-          generatedAt={generatedAt}
-          selectedAssetId={selectedAssetId}
-          onOpenAssetDetail={openAssetDetail}
-        />
+              <WatchlistSection
+                entries={pinnedEntries}
+                pinnedIdSet={pinnedIdSet}
+                selectedAssetId={selectedAssetId}
+              />
 
-        <MarketSections
-          shouldShowSection={shouldShowSection}
-          generatedAt={generatedAt}
-          isBooting={isBooting}
-          normalizedSearchTerm={normalizedSearchTerm}
-          pinnedIdSet={pinnedIdSet}
-          onTogglePin={togglePinned}
-          selectedAssetId={selectedAssetId}
-          onOpenAssetDetail={openAssetDetail}
-          segmentMeta={segmentMeta}
-          equityEstimateLabel={equityEstimateLabel}
-          topAssets={topAssets}
-          visibleTopAssets={visibleTopAssets}
-          topStocks={topStocks}
-          visibleTopStocks={visibleTopStocks}
-          topPrivateCompanies={topPrivateCompanies}
-          visibleTopPrivateCompanies={visibleTopPrivateCompanies}
-          topEtfs={topEtfs}
-          visibleTopEtfs={visibleTopEtfs}
-          topCurrencies={topCurrencies}
-          visibleTopCurrencies={visibleTopCurrencies}
-          topCryptos={topCryptos}
-          visibleTopCryptos={visibleTopCryptos}
-          activeCryptoId={activeCryptoId}
-          onCryptoActivate={setActiveCryptoId}
-        />
+              <MarketSections
+                shouldShowSection={shouldShowSection}
+                isBooting={isBooting}
+                normalizedSearchTerm={normalizedSearchTerm}
+                pinnedIdSet={pinnedIdSet}
+                selectedAssetId={selectedAssetId}
+                segmentMeta={segmentMeta}
+                topAssets={topAssets}
+                visibleTopAssets={visibleTopAssets}
+                topStocks={topStocks}
+                visibleTopStocks={visibleTopStocks}
+                topPrivateCompanies={topPrivateCompanies}
+                visibleTopPrivateCompanies={visibleTopPrivateCompanies}
+                topEtfs={topEtfs}
+                visibleTopEtfs={visibleTopEtfs}
+                topCurrencies={topCurrencies}
+                visibleTopCurrencies={visibleTopCurrencies}
+                topCryptos={topCryptos}
+                visibleTopCryptos={visibleTopCryptos}
+                activeCryptoId={activeCryptoId}
+                onCryptoActivate={setActiveCryptoId}
+              />
 
-        {sectionFilter === "all" ? (
-          <PortfolioLab candidates={portfolioCandidates} holdings={holdings} onChange={setHoldings} />
-        ) : null}
-      </DashboardShell>
+              {sectionFilter === "all" ? (
+                <PortfolioLab candidates={portfolioCandidates} holdings={holdings} onChange={setHoldings} />
+              ) : null}
+            </>
+          )}
+        </DashboardShell>
+      </CardServicesContext.Provider>
 
       {searchModalOpen ? (
         <Suspense fallback={null}>

@@ -3,6 +3,13 @@ import { memo, type ReactNode } from "react";
 
 import { MarketCard } from "./MarketCard";
 import { SectionHeader } from "./SectionHeader";
+import { useCardServices } from "../context/card-services";
+import {
+  changeSecondaryClass,
+  hasMeaningfulChange,
+  presentWatchlistEntry,
+  priceWithChangeText,
+} from "../lib/card-presenters";
 import { buildPriceTitle, type SectionId } from "../lib/dashboard-filters";
 import { getEntryChange, type DashboardEntry } from "../lib/dashboard-insights";
 import {
@@ -48,15 +55,12 @@ type CommonProps = {
   title: string;
   subtitle: string;
   meta?: DashboardSegmentMeta;
-  generatedAt: string | undefined;
   isBooting: boolean;
   totalCount: number;
   normalizedSearchTerm: string;
   emptyLabel: string;
   pinnedIdSet: ReadonlySet<string>;
-  onTogglePin: (id: string) => void;
   selectedAssetId: string | null;
-  onOpenAssetDetail: (id: string) => void;
   footerNote?: string;
 };
 
@@ -76,20 +80,41 @@ type SectionGridProps = CommonProps &
       }
   );
 
+/**
+ * Per-card render context: section-scoped state (pin set, current selection)
+ * merged with the app-level card services pulled from context. Replaces the
+ * five fields that used to be threaded down as props.
+ */
+type CardRenderContext = {
+  pinnedIdSet: ReadonlySet<string>;
+  selectedAssetId: string | null;
+  onTogglePin: (id: string) => void;
+  onOpenAssetDetail: (id: string) => void;
+  generatedAt: string | undefined;
+};
+
 export const SectionGrid = memo(function SectionGrid(props: SectionGridProps) {
+  const { onTogglePin, onOpenAssetDetail, generatedAt } = useCardServices();
   const {
     id,
     surfaceClass,
     title,
     subtitle,
     meta,
-    generatedAt,
     isBooting,
     totalCount,
     normalizedSearchTerm,
     emptyLabel,
     footerNote,
   } = props;
+
+  const ctx: CardRenderContext = {
+    pinnedIdSet: props.pinnedIdSet,
+    selectedAssetId: props.selectedAssetId,
+    onTogglePin,
+    onOpenAssetDetail,
+    generatedAt,
+  };
 
   return (
     <section id={id} className={clsx("surface", surfaceClass)}>
@@ -100,7 +125,7 @@ export const SectionGrid = memo(function SectionGrid(props: SectionGridProps) {
         generatedAt={generatedAt}
         staticBadge={props.variant === "private" ? "Curated" : undefined}
       />
-      {renderBody(props, isBooting, totalCount, normalizedSearchTerm, emptyLabel)}
+      {renderBody(props, ctx, isBooting, totalCount, normalizedSearchTerm, emptyLabel)}
       {footerNote ? <p className="disclaimer">{footerNote}</p> : null}
     </section>
   );
@@ -108,6 +133,7 @@ export const SectionGrid = memo(function SectionGrid(props: SectionGridProps) {
 
 function renderBody(
   props: SectionGridProps,
+  ctx: CardRenderContext,
   isBooting: boolean,
   totalCount: number,
   normalizedSearchTerm: string,
@@ -120,21 +146,19 @@ function renderBody(
 
   switch (props.variant) {
     case "assets":
-      return <div className="coin-grid">{props.visibleEntries.map((asset, index) => renderAssetCard(asset, index, props))}</div>;
+      return <div className="coin-grid">{props.visibleEntries.map((asset, index) => renderAssetCard(asset, index, ctx))}</div>;
     case "stocks":
-      return <div className="coin-grid">{props.visibleEntries.map((stock, index) => renderStockCard(stock, index, props))}</div>;
+      return <div className="coin-grid">{props.visibleEntries.map((stock, index) => renderStockCard(stock, index, ctx))}</div>;
     case "private":
-      return <div className="coin-grid">{props.visibleEntries.map((company, index) => renderPrivateCard(company, index, props))}</div>;
+      return <div className="coin-grid">{props.visibleEntries.map((company, index) => renderPrivateCard(company, index, ctx))}</div>;
     case "etfs":
-      return <div className="coin-grid">{props.visibleEntries.map((etf, index) => renderEtfCard(etf, index, props))}</div>;
+      return <div className="coin-grid">{props.visibleEntries.map((etf, index) => renderEtfCard(etf, index, ctx))}</div>;
     case "currencies":
-      return <div className="coin-grid">{props.visibleEntries.map((currency, index) => renderCurrencyCard(currency, index, props))}</div>;
+      return <div className="coin-grid">{props.visibleEntries.map((currency, index) => renderCurrencyCard(currency, index, ctx))}</div>;
     case "cryptos":
       return (
         <div className="coin-grid">
-          {props.visibleEntries.map((coin, index) =>
-            renderCryptoCard(coin, index, props),
-          )}
+          {props.visibleEntries.map((coin, index) => renderCryptoCard(coin, index, props, ctx))}
         </div>
       );
   }
@@ -144,12 +168,10 @@ function renderEmptyState(label: string, hasSourceData: boolean, normalizedSearc
   if (hasSourceData && normalizedSearchTerm) {
     return <p className="filter-empty">{`No ${label} match "${normalizedSearchTerm}".`}</p>;
   }
-  return <p className="muted">No {label} data available.</p>;
+  return <p className="filter-empty filter-empty--nodata">No {label} data available.</p>;
 }
 
-type CardCommon = Pick<CommonProps, "pinnedIdSet" | "onTogglePin" | "generatedAt" | "selectedAssetId" | "onOpenAssetDetail">;
-
-function renderAssetCard(asset: DashboardAsset, index: number, common: CardCommon): ReactNode {
+function renderAssetCard(asset: DashboardAsset, index: number, ctx: CardRenderContext): ReactNode {
   return (
     <MarketCard
       key={asset.id}
@@ -160,28 +182,24 @@ function renderAssetCard(asset: DashboardAsset, index: number, common: CardCommo
       meta={asset.category}
       valueLabel="Est. Market Cap"
       value={formatCompactCurrency(asset.marketCapUsd)}
-      priceTitle={buildPriceTitle(formatExactNumber(asset.marketCapUsd), common.generatedAt, "Exact market cap (USD)")}
+      priceTitle={buildPriceTitle(formatExactNumber(asset.marketCapUsd), ctx.generatedAt, "Exact market cap (USD)")}
       index={index}
       logoUrl={asset.logoUrl}
       fallbackLogoUrls={asset.fallbackLogoUrls}
-      pinned={common.pinnedIdSet.has(asset.id)}
-      onTogglePin={common.onTogglePin}
+      pinned={ctx.pinnedIdSet.has(asset.id)}
+      onTogglePin={ctx.onTogglePin}
       assetStyle
       interactive
-      active={asset.id === common.selectedAssetId}
-      onSelect={common.onOpenAssetDetail}
+      active={asset.id === ctx.selectedAssetId}
+      onSelect={ctx.onOpenAssetDetail}
     />
   );
 }
 
-function renderStockCard(stock: DashboardStock, index: number, common: CardCommon): ReactNode {
+function renderStockCard(stock: DashboardStock, index: number, ctx: CardRenderContext): ReactNode {
   const changeText = formatPercent(stock.changePercent);
-  const hasChange = changeText !== "—";
-  const priceText = stock.priceUsd === null
-    ? "Curated"
-    : hasChange
-      ? `${formatCurrency(stock.priceUsd)} · ${changeText}`
-      : formatCurrency(stock.priceUsd);
+  const hasChange = hasMeaningfulChange(changeText);
+  const priceText = stock.priceUsd === null ? "Curated" : priceWithChangeText(stock.priceUsd, changeText);
   const priceTooltip = stock.priceUsd === null
     ? "Verified snapshot; no free live quote"
     : hasChange
@@ -198,24 +216,24 @@ function renderStockCard(stock: DashboardStock, index: number, common: CardCommo
       meta={stock.category}
       valueLabel="Market cap"
       value={formatCompactCurrency(stock.marketCapUsd)}
-      priceTitle={buildPriceTitle(formatExactNumber(stock.marketCapUsd), common.generatedAt, "Exact market cap (USD)")}
+      priceTitle={buildPriceTitle(formatExactNumber(stock.marketCapUsd), ctx.generatedAt, "Exact market cap (USD)")}
       secondary={priceText}
-      secondaryClassName={hasChange ? clsx("coin-change", trendClass(stock.changePercent)) : "asset-note"}
+      secondaryClassName={changeSecondaryClass(stock.changePercent, hasChange)}
       secondaryTitle={priceTooltip}
       index={index}
       logoUrl={stock.logoUrl}
       fallbackLogoUrls={stock.fallbackLogoUrls}
-      pinned={common.pinnedIdSet.has(stock.id)}
-      onTogglePin={common.onTogglePin}
+      pinned={ctx.pinnedIdSet.has(stock.id)}
+      onTogglePin={ctx.onTogglePin}
       assetStyle
       interactive
-      active={stock.id === common.selectedAssetId}
-      onSelect={common.onOpenAssetDetail}
+      active={stock.id === ctx.selectedAssetId}
+      onSelect={ctx.onOpenAssetDetail}
     />
   );
 }
 
-function renderPrivateCard(company: DashboardPrivateCompany, index: number, common: CardCommon): ReactNode {
+function renderPrivateCard(company: DashboardPrivateCompany, index: number, ctx: CardRenderContext): ReactNode {
   return (
     <MarketCard
       key={company.id}
@@ -226,30 +244,28 @@ function renderPrivateCard(company: DashboardPrivateCompany, index: number, comm
       meta={company.category}
       valueLabel="Valuation"
       value={formatCompactCurrency(company.marketCapUsd)}
-      priceTitle={buildPriceTitle(formatExactNumber(company.marketCapUsd), common.generatedAt, "Exact valuation (USD)")}
+      priceTitle={buildPriceTitle(formatExactNumber(company.marketCapUsd), ctx.generatedAt, "Exact valuation (USD)")}
       index={index}
       logoUrl={company.logoUrl}
       fallbackLogoUrls={company.fallbackLogoUrls}
-      pinned={common.pinnedIdSet.has(company.id)}
-      onTogglePin={common.onTogglePin}
+      pinned={ctx.pinnedIdSet.has(company.id)}
+      onTogglePin={ctx.onTogglePin}
       assetStyle
       interactive
-      active={company.id === common.selectedAssetId}
-      onSelect={common.onOpenAssetDetail}
+      active={company.id === ctx.selectedAssetId}
+      onSelect={ctx.onOpenAssetDetail}
     />
   );
 }
 
-function renderEtfCard(etf: DashboardEtf, index: number, common: CardCommon): ReactNode {
+function renderEtfCard(etf: DashboardEtf, index: number, ctx: CardRenderContext): ReactNode {
   const changeText = formatPercent(etf.changePercent);
-  const hasChange = changeText !== "—";
+  const hasChange = hasMeaningfulChange(changeText);
   // ETFs are ranked by fund size (AUM), so AUM is the headline value — mirroring
   // how stock cards lead with market cap — with unit price + daily change beneath.
   const priceText = etf.priceUsd === null
     ? (hasChange ? changeText : "—")
-    : hasChange
-      ? `${formatCurrency(etf.priceUsd)} · ${changeText}`
-      : formatCurrency(etf.priceUsd);
+    : priceWithChangeText(etf.priceUsd, changeText);
   const priceTooltip = etf.priceUsd === null
     ? (hasChange ? "Daily change" : undefined)
     : hasChange
@@ -266,24 +282,24 @@ function renderEtfCard(etf: DashboardEtf, index: number, common: CardCommon): Re
       meta={etf.category}
       valueLabel="AUM"
       value={formatCompactCurrency(etf.aumUsd)}
-      priceTitle={buildPriceTitle(formatExactNumber(etf.aumUsd), common.generatedAt, "Exact AUM (USD)")}
+      priceTitle={buildPriceTitle(formatExactNumber(etf.aumUsd), ctx.generatedAt, "Exact AUM (USD)")}
       secondary={priceText}
-      secondaryClassName={hasChange ? clsx("coin-change", trendClass(etf.changePercent)) : "asset-note"}
+      secondaryClassName={changeSecondaryClass(etf.changePercent, hasChange)}
       secondaryTitle={priceTooltip}
       index={index}
       logoUrl={etf.logoUrl}
       fallbackLogoUrls={etf.fallbackLogoUrls}
-      pinned={common.pinnedIdSet.has(etf.id)}
-      onTogglePin={common.onTogglePin}
+      pinned={ctx.pinnedIdSet.has(etf.id)}
+      onTogglePin={ctx.onTogglePin}
       assetStyle
       interactive
-      active={etf.id === common.selectedAssetId}
-      onSelect={common.onOpenAssetDetail}
+      active={etf.id === ctx.selectedAssetId}
+      onSelect={ctx.onOpenAssetDetail}
     />
   );
 }
 
-function renderCurrencyCard(currency: DashboardCurrency, index: number, common: CardCommon): ReactNode {
+function renderCurrencyCard(currency: DashboardCurrency, index: number, ctx: CardRenderContext): ReactNode {
   return (
     <MarketCard
       key={currency.id}
@@ -294,19 +310,19 @@ function renderCurrencyCard(currency: DashboardCurrency, index: number, common: 
       meta={currency.category}
       valueLabel="Rate vs USD"
       value={formatCurrency(currency.rateVsUsd)}
-      priceTitle={buildPriceTitle(formatExactCurrency(currency.rateVsUsd), common.generatedAt, "Exact rate")}
+      priceTitle={buildPriceTitle(formatExactCurrency(currency.rateVsUsd), ctx.generatedAt, "Exact rate")}
       secondary={formatPercent(currency.changePercent)}
       secondaryClassName={clsx("coin-change", trendClass(currency.changePercent))}
       secondaryTitle="Daily change"
       index={index}
       logoUrl={currency.logoUrl}
       fallbackLogoUrls={currency.fallbackLogoUrls}
-      pinned={common.pinnedIdSet.has(currency.id)}
-      onTogglePin={common.onTogglePin}
+      pinned={ctx.pinnedIdSet.has(currency.id)}
+      onTogglePin={ctx.onTogglePin}
       assetStyle
       interactive
-      active={currency.id === common.selectedAssetId}
-      onSelect={common.onOpenAssetDetail}
+      active={currency.id === ctx.selectedAssetId}
+      onSelect={ctx.onOpenAssetDetail}
     />
   );
 }
@@ -315,6 +331,7 @@ function renderCryptoCard(
   coin: DashboardCrypto,
   index: number,
   props: Extract<SectionGridProps, { variant: "cryptos" }>,
+  ctx: CardRenderContext,
 ): ReactNode {
   return (
     <MarketCard
@@ -325,17 +342,17 @@ function renderCryptoCard(
       symbol={coin.symbol}
       meta={coin.category}
       value={formatCurrency(coin.priceUsd)}
-      priceTitle={buildPriceTitle(formatExactCurrency(coin.priceUsd), props.generatedAt)}
+      priceTitle={buildPriceTitle(formatExactCurrency(coin.priceUsd), ctx.generatedAt)}
       secondary={formatPercent(coin.change24h)}
       secondaryClassName={clsx("coin-change", trendClass(coin.change24h))}
       secondaryTitle="24h change"
       index={index}
       logoUrl={coin.logoUrl}
       fallbackLogoUrls={coin.fallbackLogoUrls}
-      pinned={props.pinnedIdSet.has(coin.id)}
-      onTogglePin={props.onTogglePin}
+      pinned={ctx.pinnedIdSet.has(coin.id)}
+      onTogglePin={ctx.onTogglePin}
       interactive
-      active={coin.id === props.activeCryptoId || coin.id === props.selectedAssetId}
+      active={coin.id === props.activeCryptoId || coin.id === ctx.selectedAssetId}
       onSelect={props.onCryptoSelect}
       sparkline={coin.sparkline7d}
     />
@@ -346,10 +363,7 @@ type PinnedCardProps = {
   entry: DashboardEntry;
   index: number;
   pinnedIdSet: ReadonlySet<string>;
-  onTogglePin: (id: string) => void;
-  generatedAt: string | undefined;
   selectedAssetId: string | null;
-  onOpenAssetDetail: (id: string) => void;
 };
 
 /**
@@ -360,40 +374,18 @@ export const PinnedCard = memo(function PinnedCard({
   entry,
   index,
   pinnedIdSet,
-  onTogglePin,
-  generatedAt,
   selectedAssetId,
-  onOpenAssetDetail,
 }: PinnedCardProps) {
+  const { onTogglePin, onOpenAssetDetail, generatedAt } = useCardServices();
   const change = getEntryChange(entry);
   const changeText = formatPercent(change);
-  const hasChange = changeText !== "—";
+  const hasChange = hasMeaningfulChange(changeText);
   const isCrypto = "sparkline7d" in entry;
   const isCurrency = "rateVsUsd" in entry;
   const isPrivateCompany = entry.category === "Private Company";
   const isPricedAsset = "priceUsd" in entry;
 
-  const valueLabel = isCrypto
-    ? undefined
-    : isCurrency
-      ? "Rate vs USD"
-      : isPricedAsset
-        ? "Price"
-        : isPrivateCompany
-          ? "Est. Valuation"
-          : "Est. Market Cap";
-  const value = isCurrency
-    ? formatCurrency(entry.rateVsUsd)
-    : isPricedAsset
-      ? formatCurrency(entry.priceUsd)
-      : formatCompactCurrency(entry.marketCapUsd);
-  const exactValue = isCurrency
-    ? formatExactCurrency(entry.rateVsUsd)
-    : isPrivateCompany
-      ? formatExactCurrency(entry.marketCapUsd)
-      : isPricedAsset
-        ? formatExactCurrency(entry.priceUsd)
-        : formatExactNumber(entry.marketCapUsd);
+  const { valueLabel, value, exactValue, exactNoun } = presentWatchlistEntry(entry);
 
   return (
     <MarketCard
@@ -404,11 +396,7 @@ export const PinnedCard = memo(function PinnedCard({
       meta={entry.category}
       valueLabel={valueLabel}
       value={value}
-      priceTitle={buildPriceTitle(
-        exactValue,
-        generatedAt,
-        isCurrency ? "Exact rate" : isPricedAsset ? "Exact" : isPrivateCompany ? "Exact valuation (USD)" : "Exact market cap (USD)",
-      )}
+      priceTitle={buildPriceTitle(exactValue, generatedAt, exactNoun)}
       secondary={
         isCrypto
           ? changeText

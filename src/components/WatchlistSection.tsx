@@ -6,19 +6,13 @@ import type { DashboardEntry } from "../lib/dashboard-insights";
 type WatchlistSectionProps = {
   entries: DashboardEntry[];
   pinnedIdSet: ReadonlySet<string>;
-  onTogglePin: (id: string) => void;
-  generatedAt: string | undefined;
   selectedAssetId: string | null;
-  onOpenAssetDetail: (id: string) => void;
 };
 
 export const WatchlistSection = memo(function WatchlistSection({
   entries,
   pinnedIdSet,
-  onTogglePin,
-  generatedAt,
   selectedAssetId,
-  onOpenAssetDetail,
 }: WatchlistSectionProps) {
   if (!entries.length) return null;
 
@@ -45,10 +39,7 @@ export const WatchlistSection = memo(function WatchlistSection({
             entry={entry}
             index={index}
             pinnedIdSet={pinnedIdSet}
-            onTogglePin={onTogglePin}
-            generatedAt={generatedAt}
             selectedAssetId={selectedAssetId}
-            onOpenAssetDetail={onOpenAssetDetail}
           />
         ))}
       </div>

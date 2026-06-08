@@ -49,11 +49,18 @@ function deriveDegradedSegments(segmentMeta: DashboardPayload["segmentMeta"]): D
   return SEGMENT_KEYS.filter((segment) => isDegradedSource(segmentMeta[segment].source));
 }
 
+// Hard ceiling for a single client request. The server caps its own work at
+// ~10s; if the round trip stalls past this, fail fast so React Query can retry
+// (and ultimately surface cached/last-known-good data) instead of hanging on the
+// browser's multi-minute default.
+const REQUEST_TIMEOUT_MS = 12_000;
+
 async function getJson<T>(url: string): Promise<T> {
   const response = await fetch(url, {
     // Let the browser HTTP cache honor the server's Cache-Control
     // (`s-maxage`/`stale-while-revalidate`) instead of forcing revalidation.
     cache: "no-cache",
+    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
     headers: {
       Accept: "application/json",
     },
