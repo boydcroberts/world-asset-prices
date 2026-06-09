@@ -67,14 +67,14 @@ Provider URL vars (`COINPAPRIKA_BASE_URL`, `STOOQ_BASE_URL`, etc.) override the 
 
 ```bash
 npm run dev          # dev server + local API middleware
-npm run check        # full release gate: lint, typecheck, tests, build, bundle
+npm run check        # full release gate: lint, typecheck, data audit, unit + route tests, build, bundle
 npm run audit:data   # validate curated values, sort order, ETF methodology
 npm run test:e2e     # Playwright smoke tests
 npm run verify:production  # check live site health, CSP, rankings, data
 ```
 
 Key behaviors:
-- **cmd+K** or **/** opens the global search modal — fuzzy match across all 90+ assets
+- **cmd+K** opens the global search modal (fuzzy match across every asset); **/** focuses the inline search bar
 - Click any card to open the detail drawer (provenance, source link, historical chart for stocks/ETFs)
 - Pin any card to the Watchlist via the pin icon
 - Portfolio Lab (bottom of page) simulates tradable holdings locally — nothing sent to the server
@@ -89,14 +89,16 @@ The dashboard never shows a blank screen, even when everything upstream is down.
 ```
 1. Live providers      CoinPaprika · Stooq · Yahoo · Frankfurter   (server, per-request timeouts + retry)
         │ any segment fails ↓
-2. Durable cache       Upstash KV — last good payload, TTL-bounded  (server)
+2. In-memory stale cache    last good in-process payload, stale-window bounded  (server)
+        │ cold instance / expired ↓
+3. Durable cache       Upstash KV — last good payload, TTL-bounded  (server)
         │ unset / expired ↓
-3. Bundled fallback    server/fallback/dashboard-fallback.json      (ships in the deploy, always present)
+4. Bundled fallback    server/fallback/dashboard-fallback.json      (ships in the deploy, always present)
         │ API route unreachable (offline / outage) ↓
-4. Client last-known-good   localStorage snapshot from the last visit  (browser)
+5. Client last-known-good   localStorage snapshot from the last visit  (browser)
 ```
 
-Tiers 1–3 are server-side; tier 4 is what lets a **cold, fully-offline load** still paint real (clearly-aged) data. Every segment is resolved independently, so a crypto outage never blanks the stock table.
+Tiers 1–4 are server-side; tier 5 is what lets a **cold, fully-offline load** still paint real (clearly-aged) data. Every segment is resolved independently, so a crypto outage never blanks the stock table.
 
 ## Data model
 
@@ -111,7 +113,7 @@ Private-company valuations (`server/data/asset-value-sources.json`) are curated 
 1. `npm run check` must be green before any PR
 2. `dashboard-fallback.json` is bot-owned — never edit it incidentally; use a dedicated data commit
 3. New API payload fields are additive only; removals need a version bump
-4. Keep the bundle under 300 KB gz (`npm run check:bundle`)
+4. Keep total JS under 520 KB raw / 420 KB per file (`npm run check:bundle`)
 5. Match neighboring file conventions before writing new code
 
 ---

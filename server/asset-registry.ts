@@ -105,12 +105,24 @@ export function assetRefFromEntry(entry: DetailEntry): AssetRef {
   };
 }
 
+let cachedFallbackRefMap: Map<string, AssetRef> | null = null;
+
+function fallbackAssetRefMap(): Map<string, AssetRef> {
+  if (!cachedFallbackRefMap) {
+    cachedFallbackRefMap = new Map(
+      dashboardEntries(fallbackPayload()).map((entry) => [entry.id, assetRefFromEntry(entry)]),
+    );
+  }
+
+  return cachedFallbackRefMap;
+}
+
 export function fallbackAssetRefs(): AssetRef[] {
-  return dashboardEntries(fallbackPayload()).map(assetRefFromEntry);
+  return Array.from(fallbackAssetRefMap().values());
 }
 
 export function getFallbackAssetRef(id: string): AssetRef | null {
-  return fallbackAssetRefs().find((asset) => asset.id === id) ?? null;
+  return fallbackAssetRefMap().get(id) ?? null;
 }
 
 export function findDashboardEntry(payload: DashboardPayload, id: string): DetailEntry | null {

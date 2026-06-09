@@ -28,4 +28,22 @@ describe("rateLimit", () => {
     expect(blocked.allowed).toBe(false);
     expect(reset.allowed).toBe(true);
   });
+
+  it("reports an accurate retryAfterSec while blocked", () => {
+    const now = 30_000;
+    rateLimit("logo", "client-a", { limit: 1, windowSec: 60 }, now);
+    const blocked = rateLimit("logo", "client-a", { limit: 1, windowSec: 60 }, now + 45_000);
+
+    expect(blocked.allowed).toBe(false);
+    expect(blocked.retryAfterSec).toBe(15);
+  });
+
+  it("isolates counters per scope and per client", () => {
+    const now = 40_000;
+    rateLimit("logo", "client-a", { limit: 1, windowSec: 60 }, now);
+
+    expect(rateLimit("client-error", "client-a", { limit: 1, windowSec: 60 }, now + 10).allowed).toBe(true);
+    expect(rateLimit("logo", "client-b", { limit: 1, windowSec: 60 }, now + 20).allowed).toBe(true);
+    expect(rateLimit("logo", "client-a", { limit: 1, windowSec: 60 }, now + 30).allowed).toBe(false);
+  });
 });

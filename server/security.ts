@@ -86,18 +86,27 @@ export function isPrivateHost(hostname: string): boolean {
   return false;
 }
 
+let cachedLogoHosts: { raw: string | undefined; hosts: string[] } | null = null;
+
 function getAllowedLogoHosts(): string[] {
   const raw = process.env.LOGO_ALLOWED_HOSTS;
-  if (!raw) {
-    return DEFAULT_ALLOWED_LOGO_HOSTS;
+  if (cachedLogoHosts && cachedLogoHosts.raw === raw) {
+    return cachedLogoHosts.hosts;
   }
 
-  const hosts = raw
-    .split(",")
-    .map((entry) => entry.trim().toLowerCase())
-    .filter((entry) => entry.length > 0);
+  let hosts = DEFAULT_ALLOWED_LOGO_HOSTS;
+  if (raw) {
+    const parsed = raw
+      .split(",")
+      .map((entry) => entry.trim().toLowerCase())
+      .filter((entry) => entry.length > 0);
+    if (parsed.length > 0) {
+      hosts = parsed;
+    }
+  }
 
-  return hosts.length > 0 ? hosts : DEFAULT_ALLOWED_LOGO_HOSTS;
+  cachedLogoHosts = { raw, hosts };
+  return hosts;
 }
 
 export function isAllowedLogoHost(hostname: string): boolean {

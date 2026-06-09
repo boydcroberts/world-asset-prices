@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { memo, useEffect, useMemo, useRef, type CSSProperties, type ReactNode } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef, type CSSProperties, type ReactNode } from "react";
 
 import { useTilt } from "../hooks/useTilt";
 import { LogoMark } from "./LogoMark";
@@ -32,6 +32,8 @@ type MarketCardProps = {
   priceTitle?: string;
   secondaryTitle?: string;
 };
+
+const normalizeLabel = (label: string) => label.replace(/[^a-z0-9]/gi, "").toLowerCase();
 
 function renderSparkline(points: number[], cardId: string): ReactNode {
   // Early return for insufficient data
@@ -124,6 +126,8 @@ export const MarketCard = memo(function MarketCard({
     "--card-index": index,
   } as CSSProperties;
 
+  const handleSelect = useCallback(() => onSelect?.(id), [onSelect, id]);
+
   // Memoize sparkline rendering to avoid recalculation on every render
   const sparklineElement = useMemo(() => {
     return Array.isArray(sparkline) && sparkline.length > 1 ? renderSparkline(sparkline, id) : null;
@@ -167,7 +171,6 @@ export const MarketCard = memo(function MarketCard({
   // repeated (ANTHROPIC) or an arbitrary abbreviation (SSI), which only repeats
   // or squeezes the title. Drop the pill for that category; for everything else
   // (real tickers like NVDA/BTC) keep it, guarding against any redundant repeat.
-  const normalizeLabel = (label: string) => label.replace(/[^a-z0-9]/gi, "").toLowerCase();
   const isPrivateCompany = meta.toLowerCase() === "private company";
   const showSymbolPill =
     !isPrivateCompany && normalizeLabel(symbol).length > 0 && normalizeLabel(symbol) !== normalizeLabel(name);
@@ -212,7 +215,7 @@ export const MarketCard = memo(function MarketCard({
       key={id}
       className={clsx("coin-card", "interactive-card", active && "active", assetStyle && "asset-card")}
       style={cardStyle}
-      onClick={onSelect ? () => onSelect(id) : undefined}
+      onClick={onSelect ? handleSelect : undefined}
       onMouseMove={tilt.onMouseMove}
       onMouseLeave={tilt.onMouseLeave}
       role="button"

@@ -1,5 +1,7 @@
 # World Asset Prices Audit Report
 
+> **Historical audit snapshot — 2026-05-19.** Asset counts, data versions, and findings reflect the state at that date; current state may differ.
+
 Date: 2026-05-19  
 Auditor: Codex  
 Release verdict: Ready

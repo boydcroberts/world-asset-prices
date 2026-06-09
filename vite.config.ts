@@ -162,7 +162,10 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          "react-vendor": ["react", "react-dom"],
+          // react-dom/client must be listed explicitly or Rollup resolves
+          // react-dom through @tanstack/react-query first and bundles it into
+          // query-vendor, coupling the react cache fingerprint to query upgrades.
+          "react-vendor": ["react", "react-dom", "react-dom/client"],
           "query-vendor": ["@tanstack/react-query"],
         },
       },

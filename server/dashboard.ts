@@ -1,5 +1,6 @@
 import { runtimeCache, type MemoryCache } from "./cache.js";
 import { envInt } from "./env.js";
+import { createRequestId, createStructuredLogger } from "./log.js";
 import fallbackPayloadJson from "./fallback/dashboard-fallback.json" with { type: "json" };
 import { recordProviderFailure, recordProviderFallback, recordProviderSuccess, type ProviderMetricKey } from "./metrics.js";
 import { fetchNightFromCoinpaprika, fetchTopCryptosFromCoinpaprika } from "./providers/coinpaprika.js";
@@ -423,7 +424,7 @@ async function resolveSegment<T>(options: {
 export async function buildDashboardPayload(options: DashboardBuildOptions = {}): Promise<DashboardPayload> {
   const cache = options.cache ?? runtimeCache;
   const nowMs = options.now ? options.now() : Date.now();
-  const logger = options.logger ?? console;
+  const logger = options.logger ?? createStructuredLogger("dashboard", createRequestId());
 
   const cacheTtlSec = options.cacheTtlSec ?? envInt("CACHE_TTL_SEC", 30, 15, 300);
   const fallbackTtlSec = options.fallbackTtlSec ?? envInt("FALLBACK_TTL_SEC", 600, 60, 3_600);

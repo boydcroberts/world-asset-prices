@@ -106,7 +106,12 @@ function previousBusinessDay(dateStr: string): string {
 export async function fetchTopCurrenciesFromFrankfurter(
   options: FetchFrankfurterOptions = {},
 ): Promise<DashboardCurrency[]> {
-  const baseUrl = resolveProviderBaseUrl(options.baseUrl, FRANKFURTER_BASE_URL, "Frankfurter", "api.frankfurter.app");
+  const baseUrl = resolveProviderBaseUrl(
+    options.baseUrl ?? process.env.FRANKFURTER_BASE_URL,
+    FRANKFURTER_BASE_URL,
+    "Frankfurter",
+    "api.frankfurter.app",
+  );
   const qs = `from=USD&to=${FOREIGN_SYMBOLS}`;
 
   // Step 1: fetch latest rates — response includes the date ECB published them.

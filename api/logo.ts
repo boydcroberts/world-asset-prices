@@ -138,8 +138,9 @@ export default async function handler(request: ApiRequest, response: ApiResponse
     }
 
     const contentType = upstream.headers.get("content-type") ?? "";
+    const mimeType = contentType.split(";")[0].trim();
     const ALLOWED_IMAGE_TYPES = new Set(["image/png", "image/jpeg", "image/webp", "image/avif", "image/gif"]);
-    if (!ALLOWED_IMAGE_TYPES.has(contentType.split(";")[0].trim())) {
+    if (!ALLOWED_IMAGE_TYPES.has(mimeType)) {
       recordLogoProxyError();
       response.setHeader("X-Wap-Request-Id", requestId);
       response.status(415).json({ error: "Unsupported logo response", requestId });
@@ -157,7 +158,7 @@ export default async function handler(request: ApiRequest, response: ApiResponse
     const body = await readResponseBodyWithLimit(upstream, maxBytes);
 
     response.setHeader("X-Wap-Request-Id", requestId);
-    response.setHeader("Content-Type", contentType);
+    response.setHeader("Content-Type", mimeType);
     response.setHeader("X-Content-Type-Options", "nosniff");
     response.setHeader("Cache-Control", "public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400");
     response.status(200).send(body);

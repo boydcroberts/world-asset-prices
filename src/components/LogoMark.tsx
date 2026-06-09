@@ -9,7 +9,6 @@ type LogoMarkProps = {
   fallbackLogoUrls?: string[];
 };
 
-declare const __GITHUB_PAGES__: boolean;
 const IS_GITHUB_PAGES = typeof __GITHUB_PAGES__ !== "undefined" && __GITHUB_PAGES__;
 
 function toSafeLogoSource(source: string): string | null {
@@ -71,8 +70,8 @@ export const LogoMark = memo(function LogoMark({ name, symbol, logoUrl, fallback
       className="asset-logo"
       loading="lazy"
       decoding="async"
-      width={32}
-      height={32}
+      width={28}
+      height={28}
       onError={() => {
         setLogoIndex((previous) => previous + 1);
       }}

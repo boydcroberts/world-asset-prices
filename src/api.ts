@@ -1,6 +1,5 @@
 import type { AssetDetailPayload, DashboardPayload, DashboardSegmentKey, DashboardSegmentSource, HistoricalRange } from "./types/dashboard";
 
-declare const __GITHUB_PAGES__: boolean;
 const IS_GITHUB_PAGES = typeof __GITHUB_PAGES__ !== "undefined" && __GITHUB_PAGES__;
 
 const DASHBOARD_ENDPOINT = import.meta.env.DEV
@@ -59,7 +58,7 @@ async function getJson<T>(url: string): Promise<T> {
   const response = await fetch(url, {
     // Let the browser HTTP cache honor the server's Cache-Control
     // (`s-maxage`/`stale-while-revalidate`) instead of forcing revalidation.
-    cache: "no-cache",
+    cache: "default",
     signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
     headers: {
       Accept: "application/json",

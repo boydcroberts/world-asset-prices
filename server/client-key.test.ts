@@ -42,6 +42,35 @@ describe("getClientKey", () => {
     ).toBe("198.51.100.9");
   });
 
+  it("trusts only the edge-set header on Vercel, ignoring spoofable fallbacks", () => {
+    process.env = { ...originalEnv, VERCEL: "1" };
+
+    expect(
+      getClientKey({
+        headers: {
+          "x-vercel-forwarded-for": "198.51.100.7",
+          "x-real-ip": "203.0.113.99",
+          "x-forwarded-for": "203.0.113.99",
+        },
+        socket: {
+          remoteAddress: "192.0.2.44",
+        },
+      }),
+    ).toBe("198.51.100.7");
+
+    expect(
+      getClientKey({
+        headers: {
+          "x-real-ip": "203.0.113.99",
+          "x-forwarded-for": "203.0.113.99",
+        },
+        socket: {
+          remoteAddress: "192.0.2.44",
+        },
+      }),
+    ).toBe("192.0.2.44");
+  });
+
   it("prefers trusted single-hop real IP over user-controlled forwarding chains", () => {
     process.env = { ...originalEnv, TRUST_PROXY_HEADERS: "true" };
 

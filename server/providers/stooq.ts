@@ -6,6 +6,9 @@ import type { DashboardEtf, DashboardStock, HistoricalPoint, HistoricalRange } f
 
 import fallbackPayloadJson from "../fallback/dashboard-fallback.json" with { type: "json" };
 
+// Browser-like UA: Stooq and Yahoo intermittently 403 default Node fetch UAs.
+const STOOQ_USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36";
+
 const STOOQ_BASE_URL = "https://stooq.com";
 const YAHOO_FINANCE_BASE_URL = "https://query1.finance.yahoo.com";
 const STOOQ_MAX_RESPONSE_BYTES = 64_000;
@@ -194,7 +197,7 @@ async function fetchStooqQuotes(
   try {
     const response = await fetch(url, {
       headers: {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+        "User-Agent": STOOQ_USER_AGENT,
         Accept: "text/csv,text/plain,*/*",
       },
       signal: controller.signal,
@@ -247,10 +250,11 @@ async function fetchYahooFinanceQuotes(symbols: string[], options: FetchStooqOpt
 
   const payload = await requestJsonWithRetry<unknown>(url.toString(), {
     timeoutMs: options.timeoutMs,
+    // retries: 0 — waterfall step; the retry budget is managed by the outer fetchEquityQuotes caller.
     retries: 0,
     maxBytes: STOOQ_MAX_RESPONSE_BYTES,
     headers: {
-      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+      "User-Agent": STOOQ_USER_AGENT,
       Accept: "application/json,*/*",
     },
   });
@@ -272,10 +276,11 @@ async function fetchYahooChartQuoteForSymbol(symbol: string, options: FetchStooq
 
   const payload = await requestJsonWithRetry<unknown>(url.toString(), {
     timeoutMs: options.timeoutMs,
+    // retries: 0 — waterfall step; the retry budget is managed by the outer fetchEquityQuotes caller.
     retries: 0,
     maxBytes: STOOQ_HISTORY_MAX_RESPONSE_BYTES,
     headers: {
-      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+      "User-Agent": STOOQ_USER_AGENT,
       Accept: "application/json,*/*",
     },
   });
@@ -414,7 +419,7 @@ export async function fetchHistoricalPricesFromStooq(
   try {
     const response = await fetch(url, {
       headers: {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+        "User-Agent": STOOQ_USER_AGENT,
         Accept: "text/csv,text/plain,*/*",
       },
       signal: controller.signal,
@@ -495,10 +500,11 @@ export async function fetchHistoricalPricesFromYahoo(
 
   const payload = await requestJsonWithRetry<unknown>(url.toString(), {
     timeoutMs: options.timeoutMs,
+    // retries: 0 — waterfall step; the retry budget is managed by the outer fetchEquityQuotes caller.
     retries: 0,
     maxBytes: STOOQ_HISTORY_MAX_RESPONSE_BYTES,
     headers: {
-      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+      "User-Agent": STOOQ_USER_AGENT,
       Accept: "application/json,*/*",
     },
   });

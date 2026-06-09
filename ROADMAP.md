@@ -1,6 +1,6 @@
 # World Asset Prices — Roadmap
 
-**Status: Production-stable** · Last updated: 2026-06-07 · Stack: React 19 + TS 5.9 + Vite 7 + Tailwind v4
+**Status: Production-stable** · Last updated: 2026-06-09 · Stack: React 19 + TS 5.9 + Vite 7 + Tailwind v4
 
 ---
 
@@ -8,14 +8,14 @@
 
 These are the highest-confidence, lowest-risk improvements to tackle next.
 
-### Watchlist persistence
-Pin state dies on page refresh — it lives in React state, not localStorage. Fix: write `pinnedIds` to `localStorage` under key `wap:watchlist-v1` via a `useEffect`; read it back on mount. The `WatchlistSection` and `PinnedCard` components are already wired — this is just the storage layer.
+### SpaceX reclassification (time-critical)
+SpaceX lists on Nasdaq June 12, 2026 (IPO priced at $135/share, ~$1.77T — curated mark updated 2026-06-09). Once trading begins: move it from `topPrivateCompanies` to a live-quoted stock entry, drop the curated private mark, and update `audit-data.mjs` / `verify-production.mjs` pins.
 
 ### Crypto curation
 The live Coinpaprika top-15 includes STETH and WBTC, which are synthetic wrappers of ETH and BTC already in the list. They inflate the crypto section with duplicates. Plan: filter STETH and WBTC; replace with two of (ADA, AVAX, LINK, DOT, SUI). Keep stablecoins (USDT, USDC) — they have a legitimate market cap story and deserve their own category label.
 
 ### Samsung deep-verify
-Stored at $1.024T. Aggregators show ~$1.5T but methodology varies. Need: actual share counts for both common (005930.KS) and preferred (005935.KS) × live KRW price × live KRW/USD rate. This is the one stored value we've explicitly not corrected because the aggregator number is also suspect.
+Corrected to $1.30T on 2026-06-09 (CompaniesMarketCap / StockAnalysis consensus). The deeper fix stands: derive it from actual share counts for common (005930.KS) and preferred (005935.KS) × live KRW price × live KRW/USD rate instead of trusting aggregators.
 
 ---
 
@@ -28,9 +28,6 @@ The drawer shows static metadata. Adding a 7D/30D/1Y sparkline chart would make 
 
 ### Market breadth per section
 "12 of 15 up today" in each section header. Crypto already has 24h change via CoinPaprika. Stocks need delta from prior close. Shows users at a glance which categories are advancing without opening individual cards.
-
-### Skeleton loading states
-First load currently shows nothing until the API responds. Need shimmer skeleton cards — same grid layout, dim glass, replaced by real cards on data arrival. Makes the app feel faster than it is.
 
 ### Section collapse / expand
 Power users want to focus on specific asset classes. Add a collapse toggle to each section header; persist state to `localStorage`. CSS `grid-template-rows` animation for smooth collapse.
@@ -79,6 +76,8 @@ Explicit decisions — not on the table.
 
 | Date | What |
 |---|---|
+| 2026-06-09 | Full audit pass: security hardening (spoof-proof rate-limit keys, CSP `form-action` + hashed theme script, COOP, expanded Permissions-Policy), data corrections (SpaceX $1.77T IPO mark, Samsung $1.30T, gold $29.79T), theme FOUC fix, combobox a11y on search modal, react-vendor chunk isolation |
+| 2026-06-08 | Watchlist persistence (`wap.pinned-markets.v1`), skeleton loading states, client last-known-good localStorage tier |
 | 2026-06-07 | cmd+K global search modal — fuzzy match across all 90+ assets, keyboard navigation, lazy-loaded |
 | 2026-06-07 | ETF AUM corrections: QQQ +11%, VEA +49%, IEFA +24%, VWO +9%, IWF +21%; full re-sort + re-rank |
 | 2026-06-03 | Audit pipeline enforces ETF sort order, private review age, value pins, sourceType consistency |
@@ -101,7 +100,7 @@ Never touch these regardless of what ships:
 - `dashboard-fallback.json` is bot-owned — edits only via explicit data commits, never incidental
 - NIGHT stays out of the UI — server contract only
 - Push discipline: always `git fetch && rebase origin/main` before push (bot commits daily)
-- Bundle: stay under 300 KB gz
+- Bundle: total JS under 520 KB raw, 420 KB per file (`npm run check:bundle`)
 - `npm run check` must be green before every push
 - API payload fields: additive only; removals require a version bump
 - localStorage keys: `wap.portfolio.v1`, `wap.pinned-markets.v1`, `wap.prefs.v1` — changing breaks existing user data

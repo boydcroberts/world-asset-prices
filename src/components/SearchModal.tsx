@@ -34,7 +34,7 @@ function matchScore(entry: DashboardEntry, query: string): number {
 
 export const SearchModal = memo(function SearchModal({ entries, onSelect, onClose }: SearchModalProps) {
   const [query, setQuery] = useState("");
-  const [cursor, setCursor] = useState(0);
+  const [rawCursor, setCursor] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
 
@@ -50,8 +50,9 @@ export const SearchModal = memo(function SearchModal({ entries, onSelect, onClos
       .map((r) => r.entry);
   }, [entries, query]);
 
-  // Reset cursor to 0 whenever results list changes
-  useEffect(() => { setCursor(0); }, [results]);
+  // Clamp instead of resetting via effect — results can shrink while the
+  // modal is open (background refetch) and a reset effect costs a render.
+  const cursor = Math.min(rawCursor, Math.max(0, results.length - 1));
 
   // Scroll active item into view
   useEffect(() => {
@@ -64,15 +65,20 @@ export const SearchModal = memo(function SearchModal({ entries, onSelect, onClos
     onClose();
   }
 
+  function handleQueryChange(value: string) {
+    setQuery(value);
+    setCursor(0);
+  }
+
   function handleInputKey(event: React.KeyboardEvent<HTMLInputElement>) {
     switch (event.key) {
       case "ArrowDown":
         event.preventDefault();
-        setCursor((c) => Math.min(c + 1, results.length - 1));
+        setCursor(Math.min(cursor + 1, results.length - 1));
         break;
       case "ArrowUp":
         event.preventDefault();
-        setCursor((c) => Math.max(c - 1, 0));
+        setCursor(Math.max(cursor - 1, 0));
         break;
       case "Enter":
         if (results[cursor]) handleSelect(results[cursor].id);
@@ -103,13 +109,16 @@ export const SearchModal = memo(function SearchModal({ entries, onSelect, onClos
             className="search-input"
             placeholder="Search assets…"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => handleQueryChange(e.target.value)}
             onKeyDown={handleInputKey}
             autoComplete="off"
             autoCorrect="off"
             spellCheck={false}
+            role="combobox"
+            aria-expanded={results.length > 0}
             aria-autocomplete="list"
             aria-controls="search-results"
+            aria-activedescendant={results[cursor] ? `search-result-${results[cursor].id}` : undefined}
           />
           <kbd className="search-esc-hint" aria-label="Press Escape to close">esc</kbd>
         </div>
@@ -126,6 +135,7 @@ export const SearchModal = memo(function SearchModal({ entries, onSelect, onClos
             {results.map((entry, i) => (
               <li
                 key={entry.id}
+                id={`search-result-${entry.id}`}
                 role="option"
                 aria-selected={i === cursor}
                 className={clsx("search-result", i === cursor && "search-result--active")}

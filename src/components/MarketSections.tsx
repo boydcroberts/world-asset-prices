@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from "react";
+import { memo, useCallback, useMemo } from "react";
 
 import { SectionGrid } from "./SectionGrid";
 import { useCardServices } from "../context/card-services";
@@ -56,7 +56,7 @@ type MarketSectionsProps = {
  * current section filter. Shared card-context props are forwarded once
  * to each SectionGrid.
  */
-export function MarketSections(props: MarketSectionsProps) {
+export const MarketSections = memo(function MarketSections(props: MarketSectionsProps) {
   const {
     shouldShowSection,
     isBooting,
@@ -186,4 +186,4 @@ export function MarketSections(props: MarketSectionsProps) {
       ) : null}
     </>
   );
-}
+});

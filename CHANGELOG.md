@@ -5,18 +5,31 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.0.0] — 2026-06-09
+
+### Security
+
+- Rate-limit client keys on Vercel now trust only the edge-set `x-vercel-forwarded-for`; spoofable `x-real-ip` / `x-forwarded-for` fallbacks are honored only behind explicit `TRUST_PROXY_HEADERS=true`.
+- CSP gains `form-action 'self'` and a pinned hash for the inline theme-init script; new `Cross-Origin-Opener-Policy: same-origin`; `Permissions-Policy` expanded to deny payment/usb/bluetooth/serial/idle-detection/screen-wake-lock/interest-cohort.
+- Logo proxy forwards only the validated bare MIME type, never upstream `Content-Type` parameters.
+- Security-header tests now pin the full CSP and verify the inline-script hash stays in sync with `index.html`.
 
 ### Added
 
-- Yahoo Finance v8 `/chart` endpoint as the primary keyless history provider for stocks and ETFs. The asset detail drawer now populates real 7D / 30D / 1Y points (adjusted close preferred). Stooq CSV history is retained as an opportunistic fallback.
-- `AssetRef.supportsHistory` reflects per-entry capability: `true` for stocks and ETFs that resolve a live unit price, `false` for entries that only carry curated valuations.
+- cmd+K global search modal with combobox ARIA semantics (`role="combobox"`, `aria-activedescendant`), keyboard navigation, lazy-loaded chunk.
+- Asset detail drawer with provenance, source links, confidence, and 7D/30D/1Y historical charts (stocks/ETFs).
+- Yahoo Finance v8 `/chart` endpoint as the primary keyless history provider for stocks and ETFs; Stooq CSV history retained as fallback. `AssetRef.supportsHistory` reflects per-entry capability.
+- Portfolio Lab (local-only holdings, import/export JSON), watchlist persistence (`wap.pinned-markets.v1`), skeleton loading states, client last-known-good localStorage tier.
+- Inline head script eliminates the dark-theme flash for light-mode users (hash-allowed under CSP).
+- `FRANKFURTER_BASE_URL` is now read at runtime like the other provider overrides.
 
 ### Changed
 
-- Live-computed market caps and AUM derived from price × share/unit baselines, with rankings auto-recomputed from current values so the dashboard's top-of-list stays accurate even when prices move.
-- Equity quote pipeline now batches Stooq with Yahoo Finance v7 quote fallback when Stooq is missing symbols.
-- Source disclosure now carries `equityFundamentalsAsOf` and `valueSourceVersion` for transparency about the most recent baseline reconcile.
+- Live-computed market caps and AUM derived from price × share/unit baselines, with rankings auto-recomputed from current values.
+- Equity quote pipeline batches Stooq with Yahoo Finance v7 quote fallback when Stooq is missing symbols; source disclosure carries `equityFundamentalsAsOf` and `valueSourceVersion`.
+- 15 assets per category; NIGHT removed from the UI; Framer Motion removed (~40 KB gz) in favor of CSS + WAAPI.
+- `react-dom` isolated into the `react-vendor` chunk so query-library upgrades no longer bust the React cache fingerprint.
+- Data corrections (2026-06-09): SpaceX $1.77T (IPO pricing, lists June 12), Samsung $1.30T, gold $29.79T, Databricks Feb 2026 close metadata, Epic Games confidence lowered.
 
 ## [0.1.0] — 2026-03-10
 
@@ -46,4 +59,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Package metadata and keywords updated for clearer professional positioning.
 - Preview images moved from repository root to `docs/` for a cleaner project structure.
 
+[1.0.0]: https://github.com/coleyrockin/world-asset-prices/releases/tag/v1.0.0
 [0.1.0]: https://github.com/coleyrockin/world-asset-prices/releases/tag/v0.1.0

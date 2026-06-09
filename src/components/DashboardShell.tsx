@@ -51,7 +51,7 @@ export const DashboardShell = memo(function DashboardShell({
                 type="button"
                 className="search-trigger"
                 onClick={onOpenSearch}
-                aria-label="Search assets (⌘K)"
+                aria-label="Search assets"
               >
                 <svg viewBox="0 0 18 18" fill="none" aria-hidden="true" width="14" height="14">
                   <circle cx="7.5" cy="7.5" r="5.25" stroke="currentColor" strokeWidth="1.5" />

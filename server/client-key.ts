@@ -31,14 +31,17 @@ function normalizeIp(value: string | null): string | null {
   return candidate;
 }
 
-function shouldTrustProxyHeaders(): boolean {
-  return process.env.VERCEL === "1" || process.env.TRUST_PROXY_HEADERS === "true";
-}
-
 export function getClientKey(request: ClientKeyRequest): string {
-  if (shouldTrustProxyHeaders()) {
+  if (process.env.VERCEL === "1") {
+    // On Vercel only x-vercel-forwarded-for is edge-set; x-real-ip /
+    // x-forwarded-for can be client-supplied and would let callers pick
+    // their own rate-limit key.
+    const forwarded = normalizeIp(getRequestHeader(request, "x-vercel-forwarded-for"));
+    if (forwarded) {
+      return forwarded;
+    }
+  } else if (process.env.TRUST_PROXY_HEADERS === "true") {
     const forwarded =
-      normalizeIp(getRequestHeader(request, "x-vercel-forwarded-for")) ??
       normalizeIp(getRequestHeader(request, "x-real-ip")) ??
       normalizeIp(getRequestHeader(request, "x-forwarded-for"));
 

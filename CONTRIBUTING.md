@@ -10,7 +10,7 @@
 ## Branching and commits
 
 1. Create a feature branch from `main`.
-2. Use clear commit messages in imperative form, for example: `Add OHLC validation for NIGHT panel`.
+2. Use clear commit messages in imperative form, for example: `Add review-age validation for private-company marks`.
 3. Keep commits focused and avoid unrelated changes in the same PR.
 
 ## Pull requests

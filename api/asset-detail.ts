@@ -53,11 +53,16 @@ export default async function handler(request: ApiRequest, response: ApiResponse
     response.status(200).json({ ...payload, requestId });
   } catch (error) {
     const message = error instanceof Error ? error.message : "unknown error";
-    const status = message === "unknown_asset" || message === "asset_not_available" ? 404 : 502;
+    const status =
+      message === "unknown_asset" || message === "asset_not_available"
+        ? 404
+        : message === "invalid_range"
+          ? 400
+          : 502;
     if (status >= 500) logError("api.asset-detail.failed", error, { requestId });
     response.setHeader("X-Wap-Request-Id", requestId);
     response.status(status).json({
-      error: status === 404 ? "Asset not found" : "Failed to build asset detail",
+      error: status === 404 ? "Asset not found" : status === 400 ? "Invalid range" : "Failed to build asset detail",
       requestId,
     });
   }
