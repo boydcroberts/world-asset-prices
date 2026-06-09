@@ -3,7 +3,9 @@ import { toFiniteNumber } from "../sanitize.js";
 import { resolveProviderBaseUrl } from "./base-url.js";
 import type { DashboardCurrency } from "../types.js";
 
-const FRANKFURTER_BASE_URL = "https://api.frankfurter.app";
+// Frankfurter migrated to frankfurter.dev (v1 paths); the legacy .app domain
+// now 301s cross-origin, so target the canonical origin directly.
+const FRANKFURTER_BASE_URL = "https://api.frankfurter.dev";
 
 type CurrencyDef = {
   symbol: string;
@@ -110,13 +112,13 @@ export async function fetchTopCurrenciesFromFrankfurter(
     options.baseUrl ?? process.env.FRANKFURTER_BASE_URL,
     FRANKFURTER_BASE_URL,
     "Frankfurter",
-    "api.frankfurter.app",
+    "api.frankfurter.dev",
   );
   const qs = `from=USD&to=${FOREIGN_SYMBOLS}`;
 
   // Step 1: fetch latest rates — response includes the date ECB published them.
   const todayData = await requestJsonWithRetry<FrankfurterResponse>(
-    `${baseUrl}/latest?${qs}`,
+    `${baseUrl}/v1/latest?${qs}`,
     { timeoutMs: options.timeoutMs, retries: options.retries },
   );
 
@@ -125,7 +127,7 @@ export async function fetchTopCurrenciesFromFrankfurter(
 
   // Step 2: fetch the previous business day's rates for change%.
   const yesterdayData = await requestJsonWithRetry<FrankfurterResponse>(
-    `${baseUrl}/${prevDate}?${qs}`,
+    `${baseUrl}/v1/${prevDate}?${qs}`,
     { timeoutMs: options.timeoutMs, retries: options.retries },
   );
 
