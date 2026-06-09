@@ -39,7 +39,16 @@ function stockPayload(): DashboardPayload {
       name: "SpaceX",
       symbol: "SPACEX",
       category: "Private Company",
-      marketCapUsd: 1_250_000_000_000,
+      marketCapUsd: 1_770_000_000_000,
+      logoUrl: null,
+      fallbackLogoUrls: [],
+    }, {
+      id: "private-databricks",
+      rank: 2,
+      name: "Databricks",
+      symbol: "DATABRICKS",
+      category: "Private Company",
+      marketCapUsd: 134_000_000_000,
       logoUrl: null,
       fallbackLogoUrls: [],
     }],
@@ -124,9 +133,17 @@ describe("buildAssetDetailPayload", () => {
 
     expect(detail.provenance.source).toBe("curated");
     expect(detail.provenance.confidence).toBe("high");
-    expect(detail.provenance.alternateValuations?.[0]?.sourceType).toBe("target");
     expect(detail.history.available).toBe(false);
     expect(detail.history.reason).toContain("curated");
+
+    const databricks = await buildAssetDetailPayload({
+      id: "private-databricks",
+      range: "30D",
+      dashboard: stockPayload(),
+      now: () => Date.parse("2026-05-13T00:00:00.000Z"),
+    });
+
+    expect(databricks.provenance.alternateValuations?.[0]?.sourceType).toBe("target");
   });
 
   it("rejects unknown assets before building detail", async () => {

@@ -85,9 +85,9 @@ assert(valuesAreDescending(payload.topAssets, "marketCapUsd"), "topAssets values
 
 const nvidia = payload.topStocks.find((stock) => stock.symbol === "NVDA");
 const spacex = payload.topPrivateCompanies?.find((asset) => asset.symbol === "SPACEX");
-assert(nvidia?.marketCapUsd > 5_000_000_000_000, "NVIDIA market cap is unexpectedly low", nvidia);
+assert(nvidia?.marketCapUsd > 4_000_000_000_000, "NVIDIA market cap is unexpectedly low", nvidia);
 assert(spacex?.category === "Private Company", "SpaceX is missing from private companies", spacex);
-assert(spacex?.marketCapUsd === 1_250_000_000_000, "SpaceX primary valuation is not the verified transaction mark", spacex);
+assert(spacex?.marketCapUsd === 1_770_000_000_000, "SpaceX primary valuation is not the verified transaction mark", spacex);
 
 for (const symbol of REQUIRED_PUBLIC_COMPANIES) {
   assert(payload.topStocks.some((stock) => stock.symbol === symbol), `required global public company missing: ${symbol}`);

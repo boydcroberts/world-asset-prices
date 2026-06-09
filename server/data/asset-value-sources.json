@@ -1,18 +1,18 @@
 {
-  "version": "2026-06-03",
+  "version": "2026-06-09",
   "generatedAt": "2026-05-16T00:00:00.000Z",
   "sources": [
     {
       "assetId": "commodity-gold",
       "category": "Commodity",
-      "valueUsd": 31564000000000,
-      "valueAsOf": "2026-05-28",
+      "valueUsd": 29790000000000,
+      "valueAsOf": "2026-06-09",
       "sourceUrl": "https://companiesmarketcap.com/gold/marketcap/",
       "sourceTitle": "CompaniesMarketCap gold market cap",
       "sourceType": "recognized-market-data",
       "confidence": "medium",
       "updateCadence": "monthly",
-      "notes": "Cross-asset context only; commodity market value methodology differs from equity market capitalization. Source figure \u2248216,265 t above-ground gold \u00d7 ~$4,540/oz."
+      "notes": "Cross-asset context only; commodity market value methodology differs from equity market capitalization. Source figure ≈216,265 t above-ground gold × ~$4,285/oz."
     },
     {
       "assetId": "commodity-silver",
@@ -150,10 +150,10 @@
     {
       "assetId": "stock-samsung-electronics",
       "category": "Stock",
-      "valueUsd": 1024000000000,
-      "valueAsOf": "2026-05-06",
-      "sourceUrl": "https://en.sedaily.com/news/2026/02/26/samsung-electronics-breaks-1-trillion-market-cap-jumps-to",
-      "sourceTitle": "Seoul Economic Daily Samsung market cap report",
+      "valueUsd": 1300000000000,
+      "valueAsOf": "2026-06-09",
+      "sourceUrl": "https://companiesmarketcap.com/samsung/marketcap/",
+      "sourceTitle": "CompaniesMarketCap: Samsung Electronics market cap",
       "sourceType": "recognized-market-data",
       "confidence": "medium",
       "updateCadence": "monthly",
@@ -198,25 +198,15 @@
     {
       "assetId": "private-spacex",
       "category": "Private Company",
-      "valueUsd": 1250000000000,
-      "valueAsOf": "2026-03-31",
-      "sourceUrl": "https://moneyweek.com/investments/investment-trusts/scottish-mortgage-confirms-spacex-valuation",
-      "sourceTitle": "MoneyWeek: Scottish Mortgage SpaceX valuation",
+      "valueUsd": 1770000000000,
+      "valueAsOf": "2026-06-03",
+      "sourceUrl": "https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html",
+      "sourceTitle": "CNBC: SpaceX IPO prices at $135/share (~$1.77T)",
       "sourceType": "reported-transaction",
       "confidence": "high",
       "updateCadence": "event-driven",
-      "lastCheckedAt": "2026-05-19",
-      "notes": "Primary value uses Scottish Mortgage's holding mark. IPO target chatter is tracked only as alternate context.",
-      "alternateValuations": [
-        {
-          "valueUsd": 1750000000000,
-          "valueAsOf": "2026-04-28",
-          "sourceUrl": "https://moneyweek.com/investments/tech-stocks/invest-in-space-economy-spacex",
-          "sourceTitle": "MoneyWeek SpaceX potential IPO valuation context",
-          "sourceType": "target",
-          "notes": "Potential listing/target valuation, not a verified primary mark."
-        }
-      ]
+      "lastCheckedAt": "2026-06-09",
+      "notes": "S-1 priced at $135/share (~$1.77T) ahead of the June 12, 2026 Nasdaq listing; supersedes the Scottish Mortgage $1.25T holding mark. Reclassify to Stock once trading begins."
     },
     {
       "assetId": "private-openai",
@@ -229,7 +219,7 @@
       "confidence": "high",
       "updateCadence": "event-driven",
       "lastCheckedAt": "2026-06-03",
-      "notes": "A $122B round (committed capital) closed March 31, 2026 at an $852B post-money valuation, anchored by Amazon, Nvidia and SoftBank \u2014 now #2 behind Anthropic. OpenAI confidentially filed an S-1 around May 2026 (targeting roughly September 2026) but remains private."
+      "notes": "A $122B round (committed capital) closed March 31, 2026 at an $852B post-money valuation, anchored by Amazon, Nvidia and SoftBank — now #2 behind Anthropic. OpenAI confidentially filed an S-1 around May 2026 (targeting roughly September 2026) but remains private."
     },
     {
       "assetId": "private-bytedance",
@@ -241,8 +231,18 @@
       "sourceType": "recognized-market-data",
       "confidence": "medium",
       "updateCadence": "event-driven",
-      "lastCheckedAt": "2026-06-03",
-      "notes": "Proposed secondary share sale led by General Atlantic at a $550B valuation (Feb 2026), targeting a 2026 close; supersedes the $500B SCMP mark but not yet a closed round."
+      "lastCheckedAt": "2026-06-09",
+      "notes": "Proposed secondary share sale led by General Atlantic at a $550B valuation (Feb 2026), targeting a 2026 close; supersedes the $500B SCMP mark but not yet a closed round.",
+      "alternateValuations": [
+        {
+          "valueUsd": 600000000000,
+          "valueAsOf": "2026-04-15",
+          "sourceUrl": "https://www.scmp.com/tech/big-tech/article/3349337/bytedance-valuation-surges-record-high-over-us600b-proposed-equity-sale-sources",
+          "sourceTitle": "SCMP: ByteDance valuation tops $600B in proposed equity sale",
+          "sourceType": "secondary-market-chatter",
+          "notes": "Proposed founding-shareholder sale indication; not a closed round."
+        }
+      ]
     },
     {
       "assetId": "private-anthropic",
@@ -255,7 +255,7 @@
       "confidence": "high",
       "updateCadence": "event-driven",
       "lastCheckedAt": "2026-06-03",
-      "notes": "Series H ($65B raise) closed May 28, 2026 at a $965B post-money valuation, led by Altimeter, Dragoneer, Greenoaks and Sequoia \u2014 now the most valuable AI startup ahead of OpenAI. Anthropic filed a confidential draft S-1 on June 1, 2026 but remains private."
+      "notes": "Series H ($65B raise) closed May 28, 2026 at a $965B post-money valuation, led by Altimeter, Dragoneer, Greenoaks and Sequoia — now the most valuable AI startup ahead of OpenAI. Anthropic filed a confidential draft S-1 on June 1, 2026 but remains private."
     },
     {
       "assetId": "private-stripe",
@@ -274,14 +274,24 @@
       "assetId": "private-databricks",
       "category": "Private Company",
       "valueUsd": 134000000000,
-      "valueAsOf": "2025-12-16",
-      "sourceUrl": "https://www.prnewswire.com/news-releases/databricks-grows-55-yoy-surpasses-4-8b-revenue-run-rate-and-is-raising-4b-series-l-at-134b-valuation-302643445.html",
-      "sourceTitle": "Databricks Series L press release",
+      "valueAsOf": "2026-02-09",
+      "sourceUrl": "https://www.cnbc.com/2026/02/09/databricks-completes-5-billion-funding-round-with-2-billion-in-debt.html",
+      "sourceTitle": "CNBC: Databricks completes $5B equity + $2B debt round at $134B",
       "sourceType": "reported-transaction",
       "confidence": "high",
       "updateCadence": "event-driven",
-      "lastCheckedAt": "2026-05-19",
-      "notes": "Company-announced Series L valuation."
+      "lastCheckedAt": "2026-06-09",
+      "notes": "Feb 2026 close reconfirmed the $134B Series L mark with $5B equity + $2B debt. June 2026: new round reportedly targeting $165-175B; not yet closed.",
+      "alternateValuations": [
+        {
+          "valueUsd": 170000000000,
+          "valueAsOf": "2026-06-08",
+          "sourceUrl": "https://www.pymnts.com/news/investment-tracker/2026/databricks-targets-165-billion-valuation-in-new-funding-round/",
+          "sourceTitle": "PYMNTS: Databricks targets $165-175B in new round",
+          "sourceType": "target",
+          "notes": "Reported raise target; hold primary at $134B until a close is confirmed."
+        }
+      ]
     },
     {
       "assetId": "private-waymo",
@@ -317,10 +327,10 @@
       "sourceUrl": "https://www.theinformation.com/articles/disneys-epic-deal-values-fortnite-maker-at-22-5-billion-a-sharp-cut",
       "sourceTitle": "The Information: Disney round values Epic Games at $22.5B",
       "sourceType": "reported-transaction",
-      "confidence": "medium",
+      "confidence": "low",
       "updateCadence": "event-driven",
       "lastCheckedAt": "2026-06-03",
-      "notes": "Disney $1.5B strategic investment (Feb 2024) reset Epic post-money to $22.5B, down from the $31.5B 2022 Series E peak; latest priced round (later secondaries imply lower)."
+      "notes": "Disney $1.5B strategic investment (Feb 2024) reset Epic post-money to $22.5B, down from the $31.5B 2022 Series E peak; latest priced round (later secondaries imply lower). No priced round since Feb 2024; 854-day-old mark, hence low confidence."
     },
     {
       "assetId": "private-shein",
@@ -390,7 +400,7 @@
       "valueUsd": 495180000000,
       "valueAsOf": "2026-06-03",
       "sourceUrl": "https://stockanalysis.com/etf/qqq/",
-      "sourceTitle": "Stock Analysis \u2014 QQQ ETF profile",
+      "sourceTitle": "Stock Analysis — QQQ ETF profile",
       "sourceType": "issuer",
       "confidence": "medium",
       "updateCadence": "daily",
@@ -474,7 +484,7 @@
       "valueUsd": 231840000000,
       "valueAsOf": "2026-06-03",
       "sourceUrl": "https://stockanalysis.com/etf/vea/",
-      "sourceTitle": "Stock Analysis \u2014 VEA ETF profile",
+      "sourceTitle": "Stock Analysis — VEA ETF profile",
       "sourceType": "issuer",
       "confidence": "medium",
       "updateCadence": "daily",
@@ -486,7 +496,7 @@
       "valueUsd": 185920000000,
       "valueAsOf": "2026-06-03",
       "sourceUrl": "https://stockanalysis.com/etf/iefa/",
-      "sourceTitle": "Stock Analysis \u2014 IEFA ETF profile",
+      "sourceTitle": "Stock Analysis — IEFA ETF profile",
       "sourceType": "issuer",
       "confidence": "medium",
       "updateCadence": "daily",
@@ -498,7 +508,7 @@
       "valueUsd": 121700000000,
       "valueAsOf": "2026-06-03",
       "sourceUrl": "https://advisors.vanguard.com/investments/products/vwo/vanguard-ftse-emerging-markets-etf",
-      "sourceTitle": "Vanguard \u2014 VWO product page",
+      "sourceTitle": "Vanguard — VWO product page",
       "sourceType": "issuer",
       "confidence": "medium",
       "updateCadence": "daily",
@@ -510,7 +520,7 @@
       "valueUsd": 133240000000,
       "valueAsOf": "2026-06-03",
       "sourceUrl": "https://stockanalysis.com/etf/iwf/",
-      "sourceTitle": "Stock Analysis \u2014 IWF ETF profile",
+      "sourceTitle": "Stock Analysis — IWF ETF profile",
       "sourceType": "issuer",
       "confidence": "medium",
       "updateCadence": "daily",

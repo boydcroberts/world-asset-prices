@@ -67,7 +67,14 @@ test("opens asset detail drawer with provenance and unsupported history states",
   await expect(spacexDialog).toBeVisible({ timeout: 15_000 });
   await expect(spacexDialog.getByText("curated-valuation")).toBeVisible();
   await expect(spacexDialog.getByText(/verified curated primary/i).first()).toBeVisible();
-  await expect(spacexDialog.getByText("Alternate context", { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: /Close asset detail/i }).click();
+
+  // Databricks carries the alternate-valuation context (reported raise target)
+  // since SpaceX's IPO pricing became its primary mark (2026-06-09).
+  await page.getByRole("button", { name: /Show Databricks details/i }).first().click();
+  const databricksDialog = page.getByRole("dialog", { name: /Databricks/i });
+  await expect(databricksDialog).toBeVisible({ timeout: 15_000 });
+  await expect(databricksDialog.getByText("Alternate context", { exact: true })).toBeVisible();
 });
 
 test("saves a local portfolio holding across reloads", async ({ page }) => {
