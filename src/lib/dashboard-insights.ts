@@ -113,15 +113,29 @@ function countTrackedMarkets(dashboard: DashboardPayload): number {
   );
 }
 
-function getFreshSegmentCount(dashboard: DashboardPayload): number {
-  return Object.values(dashboard.segmentMeta).filter((meta) => meta.source === "live" || meta.source === "fresh-cache").length;
+// The runtime payload strips `night` from segmentMeta (see SEGMENT_KEYS in
+// api.ts), while raw/server/test payloads may still carry it. Count provider
+// segments against this explicit allowlist so the math is correct either way —
+// the old `length - 1` (which assumed night was always the extra key) reported
+// "4 of 4" at runtime once night was stripped.
+const PROVIDER_SEGMENT_KEYS = [
+  "topCryptos",
+  "topStocks",
+  "topEtfs",
+  "topCurrencies",
+  "topPrivateCompanies",
+] as const;
+
+function getProviderSegmentCounts(dashboard: DashboardPayload): { total: number; fresh: number } {
+  const present = PROVIDER_SEGMENT_KEYS.map((key) => dashboard.segmentMeta[key]).filter(Boolean);
+  const fresh = present.filter((meta) => meta.source === "live" || meta.source === "fresh-cache").length;
+  return { total: present.length, fresh };
 }
 
 function formatDataHealthDetail(dashboard: DashboardPayload, mode: DashboardHealthMode): string {
-  const totalSegments = Object.keys(dashboard.segmentMeta).length;
-  const freshSegments = getFreshSegmentCount(dashboard);
   if (mode === "fresh") {
-    return `${freshSegments - 1} of ${totalSegments - 1} provider segments live; curated snapshots verified`;
+    const { total, fresh } = getProviderSegmentCounts(dashboard);
+    return `${fresh} of ${total} provider segments live; curated snapshots verified`;
   }
 
   if (mode === "recovering") {
@@ -223,17 +237,21 @@ function getGlobalLeader(topAssets: readonly DashboardAsset[]): DashboardInsight
 }
 
 export function buildDashboardInsights(dashboard: DashboardPayload): DashboardInsight[] {
-  const totalSegments = Object.keys(dashboard.segmentMeta).length;
   const degradedCount = dashboard.degradedSegments.length;
   const isDegraded = dashboard.source.fallbackUsed || degradedCount > 0;
   const isRecovering = !isDegraded && dashboard.stale;
   const healthMode: DashboardHealthMode = isDegraded ? "degraded" : isRecovering ? "recovering" : "fresh";
 
+  // Visible market sections = the provider segments plus the cross-category
+  // "Global Assets" section (when present).
+  const sectionCount =
+    getProviderSegmentCounts(dashboard).total + (dashboard.topAssets.length > 0 ? 1 : 0);
+
   return [
     {
       label: "Tracked markets",
       value: String(countTrackedMarkets(dashboard)),
-      detail: `Across ${totalSegments} live sections`,
+      detail: `Across ${sectionCount} live sections`,
       tone: "neutral",
     },
     {

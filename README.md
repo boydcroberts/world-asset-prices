@@ -84,7 +84,7 @@ Key behaviors:
 
 ## Resilient by design
 
-The dashboard never shows a blank screen, even when everything upstream is down. Data degrades through four tiers, and the UI labels exactly which one you're seeing:
+The dashboard never shows a blank screen, even when everything upstream is down. Data degrades through five tiers, and the UI labels exactly which one you're seeing:
 
 ```
 1. Live providers      CoinPaprika · Stooq · Yahoo · Frankfurter   (server, per-request timeouts + retry)

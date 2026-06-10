@@ -61,6 +61,7 @@
   --space-2: 0.5rem;
   --space-3: 0.75rem;
   --space-4: 1rem;
+  --space-5: 1.25rem;
   --space-6: 1.5rem;
 
   /* Type scale — only the 4 most-used exact sizes tokenized; fine-tuned
@@ -81,7 +82,7 @@ html:not(.dark) {
   --text: #0f172a;
   --text-dim: #334155;
   --text-muted: #64748b;
-  --green: #059669;
+  --green: #047857;
   --red: #e11d48;
   --flat: #64748b;
   --hover-1: 37, 99, 235;
@@ -1100,6 +1101,12 @@ html:not(.dark) .freshness-badge {
   border-color: rgba(239, 68, 68, 0.24);
 }
 
+/* Light mode: the badge sits on a near-white card, so the dark-mode label
+   colors fall below 4.5:1. Darken them for AA on the light surface. */
+html:not(.dark) .freshness-badge--live { color: #15803d; }
+html:not(.dark) .freshness-badge--cached { color: #b45309; }
+html:not(.dark) .freshness-badge--degraded { color: #b91c1c; }
+
 /* Non-live sections (e.g. curated private valuations) get a static identity chip
    instead of a freshness badge, so the header-right slot is never empty. */
 .freshness-badge--static {
@@ -1338,7 +1345,7 @@ html:not(.dark) .asset-category[data-category="crypto"] {
   border-color: rgba(61, 214, 140, 0.24);
 }
 html:not(.dark) .asset-category[data-category="stock"] {
-  color: #059669;
+  color: #047857;
   background: rgba(5, 150, 105, 0.07);
   border-color: rgba(5, 150, 105, 0.22);
 }
@@ -1360,7 +1367,7 @@ html:not(.dark) .asset-category[data-category="commodity"] {
   border-color: rgba(77, 240, 224, 0.24);
 }
 html:not(.dark) .asset-category[data-category="currency"] {
-  color: rgb(8, 145, 178);
+  color: #0e7490;
   background: rgba(8, 145, 178, 0.07);
   border-color: rgba(8, 145, 178, 0.22);
 }
@@ -1509,15 +1516,17 @@ html:not(.dark) .coin-card:focus-visible .symbol-pill {
 .is-flat { color: var(--flat); }
 
 /* Color-independent direction cue so gains/losses aren't conveyed by hue alone
-   (the signed % text remains the screen-reader truth; the glyph is decorative). */
-.coin-change.is-up::before {
+   (the signed value text remains the screen-reader truth; the glyph is decorative).
+   Applied to every is-up/is-down change value — card list, detail drawer, and
+   portfolio P/L — since those classes are only ever used on change figures. */
+.is-up::before {
   content: "\25B2";
   margin-right: 0.3em;
   font-size: 0.72em;
   vertical-align: 0.08em;
 }
 
-.coin-change.is-down::before {
+.is-down::before {
   content: "\25BC";
   margin-right: 0.3em;
   font-size: 0.72em;
@@ -1796,6 +1805,15 @@ html:not(.dark) .skeleton-line {
   border: 1px solid var(--surface-border);
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.035);
+}
+
+/* A white wash is invisible on the light background — give these inner panels a
+   faint dark wash so the elevation present in dark mode carries to light mode. */
+html:not(.dark) .portfolio-summary > div,
+html:not(.dark) .portfolio-position,
+html:not(.dark) .detail-metrics > div,
+html:not(.dark) .detail-provenance > div {
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .portfolio-summary > div { padding: 0.74rem; }

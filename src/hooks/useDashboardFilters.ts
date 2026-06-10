@@ -28,7 +28,6 @@ export type UseDashboardFiltersResult = {
   setSortMode: (value: DashboardSortMode) => void;
 
   density: DensityMode;
-  setDensity: (value: DensityMode) => void;
   toggleDensity: () => void;
 
   pinnedIds: string[];
@@ -93,7 +92,6 @@ export function useDashboardFilters(): UseDashboardFiltersResult {
     sortMode,
     setSortMode,
     density,
-    setDensity,
     toggleDensity,
     pinnedIds,
     pinnedIdSet,

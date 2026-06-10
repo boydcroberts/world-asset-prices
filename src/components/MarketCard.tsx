@@ -25,9 +25,6 @@ type MarketCardProps = {
   pinned?: boolean;
   /** Called with the card's id when the pin chip is toggled. */
   onTogglePin?: (id: string) => void;
-  compared?: boolean;
-  /** Called with the card's id when the compare chip is toggled. */
-  onToggleCompare?: (id: string) => void;
   sparkline?: number[];
   priceTitle?: string;
   secondaryTitle?: string;
@@ -95,8 +92,6 @@ export const MarketCard = memo(function MarketCard({
   assetStyle = false,
   pinned = false,
   onTogglePin,
-  compared = false,
-  onToggleCompare,
   sparkline,
   priceTitle,
   secondaryTitle,
@@ -106,10 +101,10 @@ export const MarketCard = memo(function MarketCard({
   const prevValueRef = useRef<string>(value);
 
   useEffect(() => {
+    // Suppress the flash on the very first commit (the ref is seeded with the
+    // initial value) and whenever the value is unchanged.
     if (prevValueRef.current === value) return;
-    const isInitial = prevValueRef.current === undefined;
     prevValueRef.current = value;
-    if (isInitial) return;
     const el = priceRef.current;
     if (!el) return;
     // Web Animations API restarts cleanly with no forced layout reflow. Unlike a
@@ -147,21 +142,6 @@ export const MarketCard = memo(function MarketCard({
           aria-label={pinned ? `Unpin ${name} from watchlist` : `Pin ${name} to watchlist`}
         >
           {pinned ? "Pinned" : "Pin"}
-        </button>
-      ) : null}
-
-      {onToggleCompare ? (
-        <button
-          type="button"
-          className={clsx("card-chip", compared && "active")}
-          onClick={(event) => {
-            event.stopPropagation();
-            onToggleCompare(id);
-          }}
-          aria-pressed={compared}
-          aria-label={compared ? `Remove ${name} from compare` : `Add ${name} to compare`}
-        >
-          {compared ? "Comparing" : "Compare"}
         </button>
       ) : null}
     </div>

@@ -1,4 +1,4 @@
-import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import clsx from "clsx";
 import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from "react";
 
@@ -100,8 +100,6 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => setupSectionObserver(), [setupSectionObserver]);
-
   // Seed the query with the last successful payload from a prior visit so a cold
   // load (including a fully offline one) paints real, clearly-aged data instead
   // of a blank screen while the live fetch runs.
@@ -125,9 +123,12 @@ function App() {
     queryKey: ["asset-detail", selectedAssetId, detailRange],
     queryFn: () => fetchAssetDetail(selectedAssetId ?? "", detailRange),
     enabled: Boolean(selectedAssetId),
-    // Keep the previous range's chart on screen while the next range loads so
-    // switching 7D/30D/1Y never flashes an empty drawer.
-    placeholderData: keepPreviousData,
+    // Keep the previous payload only while switching ranges for the SAME asset
+    // (so 7D→1Y doesn't flash an empty drawer). When the asset itself changes,
+    // drop it — otherwise asset A's name/metrics/chart render under asset B's
+    // header until the fetch lands.
+    placeholderData: (previousData, previousQuery) =>
+      previousQuery?.queryKey[1] === selectedAssetId ? previousData : undefined,
   });
 
   // Persist every successful payload as the client-side last-known-good cache.
@@ -256,10 +257,29 @@ function App() {
     [normalizedSearchTerm, sortMode, topPrivateCompanies],
   );
 
-  const allEntries = useMemo(
-    () => [...topStocks, ...topEtfs, ...topCurrencies, ...topCryptos, ...topPrivateCompanies, ...topAssets],
-    [topAssets, topCryptos, topCurrencies, topEtfs, topPrivateCompanies, topStocks],
-  );
+  const allEntries = useMemo(() => {
+    // Section arrays carry the richest variant (price + daily change). topAssets
+    // is a cross-category market-cap summary that re-lists many of the same ids
+    // (e.g. stock-nvda, btc-bitcoin) without price/change — so add a topAssets
+    // entry only when its id isn't already represented by a section entry. This
+    // keeps pinned/selected/search resolving to the rich variant and prevents
+    // duplicate React keys + duplicate rows in the search modal.
+    const ordered: DashboardEntry[] = [
+      ...topStocks,
+      ...topEtfs,
+      ...topCurrencies,
+      ...topCryptos,
+      ...topPrivateCompanies,
+    ];
+    const seen = new Set(ordered.map((entry) => entry.id));
+    for (const asset of topAssets) {
+      if (!seen.has(asset.id)) {
+        seen.add(asset.id);
+        ordered.push(asset);
+      }
+    }
+    return ordered;
+  }, [topAssets, topCryptos, topCurrencies, topEtfs, topPrivateCompanies, topStocks]);
 
   const entriesById = useMemo(() => {
     const byId = new Map<string, DashboardEntry>();
@@ -291,6 +311,15 @@ function App() {
         return sectionFilter === "all" || link.filter === sectionFilter;
       }),
     [pinnedEntries.length, sectionFilter],
+  );
+
+  // (Re)attach the scroll-spy observer whenever the rendered set of sections can
+  // change — section filter, watchlist presence, boot state, or the error panel
+  // mounting/unmounting sections. Without re-running, newly-mounted sections go
+  // unobserved and the nav active-highlight stops tracking scroll.
+  useEffect(
+    () => setupSectionObserver(),
+    [setupSectionObserver, sectionFilter, pinnedEntries.length, isBooting, dashboardQuery.isError],
   );
 
   return (

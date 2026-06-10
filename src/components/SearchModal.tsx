@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState, memo } from "react";
 import clsx from "clsx";
 
 import { LogoMark } from "./LogoMark";
+import { useModalA11y } from "../hooks/useModalA11y";
 import type { DashboardEntry } from "../lib/dashboard-insights";
 
 type SearchModalProps = {
@@ -35,11 +36,13 @@ function matchScore(entry: DashboardEntry, query: string): number {
 export const SearchModal = memo(function SearchModal({ entries, onSelect, onClose }: SearchModalProps) {
   const [query, setQuery] = useState("");
   const [rawCursor, setCursor] = useState(0);
+  const overlayRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
 
-  // Focus input on mount
-  useEffect(() => { inputRef.current?.focus(); }, []);
+  // Focus the search input on open, trap Tab inside the dialog, lock background
+  // scroll + inert the page, and restore focus to the cmd+K trigger on close.
+  useModalA11y(overlayRef, ".search-input");
 
   const results = useMemo(() => {
     return entries
@@ -91,6 +94,7 @@ export const SearchModal = memo(function SearchModal({ entries, onSelect, onClos
 
   return (
     <div
+      ref={overlayRef}
       className="search-overlay"
       role="dialog"
       aria-modal="true"

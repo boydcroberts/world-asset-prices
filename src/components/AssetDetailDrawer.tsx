@@ -1,12 +1,10 @@
 import clsx from "clsx";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 import { LogoMark } from "./LogoMark";
+import { useModalA11y } from "../hooks/useModalA11y";
 import { formatCompactCurrency, formatCurrency, formatPercent, trendClass } from "../lib/formatters";
 import type { AssetDetailPayload, HistoricalRange } from "../types/dashboard";
-
-const FOCUSABLE_SELECTOR =
-  'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 const RANGES: HistoricalRange[] = ["7D", "30D", "1Y"];
 
@@ -83,47 +81,9 @@ export function AssetDetailDrawer({ detail, isLoading, error, range, onRangeChan
 
   const drawerRef = useRef<HTMLElement>(null);
 
-  // Focus management for the modal dialog: move focus in on open, trap Tab
-  // within it, and restore focus to the triggering element on close.
-  useEffect(() => {
-    const previouslyFocused = document.activeElement as HTMLElement | null;
-    const drawer = drawerRef.current;
-    drawer?.querySelector<HTMLElement>(".detail-close")?.focus();
-
-    // Lock background scroll while the modal is open so the page behind the
-    // mobile bottom-sheet can't scroll or rubber-band under it.
-    const previousBodyOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-
-    // Mark the main content as inert so background elements are fully removed
-    // from the accessibility tree — keyboard and SR focus stays inside the modal.
-    const mainEl = document.querySelector<HTMLElement>("main");
-    if (mainEl) mainEl.inert = true;
-
-    function handleTab(event: KeyboardEvent) {
-      if (event.key !== "Tab" || !drawer) return;
-      const focusables = Array.from(drawer.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR));
-      if (focusables.length === 0) return;
-      const first = focusables[0];
-      const last = focusables[focusables.length - 1];
-      const active = document.activeElement;
-      if (event.shiftKey && (active === first || !drawer.contains(active))) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && active === last) {
-        event.preventDefault();
-        first.focus();
-      }
-    }
-
-    document.addEventListener("keydown", handleTab, true);
-    return () => {
-      document.removeEventListener("keydown", handleTab, true);
-      document.body.style.overflow = previousBodyOverflow;
-      if (mainEl) mainEl.inert = false;
-      previouslyFocused?.focus?.();
-    };
-  }, []);
+  // Focus management for the modal dialog (focus in / trap Tab / inert
+  // background / scroll lock / restore on close). Focus the close button first.
+  useModalA11y(drawerRef, ".detail-close");
 
   return (
     <div className="detail-overlay" role="presentation" onMouseDown={onClose}>

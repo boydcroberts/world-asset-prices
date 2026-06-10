@@ -73,6 +73,15 @@ export const PortfolioLab = memo(function PortfolioLab({ candidates, holdings, o
           (holding.costBasisUsd === undefined || (typeof holding.costBasisUsd === "string" && Boolean(parsePositiveDecimal(holding.costBasisUsd))))
         );
       });
+      // Never let an empty or all-invalid import silently wipe existing holdings.
+      if (allowed.length === 0) {
+        setError(
+          parsed.length === 0
+            ? "Paste exported holdings JSON before importing."
+            : "No importable holdings found — nothing was changed.",
+        );
+        return;
+      }
       onChange(allowed);
       setError("");
     } catch {

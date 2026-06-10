@@ -128,6 +128,26 @@ describe("dashboard insights", () => {
     ]);
   });
 
+  it("reports correct section/segment counts when night is stripped (runtime shape)", () => {
+    // The live client strips `night` from segmentMeta (api.ts SEGMENT_KEYS), so
+    // segmentMeta has only the 5 provider segments at runtime. Counts must still
+    // read 6 sections / 5 of 5 — the previous `length - 1` math reported 5 / 4 of 4.
+    const base = makePayload();
+    const normalized: DashboardPayload = {
+      ...base,
+      segmentMeta: {
+        topCryptos: { source: "live", ageSec: 2 },
+        topStocks: { source: "fresh-cache", ageSec: 12 },
+        topEtfs: { source: "live", ageSec: 5 },
+        topCurrencies: { source: "live", ageSec: 3 },
+        topPrivateCompanies: { source: "live", ageSec: 7 },
+      } as DashboardPayload["segmentMeta"],
+    };
+    const insights = buildDashboardInsights(normalized);
+    expect(insights[0].detail).toBe("Across 6 live sections");
+    expect(insights[1].detail).toBe("5 of 5 provider segments live; curated snapshots verified");
+  });
+
   it("marks degraded payloads in the data health insight", () => {
     const insights = buildDashboardInsights(makePayload({
       stale: true,

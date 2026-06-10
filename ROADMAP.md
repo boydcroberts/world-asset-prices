@@ -103,4 +103,4 @@ Never touch these regardless of what ships:
 - Bundle: total JS under 520 KB raw, 420 KB per file (`npm run check:bundle`)
 - `npm run check` must be green before every push
 - API payload fields: additive only; removals require a version bump
-- localStorage keys: `wap.portfolio.v1`, `wap.pinned-markets.v1`, `wap.prefs.v1` — changing breaks existing user data
+- localStorage keys: `wap.portfolio.v1`, `wap.pinned-markets.v1`, `wap.prefs.v1`, `wap.dashboard-cache.v1` — changing breaks existing user data / the offline last-known-good cache
