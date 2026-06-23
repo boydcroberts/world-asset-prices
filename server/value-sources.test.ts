@@ -4,7 +4,7 @@ import { ASSET_VALUE_SOURCE_VERSION, ASSET_VALUE_SOURCES, getAssetValueSource } 
 
 describe("asset value sources", () => {
   it("requires verified primary source metadata for curated and derived values", () => {
-    expect(ASSET_VALUE_SOURCE_VERSION).toBe("2026-06-09");
+    expect(ASSET_VALUE_SOURCE_VERSION).toBe("2026-06-22");
     expect(getAssetValueSource("stock-nvda")?.sourceType).toBe("recognized-market-data");
     expect(getAssetValueSource("private-spacex")?.valueUsd).toBe(1_770_000_000_000);
     expect(getAssetValueSource("private-databricks")?.alternateValuations?.[0]?.sourceType).toBe("target");

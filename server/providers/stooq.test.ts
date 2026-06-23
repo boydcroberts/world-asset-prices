@@ -78,7 +78,7 @@ describe("Stooq provider", () => {
     expect(stocks.find((stock) => stock.symbol === "2222.SR")).toMatchObject({
       name: "Saudi Aramco",
       priceUsd: null,
-      marketCapUsd: 1_700_000_000_000,
+      marketCapUsd: 1_703_000_000_000,
     });
   });
 
@@ -121,7 +121,7 @@ describe("Stooq provider", () => {
     expect(spy).toMatchObject({
       symbol: "SPY",
       priceUsd: 718.03,
-      aumUsd: 743_110_000_000,
+      aumUsd: 758_880_000_000,
     });
   });
 
