@@ -108,6 +108,13 @@ const payload: DashboardPayload = {
     change24h: null,
     percentFromAth: null,
   },
+  indices: [
+    { key: "sp500", symbol: "^GSPC", name: "S&P 500", kind: "index", level: 5000, previousClose: 4950, changeAbs: 50, changePercent: 1.01, intraday: [{ t: "2026-02-16T14:30:00.000Z", value: 4950 }, { t: "2026-02-16T15:00:00.000Z", value: 5000 }] },
+    { key: "nasdaq", symbol: "^IXIC", name: "Nasdaq Composite", kind: "index", level: 16000, previousClose: 15900, changeAbs: 100, changePercent: 0.63, intraday: [] },
+    { key: "dow", symbol: "^DJI", name: "Dow Jones", kind: "index", level: 40000, previousClose: 39800, changeAbs: 200, changePercent: 0.5, intraday: [] },
+    { key: "vix", symbol: "^VIX", name: "VIX", kind: "volatility", level: 15, previousClose: 14, changeAbs: 1, changePercent: 7.14, intraday: [] },
+    { key: "ust10y", symbol: "^TNX", name: "US 10Y", kind: "rate", level: 4.2, previousClose: 4.15, changeAbs: 0.05, changePercent: 1.2, intraday: [] },
+  ],
 };
 
 const assetDetail: AssetDetailPayload = {
@@ -175,11 +182,22 @@ describe("App", () => {
     localStorage.clear();
   });
 
-  it("opens an asset detail drawer from a market card", async () => {
+  it("renders the US-market hero from live indices", async () => {
     renderApp();
 
-    await screen.findByText("Apple");
-    fireEvent.click(screen.getByRole("button", { name: "Show Apple details" }));
+    expect(await screen.findByText("5,000.00")).toBeInTheDocument();
+    expect(screen.getByText("Nasdaq Composite")).toBeInTheDocument();
+    expect(screen.getByText("VIX")).toBeInTheDocument();
+    // Breadth is derived from the live stock universe (AAPL is advancing).
+    expect(screen.getByLabelText(/advancing/)).toBeInTheDocument();
+  });
+
+  it("opens an asset detail drawer from a mover", async () => {
+    renderApp();
+
+    await screen.findByText("Nasdaq Composite");
+    // "Apple" surfaces both as a mover and a Beyond-US card; either opens the drawer.
+    fireEvent.click(screen.getAllByRole("button", { name: "Show Apple details" })[0]);
 
     expect(await screen.findByRole("dialog", { name: "Apple" })).toBeInTheDocument();
     expect(screen.getByText("Market cap is estimated.")).toBeInTheDocument();
@@ -189,8 +207,9 @@ describe("App", () => {
   it("adds a local portfolio holding without sending it to an API", async () => {
     renderApp();
 
+    // Wait for live data so the portfolio candidate list is populated.
+    await screen.findByText("Nasdaq Composite");
     await screen.findByText("Portfolio Lab");
-    await screen.findByText("Apple");
     fireEvent.change(screen.getByLabelText("Holding quantity"), { target: { value: "2" } });
     fireEvent.change(screen.getByLabelText("Holding cost basis"), { target: { value: "300" } });
     fireEvent.click(screen.getByRole("button", { name: "Save holding" }));
@@ -205,12 +224,12 @@ describe("App", () => {
     renderApp();
 
     expect(await screen.findByText("Bitcoin")).toBeInTheDocument();
-    expect(screen.getByText("AAPL")).toBeInTheDocument();
+    expect(screen.getAllByText("AAPL").length).toBeGreaterThan(0);
     expect(screen.getAllByText("XAU").length).toBeGreaterThan(0);
     expect(screen.getAllByText("—").length).toBeGreaterThan(0);
   });
 
-  it("filters visible market cards by search text", async () => {
+  it("filters Beyond-US cards by search text", async () => {
     renderApp();
 
     expect(await screen.findByText("Bitcoin")).toBeInTheDocument();
@@ -219,7 +238,7 @@ describe("App", () => {
       target: { value: "apple" },
     });
 
-    expect(screen.getByText("Apple")).toBeInTheDocument();
+    expect(screen.getAllByText("Apple").length).toBeGreaterThan(0);
     expect(screen.queryByText("Bitcoin")).not.toBeInTheDocument();
     expect(screen.getByText('No cryptocurrencies match "apple".')).toBeInTheDocument();
   });
@@ -227,44 +246,11 @@ describe("App", () => {
   it("pins markets into a watchlist section", async () => {
     renderApp();
 
-    await screen.findByText("Apple");
+    await screen.findByText("Nasdaq Composite");
     fireEvent.click(screen.getByRole("button", { name: "Pin Apple to watchlist" }));
 
     const watchlist = screen.getByRole("region", { name: "Pinned Watchlist" });
     expect(within(watchlist).getByText("Apple")).toBeInTheDocument();
     expect(within(watchlist).getByRole("button", { name: "Unpin Apple from watchlist" })).toBeInTheDocument();
-  });
-
-  it("renders compact health segment badges when data is degraded", async () => {
-    mockedFetchDashboard.mockResolvedValue({
-      ...payload,
-      stale: true,
-      source: {
-        ...payload.source,
-        fallbackUsed: false,
-      },
-      degradedSegments: ["topStocks", "topEtfs"],
-      segmentMeta: {
-        ...payload.segmentMeta,
-        topStocks: {
-          ...payload.segmentMeta.topStocks,
-          source: "stale-cache",
-          ageSec: 90,
-        },
-        topEtfs: {
-          ...payload.segmentMeta.topEtfs,
-          source: "durable-cache",
-          ageSec: 300,
-        },
-      },
-    });
-
-    renderApp();
-
-    const healthRow = await screen.findByLabelText("Degraded segments");
-    expect(healthRow).toBeInTheDocument();
-    expect(healthRow.textContent).toContain("Public companies");
-    expect(healthRow.textContent).toContain("ETFs");
-    expect(healthRow.textContent).toContain("Durable cache");
   });
 });

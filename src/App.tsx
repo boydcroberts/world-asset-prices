@@ -5,22 +5,23 @@ import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } fro
 import { fetchAssetDetail, fetchDashboard } from "./api";
 import { CardServicesContext, type CardServices } from "./context/card-services";
 import { readCachedDashboard, writeCachedDashboard } from "./lib/dashboard-cache";
-import { DashboardShell } from "./components/DashboardShell";
 import { MarketControls } from "./components/MarketControls";
 import { MarketSections } from "./components/MarketSections";
 import { PortfolioLab } from "./components/PortfolioLab";
 import { WatchlistSection } from "./components/WatchlistSection";
+import { MeridianShell } from "./components/MeridianShell";
+import { Masthead } from "./components/Masthead";
+import { LivingHorizon } from "./components/LivingHorizon";
+import { RiskStrip } from "./components/RiskStrip";
+import { Movers } from "./components/Movers";
+import { deriveBreadth, deriveMovers, findIndex } from "./lib/us-market";
 import {
   DEFAULT_REFRESH_SEC,
   SECTION_IDS,
   SECTION_LINKS,
   filterAndSortEntries,
 } from "./lib/dashboard-filters";
-import {
-  buildDashboardInsights,
-  getWorstSegmentHealthSummaries,
-  type DashboardEntry,
-} from "./lib/dashboard-insights";
+import { type DashboardEntry } from "./lib/dashboard-insights";
 import { isTradablePortfolioAsset, type PortfolioEntry } from "./lib/portfolio";
 import { useDashboardFilters } from "./hooks/useDashboardFilters";
 import { useTheme } from "./hooks/useTheme";
@@ -226,12 +227,6 @@ function App() {
     [togglePinned, openAssetDetail, generatedAt, equityEstimateLabel],
   );
 
-  const dashboardInsights = useMemo(() => (dashboard ? buildDashboardInsights(dashboard) : []), [dashboard]);
-  const segmentHealthSummaries = useMemo(
-    () => (dashboard ? getWorstSegmentHealthSummaries(dashboard) : []),
-    [dashboard],
-  );
-
   const visibleTopAssets = useMemo(
     () => filterAndSortEntries(topAssets, normalizedSearchTerm, sortMode),
     [normalizedSearchTerm, sortMode, topAssets],
@@ -294,6 +289,15 @@ function App() {
 
   const selectedEntry = selectedAssetId ? entriesById.get(selectedAssetId) : undefined;
 
+  // US-market command-center data. Indices come from the server; movers and
+  // breadth are derived client-side from the live equity universe.
+  const indices = dashboard?.indices;
+  const vix = findIndex(indices, "vix");
+  const ust10y = findIndex(indices, "ust10y");
+  const breadth = useMemo(() => deriveBreadth(topStocks), [topStocks]);
+  const movers = useMemo(() => deriveMovers(topStocks), [topStocks]);
+  const isStale = dashboard?.stale ?? false;
+
   const portfolioCandidates = useMemo(() => {
     const entries: PortfolioEntry[] = [
       ...topStocks.filter((stock) => typeof stock.priceUsd === "number"),
@@ -325,89 +329,91 @@ function App() {
   return (
     <>
       <CardServicesContext.Provider value={cardServices}>
-        <DashboardShell
-          theme={theme}
-          onToggleTheme={toggleTheme}
-          onOpenSearch={() => setSearchModalOpen(true)}
-          insights={dashboardInsights}
-          segmentHealthSummaries={segmentHealthSummaries}
-          density={density}
-        >
-          <MarketControls
-            searchTerm={searchTerm}
-            onSearchChange={setSearchTerm}
-            searchInputRef={searchInputRef}
-            sectionFilter={sectionFilter}
-            onSectionFilterChange={setSectionFilter}
-            sortMode={sortMode}
-            onSortChange={setSortMode}
-            density={density}
-            onDensityToggle={toggleDensity}
-            isFetching={dashboardQuery.isFetching}
-            generatedAt={generatedAt}
-          />
+        <MeridianShell>
+          <Masthead theme={theme} onToggleTheme={toggleTheme} onOpenSearch={() => setSearchModalOpen(true)} />
 
           {dashboardQuery.isError && !dashboard ? (
-            <section className="surface dashboard-error" role="alert">
-              <h2>Live data is unavailable</h2>
-              <p>
-                We couldn&apos;t reach the markets service, and no cached snapshot is stored on this
-                device yet. Your watchlist and portfolio are safe.
+            <section className="lh lh--empty" role="alert">
+              <p className="lh-unavailable">
+                Live market data is unavailable, and no cached snapshot is stored yet.{" "}
+                <button type="button" className="retry-button" onClick={() => void dashboardQuery.refetch()}>
+                  Try again
+                </button>
               </p>
-              <button type="button" className="retry-button" onClick={() => void dashboardQuery.refetch()}>
-                Try again
-              </button>
             </section>
           ) : (
             <>
-              <nav className="section-nav" aria-label="Dashboard sections">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.id}
-                    href={`#${link.id}`}
-                    className={clsx(activeSection === link.id && "nav-active")}
-                    aria-current={activeSection === link.id ? "true" : undefined}
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </nav>
+              <LivingHorizon indices={indices} isStale={isStale} />
+              <RiskStrip breadth={breadth} vix={vix} ust10y={ust10y} />
+              <Movers gainers={movers.gainers} losers={movers.losers} onSelect={openAssetDetail} />
 
-              <WatchlistSection
-                entries={pinnedEntries}
-                pinnedIdSet={pinnedIdSet}
-                selectedAssetId={selectedAssetId}
-              />
+              <details className="beyond">
+                <summary>Beyond the US market — crypto, FX, global &amp; private</summary>
+                <div className="beyond-body">
+                  <MarketControls
+                    searchTerm={searchTerm}
+                    onSearchChange={setSearchTerm}
+                    searchInputRef={searchInputRef}
+                    sectionFilter={sectionFilter}
+                    onSectionFilterChange={setSectionFilter}
+                    sortMode={sortMode}
+                    onSortChange={setSortMode}
+                    density={density}
+                    onDensityToggle={toggleDensity}
+                    isFetching={dashboardQuery.isFetching}
+                    generatedAt={generatedAt}
+                  />
 
-              <MarketSections
-                shouldShowSection={shouldShowSection}
-                isBooting={isBooting}
-                normalizedSearchTerm={normalizedSearchTerm}
-                pinnedIdSet={pinnedIdSet}
-                selectedAssetId={selectedAssetId}
-                segmentMeta={segmentMeta}
-                topAssets={topAssets}
-                visibleTopAssets={visibleTopAssets}
-                topStocks={topStocks}
-                visibleTopStocks={visibleTopStocks}
-                topPrivateCompanies={topPrivateCompanies}
-                visibleTopPrivateCompanies={visibleTopPrivateCompanies}
-                topEtfs={topEtfs}
-                visibleTopEtfs={visibleTopEtfs}
-                topCurrencies={topCurrencies}
-                visibleTopCurrencies={visibleTopCurrencies}
-                topCryptos={topCryptos}
-                visibleTopCryptos={visibleTopCryptos}
-                activeCryptoId={activeCryptoId}
-                onCryptoActivate={setActiveCryptoId}
-              />
+                  <nav className="section-nav" aria-label="Dashboard sections">
+                    {navLinks.map((link) => (
+                      <a
+                        key={link.id}
+                        href={`#${link.id}`}
+                        className={clsx(activeSection === link.id && "nav-active")}
+                        aria-current={activeSection === link.id ? "true" : undefined}
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </nav>
 
-              {sectionFilter === "all" ? (
-                <PortfolioLab candidates={portfolioCandidates} holdings={holdings} onChange={setHoldings} />
-              ) : null}
+                  <WatchlistSection
+                    entries={pinnedEntries}
+                    pinnedIdSet={pinnedIdSet}
+                    selectedAssetId={selectedAssetId}
+                  />
+
+                  <MarketSections
+                    shouldShowSection={shouldShowSection}
+                    isBooting={isBooting}
+                    normalizedSearchTerm={normalizedSearchTerm}
+                    pinnedIdSet={pinnedIdSet}
+                    selectedAssetId={selectedAssetId}
+                    segmentMeta={segmentMeta}
+                    topAssets={topAssets}
+                    visibleTopAssets={visibleTopAssets}
+                    topStocks={topStocks}
+                    visibleTopStocks={visibleTopStocks}
+                    topPrivateCompanies={topPrivateCompanies}
+                    visibleTopPrivateCompanies={visibleTopPrivateCompanies}
+                    topEtfs={topEtfs}
+                    visibleTopEtfs={visibleTopEtfs}
+                    topCurrencies={topCurrencies}
+                    visibleTopCurrencies={visibleTopCurrencies}
+                    topCryptos={topCryptos}
+                    visibleTopCryptos={visibleTopCryptos}
+                    activeCryptoId={activeCryptoId}
+                    onCryptoActivate={setActiveCryptoId}
+                  />
+
+                  {sectionFilter === "all" ? (
+                    <PortfolioLab candidates={portfolioCandidates} holdings={holdings} onChange={setHoldings} />
+                  ) : null}
+                </div>
+              </details>
             </>
           )}
-        </DashboardShell>
+        </MeridianShell>
       </CardServicesContext.Provider>
 
       {searchModalOpen ? (

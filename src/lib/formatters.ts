@@ -94,6 +94,25 @@ export function formatPercent(value: unknown): string {
   return `${sign}${value.toFixed(2)}%`;
 }
 
+const levelFormatter = new Intl.NumberFormat("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+/** Comma-grouped index level with 2 decimals (e.g. 7,472.79). */
+export function formatLevel(value: unknown): string {
+  if (!isFiniteNumber(value)) {
+    return "—";
+  }
+  return levelFormatter.format(value);
+}
+
+/** Signed, comma-grouped points change with a true minus glyph (e.g. +41.33 / −18.20). */
+export function formatPoints(value: unknown): string {
+  if (!isFiniteNumber(value)) {
+    return "—";
+  }
+  const sign = value > 0 ? "+" : value < 0 ? "−" : "";
+  return `${sign}${levelFormatter.format(Math.abs(value))}`;
+}
+
 export function trendClass(value: unknown): "is-up" | "is-down" | "is-flat" {
   if (!isFiniteNumber(value) || value === 0) {
     return "is-flat";

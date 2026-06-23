@@ -102,6 +102,22 @@ export type DashboardCurrency = DashboardEntryBase & {
   changePercent: number | null;
 };
 
+export type IndexIntradayPoint = { t: string; value: number };
+
+export type UsIndexKind = "index" | "volatility" | "rate";
+
+export type UsIndex = {
+  key: string;
+  symbol: string;
+  name: string;
+  kind: UsIndexKind;
+  level: number | null;
+  previousClose: number | null;
+  changeAbs: number | null;
+  changePercent: number | null;
+  intraday: IndexIntradayPoint[];
+};
+
 export type DashboardPayload = {
   generatedAt: string;
   stale: boolean;
@@ -116,6 +132,8 @@ export type DashboardPayload = {
   topPrivateCompanies: DashboardPrivateCompany[];
   topAssets: DashboardAsset[];
   night: DashboardNight | null;
+  /** US-market instruments (indices + VIX + 10Y) powering the command-center hero. Additive/optional. */
+  indices?: UsIndex[];
   valueSources?: Record<string, AssetValueSource>;
   requestId?: string;
 };

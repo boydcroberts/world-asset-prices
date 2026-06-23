@@ -6,6 +6,7 @@ import { reportClientError } from "./api";
 import App from "./App";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import "./globals.css";
+import "./meridian.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {
