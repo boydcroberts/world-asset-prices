@@ -178,6 +178,12 @@ html:not(.dark) .lh-canvas::after { background: linear-gradient(100deg, var(--ra
 }
 @keyframes lh-now-pulse { 0%, 100% { box-shadow: 0 0 0 4px rgba(200, 162, 75, 0.18), 0 0 16px var(--brass); } 50% { box-shadow: 0 0 0 8px rgba(200, 162, 75, 0.05), 0 0 22px var(--brass); } }
 
+/* Scrub crosshair: a vertical brass guide with a dot riding the line. */
+.lh-crosshair { position: absolute; top: 0; bottom: 0; width: 1px; background: linear-gradient(var(--brass), transparent); opacity: 0.55; pointer-events: none; }
+.lh-crosshair-dot { position: absolute; left: 50%; width: 9px; height: 9px; border-radius: 50%; background: var(--brass); transform: translate(-50%, -50%); box-shadow: 0 0 12px var(--brass); }
+.lh--scrubbing .lh-line { opacity: 1; }
+.lh:focus-visible { outline: 1px solid var(--hairline-strong); outline-offset: -1px; }
+
 .lh-readout {
   position: relative; z-index: 1;
   height: 100%;
@@ -199,8 +205,15 @@ html:not(.dark) .lh-canvas::after { background: linear-gradient(100deg, var(--ra
   margin: 0.4rem 0 0.2rem;
 }
 .lh-change { margin: 0; font-family: var(--font-mono); font-weight: 600; font-size: clamp(1rem, 2.4vw, 1.5rem); font-variant-numeric: tabular-nums; }
-.lh-rail { display: flex; gap: 1.6rem; flex-wrap: wrap; }
-.lh-rail-item { display: flex; flex-direction: column; gap: 0.1rem; }
+.lh-rail { display: flex; gap: 1rem; flex-wrap: wrap; }
+.lh-rail-item {
+  display: flex; flex-direction: column; gap: 0.1rem;
+  background: none; border: 1px solid transparent; border-radius: 10px;
+  padding: 0.3rem 0.55rem; margin: -0.3rem -0.1rem; cursor: pointer; text-align: left;
+  transition: border-color var(--dur-fast, 160ms) ease, background var(--dur-fast, 160ms) ease;
+}
+.lh-rail-item:hover, .lh-rail-item:focus-visible { border-color: var(--hairline-strong); background: rgba(255, 255, 255, 0.03); outline: none; }
+html:not(.dark) .lh-rail-item:hover, html:not(.dark) .lh-rail-item:focus-visible { background: rgba(0, 0, 0, 0.03); }
 .lh-rail-name { font-family: var(--font-body); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 .lh-rail-level { font-family: var(--font-mono); font-size: 1.04rem; font-weight: 600; color: var(--bone); font-variant-numeric: tabular-nums; }
 .lh-rail-change { font-family: var(--font-mono); font-size: 0.82rem; font-variant-numeric: tabular-nums; }

@@ -1,5 +1,7 @@
 import type { IndexIntradayPoint } from "../types/dashboard";
 
+export type HorizonPoint = { xPct: number; yPct: number; value: number; t: string };
+
 export type HorizonGeometry = {
   /** Polyline path for the intraday line. */
   line: string;
@@ -14,6 +16,8 @@ export type HorizonGeometry = {
   height: number;
   /** True when the latest value is at/above the previous close. */
   rising: boolean;
+  /** Per-sample coords (as 0–100 percentages) for scrub/crosshair positioning. */
+  points: HorizonPoint[];
 };
 
 type BuildOptions = { width?: number; height?: number; padY?: number };
@@ -60,6 +64,12 @@ export function buildHorizonGeometry(
     ` L${width} ${height} Z`;
 
   const lastValue = points[points.length - 1].value;
+  const pointCoords: HorizonPoint[] = points.map((point, index) => ({
+    xPct: points.length > 1 ? (index / (points.length - 1)) * 100 : 100,
+    yPct: (yFor(point.value) / height) * 100,
+    value: point.value,
+    t: point.t,
+  }));
   return {
     line: line.trim(),
     area,
@@ -69,5 +79,6 @@ export function buildHorizonGeometry(
     width,
     height,
     rising: hasBaseline ? lastValue >= (previousClose as number) : true,
+    points: pointCoords,
   };
 }
