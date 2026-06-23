@@ -395,6 +395,8 @@ html:not(.dark) .lh-rail-item:hover, html:not(.dark) .lh-rail-item:focus-visible
 }
 .ml-list li:first-child .ml-row { border-top: 0; }
 .ml-row:hover { background: var(--hairline); }
+.ml-row--static { cursor: default; }
+.ml-row--static:hover { background: none; }
 .ml-rank { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 .ml-sym { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
 .ml-nm { font-family: var(--font-body); font-size: 0.78rem; color: var(--dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

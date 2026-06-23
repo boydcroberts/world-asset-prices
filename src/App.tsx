@@ -19,7 +19,7 @@ import { MacroRail } from "./components/MacroRail";
 import { UsLargeCaps } from "./components/UsLargeCaps";
 import { MarketList, type MarketRow } from "./components/MarketList";
 import { deriveBreadth, deriveMovers, deriveSectors, findIndex } from "./lib/us-market";
-import { formatCompactCurrency, formatCurrency } from "./lib/formatters";
+import { formatCompactCurrency, formatCurrency, formatLevel } from "./lib/formatters";
 import {
   DEFAULT_REFRESH_SEC,
   SECTION_IDS,
@@ -38,6 +38,7 @@ import type {
   DashboardPrivateCompany,
   DashboardStock,
   HistoricalRange,
+  UsIndex,
 } from "./types/dashboard";
 
 // Code-split the detail drawer: it only mounts after a card is clicked, so it
@@ -57,6 +58,23 @@ const EMPTY_ETFS: DashboardEtf[] = [];
 const EMPTY_CURRENCIES: DashboardCurrency[] = [];
 const EMPTY_ASSETS: DashboardAsset[] = [];
 const EMPTY_PRIVATE_COMPANIES: DashboardPrivateCompany[] = [];
+const EMPTY_INDICES: UsIndex[] = [];
+
+// Country/region code shown in the Global Indices board (in place of a logo).
+const INDEX_COUNTRY: Record<string, string> = {
+  ftse100: "UK",
+  dax: "DE",
+  cac40: "FR",
+  estoxx50: "EU",
+  nikkei: "JP",
+  hangseng: "HK",
+  kospi: "KR",
+  sensex: "IN",
+  asx200: "AU",
+  tsx: "CA",
+  bovespa: "BR",
+  ipc: "MX",
+};
 
 function App() {
   const { theme, toggleTheme } = useTheme();
@@ -154,6 +172,7 @@ function App() {
   const topPrivateCompanies = dashboard?.topPrivateCompanies ?? EMPTY_PRIVATE_COMPANIES;
   const topAssets = dashboard?.topAssets ?? EMPTY_ASSETS;
   const topCommodities = dashboard?.topCommodities ?? EMPTY_ASSETS;
+  const topGlobalIndices = dashboard?.topGlobalIndices ?? EMPTY_INDICES;
   const segmentMeta = dashboard?.segmentMeta;
   const generatedAt = dashboard?.generatedAt;
   const equityFundamentalsAsOf = dashboard?.source.equityFundamentalsAsOf;
@@ -313,8 +332,9 @@ function App() {
     const fx: MarketRow[] = topCurrencies.map((c) => ({ id: c.id, name: c.name, symbol: c.symbol, logoUrl: c.logoUrl, fallbackLogoUrls: c.fallbackLogoUrls, value: formatCurrency(c.rateVsUsd), change: c.changePercent, hasChange: true }));
     const commodities: MarketRow[] = topCommodities.map((a) => ({ id: a.id, name: a.name, symbol: a.symbol, logoUrl: a.logoUrl, fallbackLogoUrls: a.fallbackLogoUrls, value: formatCompactCurrency(a.marketCapUsd), change: null, hasChange: false }));
     const priv: MarketRow[] = topPrivateCompanies.map((p) => ({ id: p.id, name: p.name, symbol: p.symbol, logoUrl: p.logoUrl, fallbackLogoUrls: p.fallbackLogoUrls, value: formatCompactCurrency(p.marketCapUsd), change: null, hasChange: false }));
-    return { crypto, etfs, fx, commodities, priv };
-  }, [topCryptos, topEtfs, topCurrencies, topCommodities, topPrivateCompanies]);
+    const globalIndices: MarketRow[] = topGlobalIndices.map((i) => ({ id: i.key, name: i.name, symbol: INDEX_COUNTRY[i.key] ?? i.symbol.replace("^", ""), logoUrl: null, fallbackLogoUrls: [], value: formatLevel(i.level), change: i.changePercent, hasChange: true }));
+    return { crypto, etfs, fx, commodities, priv, globalIndices };
+  }, [topCryptos, topEtfs, topCurrencies, topCommodities, topPrivateCompanies, topGlobalIndices]);
 
   const portfolioCandidates = useMemo(() => {
     const entries: PortfolioEntry[] = [
@@ -369,11 +389,12 @@ function App() {
               <UsLargeCaps stocks={topStocks} onSelect={openAssetDetail} />
 
               <div className="markets" aria-label="Markets leaderboards">
-                <MarketList title="Crypto" rows={marketLists.crypto} onSelect={openAssetDetail} />
-                <MarketList title="ETFs" rows={marketLists.etfs} onSelect={openAssetDetail} />
-                <MarketList title="Currencies" rows={marketLists.fx} onSelect={openAssetDetail} />
-                <MarketList title="Commodities" rows={marketLists.commodities} onSelect={openAssetDetail} />
                 <MarketList title="Private Companies" rows={marketLists.priv} onSelect={openAssetDetail} />
+                <MarketList title="ETFs" rows={marketLists.etfs} onSelect={openAssetDetail} />
+                <MarketList title="Commodities" rows={marketLists.commodities} onSelect={openAssetDetail} />
+                <MarketList title="Currencies" rows={marketLists.fx} onSelect={openAssetDetail} />
+                <MarketList title="Crypto" rows={marketLists.crypto} onSelect={openAssetDetail} />
+                <MarketList title="Global Indices" rows={marketLists.globalIndices} />
               </div>
 
               <details className="beyond">

@@ -19,7 +19,8 @@ export type MarketRow = {
 type MarketListProps = {
   title: string;
   rows: MarketRow[];
-  onSelect: (id: string) => void;
+  /** When omitted, rows render non-interactive (e.g. indices have no detail view). */
+  onSelect?: (id: string) => void;
   limit?: number;
 };
 
@@ -36,9 +37,9 @@ export const MarketList = memo(function MarketList({ title, rows, onSelect, limi
     <section className="ml" aria-label={title}>
       <h3 className="ml-title">{title}</h3>
       <ol className="ml-list">
-        {visible.map((row, index) => (
-          <li key={row.id}>
-            <button type="button" className="ml-row" onClick={() => onSelect(row.id)} aria-label={`Show ${row.name} details`}>
+        {visible.map((row, index) => {
+          const inner = (
+            <>
               <span className="ml-rank">{index + 1}</span>
               <LogoMark name={row.name} symbol={row.symbol} logoUrl={row.logoUrl} fallbackLogoUrls={row.fallbackLogoUrls} />
               <span className="ml-sym">{row.symbol}</span>
@@ -49,9 +50,20 @@ export const MarketList = memo(function MarketList({ title, rows, onSelect, limi
               ) : (
                 <span className="ml-chg ml-chg--none" aria-hidden="true" />
               )}
-            </button>
-          </li>
-        ))}
+            </>
+          );
+          return (
+            <li key={row.id}>
+              {onSelect ? (
+                <button type="button" className="ml-row" onClick={() => onSelect(row.id)} aria-label={`Show ${row.name} details`}>
+                  {inner}
+                </button>
+              ) : (
+                <div className="ml-row ml-row--static">{inner}</div>
+              )}
+            </li>
+          );
+        })}
       </ol>
     </section>
   );
