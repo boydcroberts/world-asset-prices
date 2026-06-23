@@ -325,6 +325,60 @@ html:not(.dark) .lh-rail-item:hover, html:not(.dark) .lh-rail-item:focus-visible
 .mv-change { font-family: var(--font-mono); font-size: 0.84rem; font-weight: 600; font-variant-numeric: tabular-nums; }
 .mv-empty { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); margin: 0.4rem 0; }
 
+/* ── US Large Caps board ── */
+.ulc {
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  background: var(--raise);
+  padding: 0.9rem 1rem 0.6rem;
+  display: grid;
+  gap: 0.5rem;
+}
+.ulc-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.ulc-title { font-family: var(--font-body); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); margin: 0; display: flex; align-items: baseline; gap: 0.5rem; }
+.ulc-count { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); font-weight: 500; letter-spacing: 0; }
+.ulc-sort { display: flex; gap: 0.3rem; }
+.ulc-sort-btn { font-family: var(--font-body); font-size: 0.68rem; color: var(--muted); background: none; border: 1px solid var(--hairline); border-radius: 999px; padding: 0.22rem 0.6rem; cursor: pointer; transition: color 0.15s ease, border-color 0.15s ease; }
+.ulc-sort-btn:hover { color: var(--dim); }
+.ulc-sort-btn.active { color: var(--bone); border-color: var(--brass); }
+
+.ulc-table { display: grid; }
+.ulc-row {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr) 5.5rem 5rem 5.5rem 9rem;
+  align-items: center; gap: 0.75rem;
+  width: 100%; text-align: left; background: none; border: 0; border-top: 1px solid var(--hairline);
+  padding: 0.5rem 0.4rem; cursor: pointer; color: var(--bone);
+  transition: background 0.13s ease;
+}
+.ulc-row:hover { background: var(--hairline); }
+.ulc-row--header { cursor: default; border-top: 0; padding-bottom: 0.4rem; }
+.ulc-row--header:hover { background: none; }
+.ulc-row--header span { font-family: var(--font-body); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.ulc-c-rank { font-family: var(--font-mono); font-size: 0.74rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ulc-c-name { display: flex; align-items: center; gap: 0.55rem; min-width: 0; }
+.ulc-sym { font-family: var(--font-mono); font-size: 0.82rem; font-weight: 600; white-space: nowrap; }
+.ulc-nm { font-family: var(--font-body); font-size: 0.8rem; color: var(--dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ulc-c-price, .ulc-c-chg, .ulc-c-cap { font-family: var(--font-mono); font-size: 0.82rem; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.ulc-c-chg.is-up { color: var(--rise); }
+.ulc-c-chg.is-down { color: var(--fall); }
+.ulc-c-chg.is-flat { color: var(--muted); }
+.ulc-c-cap { color: var(--dim); }
+.ulc-c-range { display: flex; }
+.ulc-range { display: block; width: 100%; }
+.ulc-range--empty { height: 4px; }
+.ulc-range-track { position: relative; display: block; height: 4px; border-radius: 999px; background: var(--hairline); }
+.ulc-range-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 999px; background: linear-gradient(90deg, rgba(200, 162, 75, 0.25), rgba(200, 162, 75, 0.55)); }
+.ulc-range-dot { position: absolute; top: 50%; width: 8px; height: 8px; border-radius: 50%; transform: translate(-50%, -50%); background: var(--brass); box-shadow: 0 0 6px rgba(200, 162, 75, 0.6); }
+.ulc-range-dot.is-up { background: var(--rise); box-shadow: 0 0 6px var(--rise); }
+.ulc-range-dot.is-down { background: var(--fall); box-shadow: 0 0 6px var(--fall); }
+
+@media (max-width: 760px) {
+  .ulc-row { grid-template-columns: 1.6rem minmax(0, 1fr) 4.5rem 4rem; }
+  .ulc-c-cap, .ulc-c-range, .ulc-row--header .ulc-c-cap, .ulc-row--header .ulc-c-range { display: none; }
+  .ulc-nm { display: none; }
+}
+
 /* ── Beyond US (demoted legacy section) ── */
 .beyond { border: 1px solid var(--hairline); border-radius: 14px; background: var(--raise); padding: 0.4rem 1rem; }
 .beyond > summary {

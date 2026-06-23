@@ -16,6 +16,7 @@ import { RiskStrip } from "./components/RiskStrip";
 import { Movers } from "./components/Movers";
 import { SectorRibbon } from "./components/SectorRibbon";
 import { MacroRail } from "./components/MacroRail";
+import { UsLargeCaps } from "./components/UsLargeCaps";
 import { deriveBreadth, deriveMovers, deriveSectors, findIndex } from "./lib/us-market";
 import {
   DEFAULT_REFRESH_SEC,
@@ -351,6 +352,7 @@ function App() {
               <MacroRail indices={indices} />
               <SectorRibbon sectors={sectors} />
               <Movers gainers={movers.gainers} losers={movers.losers} onSelect={openAssetDetail} />
+              <UsLargeCaps stocks={topStocks} onSelect={openAssetDetail} />
 
               <details className="beyond">
                 <summary>Beyond the US market — crypto, FX, global &amp; private</summary>

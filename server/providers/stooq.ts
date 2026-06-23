@@ -5,6 +5,11 @@ import { sourceValueUsd } from "../value-sources.js";
 import type { DashboardEtf, DashboardStock, HistoricalPoint, HistoricalRange } from "../types.js";
 
 import fallbackPayloadJson from "../fallback/dashboard-fallback.json" with { type: "json" };
+import universeStatsJson from "../data/universe-stats.json" with { type: "json" };
+
+type UniverseStat = { prevClose?: number | null; low52w?: number | null; high52w?: number | null };
+const UNIVERSE_STATS: Record<string, UniverseStat> =
+  (universeStatsJson as { stats?: Record<string, UniverseStat> }).stats ?? {};
 
 // Browser-like UA: Stooq and Yahoo intermittently 403 default Node fetch UAs.
 const STOOQ_USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36";
@@ -623,6 +628,19 @@ export async function fetchTopStocksFromStooq(
 
       if (marketCapUsd === null) return null;
 
+      // Daily stats (prev close + 52w) come from the bot-refreshed snapshot. Prefer
+      // live-price-vs-previous-close for the day change so the sign matches the
+      // indices; fall back to the intraday open→close move when prev close is absent.
+      const stats = UNIVERSE_STATS[company.symbol];
+      const prevClose = toFiniteNumber(stats?.prevClose);
+      const liveClose = q?.close ?? null;
+      const changePercent =
+        liveClose === null
+          ? null
+          : prevClose !== null && prevClose > 0
+            ? ((liveClose - prevClose) / prevClose) * 100
+            : calcChangePercent(q?.open ?? null, liveClose);
+
       return {
         id: company.id,
         rank: 0,
@@ -630,9 +648,11 @@ export async function fetchTopStocksFromStooq(
         symbol: company.symbol,
         category: "Stock" as const,
         marketCapUsd,
-        priceUsd: q?.close ?? null,
-        changePercent: q ? calcChangePercent(q.open, q.close) : null,
+        priceUsd: liveClose,
+        changePercent,
         sector: company.sector,
+        low52w: toFiniteNumber(stats?.low52w) ?? undefined,
+        high52w: toFiniteNumber(stats?.high52w) ?? undefined,
         logoUrl: company.quoteSymbol ? `https://financialmodelingprep.com/image-stock/${company.logoSymbol ?? company.quoteSymbol}.png` : null,
         fallbackLogoUrls: company.quoteSymbol ? [`https://images.financialmodelingprep.com/symbol/${company.logoSymbol ?? company.quoteSymbol}.png`] : [],
       };

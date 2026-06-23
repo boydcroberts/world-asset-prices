@@ -25,18 +25,21 @@ jobs:
         with:
           node-version: "24"
 
+      - name: Refresh per-stock daily stats (prev close + 52-week range)
+        run: node ./scripts/refresh-universe-stats.mjs
+
       - name: Refresh fallback snapshot
         run: node ./scripts/refresh-fallback.mjs
 
       - name: Commit and push if changed
         run: |
           set -e
-          if git diff --quiet server/fallback/dashboard-fallback.json; then
+          if git diff --quiet server/fallback/dashboard-fallback.json server/data/universe-stats.json; then
             echo "No changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add server/fallback/dashboard-fallback.json
-          git commit -m "chore(fallback): daily refresh from live dashboard"
+          git add server/fallback/dashboard-fallback.json server/data/universe-stats.json
+          git commit -m "chore(data): daily refresh of fallback + stock stats"
           git push

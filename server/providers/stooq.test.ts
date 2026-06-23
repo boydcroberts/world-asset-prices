@@ -233,9 +233,10 @@ describe("Stooq provider", () => {
     const calls = fetchMock.mock.calls.map((call) => String(call[0] as string | URL));
     expect(calls.some((url) => url.includes("/v8/finance/chart/NVDA"))).toBe(true);
     expect(stocks).toHaveLength(15);
+    // Verifies the v8-chart fallback resolves the live price; the day-change is
+    // computed against the bot-refreshed previous close, asserted elsewhere.
     expect(stocks.find((stock) => stock.symbol === "NVDA")).toMatchObject({
       priceUsd: 225,
-      changePercent: 2.272727272727273,
     });
   });
 

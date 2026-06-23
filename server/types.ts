@@ -65,6 +65,9 @@ export type DashboardStock = DashboardEntryBase & {
   changePercent: number | null;
   /** GICS-style sector for breadth/sector aggregation. Additive/optional. */
   sector?: string;
+  /** 52-week range (sourced snapshot) for the range bar. Additive/optional. */
+  low52w?: number;
+  high52w?: number;
 };
 
 export type DashboardEtf = DashboardEntryBase & {
