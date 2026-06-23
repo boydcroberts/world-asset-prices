@@ -379,6 +379,32 @@ html:not(.dark) .lh-rail-item:hover, html:not(.dark) .lh-rail-item:focus-visible
   .ulc-nm { display: none; }
 }
 
+/* ── Markets board (top-N leaderboards) ── */
+.markets { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.1rem; }
+.ml { border: 1px solid var(--hairline); border-radius: 14px; background: var(--raise); padding: 0.85rem 0.9rem 0.55rem; }
+.ml-title { font-family: var(--font-body); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin: 0 0 0.4rem; }
+.ml-list { list-style: none; margin: 0; padding: 0; display: grid; }
+.ml-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.3rem auto auto minmax(0, 1fr) auto auto;
+  align-items: center; gap: 0.55rem;
+  background: none; border: 0; border-top: 1px solid var(--hairline);
+  padding: 0.42rem 0.3rem; cursor: pointer; text-align: left; color: var(--bone);
+  transition: background 0.13s ease;
+}
+.ml-list li:first-child .ml-row { border-top: 0; }
+.ml-row:hover { background: var(--hairline); }
+.ml-rank { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ml-sym { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+.ml-nm { font-family: var(--font-body); font-size: 0.78rem; color: var(--dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ml-val { font-family: var(--font-mono); font-size: 0.8rem; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.ml-chg { font-family: var(--font-mono); font-size: 0.76rem; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; min-width: 4.2rem; }
+.ml-chg.is-up { color: var(--rise); }
+.ml-chg.is-down { color: var(--fall); }
+.ml-chg.is-flat { color: var(--muted); }
+.ml-chg--none { min-width: 0; }
+
 /* ── Beyond US (demoted legacy section) ── */
 .beyond { border: 1px solid var(--hairline); border-radius: 14px; background: var(--raise); padding: 0.4rem 1rem; }
 .beyond > summary {

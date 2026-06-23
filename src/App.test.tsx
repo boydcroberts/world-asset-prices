@@ -223,23 +223,24 @@ describe("App", () => {
   it("renders safely with missing numbers and keeps ticker pills visible", async () => {
     renderApp();
 
-    expect(await screen.findByText("Bitcoin")).toBeInTheDocument();
+    expect((await screen.findAllByText("Bitcoin")).length).toBeGreaterThan(0);
     expect(screen.getAllByText("AAPL").length).toBeGreaterThan(0);
     expect(screen.getAllByText("XAU").length).toBeGreaterThan(0);
     expect(screen.getAllByText("—").length).toBeGreaterThan(0);
   });
 
-  it("filters Beyond-US cards by search text", async () => {
+  it("filters the searchable grid by search text", async () => {
     renderApp();
 
-    expect(await screen.findByText("Bitcoin")).toBeInTheDocument();
+    expect((await screen.findAllByText("Bitcoin")).length).toBeGreaterThan(0);
 
     fireEvent.change(screen.getByLabelText("Search markets"), {
       target: { value: "apple" },
     });
 
+    // The searchable grid filters down; the always-on Markets leaderboards are
+    // unaffected, so we assert the grid's empty-state rather than global absence.
     expect(screen.getAllByText("Apple").length).toBeGreaterThan(0);
-    expect(screen.queryByText("Bitcoin")).not.toBeInTheDocument();
     expect(screen.getByText('No cryptocurrencies match "apple".')).toBeInTheDocument();
   });
 
