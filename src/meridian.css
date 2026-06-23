@@ -79,12 +79,25 @@ html:not(.dark) body::after { opacity: 0.02; }
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(120% 80% at 80% -10%, rgba(200, 162, 75, 0.05), transparent 60%);
-  transition: opacity 1.2s ease;
+  background: radial-gradient(120% 80% at 50% -10%, rgba(200, 162, 75, 0.06), transparent 60%);
+  transition: background 1.4s ease, opacity 1.2s ease, filter 1.2s ease;
 }
-.meridian-root[data-session="power"] .meridian-wash { background: radial-gradient(120% 90% at 80% -10%, rgba(200, 162, 75, 0.1), transparent 62%); }
+/* Daily MOOD — the page-wide ambient temperature. Intensity scales the alpha. */
+.meridian-root[data-mood="bullish"] .meridian-wash {
+  background:
+    radial-gradient(135% 95% at 50% -10%, rgba(63, 224, 163, calc(0.05 + var(--mood-intensity, 0) * 0.09)), transparent 60%),
+    radial-gradient(80% 60% at 85% 0%, rgba(60, 150, 205, calc(0.03 + var(--mood-intensity, 0) * 0.05)), transparent 55%);
+}
+.meridian-root[data-mood="bearish"] .meridian-wash {
+  background:
+    radial-gradient(135% 98% at 50% -10%, rgba(255, 92, 114, calc(0.06 + var(--mood-intensity, 0) * 0.11)), transparent 60%),
+    radial-gradient(90% 70% at 85% 0%, rgba(222, 138, 58, calc(0.03 + var(--mood-intensity, 0) * 0.06)), transparent 55%),
+    radial-gradient(150% 130% at 50% 125%, rgba(0, 0, 0, calc(0.16 + var(--mood-intensity, 0) * 0.22)), transparent 60%);
+}
+/* Power hour intensifies the mood; after-hours/closed calm it down. */
+.meridian-root[data-session="power"] .meridian-wash { filter: saturate(1.15) brightness(1.08); }
 .meridian-root[data-session="closed"] .meridian-wash,
-.meridian-root[data-session="after"] .meridian-wash { opacity: 0.4; }
+.meridian-root[data-session="after"] .meridian-wash { opacity: 0.5; }
 
 .meridian {
   width: min(1180px, 94vw);
@@ -159,7 +172,8 @@ html:not(.dark) body::after { opacity: 0.02; }
   background: linear-gradient(100deg, var(--raise) 8%, rgba(20, 25, 37, 0.4) 42%, transparent 75%);
 }
 html:not(.dark) .lh-canvas::after { background: linear-gradient(100deg, var(--raise) 8%, rgba(255, 255, 255, 0.45) 42%, transparent 75%); }
-.lh-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+/* Right gutter so the line terminates with the now-dot (never overshoots it). */
+.lh-svg { position: absolute; inset: 0 10px 0 0; }
 .lh-line {
   stroke: currentColor; stroke-width: 2.25; stroke-linejoin: round; stroke-linecap: round;
   filter: drop-shadow(0 0 10px currentColor); opacity: 0.95;
@@ -171,12 +185,27 @@ html:not(.dark) .lh-canvas::after { background: linear-gradient(100deg, var(--ra
 @keyframes lh-draw { from { stroke-dashoffset: 3200; } to { stroke-dashoffset: 0; } }
 .lh-baseline { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 2 5; opacity: 0.6; }
 .lh-now {
-  position: absolute; right: 7px; transform: translateY(-50%);
+  position: absolute; right: 10px; transform: translate(50%, -50%);
   width: 10px; height: 10px; border-radius: 50%;
   background: var(--brass); box-shadow: 0 0 0 4px rgba(200, 162, 75, 0.18), 0 0 16px var(--brass);
   animation: lh-now-pulse 2.6s ease-in-out infinite;
 }
 @keyframes lh-now-pulse { 0%, 100% { box-shadow: 0 0 0 4px rgba(200, 162, 75, 0.18), 0 0 16px var(--brass); } 50% { box-shadow: 0 0 0 8px rgba(200, 162, 75, 0.05), 0 0 22px var(--brass); } }
+/* Calm the "now" pulse when the market isn't actively trading. */
+.meridian-root[data-session="closed"] .lh-now,
+.meridian-root[data-session="after"] .lh-now { animation: none; }
+
+/* Editorial one-line read of the day under the hero change. */
+.lh-narrative {
+  margin: 0.7rem 0 0;
+  max-width: 40ch;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(0.92rem, 1.45vw, 1.12rem);
+  line-height: 1.4;
+  color: var(--dim);
+}
 
 /* Scrub crosshair: a vertical brass guide with a dot riding the line. */
 .lh-crosshair { position: absolute; top: 0; bottom: 0; width: 1px; background: linear-gradient(var(--brass), transparent); opacity: 0.55; pointer-events: none; }

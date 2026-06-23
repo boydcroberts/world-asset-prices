@@ -4,11 +4,14 @@ import clsx from "clsx";
 import { buildHorizonGeometry } from "../lib/horizon";
 import { findIndex, getMarketSession } from "../lib/us-market";
 import { useNow } from "../hooks/useNow";
+import { useCountUp } from "../hooks/useCountUp";
 import { formatLevel, formatPercent, formatPoints, trendClass } from "../lib/formatters";
 import type { UsIndex } from "../types/dashboard";
 
 type LivingHorizonProps = {
   indices: UsIndex[] | undefined;
+  /** One-line editorial read of the day (sector-driven). */
+  narrative?: string;
   isStale?: boolean;
 };
 
@@ -24,7 +27,7 @@ const etTimeFormatter = new Intl.DateTimeFormat("en-US", {
   minute: "2-digit",
 });
 
-export const LivingHorizon = memo(function LivingHorizon({ indices, isStale }: LivingHorizonProps) {
+export const LivingHorizon = memo(function LivingHorizon({ indices, narrative, isStale }: LivingHorizonProps) {
   const gradientId = useId();
   const session = getMarketSession(useNow());
   const [selectedKey, setSelectedKey] = useState<string>("sp500");
@@ -37,6 +40,10 @@ export const LivingHorizon = memo(function LivingHorizon({ indices, isStale }: L
     () => (selected ? buildHorizonGeometry(selected.intraday, selected.previousClose, { width: 1000, height: 300 }) : null),
     [selected],
   );
+
+  // Count the giant level in from the previous close on first load (cinematic),
+  // then track live updates. Honors prefers-reduced-motion.
+  const liveLevel = useCountUp(selected?.level ?? null, { from: selected?.previousClose ?? null });
 
   // Flash the level toward its direction color on each value change — but not when
   // the user switches index (reset the baseline on key change) or while scrubbing.
@@ -76,7 +83,7 @@ export const LivingHorizon = memo(function LivingHorizon({ indices, isStale }: L
   }
 
   const scrubPoint = scrub !== null && geometry ? geometry.points[scrub] : undefined;
-  const displayLevel = scrubPoint ? scrubPoint.value : selected.level;
+  const displayLevel = scrubPoint ? scrubPoint.value : liveLevel ?? selected.level;
   const scrubChangeAbs =
     scrubPoint && selected.previousClose != null ? scrubPoint.value - selected.previousClose : null;
   const scrubChangePct =
@@ -147,6 +154,7 @@ export const LivingHorizon = memo(function LivingHorizon({ indices, isStale }: L
             <span ref={levelRef}>{formatLevel(displayLevel)}</span>
           </div>
           <p className={clsx("lh-change", trendClass(displayChangePct))}>{changeText}</p>
+          {narrative && !scrubPoint ? <p className="lh-narrative">{narrative}</p> : null}
         </div>
         <div className="lh-rail">
           {railIndices.map((index) => (

@@ -18,7 +18,7 @@ import { SectorRibbon } from "./components/SectorRibbon";
 import { MacroRail } from "./components/MacroRail";
 import { UsLargeCaps } from "./components/UsLargeCaps";
 import { MarketList, type MarketRow } from "./components/MarketList";
-import { deriveBreadth, deriveMovers, deriveSectors, findIndex } from "./lib/us-market";
+import { deriveBreadth, deriveMood, deriveMovers, deriveNarrative, deriveSectors, findIndex, getMarketSession } from "./lib/us-market";
 import { formatCompactCurrency, formatCurrency, formatLevel } from "./lib/formatters";
 import {
   DEFAULT_REFRESH_SEC,
@@ -134,7 +134,11 @@ function App() {
     queryFn: fetchDashboard,
     refetchInterval: (query) => {
       const refreshInSec = query.state.data?.refreshInSec ?? DEFAULT_REFRESH_SEC;
-      return refreshInSec * 1_000;
+      // Market-hours-aware cadence: live during the session, slower pre/post,
+      // much slower when closed — it's a glance product, not a tick terminal.
+      const phase = getMarketSession(Date.now()).phase;
+      const multiplier = phase === "open" || phase === "power" ? 1 : phase === "pre" || phase === "after" ? 4 : 12;
+      return refreshInSec * multiplier * 1_000;
     },
     // The dynamic refetchInterval drives live updates; staleTime just stops
     // window-focus from triggering a redundant refetch within the same window.
@@ -317,11 +321,16 @@ function App() {
   // US-market command-center data. Indices come from the server; movers and
   // breadth are derived client-side from the live equity universe.
   const indices = dashboard?.indices;
+  const sp = findIndex(indices, "sp500");
   const vix = findIndex(indices, "vix");
   const ust10y = findIndex(indices, "ust10y");
   const breadth = useMemo(() => deriveBreadth(topStocks), [topStocks]);
   const movers = useMemo(() => deriveMovers(topStocks), [topStocks]);
   const sectors = useMemo(() => deriveSectors(topStocks), [topStocks]);
+  // Daily mood (page-wide ambient) + a one-line editorial read, from breadth +
+  // sector dispersion + the S&P move.
+  const mood = useMemo(() => deriveMood(breadth, sp?.changePercent), [breadth, sp?.changePercent]);
+  const narrative = useMemo(() => deriveNarrative(sectors, sp?.changePercent), [sectors, sp?.changePercent]);
   const isStale = dashboard?.stale ?? false;
 
   // The classic "top-N" leaderboards (crypto / ETFs / FX / commodities / private),
@@ -367,7 +376,7 @@ function App() {
   return (
     <>
       <CardServicesContext.Provider value={cardServices}>
-        <MeridianShell>
+        <MeridianShell mood={mood}>
           <Masthead theme={theme} onToggleTheme={toggleTheme} onOpenSearch={() => setSearchModalOpen(true)} />
 
           {dashboardQuery.isError && !dashboard ? (
@@ -381,7 +390,7 @@ function App() {
             </section>
           ) : (
             <>
-              <LivingHorizon indices={indices} isStale={isStale} />
+              <LivingHorizon indices={indices} narrative={narrative} isStale={isStale} />
               <RiskStrip breadth={breadth} vix={vix} ust10y={ust10y} />
               <MacroRail indices={indices} />
               <SectorRibbon sectors={sectors} />

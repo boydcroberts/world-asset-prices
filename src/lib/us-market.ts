@@ -166,3 +166,55 @@ export function deriveMovers(stocks: DashboardStock[], limit = 6): { gainers: Da
     .slice(0, limit);
   return { gainers, losers };
 }
+
+export type MarketMood = { tone: "bullish" | "bearish" | "neutral"; intensity: number };
+
+/**
+ * The page's daily mood — a single signal from index direction (primary) + market
+ * breadth. Drives the ambient page-wide color temperature: bullish = cool/calm,
+ * bearish = warm/tense. `intensity` (0..1) scales the wash strength.
+ */
+export function deriveMood(breadth: MarketBreadth, indexChangePct: number | null | undefined): MarketMood {
+  const direction = typeof indexChangePct === "number" && Number.isFinite(indexChangePct) ? indexChangePct : 0;
+  const dirScore = Math.tanh(direction / 1.2); // ±1.2% ≈ a strong day
+  const decided = breadth.advancing + breadth.declining;
+  const breadthScore = decided > 0 ? (breadth.advancing - breadth.declining) / decided : 0;
+  const score = 0.6 * dirScore + 0.4 * breadthScore; // -1..1
+  const tone = score > 0.06 ? "bullish" : score < -0.06 ? "bearish" : "neutral";
+  const intensity = Math.min(1, Math.round(Math.abs(score) * 1.4 * 1000) / 1000);
+  return { tone, intensity };
+}
+
+/**
+ * A one-line editorial read of the day from sector breadth + the index move.
+ * Sector-driven so it says something specific ("led by Technology") rather than
+ * just restating the number.
+ */
+export function deriveNarrative(sectors: SectorPerf[], indexChangePct: number | null | undefined): string {
+  if (!sectors.length) return "";
+  const up = sectors.filter((s) => (s.changePercent ?? 0) > 0).length;
+  const down = sectors.filter((s) => (s.changePercent ?? 0) < 0).length;
+  const sorted = [...sectors].sort((a, b) => (b.changePercent ?? 0) - (a.changePercent ?? 0));
+  const label = (s: SectorPerf) => SECTOR_SHORT[s.sector] ?? s.sector;
+  const top = label(sorted[0]);
+  const bottom = label(sorted[sorted.length - 1]);
+  const n = sectors.length;
+  const sp = typeof indexChangePct === "number" ? indexChangePct : null;
+
+  const breadthUp = up > down;
+  // Index and breadth can diverge (a cap-weighted index falls on mega-caps while
+  // most sectors hold green, or vice versa) — say what's actually happening.
+  if (sp != null && sp <= -0.6) {
+    return breadthUp
+      ? `Heavyweights drag — index red while ${up} of ${n} sectors held green; ${top} leads.`
+      : `Risk-off — ${down} of ${n} sectors lower; ${top} holding up best.`;
+  }
+  if (sp != null && sp >= 0.6) {
+    return breadthUp
+      ? `Broad advance — ${up} of ${n} sectors higher, led by ${top}.`
+      : `Narrow rally — index up on mega-caps while ${down} of ${n} sectors slipped; ${top} leads.`;
+  }
+  if (up > down) return `Quietly higher — ${up} of ${n} sectors up; ${top} leads, ${bottom} lags.`;
+  if (down > up) return `Under pressure — ${down} of ${n} sectors down; ${top} the bright spot.`;
+  return `Mixed tape — ${up} up, ${down} down; ${top} leads, ${bottom} lags.`;
+}

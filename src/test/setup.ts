@@ -8,7 +8,9 @@ if (typeof window !== "undefined") {
   Object.defineProperty(window, "matchMedia", {
     writable: true,
     value: (query: string) => ({
-      matches: false,
+      // Report reduced-motion in tests so motion (count-up, etc.) resolves
+      // deterministically to its final state.
+      matches: /prefers-reduced-motion/.test(query),
       media: query,
       onchange: null,
       addListener: () => undefined,
