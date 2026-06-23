@@ -63,6 +63,8 @@ export type DashboardStock = DashboardEntryBase & {
   marketCapUsd: number | null;
   priceUsd: number | null;
   changePercent: number | null;
+  /** GICS-style sector for breadth/sector aggregation. Additive/optional. */
+  sector?: string;
 };
 
 export type DashboardEtf = DashboardEntryBase & {

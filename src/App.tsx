@@ -14,7 +14,8 @@ import { Masthead } from "./components/Masthead";
 import { LivingHorizon } from "./components/LivingHorizon";
 import { RiskStrip } from "./components/RiskStrip";
 import { Movers } from "./components/Movers";
-import { deriveBreadth, deriveMovers, findIndex } from "./lib/us-market";
+import { SectorRibbon } from "./components/SectorRibbon";
+import { deriveBreadth, deriveMovers, deriveSectors, findIndex } from "./lib/us-market";
 import {
   DEFAULT_REFRESH_SEC,
   SECTION_IDS,
@@ -296,6 +297,7 @@ function App() {
   const ust10y = findIndex(indices, "ust10y");
   const breadth = useMemo(() => deriveBreadth(topStocks), [topStocks]);
   const movers = useMemo(() => deriveMovers(topStocks), [topStocks]);
+  const sectors = useMemo(() => deriveSectors(topStocks), [topStocks]);
   const isStale = dashboard?.stale ?? false;
 
   const portfolioCandidates = useMemo(() => {
@@ -345,6 +347,7 @@ function App() {
             <>
               <LivingHorizon indices={indices} isStale={isStale} />
               <RiskStrip breadth={breadth} vix={vix} ust10y={ust10y} />
+              <SectorRibbon sectors={sectors} />
               <Movers gainers={movers.gainers} losers={movers.losers} onSelect={openAssetDetail} />
 
               <details className="beyond">

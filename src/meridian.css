@@ -236,6 +236,39 @@ html:not(.dark) .lh-canvas::after { background: linear-gradient(100deg, var(--ra
 .rs-stat-value { font-family: var(--font-mono); font-size: 1.1rem; font-weight: 600; color: var(--bone); font-variant-numeric: tabular-nums; }
 .rs-stat-change { font-family: var(--font-mono); font-size: 0.78rem; font-variant-numeric: tabular-nums; }
 
+/* ── Sector heat ribbon ── */
+.heat {
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  background: var(--raise);
+  padding: 0.7rem 0.9rem 0.8rem;
+  display: grid;
+  gap: 0.5rem;
+}
+.heat-eyebrow { font-family: var(--font-body); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.heat-ribbon { display: flex; gap: 4px; height: 56px; }
+.heat-seg {
+  flex-basis: 0;
+  min-width: 44px;
+  border-radius: 8px;
+  border: 1px solid var(--hairline);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.15rem;
+  padding: 0 0.55rem;
+  overflow: hidden;
+  cursor: default;
+  transition: filter var(--dur-fast, 160ms) ease, transform var(--dur-fast, 160ms) ease;
+}
+.heat-seg:hover, .heat-seg:focus-visible { filter: brightness(1.18); transform: translateY(-1px); outline: none; }
+.heat-name { font-family: var(--font-body); font-size: 0.68rem; font-weight: 600; color: var(--bone); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.heat-chg { font-family: var(--font-mono); font-size: 0.74rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+@media (max-width: 700px) {
+  .heat-ribbon { flex-wrap: wrap; height: auto; }
+  .heat-seg { flex: 1 1 30%; min-height: 44px; }
+}
+
 /* ── Movers ── */
 .mv { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
 .mv-col { border: 1px solid var(--hairline); border-radius: 14px; background: var(--raise); padding: 0.9rem 1rem 1rem; }

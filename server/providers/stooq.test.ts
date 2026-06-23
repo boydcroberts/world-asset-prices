@@ -57,25 +57,18 @@ describe("Stooq provider", () => {
     const stocks = await fetchTopStocksFromStooq({ timeoutMs: 1000 });
 
     const calls = fetchMock.mock.calls.map((call) => String(call[0] as string | URL));
-    expect(calls[0]).toContain("s=nvda.us+googl.us+aapl.us");
+    expect(calls[0]).toContain("s=nvda.us+aapl.us+msft.us");
     expect(calls.some((url) => url.includes("query1.finance.yahoo.com/v7/finance/quote"))).toBe(true);
+    // NVDA/AAPL resolve from Stooq and GOOGL from Yahoo (live price × shares); the
+    // other original names fall back to their manifest market cap (priceUsd null);
+    // the newer universe names lack both a quote and a manifest mark and drop out.
+    const bySymbol = Object.fromEntries(stocks.map((stock) => [stock.symbol, stock]));
     expect(stocks).toHaveLength(15);
-    expect(stocks[0]).toMatchObject({
-      symbol: "GOOGL",
-      priceUsd: 390,
-      marketCapUsd: 4_851_600_000_000,
-    });
-    expect(stocks[1]).toMatchObject({
-      symbol: "NVDA",
-      priceUsd: 198.543,
-      marketCapUsd: 4_824_594_900_000,
-    });
-    expect(stocks[2]).toMatchObject({
-      symbol: "AAPL",
-      priceUsd: 276.873,
-      marketCapUsd: 4_067_264_370_000,
-    });
-    expect(stocks.find((stock) => stock.symbol === "2222.SR")).toMatchObject({
+    expect(stocks[0].symbol).toBe("NVDA"); // highest market cap leads
+    expect(bySymbol.NVDA).toMatchObject({ priceUsd: 198.543, marketCapUsd: Math.round(198.543 * 24_598_300_000) });
+    expect(bySymbol.GOOGL).toMatchObject({ priceUsd: 390, marketCapUsd: Math.round(390 * 12_116_119_041) });
+    expect(bySymbol.AAPL).toMatchObject({ priceUsd: 276.873, marketCapUsd: Math.round(276.873 * 14_687_400_000) });
+    expect(bySymbol["2222.SR"]).toMatchObject({
       name: "Saudi Aramco",
       priceUsd: null,
       marketCapUsd: 1_703_000_000_000,
@@ -193,11 +186,13 @@ describe("Stooq provider", () => {
     const calls = fetchMock.mock.calls.map((call) => String(call[0] as string | URL));
     expect(calls.some((url) => url.includes("stooq.com"))).toBe(true);
     expect(calls.some((url) => url.includes("query1.finance.yahoo.com/v7/finance/quote"))).toBe(true);
+    // NVDA resolves live from Yahoo; the other original names fall back to their
+    // manifest market cap; the newer universe names (no quote, no manifest) drop out.
     expect(stocks).toHaveLength(15);
     expect(stocks[0]).toMatchObject({
       symbol: "NVDA",
       priceUsd: 225,
-      marketCapUsd: 5_467_500_000_000,
+      marketCapUsd: Math.round(225 * 24_598_300_000),
     });
   });
 

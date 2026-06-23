@@ -23,26 +23,57 @@ type PublicCompanyDefinition = {
   name: string;
   shares?: number;
   logoSymbol?: string;
+  /** GICS-style sector, threaded onto the stock for breadth/sector aggregation. */
+  sector?: string;
 };
 
-// Global public-company universe. Stooq/Yahoo provide live quotes where possible;
-// unsupported exchanges fall back to verified market-cap snapshots with no unit price.
+// US large-cap universe (~S&P 100 subset). Live quotes from Stooq/Yahoo; market cap
+// derived as price × shares. Shares outstanding + sectors sourced from Robinhood
+// fundamentals on 2026-06-23 (build-time; the deployed site stays keyless). Two
+// curated names (Tadawul/KRX) carry no keyless quote and use a manifest mark.
 const PUBLIC_COMPANIES: PublicCompanyDefinition[] = [
-  { id: "stock-nvda", symbol: "NVDA", quoteSymbol: "NVDA", name: "NVIDIA", shares: 24_300_000_000 },
-  { id: "stock-googl", symbol: "GOOGL", quoteSymbol: "GOOGL", name: "Alphabet", shares: 12_440_000_000 },
-  { id: "stock-aapl", symbol: "AAPL", quoteSymbol: "AAPL", name: "Apple", shares: 14_690_000_000 },
-  { id: "stock-msft", symbol: "MSFT", quoteSymbol: "MSFT", name: "Microsoft", shares: 7_430_000_000 },
-  { id: "stock-amzn", symbol: "AMZN", quoteSymbol: "AMZN", name: "Amazon", shares: 11_120_000_000 },
-  { id: "stock-tsm", symbol: "TSM", quoteSymbol: "TSM", name: "TSMC", shares: 5_490_000_000 },
-  { id: "stock-avgo", symbol: "AVGO", quoteSymbol: "AVGO", name: "Broadcom", shares: 4_730_000_000 },
-  { id: "stock-saudi-aramco", symbol: "2222.SR", name: "Saudi Aramco" },
-  { id: "stock-tsla", symbol: "TSLA", quoteSymbol: "TSLA", name: "Tesla", shares: 3_755_700_000 },
-  { id: "stock-meta", symbol: "META", quoteSymbol: "META", name: "Meta Platforms", shares: 2_530_000_000 },
-  { id: "stock-samsung-electronics", symbol: "005930.KS", name: "Samsung Electronics" },
-  { id: "stock-wmt", symbol: "WMT", quoteSymbol: "WMT", name: "Walmart", shares: 7_985_000_000 },
-  { id: "stock-brk-b", symbol: "BRK-B", quoteSymbol: "BRK-B", name: "Berkshire Hathaway", shares: 2_160_000_000 },
-  { id: "stock-lly", symbol: "LLY", quoteSymbol: "LLY", name: "Eli Lilly", shares: 891_740_000 },
-  { id: "stock-jpm", symbol: "JPM", quoteSymbol: "JPM", name: "JPMorgan Chase", shares: 2_716_000_000 },
+  { id: "stock-nvda", symbol: "NVDA", quoteSymbol: "NVDA", name: "NVIDIA", shares: 24_598_300_000, sector: "Technology" },
+  { id: "stock-aapl", symbol: "AAPL", quoteSymbol: "AAPL", name: "Apple", shares: 14_687_400_000, sector: "Technology" },
+  { id: "stock-msft", symbol: "MSFT", quoteSymbol: "MSFT", name: "Microsoft", shares: 7_428_434_451, sector: "Technology" },
+  { id: "stock-googl", symbol: "GOOGL", quoteSymbol: "GOOGL", name: "Alphabet", shares: 12_116_119_041, sector: "Communication Services" },
+  { id: "stock-amzn", symbol: "AMZN", quoteSymbol: "AMZN", name: "Amazon", shares: 10_757_109_348, sector: "Consumer Discretionary" },
+  { id: "stock-meta", symbol: "META", quoteSymbol: "META", name: "Meta Platforms", shares: 2_538_427_716, sector: "Communication Services" },
+  { id: "stock-avgo", symbol: "AVGO", quoteSymbol: "AVGO", name: "Broadcom", shares: 4_757_580_149, sector: "Technology" },
+  { id: "stock-tsla", symbol: "TSLA", quoteSymbol: "TSLA", name: "Tesla", shares: 3_755_723_541, sector: "Consumer Discretionary" },
+  { id: "stock-tsm", symbol: "TSM", quoteSymbol: "TSM", name: "TSMC", shares: 5_186_480_000, sector: "Technology" },
+  { id: "stock-lly", symbol: "LLY", quoteSymbol: "LLY", name: "Eli Lilly", shares: 941_741_355, sector: "Health Care" },
+  { id: "stock-jpm", symbol: "JPM", quoteSymbol: "JPM", name: "JPMorgan Chase", shares: 2_679_511_485, sector: "Financials" },
+  { id: "stock-wmt", symbol: "WMT", quoteSymbol: "WMT", name: "Walmart", shares: 7_958_080_000, sector: "Consumer Staples" },
+  { id: "stock-brk-b", symbol: "BRK-B", quoteSymbol: "BRK-B", name: "Berkshire Hathaway", shares: 2_160_000_000, sector: "Financials" },
+  { id: "stock-v", symbol: "V", quoteSymbol: "V", name: "Visa", shares: 1_884_125_025, sector: "Financials" },
+  { id: "stock-ma", symbol: "MA", quoteSymbol: "MA", name: "Mastercard", shares: 883_583_895, sector: "Financials" },
+  { id: "stock-unh", symbol: "UNH", quoteSymbol: "UNH", name: "UnitedHealth", shares: 908_144_379, sector: "Health Care" },
+  { id: "stock-xom", symbol: "XOM", quoteSymbol: "XOM", name: "Exxon Mobil", shares: 4_144_950_000, sector: "Energy" },
+  { id: "stock-jnj", symbol: "JNJ", quoteSymbol: "JNJ", name: "Johnson & Johnson", shares: 2_407_220_000, sector: "Health Care" },
+  { id: "stock-hd", symbol: "HD", quoteSymbol: "HD", name: "Home Depot", shares: 997_117_000, sector: "Consumer Discretionary" },
+  { id: "stock-pg", symbol: "PG", quoteSymbol: "PG", name: "Procter & Gamble", shares: 2_328_600_000, sector: "Consumer Staples" },
+  { id: "stock-cost", symbol: "COST", quoteSymbol: "COST", name: "Costco", shares: 443_479_000, sector: "Consumer Staples" },
+  { id: "stock-nflx", symbol: "NFLX", quoteSymbol: "NFLX", name: "Netflix", shares: 4_210_800_000, sector: "Communication Services" },
+  { id: "stock-orcl", symbol: "ORCL", quoteSymbol: "ORCL", name: "Oracle", shares: 2_876_050_000, sector: "Technology" },
+  { id: "stock-amd", symbol: "AMD", quoteSymbol: "AMD", name: "AMD", shares: 1_630_600_561, sector: "Technology" },
+  { id: "stock-crm", symbol: "CRM", quoteSymbol: "CRM", name: "Salesforce", shares: 819_000_000, sector: "Technology" },
+  { id: "stock-bac", symbol: "BAC", quoteSymbol: "BAC", name: "Bank of America", shares: 7_096_590_428, sector: "Financials" },
+  { id: "stock-ko", symbol: "KO", quoteSymbol: "KO", name: "Coca-Cola", shares: 4_302_482_389, sector: "Consumer Staples" },
+  { id: "stock-pep", symbol: "PEP", quoteSymbol: "PEP", name: "PepsiCo", shares: 1_366_770_000, sector: "Consumer Staples" },
+  { id: "stock-cvx", symbol: "CVX", quoteSymbol: "CVX", name: "Chevron", shares: 1_991_600_000, sector: "Energy" },
+  { id: "stock-abbv", symbol: "ABBV", quoteSymbol: "ABBV", name: "AbbVie", shares: 1_766_792_748, sector: "Health Care" },
+  { id: "stock-wfc", symbol: "WFC", quoteSymbol: "WFC", name: "Wells Fargo", shares: 3_060_190_000, sector: "Financials" },
+  { id: "stock-mrk", symbol: "MRK", quoteSymbol: "MRK", name: "Merck", shares: 2_469_824_522, sector: "Health Care" },
+  { id: "stock-adbe", symbol: "ADBE", quoteSymbol: "ADBE", name: "Adobe", shares: 397_500_000, sector: "Technology" },
+  { id: "stock-csco", symbol: "CSCO", quoteSymbol: "CSCO", name: "Cisco", shares: 3_941_434_845, sector: "Technology" },
+  { id: "stock-acn", symbol: "ACN", quoteSymbol: "ACN", name: "Accenture", shares: 613_939_286, sector: "Technology" },
+  { id: "stock-mcd", symbol: "MCD", quoteSymbol: "MCD", name: "McDonald's", shares: 710_506_000, sector: "Consumer Discretionary" },
+  { id: "stock-tmus", symbol: "TMUS", quoteSymbol: "TMUS", name: "T-Mobile US", shares: 1_082_204_701, sector: "Communication Services" },
+  { id: "stock-intc", symbol: "INTC", quoteSymbol: "INTC", name: "Intel", shares: 5_026_000_206, sector: "Technology" },
+  { id: "stock-qcom", symbol: "QCOM", quoteSymbol: "QCOM", name: "Qualcomm", shares: 1_054_000_000, sector: "Technology" },
+  { id: "stock-txn", symbol: "TXN", quoteSymbol: "TXN", name: "Texas Instruments", shares: 910_093_000, sector: "Technology" },
+  { id: "stock-saudi-aramco", symbol: "2222.SR", name: "Saudi Aramco", sector: "Energy" },
+  { id: "stock-samsung-electronics", symbol: "005930.KS", name: "Samsung Electronics", sector: "Technology" },
 ];
 
 const TOP_STOCK_SYMBOLS = PUBLIC_COMPANIES
@@ -601,6 +632,7 @@ export async function fetchTopStocksFromStooq(
         marketCapUsd,
         priceUsd: q?.close ?? null,
         changePercent: q ? calcChangePercent(q.open, q.close) : null,
+        sector: company.sector,
         logoUrl: company.quoteSymbol ? `https://financialmodelingprep.com/image-stock/${company.logoSymbol ?? company.quoteSymbol}.png` : null,
         fallbackLogoUrls: company.quoteSymbol ? [`https://images.financialmodelingprep.com/symbol/${company.logoSymbol ?? company.quoteSymbol}.png`] : [],
       };

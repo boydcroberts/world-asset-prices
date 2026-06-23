@@ -87,6 +87,70 @@ export function deriveBreadth(stocks: DashboardStock[]): MarketBreadth {
   return { advancing, declining, unchanged, total: advancing + declining + unchanged };
 }
 
+export type SectorPerf = {
+  sector: string;
+  /** Cap-weighted average daily change across the sector's constituents. */
+  changePercent: number | null;
+  marketCapUsd: number;
+  count: number;
+  advancing: number;
+  declining: number;
+};
+
+/** Short labels so the sector ribbon stays legible at narrow widths. */
+export const SECTOR_SHORT: Record<string, string> = {
+  Technology: "Tech",
+  "Communication Services": "Comms",
+  "Consumer Discretionary": "Cons Disc",
+  "Consumer Staples": "Staples",
+  Financials: "Financials",
+  "Health Care": "Health",
+  Energy: "Energy",
+  Industrials: "Industrials",
+  Utilities: "Utilities",
+  "Real Estate": "Real Estate",
+  Materials: "Materials",
+};
+
+/**
+ * Aggregate the stock universe into sector performance — cap-weighted daily change,
+ * total market cap (drives ribbon width), and advance/decline counts. Sorted by
+ * market cap so the heaviest sectors lead.
+ */
+export function deriveSectors(stocks: DashboardStock[]): SectorPerf[] {
+  type Agg = { weightedChange: number; weight: number; marketCap: number; count: number; advancing: number; declining: number };
+  const map = new Map<string, Agg>();
+  for (const stock of stocks) {
+    if (!stock.sector) continue;
+    let agg = map.get(stock.sector);
+    if (!agg) {
+      agg = { weightedChange: 0, weight: 0, marketCap: 0, count: 0, advancing: 0, declining: 0 };
+      map.set(stock.sector, agg);
+    }
+    const cap = stock.marketCapUsd ?? 0;
+    agg.count += 1;
+    agg.marketCap += cap;
+    const change = stock.changePercent;
+    if (change !== null && Number.isFinite(change)) {
+      const weight = cap > 0 ? cap : 1;
+      agg.weightedChange += change * weight;
+      agg.weight += weight;
+      if (change > 0.05) agg.advancing += 1;
+      else if (change < -0.05) agg.declining += 1;
+    }
+  }
+  return [...map.entries()]
+    .map(([sector, a]) => ({
+      sector,
+      changePercent: a.weight > 0 ? a.weightedChange / a.weight : null,
+      marketCapUsd: a.marketCap,
+      count: a.count,
+      advancing: a.advancing,
+      declining: a.declining,
+    }))
+    .sort((x, y) => y.marketCapUsd - x.marketCapUsd);
+}
+
 /** Top movers by absolute daily change, split into gainers and losers. */
 export function deriveMovers(stocks: DashboardStock[], limit = 6): { gainers: DashboardStock[]; losers: DashboardStock[] } {
   const withChange = stocks.filter(

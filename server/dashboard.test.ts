@@ -17,6 +17,12 @@ vi.mock("./providers/coinpaprika", () => ({
   fetchNightFromCoinpaprika: vi.fn(),
 }));
 
+// Indices are a best-effort additive segment; mock them so the cache/fallback
+// tests stay hermetic and never touch the network.
+vi.mock("./providers/indices", () => ({
+  fetchUsIndices: vi.fn(async () => []),
+}));
+
 import { buildDashboardPayload, dashboardFallbackPayload } from "./dashboard";
 import { fetchNightFromCoinpaprika, fetchTopCryptosFromCoinpaprika } from "./providers/coinpaprika";
 import { fetchTopCurrenciesFromFrankfurter } from "./providers/frankfurter";

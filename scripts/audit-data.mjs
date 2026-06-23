@@ -139,7 +139,12 @@ for (const symbol of REQUIRED_PUBLIC_COMPANIES) {
 }
 
 for (const stock of fallback.topStocks ?? []) {
-  if (!sourceById.has(stock.id)) errors.push(`${stock.id} missing value source metadata`);
+  // Live-priced stocks derive market cap from price × shares and need no manifest
+  // entry. Only curated stocks (no keyless quote, priceUsd=null) must carry a
+  // sourced market-cap mark.
+  if (stock.priceUsd === null && !sourceById.has(stock.id)) {
+    errors.push(`${stock.id} (curated) missing value source metadata`);
+  }
   if ((stock.symbol === "2222.SR" || stock.symbol === "005930.KS") && stock.priceUsd !== null) {
     errors.push(`${stock.symbol} should use curated market cap with priceUsd=null`);
   }
