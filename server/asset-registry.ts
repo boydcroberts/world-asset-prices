@@ -62,6 +62,7 @@ export function dashboardEntries(payload: DashboardPayload): DetailEntry[] {
     ...payload.topCurrencies,
     ...payload.topPrivateCompanies,
     ...payload.topAssets,
+    ...(payload.topCommodities ?? []),
     ...nightEntry(payload),
   ];
 

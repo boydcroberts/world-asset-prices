@@ -1922,5 +1922,107 @@
       "notes": "Series C (more than $1B in committed capital) at a $39B post-money valuation announced September 16, 2025, led by Parkway Venture Capital with NVIDIA, Brookfield, Intel Capital, Salesforce, Qualcomm and T-Mobile."
     }
   },
-  "requestId": "b31b458d-a64f-4de1-afb2-edb8a39f04e8"
+  "requestId": "b31b458d-a64f-4de1-afb2-edb8a39f04e8",
+  "topCommodities": [
+    {
+      "id": "comm-crude-oil",
+      "rank": 1,
+      "name": "Crude Oil",
+      "symbol": "OIL",
+      "category": "Commodity",
+      "marketCapUsd": 1400000000000,
+      "logoUrl": null,
+      "fallbackLogoUrls": []
+    },
+    {
+      "id": "comm-oil-products",
+      "rank": 2,
+      "name": "Oil Products",
+      "symbol": "OILP",
+      "category": "Commodity",
+      "marketCapUsd": 950000000000,
+      "logoUrl": null,
+      "fallbackLogoUrls": []
+    },
+    {
+      "id": "comm-gold",
+      "rank": 3,
+      "name": "Gold",
+      "symbol": "XAU",
+      "category": "Commodity",
+      "marketCapUsd": 550000000000,
+      "logoUrl": null,
+      "fallbackLogoUrls": []
+    },
+    {
+      "id": "comm-steel",
+      "rank": 4,
+      "name": "Steel",
+      "symbol": "STEEL",
+      "category": "Commodity",
+      "marketCapUsd": 470000000000,
+      "logoUrl": null,
+      "fallbackLogoUrls": []
+    },
+    {
+      "id": "comm-lng",
+      "rank": 5,
+      "name": "LNG",
+      "symbol": "LNG",
+      "category": "Commodity",
+      "marketCapUsd": 260000000000,
+      "logoUrl": null,
+      "fallbackLogoUrls": []
+    },
+    {
+      "id": "comm-aluminium",
+      "rank": 6,
+      "name": "Aluminium",
+      "symbol": "ALUM",
+      "category": "Commodity",
+      "marketCapUsd": 240000000000,
+      "logoUrl": null,
+      "fallbackLogoUrls": []
+    },
+    {
+      "id": "comm-coal",
+      "rank": 7,
+      "name": "Coal",
+      "symbol": "COAL",
+      "category": "Commodity",
+      "marketCapUsd": 210000000000,
+      "logoUrl": null,
+      "fallbackLogoUrls": []
+    },
+    {
+      "id": "comm-copper",
+      "rank": 8,
+      "name": "Copper",
+      "symbol": "COPPER",
+      "category": "Commodity",
+      "marketCapUsd": 210000000000,
+      "logoUrl": null,
+      "fallbackLogoUrls": []
+    },
+    {
+      "id": "comm-natural-gas",
+      "rank": 9,
+      "name": "Natural Gas",
+      "symbol": "GAS",
+      "category": "Commodity",
+      "marketCapUsd": 210000000000,
+      "logoUrl": null,
+      "fallbackLogoUrls": []
+    },
+    {
+      "id": "comm-iron-ore",
+      "rank": 10,
+      "name": "Iron Ore",
+      "symbol": "IRON",
+      "category": "Commodity",
+      "marketCapUsd": 185000000000,
+      "logoUrl": null,
+      "fallbackLogoUrls": []
+    }
+  ]
 }

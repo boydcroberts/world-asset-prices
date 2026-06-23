@@ -153,6 +153,7 @@ function App() {
   const topCurrencies = dashboard?.topCurrencies ?? EMPTY_CURRENCIES;
   const topPrivateCompanies = dashboard?.topPrivateCompanies ?? EMPTY_PRIVATE_COMPANIES;
   const topAssets = dashboard?.topAssets ?? EMPTY_ASSETS;
+  const topCommodities = dashboard?.topCommodities ?? EMPTY_ASSETS;
   const segmentMeta = dashboard?.segmentMeta;
   const generatedAt = dashboard?.generatedAt;
   const equityFundamentalsAsOf = dashboard?.source.equityFundamentalsAsOf;
@@ -310,10 +311,10 @@ function App() {
     const crypto: MarketRow[] = topCryptos.map((c) => ({ id: c.id, name: c.name, symbol: c.symbol, logoUrl: c.logoUrl, fallbackLogoUrls: c.fallbackLogoUrls, value: formatCurrency(c.priceUsd), change: c.change24h, hasChange: true }));
     const etfs: MarketRow[] = topEtfs.map((e) => ({ id: e.id, name: e.name, symbol: e.symbol, logoUrl: e.logoUrl, fallbackLogoUrls: e.fallbackLogoUrls, value: formatCompactCurrency(e.aumUsd), change: e.changePercent, hasChange: true }));
     const fx: MarketRow[] = topCurrencies.map((c) => ({ id: c.id, name: c.name, symbol: c.symbol, logoUrl: c.logoUrl, fallbackLogoUrls: c.fallbackLogoUrls, value: formatCurrency(c.rateVsUsd), change: c.changePercent, hasChange: true }));
-    const commodities: MarketRow[] = topAssets.filter((a) => a.category === "Commodity").map((a) => ({ id: a.id, name: a.name, symbol: a.symbol, logoUrl: a.logoUrl, fallbackLogoUrls: a.fallbackLogoUrls, value: formatCompactCurrency(a.marketCapUsd), change: null, hasChange: false }));
+    const commodities: MarketRow[] = topCommodities.map((a) => ({ id: a.id, name: a.name, symbol: a.symbol, logoUrl: a.logoUrl, fallbackLogoUrls: a.fallbackLogoUrls, value: formatCompactCurrency(a.marketCapUsd), change: null, hasChange: false }));
     const priv: MarketRow[] = topPrivateCompanies.map((p) => ({ id: p.id, name: p.name, symbol: p.symbol, logoUrl: p.logoUrl, fallbackLogoUrls: p.fallbackLogoUrls, value: formatCompactCurrency(p.marketCapUsd), change: null, hasChange: false }));
     return { crypto, etfs, fx, commodities, priv };
-  }, [topCryptos, topEtfs, topCurrencies, topAssets, topPrivateCompanies]);
+  }, [topCryptos, topEtfs, topCurrencies, topCommodities, topPrivateCompanies]);
 
   const portfolioCandidates = useMemo(() => {
     const entries: PortfolioEntry[] = [

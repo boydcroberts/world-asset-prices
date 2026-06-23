@@ -3,6 +3,7 @@ import { envInt } from "./env.js";
 import { createRequestId, createStructuredLogger } from "./log.js";
 import fallbackPayloadJson from "./fallback/dashboard-fallback.json" with { type: "json" };
 import privateCompaniesJson from "./data/private-companies.json" with { type: "json" };
+import commoditiesJson from "./data/commodities.json" with { type: "json" };
 import { recordProviderFailure, recordProviderFallback, recordProviderSuccess, type ProviderMetricKey } from "./metrics.js";
 import { fetchNightFromCoinpaprika, fetchTopCryptosFromCoinpaprika } from "./providers/coinpaprika.js";
 import { fetchTopCurrenciesFromFrankfurter } from "./providers/frankfurter.js";
@@ -263,6 +264,26 @@ function buildPrivateCompanies(): DashboardPrivateCompany[] {
       symbol: company.symbol,
       category: "Private Company" as const,
       marketCapUsd: toFiniteNumber(company.marketCapUsd),
+      logoUrl: null,
+      fallbackLogoUrls: [],
+    }));
+}
+
+type CommodityEntry = { id: string; name: string; symbol: string; marketCapUsd: number };
+const COMMODITIES = commoditiesJson as { lastUpdated: string; commodities: CommodityEntry[] };
+
+// Top commodities by annual global market value (curated; no clean live feed).
+// Distinct from the global-assets gold figure (above-ground stock value).
+function buildTopCommodities(): DashboardAsset[] {
+  return [...COMMODITIES.commodities]
+    .sort((left, right) => (toFiniteNumber(right.marketCapUsd) ?? 0) - (toFiniteNumber(left.marketCapUsd) ?? 0))
+    .map((commodity, index) => ({
+      id: commodity.id,
+      rank: index + 1,
+      name: commodity.name,
+      symbol: commodity.symbol,
+      category: "Commodity" as const,
+      marketCapUsd: toFiniteNumber(commodity.marketCapUsd),
       logoUrl: null,
       fallbackLogoUrls: [],
     }));
@@ -613,6 +634,7 @@ export async function buildDashboardPayload(options: DashboardBuildOptions = {})
   const topCryptos = normalizeCryptos(cryptosResult.data);
   const topCurrencies = normalizeCurrencies(currenciesResult.data);
   const topPrivateCompanies = buildPrivateCompanies();
+  const topCommodities = buildTopCommodities();
   const topAssets = buildTopAssets(topStocks, topCryptos, topPrivateCompanies);
   const night = normalizeNight(nightResult.data);
   const indices = await indicesPromise;
@@ -691,6 +713,7 @@ export async function buildDashboardPayload(options: DashboardBuildOptions = {})
     night,
     indices,
     topGlobalIndices,
+    topCommodities,
     valueSources: assetValueSourcesById(),
   };
 }

@@ -145,6 +145,8 @@ export type DashboardPayload = {
   indices?: UsIndex[];
   /** Major global indices (FTSE/DAX/Nikkei/…) for the Top-Tens board. Additive/optional. */
   topGlobalIndices?: UsIndex[];
+  /** Top commodities by annual global market value (curated). Additive/optional. */
+  topCommodities?: DashboardAsset[];
   valueSources?: Record<string, AssetValueSource>;
   requestId?: string;
 };

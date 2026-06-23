@@ -1,0 +1,21 @@
+{
+  "_comment": "Top 10 commodities by approximate ANNUAL global trade value (USD). Curated — there is no clean live feed for commodity market size. Source: Thunder Said Energy, 'global commodity trade by value'. NOTE: this is annual market value, deliberately distinct from the global-assets board's gold figure ($29.79T = total above-ground stock, the correct metric there for comparing against company market caps). Update marketCapUsd + bump lastUpdated when refreshed.",
+  "lastUpdated": "2026-06-23",
+  "source": {
+    "url": "https://thundersaidenergy.com/downloads/global-commodity-trade-by-product-by-region/",
+    "title": "Thunder Said Energy — global commodity trade by value",
+    "asOf": "2024-12-31"
+  },
+  "commodities": [
+    { "id": "comm-crude-oil", "name": "Crude Oil", "symbol": "OIL", "marketCapUsd": 1400000000000 },
+    { "id": "comm-oil-products", "name": "Oil Products", "symbol": "OILP", "marketCapUsd": 950000000000 },
+    { "id": "comm-gold", "name": "Gold", "symbol": "XAU", "marketCapUsd": 550000000000 },
+    { "id": "comm-steel", "name": "Steel", "symbol": "STEEL", "marketCapUsd": 470000000000 },
+    { "id": "comm-lng", "name": "LNG", "symbol": "LNG", "marketCapUsd": 260000000000 },
+    { "id": "comm-aluminium", "name": "Aluminium", "symbol": "ALUM", "marketCapUsd": 240000000000 },
+    { "id": "comm-coal", "name": "Coal", "symbol": "COAL", "marketCapUsd": 210000000000 },
+    { "id": "comm-copper", "name": "Copper", "symbol": "COPPER", "marketCapUsd": 210000000000 },
+    { "id": "comm-natural-gas", "name": "Natural Gas", "symbol": "GAS", "marketCapUsd": 210000000000 },
+    { "id": "comm-iron-ore", "name": "Iron Ore", "symbol": "IRON", "marketCapUsd": 185000000000 }
+  ]
+}
