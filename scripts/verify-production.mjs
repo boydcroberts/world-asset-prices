@@ -84,10 +84,11 @@ assert(valuesAreDescending(payload.topEtfs, "aumUsd"), "topEtfs values are not d
 assert(valuesAreDescending(payload.topAssets, "marketCapUsd"), "topAssets values are not descending");
 
 const nvidia = payload.topStocks.find((stock) => stock.symbol === "NVDA");
-const spacex = payload.topPrivateCompanies?.find((asset) => asset.symbol === "SPACEX");
 assert(nvidia?.marketCapUsd > 4_000_000_000_000, "NVIDIA market cap is unexpectedly low", nvidia);
-assert(spacex?.category === "Private Company", "SpaceX is missing from private companies", spacex);
-assert(spacex?.marketCapUsd === 1_770_000_000_000, "SpaceX primary valuation is not the verified transaction mark", spacex);
+// SpaceX IPO'd as the public stock SPCX — it must be a live large-cap, never a private company.
+const spcx = payload.topStocks.find((stock) => stock.symbol === "SPCX");
+assert(spcx?.priceUsd > 0, "SPCX (SpaceX) is missing from public large caps", spcx);
+assert(!payload.topPrivateCompanies?.some((asset) => asset.symbol === "SPACEX"), "SpaceX must not appear as a private company");
 
 for (const symbol of REQUIRED_PUBLIC_COMPANIES) {
   assert(payload.topStocks.some((stock) => stock.symbol === symbol), `required global public company missing: ${symbol}`);

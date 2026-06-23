@@ -196,19 +196,6 @@
       "notes": "Live quote path scales a May 2026 public share-count baseline."
     },
     {
-      "assetId": "private-spacex",
-      "category": "Private Company",
-      "valueUsd": 1770000000000,
-      "valueAsOf": "2026-06-03",
-      "sourceUrl": "https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html",
-      "sourceTitle": "CNBC: SpaceX IPO prices at $135/share (~$1.77T)",
-      "sourceType": "reported-transaction",
-      "confidence": "high",
-      "updateCadence": "event-driven",
-      "lastCheckedAt": "2026-06-09",
-      "notes": "S-1 priced at $135/share (~$1.77T) ahead of the June 12, 2026 Nasdaq listing; supersedes the Scottish Mortgage $1.25T holding mark. Reclassify to Stock once trading begins."
-    },
-    {
       "assetId": "private-openai",
       "category": "Private Company",
       "valueUsd": 852000000000,

@@ -4,6 +4,8 @@ export type DashboardSource = {
   fallbackUsed: boolean;
   equityFundamentalsAsOf?: string;
   valueSourceVersion?: string;
+  /** Date the curated private-company list was last reviewed (staleness indicator). */
+  privateCompaniesAsOf?: string;
 };
 
 export type DashboardSegmentKey = "topCryptos" | "topStocks" | "topEtfs" | "topCurrencies" | "topPrivateCompanies" | "night";

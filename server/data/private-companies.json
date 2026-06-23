@@ -1,0 +1,20 @@
+{
+  "_comment": "Maintained list of top private-company valuations — curated, no live feed (no reliable API exists for private valuations). Ranked by marketCapUsd at build time. Rich provenance (source URL/title/confidence/notes) lives in asset-value-sources.json and is shipped to the client via the payload's valueSources[id]. When a new round or secondary prints: update marketCapUsd + valueAsOf here AND the matching entry in asset-value-sources.json, then bump lastUpdated. SpaceX is intentionally absent — it IPO'd as the public stock SPCX.",
+  "lastUpdated": "2026-06-23",
+  "companies": [
+    { "id": "private-anthropic", "name": "Anthropic", "symbol": "ANTHROPIC", "marketCapUsd": 965000000000, "valueAsOf": "2026-05-28", "confidence": "high" },
+    { "id": "private-openai", "name": "OpenAI", "symbol": "OPENAI", "marketCapUsd": 852000000000, "valueAsOf": "2026-03-31", "confidence": "high" },
+    { "id": "private-bytedance", "name": "ByteDance", "symbol": "BYTEDANCE", "marketCapUsd": 550000000000, "valueAsOf": "2026-02-25", "confidence": "medium" },
+    { "id": "private-stripe", "name": "Stripe", "symbol": "STRIPE", "marketCapUsd": 159000000000, "valueAsOf": "2026-02-24", "confidence": "high" },
+    { "id": "private-databricks", "name": "Databricks", "symbol": "DATABRICKS", "marketCapUsd": 134000000000, "valueAsOf": "2026-02-09", "confidence": "high" },
+    { "id": "private-waymo", "name": "Waymo", "symbol": "WAYMO", "marketCapUsd": 126000000000, "valueAsOf": "2026-02-02", "confidence": "high" },
+    { "id": "private-revolut", "name": "Revolut", "symbol": "REVOLUT", "marketCapUsd": 75000000000, "valueAsOf": "2025-11-30", "confidence": "high" },
+    { "id": "private-anduril", "name": "Anduril", "symbol": "ANDURIL", "marketCapUsd": 61000000000, "valueAsOf": "2026-05-13", "confidence": "high" },
+    { "id": "private-canva", "name": "Canva", "symbol": "CANVA", "marketCapUsd": 42000000000, "valueAsOf": "2025-08-22", "confidence": "medium" },
+    { "id": "private-figure-ai", "name": "Figure AI", "symbol": "FIGURE", "marketCapUsd": 39000000000, "valueAsOf": "2025-09-16", "confidence": "high" },
+    { "id": "private-ssi", "name": "Safe Superintelligence", "symbol": "SSI", "marketCapUsd": 32000000000, "valueAsOf": "2026-03-24", "confidence": "high" },
+    { "id": "private-shein", "name": "Shein", "symbol": "SHEIN", "marketCapUsd": 30000000000, "valueAsOf": "2026-03-01", "confidence": "low" },
+    { "id": "private-anysphere", "name": "Cursor", "symbol": "CURSOR", "marketCapUsd": 29300000000, "valueAsOf": "2025-11-13", "confidence": "high" },
+    { "id": "private-epic-games", "name": "Epic Games", "symbol": "EPIC", "marketCapUsd": 22500000000, "valueAsOf": "2024-02-06", "confidence": "low" }
+  ]
+}

@@ -77,6 +77,9 @@ const PUBLIC_COMPANIES: PublicCompanyDefinition[] = [
   { id: "stock-intc", symbol: "INTC", quoteSymbol: "INTC", name: "Intel", shares: 5_026_000_206, sector: "Technology" },
   { id: "stock-qcom", symbol: "QCOM", quoteSymbol: "QCOM", name: "Qualcomm", shares: 1_054_000_000, sector: "Technology" },
   { id: "stock-txn", symbol: "TXN", quoteSymbol: "TXN", name: "Texas Instruments", shares: 910_093_000, sector: "Technology" },
+  // SpaceX IPO'd on Nasdaq as SPCX (June 12, 2026) — now a live public large-cap,
+  // not a private company. Shares + sector sourced from Robinhood fundamentals 2026-06-23.
+  { id: "stock-spcx", symbol: "SPCX", quoteSymbol: "SPCX", name: "SpaceX", shares: 13_183_793_257, sector: "Communication Services" },
   { id: "stock-saudi-aramco", symbol: "2222.SR", name: "Saudi Aramco", sector: "Energy" },
   { id: "stock-samsung-electronics", symbol: "005930.KS", name: "Samsung Electronics", sector: "Technology" },
 ];

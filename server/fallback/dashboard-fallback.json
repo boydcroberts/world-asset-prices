@@ -469,8 +469,25 @@
       ]
     },
     {
-      "id": "stock-avgo",
+      "id": "stock-spcx",
       "rank": 7,
+      "name": "SpaceX",
+      "symbol": "SPCX",
+      "category": "Stock",
+      "marketCapUsd": 2075524572450,
+      "priceUsd": 157.43,
+      "changePercent": 1.83,
+      "sector": "Communication Services",
+      "low52w": 147.11,
+      "high52w": 225.64,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/SPCX.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/SPCX.png"
+      ]
+    },
+    {
+      "id": "stock-avgo",
+      "rank": 8,
       "name": "Broadcom",
       "symbol": "AVGO",
       "category": "Stock",
@@ -484,7 +501,7 @@
     },
     {
       "id": "stock-saudi-aramco",
-      "rank": 8,
+      "rank": 9,
       "name": "Saudi Aramco",
       "symbol": "2222.SR",
       "category": "Stock",
@@ -496,7 +513,7 @@
     },
     {
       "id": "stock-meta",
-      "rank": 9,
+      "rank": 10,
       "name": "Meta Platforms",
       "symbol": "META",
       "category": "Stock",
@@ -510,7 +527,7 @@
     },
     {
       "id": "stock-tsla",
-      "rank": 10,
+      "rank": 11,
       "name": "Tesla",
       "symbol": "TSLA",
       "category": "Stock",
@@ -524,7 +541,7 @@
     },
     {
       "id": "stock-brk-b",
-      "rank": 11,
+      "rank": 12,
       "name": "Berkshire Hathaway",
       "symbol": "BRK-B",
       "category": "Stock",
@@ -538,7 +555,7 @@
     },
     {
       "id": "stock-samsung-electronics",
-      "rank": 12,
+      "rank": 13,
       "name": "Samsung Electronics",
       "symbol": "005930.KS",
       "category": "Stock",
@@ -550,7 +567,7 @@
     },
     {
       "id": "stock-lly",
-      "rank": 13,
+      "rank": 14,
       "name": "Eli Lilly",
       "symbol": "LLY",
       "category": "Stock",
@@ -564,7 +581,7 @@
     },
     {
       "id": "stock-wmt",
-      "rank": 14,
+      "rank": 15,
       "name": "Walmart",
       "symbol": "WMT",
       "category": "Stock",
@@ -578,7 +595,7 @@
     },
     {
       "id": "stock-jpm",
-      "rank": 15,
+      "rank": 16,
       "name": "JPMorgan Chase",
       "symbol": "JPM",
       "category": "Stock",
@@ -1002,18 +1019,8 @@
   ],
   "topPrivateCompanies": [
     {
-      "id": "private-spacex",
-      "rank": 1,
-      "name": "SpaceX",
-      "symbol": "SPACEX",
-      "category": "Private Company",
-      "marketCapUsd": 1770000000000,
-      "logoUrl": null,
-      "fallbackLogoUrls": []
-    },
-    {
       "id": "private-anthropic",
-      "rank": 2,
+      "rank": 1,
       "name": "Anthropic",
       "symbol": "ANTHROPIC",
       "category": "Private Company",
@@ -1023,7 +1030,7 @@
     },
     {
       "id": "private-openai",
-      "rank": 3,
+      "rank": 2,
       "name": "OpenAI",
       "symbol": "OPENAI",
       "category": "Private Company",
@@ -1033,7 +1040,7 @@
     },
     {
       "id": "private-bytedance",
-      "rank": 4,
+      "rank": 3,
       "name": "ByteDance",
       "symbol": "BYTEDANCE",
       "category": "Private Company",
@@ -1043,7 +1050,7 @@
     },
     {
       "id": "private-stripe",
-      "rank": 5,
+      "rank": 4,
       "name": "Stripe",
       "symbol": "STRIPE",
       "category": "Private Company",
@@ -1053,7 +1060,7 @@
     },
     {
       "id": "private-databricks",
-      "rank": 6,
+      "rank": 5,
       "name": "Databricks",
       "symbol": "DATABRICKS",
       "category": "Private Company",
@@ -1063,7 +1070,7 @@
     },
     {
       "id": "private-waymo",
-      "rank": 7,
+      "rank": 6,
       "name": "Waymo",
       "symbol": "WAYMO",
       "category": "Private Company",
@@ -1073,7 +1080,7 @@
     },
     {
       "id": "private-revolut",
-      "rank": 8,
+      "rank": 7,
       "name": "Revolut",
       "symbol": "REVOLUT",
       "category": "Private Company",
@@ -1083,7 +1090,7 @@
     },
     {
       "id": "private-anduril",
-      "rank": 9,
+      "rank": 8,
       "name": "Anduril",
       "symbol": "ANDURIL",
       "category": "Private Company",
@@ -1093,7 +1100,7 @@
     },
     {
       "id": "private-canva",
-      "rank": 10,
+      "rank": 9,
       "name": "Canva",
       "symbol": "CANVA",
       "category": "Private Company",
@@ -1103,7 +1110,7 @@
     },
     {
       "id": "private-figure-ai",
-      "rank": 11,
+      "rank": 10,
       "name": "Figure AI",
       "symbol": "FIGURE",
       "category": "Private Company",
@@ -1113,7 +1120,7 @@
     },
     {
       "id": "private-ssi",
-      "rank": 12,
+      "rank": 11,
       "name": "Safe Superintelligence",
       "symbol": "SSI",
       "category": "Private Company",
@@ -1123,7 +1130,7 @@
     },
     {
       "id": "private-shein",
-      "rank": 13,
+      "rank": 12,
       "name": "Shein",
       "symbol": "SHEIN",
       "category": "Private Company",
@@ -1133,7 +1140,7 @@
     },
     {
       "id": "private-anysphere",
-      "rank": 14,
+      "rank": 13,
       "name": "Cursor",
       "symbol": "CURSOR",
       "category": "Private Company",
@@ -1143,7 +1150,7 @@
     },
     {
       "id": "private-epic-games",
-      "rank": 15,
+      "rank": 14,
       "name": "Epic Games",
       "symbol": "EPIC",
       "category": "Private Company",
@@ -1246,8 +1253,20 @@
       ]
     },
     {
-      "id": "stock-avgo",
+      "id": "stock-spcx",
       "rank": 9,
+      "name": "SpaceX",
+      "symbol": "SPCX",
+      "category": "Stock",
+      "marketCapUsd": 2075524572450,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/SPCX.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/SPCX.png"
+      ]
+    },
+    {
+      "id": "stock-avgo",
+      "rank": 10,
       "name": "Broadcom",
       "symbol": "AVGO",
       "category": "Stock",
@@ -1256,16 +1275,6 @@
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/AVGO.png"
       ]
-    },
-    {
-      "id": "private-spacex",
-      "rank": 10,
-      "name": "SpaceX",
-      "symbol": "SPACEX",
-      "category": "Private Company",
-      "marketCapUsd": 1770000000000,
-      "logoUrl": null,
-      "fallbackLogoUrls": []
     },
     {
       "id": "stock-saudi-aramco",
@@ -1536,29 +1545,6 @@
       "confidence": "high",
       "updateCadence": "daily",
       "notes": "Live quote path scales a May 2026 public share-count baseline."
-    },
-    "private-spacex": {
-      "assetId": "private-spacex",
-      "category": "Private Company",
-      "valueUsd": 1250000000000,
-      "valueAsOf": "2026-06-03",
-      "sourceUrl": "https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html",
-      "sourceTitle": "CNBC: SpaceX IPO prices at $135/share (~$1.77T)",
-      "sourceType": "reported-transaction",
-      "confidence": "high",
-      "updateCadence": "event-driven",
-      "lastCheckedAt": "2026-05-19",
-      "notes": "Primary value uses Scottish Mortgage's holding mark. IPO target chatter is tracked only as alternate context.",
-      "alternateValuations": [
-        {
-          "valueUsd": 1750000000000,
-          "valueAsOf": "2026-04-28",
-          "sourceUrl": "https://moneyweek.com/investments/tech-stocks/invest-in-space-economy-spacex",
-          "sourceTitle": "MoneyWeek SpaceX potential IPO valuation context",
-          "sourceType": "target",
-          "notes": "Potential listing/target valuation, not a verified primary mark."
-        }
-      ]
     },
     "private-openai": {
       "assetId": "private-openai",

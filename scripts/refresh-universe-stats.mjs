@@ -18,6 +18,7 @@ const SYMBOLS = [
   "JPM", "WMT", "BRK-B", "V", "MA", "UNH", "XOM", "JNJ", "HD", "PG",
   "COST", "NFLX", "ORCL", "AMD", "CRM", "BAC", "KO", "PEP", "CVX", "ABBV",
   "WFC", "MRK", "ADBE", "CSCO", "ACN", "MCD", "TMUS", "INTC", "QCOM", "TXN",
+  "SPCX",
 ];
 
 const BASE_URL = process.env.YAHOO_FINANCE_BASE_URL ?? "https://query1.finance.yahoo.com";

@@ -34,12 +34,12 @@ function stockPayload(): DashboardPayload {
     topEtfs: [],
     topCurrencies: [],
     topPrivateCompanies: [{
-      id: "private-spacex",
+      id: "private-anthropic",
       rank: 1,
-      name: "SpaceX",
-      symbol: "SPACEX",
+      name: "Anthropic",
+      symbol: "ANTHROPIC",
       category: "Private Company",
-      marketCapUsd: 1_770_000_000_000,
+      marketCapUsd: 965_000_000_000,
       logoUrl: null,
       fallbackLogoUrls: [],
     }, {
@@ -125,7 +125,7 @@ describe("buildAssetDetailPayload", () => {
 
   it("labels private companies as curated with unsupported history", async () => {
     const detail = await buildAssetDetailPayload({
-      id: "private-spacex",
+      id: "private-anthropic",
       range: "30D",
       dashboard: stockPayload(),
       now: () => Date.parse("2026-05-13T00:00:00.000Z"),

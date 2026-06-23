@@ -5,7 +5,7 @@ import { fallbackAssetRefs, getFallbackAssetRef, isHistoricalRange } from "./ass
 describe("asset registry", () => {
   it("keeps stable dashboard ids and capability flags", () => {
     const nvda = getFallbackAssetRef("stock-nvda");
-    const spacex = getFallbackAssetRef("private-spacex");
+    const anthropic = getFallbackAssetRef("private-anthropic");
 
     expect(nvda).toMatchObject({
       id: "stock-nvda",
@@ -16,8 +16,8 @@ describe("asset registry", () => {
         stooq: "NVDA",
       },
     });
-    expect(spacex).toMatchObject({
-      id: "private-spacex",
+    expect(anthropic).toMatchObject({
+      id: "private-anthropic",
       tradable: false,
       supportsHistory: false,
     });

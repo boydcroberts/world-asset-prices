@@ -2,6 +2,7 @@ import { runtimeCache, type MemoryCache } from "./cache.js";
 import { envInt } from "./env.js";
 import { createRequestId, createStructuredLogger } from "./log.js";
 import fallbackPayloadJson from "./fallback/dashboard-fallback.json" with { type: "json" };
+import privateCompaniesJson from "./data/private-companies.json" with { type: "json" };
 import { recordProviderFailure, recordProviderFallback, recordProviderSuccess, type ProviderMetricKey } from "./metrics.js";
 import { fetchNightFromCoinpaprika, fetchTopCryptosFromCoinpaprika } from "./providers/coinpaprika.js";
 import { fetchTopCurrenciesFromFrankfurter } from "./providers/frankfurter.js";
@@ -245,16 +246,25 @@ function reconcileEtfValuations(
   };
 }
 
-function normalizePrivateCompanies(privateCompanies: unknown): DashboardPrivateCompany[] {
-  if (!Array.isArray(privateCompanies)) {
-    return [];
-  }
+type PrivateCompanyEntry = { id: string; name: string; symbol: string; marketCapUsd: number; valueAsOf?: string; confidence?: string };
+const PRIVATE_COMPANIES = privateCompaniesJson as { lastUpdated: string; companies: PrivateCompanyEntry[] };
 
-  return privateCompanies.map((company, index) => ({
-    ...company,
-    rank: index + 1,
-    marketCapUsd: toFiniteNumber(company.marketCapUsd),
-  }));
+// Private-company valuations are curated (no reliable live feed). Built from the
+// maintained server/data/private-companies.json, ranked by valuation. SpaceX is
+// intentionally absent — it IPO'd as the public stock SPCX.
+function buildPrivateCompanies(): DashboardPrivateCompany[] {
+  return [...PRIVATE_COMPANIES.companies]
+    .sort((left, right) => (toFiniteNumber(right.marketCapUsd) ?? 0) - (toFiniteNumber(left.marketCapUsd) ?? 0))
+    .map((company, index) => ({
+      id: company.id,
+      rank: index + 1,
+      name: company.name,
+      symbol: company.symbol,
+      category: "Private Company" as const,
+      marketCapUsd: toFiniteNumber(company.marketCapUsd),
+      logoUrl: null,
+      fallbackLogoUrls: [],
+    }));
 }
 
 function normalizeAssets(assets: unknown): DashboardAsset[] {
@@ -586,7 +596,7 @@ export async function buildDashboardPayload(options: DashboardBuildOptions = {})
 
   const topCryptos = normalizeCryptos(cryptosResult.data);
   const topCurrencies = normalizeCurrencies(currenciesResult.data);
-  const topPrivateCompanies = normalizePrivateCompanies(FALLBACK_PAYLOAD.topPrivateCompanies);
+  const topPrivateCompanies = buildPrivateCompanies();
   const topAssets = buildTopAssets(topStocks, topCryptos, topPrivateCompanies);
   const night = normalizeNight(nightResult.data);
   const indices = await indicesPromise;
@@ -651,6 +661,7 @@ export async function buildDashboardPayload(options: DashboardBuildOptions = {})
       fallbackUsed,
       equityFundamentalsAsOf: EQUITY_FUNDAMENTALS_AS_OF,
       valueSourceVersion: ASSET_VALUE_SOURCE_VERSION,
+      privateCompaniesAsOf: PRIVATE_COMPANIES.lastUpdated,
     },
     degradedSegments,
     segmentMeta,

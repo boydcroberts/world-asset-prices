@@ -20,7 +20,7 @@ const REQUIRED_PUBLIC_COMPANIES = [
   "LLY",
 ];
 const REQUIRED_PRIVATE_VALUES = new Map([
-  ["private-spacex", 1_770_000_000_000],
+  // SpaceX intentionally absent — it IPO'd as the public stock SPCX (see stooq.ts).
   ["private-openai", 852_000_000_000],
   ["private-bytedance", 550_000_000_000],
   ["private-anthropic", 965_000_000_000],
