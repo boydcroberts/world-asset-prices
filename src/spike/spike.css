@@ -1,0 +1,307 @@
+/* Phase-1 concept spike — isolated styles. Two type directions (serif vs
+   grotesque) × two moods (bullish/bearish), driven by data-* attributes. */
+
+.sx-page {
+  --floor: #0b0c0e;
+  --raise: #14171d;
+  --bone: #ece8dc;
+  --brass: #c8a24b;
+  --rise: #46e0a6;
+  --fall: #ff6076;
+  --dim: rgba(236, 232, 220, 0.62);
+  --muted: rgba(236, 232, 220, 0.4);
+  --hair: rgba(236, 232, 220, 0.09);
+
+  min-height: 100vh;
+  background: #08090b;
+  color: var(--bone);
+  margin: 0;
+  padding: 0 0 64px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sx-page.light {
+  --floor: #f4f0e6;
+  --raise: #ffffff;
+  --bone: #1a1d24;
+  --brass: #8a6a1f;
+  --rise: #0a7d54;
+  --fall: #c5392f;
+  --dim: rgba(26, 29, 36, 0.62);
+  --muted: rgba(26, 29, 36, 0.42);
+  --hair: rgba(26, 29, 36, 0.1);
+  background: #e8e3d6;
+}
+
+/* ── masthead ── */
+.sx-masthead {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 22px 28px 18px;
+  border-bottom: 1px solid var(--hair);
+  flex-wrap: wrap;
+}
+.sx-brand {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+}
+.sx-tag {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── gallery grid ── */
+.sx-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+  padding: 26px 28px;
+  max-width: 1480px;
+  margin: 0 auto;
+}
+@media (max-width: 920px) {
+  .sx-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sx-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sx-cell-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.sx-cell-label {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+.sx-cell-mood {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.sx-cell-note {
+  margin: 0;
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+/* ── hero card ── */
+.sx-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--hair);
+  border-radius: 20px;
+  background: var(--floor);
+  min-height: 400px;
+  padding: 30px 34px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* mood ambient (no text — contrast-safe) */
+.sx-mood {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  transition: opacity 0.8s ease;
+}
+.sx-hero[data-mood="bullish"] .sx-mood {
+  background:
+    radial-gradient(120% 95% at 16% -12%, rgba(70, 224, 166, 0.16), transparent 58%),
+    radial-gradient(90% 75% at 92% -4%, rgba(60, 150, 205, 0.09), transparent 56%);
+}
+.sx-hero[data-mood="bearish"] .sx-mood {
+  background:
+    radial-gradient(120% 98% at 18% -12%, rgba(255, 96, 118, 0.18), transparent 58%),
+    radial-gradient(100% 82% at 90% -4%, rgba(222, 138, 58, 0.12), transparent 55%),
+    radial-gradient(150% 130% at 50% 128%, rgba(0, 0, 0, 0.55), transparent 60%);
+}
+
+/* film grain — editorial texture */
+.sx-grain {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── sparkline ── */
+.sx-spark-wrap {
+  position: absolute;
+  left: 0;
+  /* reserve a small right gutter so the line ends with the now-dot fully visible
+     (the dot terminates the line; the line never runs past it). */
+  right: 16px;
+  bottom: 0;
+  height: 52%;
+  z-index: -1;
+}
+.sx-spark {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.sx-area {
+  stroke: none;
+}
+.sx-hero[data-mood="bullish"] .sx-area {
+  fill: rgba(70, 224, 166, 0.09);
+}
+.sx-hero[data-mood="bearish"] .sx-area {
+  fill: rgba(255, 96, 118, 0.09);
+}
+.sx-line {
+  fill: none;
+  stroke-width: 2.25;
+  vector-effect: non-scaling-stroke;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.sx-hero[data-mood="bullish"] .sx-line {
+  stroke: var(--rise);
+}
+.sx-hero[data-mood="bearish"] .sx-line {
+  stroke: var(--fall);
+}
+.sx-baseline {
+  stroke: rgba(236, 232, 220, 0.26);
+  stroke-width: 1;
+  stroke-dasharray: 3 6;
+  vector-effect: non-scaling-stroke;
+}
+.sx-baseline-label {
+  position: absolute;
+  right: 12px;
+  transform: translateY(-50%);
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.sx-now {
+  position: absolute;
+  /* sit exactly on the line's leading endpoint (x = 100% of the chart width) */
+  left: 100%;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.sx-now.is-up {
+  background: var(--rise);
+  box-shadow: 0 0 0 4px rgba(70, 224, 166, 0.16), 0 0 18px rgba(70, 224, 166, 0.6);
+}
+.sx-now.is-down {
+  background: var(--fall);
+  box-shadow: 0 0 0 4px rgba(255, 96, 118, 0.16), 0 0 18px rgba(255, 96, 118, 0.55);
+}
+
+/* ── readout (type direction lives here) ── */
+.sx-inner {
+  position: relative;
+  z-index: 1;
+}
+.sx-hero[data-direction="serif"] {
+  --display: "Fraunces", Georgia, serif;
+  --data: "Martian Mono", ui-monospace, monospace;
+}
+.sx-hero[data-direction="grotesque"] {
+  --display: "Geist", "Inter", system-ui, sans-serif;
+  --data: "Geist Mono", ui-monospace, monospace;
+}
+
+.sx-eyebrow {
+  margin: 0 0 18px;
+  font-family: var(--data);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sx-level {
+  font-family: var(--display);
+  font-variant-numeric: tabular-nums;
+  line-height: 0.9;
+  margin: 0;
+}
+.sx-hero[data-direction="serif"] .sx-level {
+  font-size: clamp(58px, 7.4vw, 104px);
+  font-weight: 380;
+  letter-spacing: -0.012em;
+}
+.sx-hero[data-direction="grotesque"] .sx-level {
+  font-size: clamp(54px, 7vw, 98px);
+  font-weight: 640;
+  letter-spacing: -0.035em;
+}
+.sx-change {
+  display: flex;
+  align-items: baseline;
+  gap: 11px;
+  margin: 14px 0 0;
+  font-family: var(--data);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(15px, 1.5vw, 21px);
+  font-weight: 500;
+}
+.sx-change .sx-arrow {
+  font-size: 0.78em;
+}
+.sx-change .sx-pct {
+  color: var(--bone);
+  opacity: 0.7;
+}
+.sx-change.is-up {
+  color: var(--rise);
+  text-shadow: 0 0 24px rgba(70, 224, 166, 0.32);
+}
+.sx-change.is-down {
+  color: var(--fall);
+  text-shadow: 0 0 24px rgba(255, 96, 118, 0.28);
+}
+.sx-narrative {
+  margin: 18px 0 0;
+  max-width: 34ch;
+  color: var(--dim);
+  font-size: clamp(14px, 1.35vw, 17px);
+  line-height: 1.42;
+}
+.sx-hero[data-direction="serif"] .sx-narrative {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 380;
+  font-size: clamp(15px, 1.5vw, 19px);
+}
+.sx-hero[data-direction="grotesque"] .sx-narrative {
+  font-family: var(--display);
+  font-weight: 430;
+  letter-spacing: -0.005em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sx-mood {
+    transition: none;
+  }
+}
