@@ -97,14 +97,14 @@ export type SectorPerf = {
   declining: number;
 };
 
-/** Short labels so the sector ribbon stays legible at narrow widths. */
+/** Clear sector labels for the sector grid (full GICS names, lightly shortened to fit). */
 export const SECTOR_SHORT: Record<string, string> = {
-  Technology: "Tech",
-  "Communication Services": "Comms",
-  "Consumer Discretionary": "Cons Disc",
-  "Consumer Staples": "Staples",
+  Technology: "Technology",
+  "Communication Services": "Communications",
+  "Consumer Discretionary": "Consumer Disc.",
+  "Consumer Staples": "Consumer Staples",
   Financials: "Financials",
-  "Health Care": "Health",
+  "Health Care": "Health Care",
   Energy: "Energy",
   Industrials: "Industrials",
   Utilities: "Utilities",

@@ -38,16 +38,22 @@ function RangeBar({ stock }: { stock: DashboardStock }) {
   );
 }
 
+const DEFAULT_LIMIT = 50;
+
 /**
- * The full US large-cap board — every tracked name in one scrollable, sortable
- * table: price, today's change (vs previous close), market cap, and a live
- * 52-week range bar. The "scroll through the whole market" centerpiece.
+ * The largest-companies board — the world's biggest companies (US-focused, globals
+ * included) in one sortable table: price, today's change (vs previous close),
+ * market cap, and a live 52-week range bar. Capped by default with a "show all"
+ * toggle so it stays fast and scannable. The "scroll through the whole market" centerpiece.
  */
 export const UsLargeCaps = memo(function UsLargeCaps({ stocks, onSelect }: UsLargeCapsProps) {
   const [sort, setSort] = useState<SortKey>("marketCap");
+  const [expanded, setExpanded] = useState(false);
 
   const rows = useMemo(() => {
-    const list = stocks.filter((stock) => stock.priceUsd != null);
+    // Rank by market cap; include curated names (e.g. Aramco/Samsung) that have a
+    // market cap but no live keyless price — they show "—" for price, no range bar.
+    const list = stocks.filter((stock) => stock.marketCapUsd != null);
     if (sort === "name") list.sort((a, b) => a.name.localeCompare(b.name));
     else if (sort === "change") list.sort((a, b) => (b.changePercent ?? -Infinity) - (a.changePercent ?? -Infinity));
     else list.sort((a, b) => (b.marketCapUsd ?? 0) - (a.marketCapUsd ?? 0));
@@ -56,11 +62,14 @@ export const UsLargeCaps = memo(function UsLargeCaps({ stocks, onSelect }: UsLar
 
   if (!rows.length) return null;
 
+  const visible = expanded ? rows : rows.slice(0, DEFAULT_LIMIT);
+  const hasMore = rows.length > DEFAULT_LIMIT;
+
   return (
-    <section className="ulc" aria-label="US large caps">
+    <section className="ulc" aria-label="Largest companies">
       <div className="ulc-head">
-        <h2 className="ulc-title">US Large Caps <span className="ulc-count">{rows.length}</span></h2>
-        <div className="ulc-sort" role="group" aria-label="Sort large caps">
+        <h2 className="ulc-title">Largest Companies <span className="ulc-count">{rows.length}</span></h2>
+        <div className="ulc-sort" role="group" aria-label="Sort largest companies">
           {SORTS.map(([key, label]) => (
             <button key={key} type="button" className={clsx("ulc-sort-btn", sort === key && "active")} onClick={() => setSort(key)} aria-pressed={sort === key}>
               {label}
@@ -78,7 +87,7 @@ export const UsLargeCaps = memo(function UsLargeCaps({ stocks, onSelect }: UsLar
           <span role="columnheader" className="ulc-c-cap">Mkt Cap</span>
           <span role="columnheader" className="ulc-c-range">52-week range</span>
         </div>
-        {rows.map((stock, index) => (
+        {visible.map((stock, index) => (
           <button key={stock.id} type="button" role="row" className="ulc-row" onClick={() => onSelect(stock.id)} aria-label={`Show ${stock.name} details`}>
             <span role="cell" className="ulc-c-rank">{index + 1}</span>
             <span role="cell" className="ulc-c-name">
@@ -93,6 +102,12 @@ export const UsLargeCaps = memo(function UsLargeCaps({ stocks, onSelect }: UsLar
           </button>
         ))}
       </div>
+
+      {hasMore ? (
+        <button type="button" className="ulc-more" onClick={() => setExpanded((value) => !value)}>
+          {expanded ? "Show less" : `Show all ${rows.length}`}
+        </button>
+      ) : null}
     </section>
   );
 });

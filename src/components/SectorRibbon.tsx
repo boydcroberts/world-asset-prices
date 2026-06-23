@@ -15,29 +15,33 @@ function tintFor(change: number | null): string {
 }
 
 /**
- * The whole US market as one heat ribbon: each GICS sector is a segment sized by
- * market cap and tinted by its cap-weighted daily move — so the page's color
- * temperature reads the market's mood at a glance, before any number.
+ * The 11 GICS sectors as a legible grid, ordered best-to-worst and tinted by each
+ * sector's cap-weighted daily move — the page's "market mood" color temperature,
+ * read at a glance. Each cell also shows the sector's internal breadth (up/down).
  */
 export const SectorRibbon = memo(function SectorRibbon({ sectors }: SectorRibbonProps) {
   if (!sectors.length) return null;
 
+  const ordered = [...sectors].sort((a, b) => (b.changePercent ?? -Infinity) - (a.changePercent ?? -Infinity));
+
   return (
     <section className="heat" aria-label="Sector performance">
-      <span className="heat-eyebrow">Sectors</span>
-      <div className="heat-ribbon" role="list">
-        {sectors.map((sector) => (
+      <span className="heat-eyebrow">Sectors · today</span>
+      <div className="heat-grid" role="list">
+        {ordered.map((sector) => (
           <div
             key={sector.sector}
             role="listitem"
-            className="heat-seg"
-            style={{ flexGrow: Math.max(1, sector.marketCapUsd), background: tintFor(sector.changePercent) }}
+            className="heat-cell"
+            style={{ background: tintFor(sector.changePercent) }}
             tabIndex={0}
             aria-label={`${sector.sector}: ${formatPercent(sector.changePercent)}, ${sector.advancing} up and ${sector.declining} down of ${sector.count}`}
-            title={`${sector.sector} · ${formatPercent(sector.changePercent)} · ${sector.advancing}▲ / ${sector.declining}▼ of ${sector.count}`}
           >
             <span className="heat-name">{SECTOR_SHORT[sector.sector] ?? sector.sector}</span>
-            <span className={clsx("heat-chg", trendClass(sector.changePercent))}>{formatPercent(sector.changePercent)}</span>
+            <div className="heat-cell-bot">
+              <span className={clsx("heat-chg", trendClass(sector.changePercent))}>{formatPercent(sector.changePercent)}</span>
+              <span className="heat-bd">{sector.advancing}▲ · {sector.declining}▼</span>
+            </div>
           </div>
         ))}
       </div>

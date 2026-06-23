@@ -11,15 +11,12 @@
 // Keep SYMBOLS in sync with PUBLIC_COMPANIES (server/providers/stooq.ts) — curated
 // names without a keyless quote (Aramco/Samsung) are intentionally excluded.
 
-import { writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 
-const SYMBOLS = [
-  "NVDA", "AAPL", "MSFT", "GOOGL", "AMZN", "META", "AVGO", "TSLA", "TSM", "LLY",
-  "JPM", "WMT", "BRK-B", "V", "MA", "UNH", "XOM", "JNJ", "HD", "PG",
-  "COST", "NFLX", "ORCL", "AMD", "CRM", "BAC", "KO", "PEP", "CVX", "ABBV",
-  "WFC", "MRK", "ADBE", "CSCO", "ACN", "MCD", "TMUS", "INTC", "QCOM", "TXN",
-  "SPCX",
-];
+// Symbol list is derived from the maintained universe (server/data/large-caps.json),
+// excluding curated names that have no keyless quote (e.g. Tadawul/KRX).
+const largeCaps = JSON.parse(await readFile(new URL("../server/data/large-caps.json", import.meta.url), "utf8"));
+const SYMBOLS = largeCaps.companies.filter((company) => !company.curated).map((company) => company.symbol);
 
 const BASE_URL = process.env.YAHOO_FINANCE_BASE_URL ?? "https://query1.finance.yahoo.com";
 const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36";
