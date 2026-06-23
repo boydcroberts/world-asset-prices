@@ -106,7 +106,7 @@ export type DashboardCurrency = DashboardEntryBase & {
 
 export type IndexIntradayPoint = { t: string; value: number };
 
-export type UsIndexKind = "index" | "volatility" | "rate";
+export type UsIndexKind = "index" | "volatility" | "rate" | "future" | "currency" | "commodity";
 
 export type UsIndex = {
   key: string;

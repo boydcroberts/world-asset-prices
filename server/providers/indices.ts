@@ -24,7 +24,17 @@ const INDEX_DEFINITIONS: IndexDefinition[] = [
   { key: "nasdaq", symbol: "^IXIC", name: "Nasdaq Composite", kind: "index", intraday: true },
   { key: "dow", symbol: "^DJI", name: "Dow Jones", kind: "index", intraday: true },
   { key: "vix", symbol: "^VIX", name: "VIX", kind: "volatility" },
+  // Treasury curve
+  { key: "ust5y", symbol: "^FVX", name: "US 5Y", kind: "rate" },
   { key: "ust10y", symbol: "^TNX", name: "US 10Y", kind: "rate" },
+  { key: "ust30y", symbol: "^TYX", name: "US 30Y", kind: "rate" },
+  // Index futures (pre/post-market pulse)
+  { key: "es", symbol: "ES=F", name: "S&P Futures", kind: "future" },
+  { key: "nq", symbol: "NQ=F", name: "Nasdaq Futures", kind: "future" },
+  // Macro backdrop
+  { key: "dxy", symbol: "DX-Y.NYB", name: "Dollar (DXY)", kind: "currency" },
+  { key: "wti", symbol: "CL=F", name: "WTI Crude", kind: "commodity" },
+  { key: "gold", symbol: "GC=F", name: "Gold", kind: "commodity" },
 ];
 
 type YahooChartResult = {

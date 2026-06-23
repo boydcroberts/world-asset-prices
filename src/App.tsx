@@ -15,6 +15,7 @@ import { LivingHorizon } from "./components/LivingHorizon";
 import { RiskStrip } from "./components/RiskStrip";
 import { Movers } from "./components/Movers";
 import { SectorRibbon } from "./components/SectorRibbon";
+import { MacroRail } from "./components/MacroRail";
 import { deriveBreadth, deriveMovers, deriveSectors, findIndex } from "./lib/us-market";
 import {
   DEFAULT_REFRESH_SEC,
@@ -347,6 +348,7 @@ function App() {
             <>
               <LivingHorizon indices={indices} isStale={isStale} />
               <RiskStrip breadth={breadth} vix={vix} ust10y={ust10y} />
+              <MacroRail indices={indices} />
               <SectorRibbon sectors={sectors} />
               <Movers gainers={movers.gainers} losers={movers.losers} onSelect={openAssetDetail} />
 
