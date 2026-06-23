@@ -7,7 +7,7 @@ import { recordProviderFailure, recordProviderFallback, recordProviderSuccess, t
 import { fetchNightFromCoinpaprika, fetchTopCryptosFromCoinpaprika } from "./providers/coinpaprika.js";
 import { fetchTopCurrenciesFromFrankfurter } from "./providers/frankfurter.js";
 import { EQUITY_FUNDAMENTALS_AS_OF, EQUITY_QUOTE_PROVIDERS, fetchTopEtfsFromStooq, fetchTopStocksFromStooq } from "./providers/stooq.js";
-import { fetchUsIndices } from "./providers/indices.js";
+import { fetchGlobalIndices, fetchUsIndices } from "./providers/indices.js";
 import { toFiniteNumber } from "./sanitize.js";
 import { withTimeout } from "./request.js";
 import { isDashboardPayload } from "./dashboard-schema.js";
@@ -64,6 +64,7 @@ const SEGMENT_KEYS: DashboardSegmentKey[] = ["topCryptos", "topStocks", "topEtfs
 const CACHE_KEY_STOCKS = "stooq:top-stocks";
 const CACHE_KEY_ETFS = "stooq:top-etfs";
 const CACHE_KEY_INDICES = "yahoo:us-indices";
+const CACHE_KEY_GLOBAL_INDICES = "yahoo:global-indices";
 const OUTLIER_JUMP_RATIO = 2.6;
 
 type StaleAlertGlobal = typeof globalThis & {
@@ -468,6 +469,21 @@ export async function buildDashboardPayload(options: DashboardBuildOptions = {})
       return cache.getStaleEntry<UsIndex[]>(CACHE_KEY_INDICES, fallbackTtlSec, nowMs)?.value ?? [];
     });
 
+  // Global indices (FTSE/DAX/Nikkei/…) for the Top-Tens board — same best-effort
+  // + last-good-cache pattern; additive, never blocks the core payload.
+  const globalIndicesPromise: Promise<UsIndex[]> = fetchGlobalIndices({ timeoutMs })
+    .then((fetched) => {
+      if (fetched.length > 0) {
+        cache.set(CACHE_KEY_GLOBAL_INDICES, fetched, nowMs);
+        return fetched;
+      }
+      return cache.getStaleEntry<UsIndex[]>(CACHE_KEY_GLOBAL_INDICES, fallbackTtlSec, nowMs)?.value ?? [];
+    })
+    .catch((error) => {
+      logger.warn(`[dashboard] global indices fetch failed: ${error instanceof Error ? error.message : "unknown"}`);
+      return cache.getStaleEntry<UsIndex[]>(CACHE_KEY_GLOBAL_INDICES, fallbackTtlSec, nowMs)?.value ?? [];
+    });
+
   const [cryptosResult, stocksResult, etfsResult, currenciesResult, nightResult] = await Promise.all([
     resolveSegment<DashboardCrypto[]>({
       key: "coinpaprika:top-cryptos",
@@ -600,6 +616,7 @@ export async function buildDashboardPayload(options: DashboardBuildOptions = {})
   const topAssets = buildTopAssets(topStocks, topCryptos, topPrivateCompanies);
   const night = normalizeNight(nightResult.data);
   const indices = await indicesPromise;
+  const topGlobalIndices = await globalIndicesPromise;
 
   const stale = cryptosResult.stale || stocksMeta.stale || etfsMeta.stale || currenciesResult.stale || nightResult.stale;
   const fallbackUsed =
@@ -673,6 +690,7 @@ export async function buildDashboardPayload(options: DashboardBuildOptions = {})
     topAssets,
     night,
     indices,
+    topGlobalIndices,
     valueSources: assetValueSourcesById(),
   };
 }

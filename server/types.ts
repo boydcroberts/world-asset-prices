@@ -123,6 +123,8 @@ export type UsIndex = {
   changeAbs: number | null;
   changePercent: number | null;
   intraday: IndexIntradayPoint[];
+  /** Region grouping for non-US indices (e.g. "Europe", "Asia", "Americas"). */
+  region?: string;
 };
 
 export type DashboardPayload = {
@@ -141,6 +143,8 @@ export type DashboardPayload = {
   night: DashboardNight | null;
   /** US-market instruments (indices + VIX + 10Y) powering the command-center hero. Additive/optional. */
   indices?: UsIndex[];
+  /** Major global indices (FTSE/DAX/Nikkei/…) for the Top-Tens board. Additive/optional. */
+  topGlobalIndices?: UsIndex[];
   valueSources?: Record<string, AssetValueSource>;
   requestId?: string;
 };

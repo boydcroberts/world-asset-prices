@@ -17,6 +17,8 @@ type IndexDefinition = {
   kind: UsIndexKind;
   /** Fetch a same-day intraday series (used by the Living Horizon hero). */
   intraday?: boolean;
+  /** Region grouping for non-US (global) indices. */
+  region?: string;
 };
 
 const INDEX_DEFINITIONS: IndexDefinition[] = [
@@ -24,7 +26,8 @@ const INDEX_DEFINITIONS: IndexDefinition[] = [
   { key: "nasdaq", symbol: "^IXIC", name: "Nasdaq Composite", kind: "index", intraday: true },
   { key: "dow", symbol: "^DJI", name: "Dow Jones", kind: "index", intraday: true },
   { key: "vix", symbol: "^VIX", name: "VIX", kind: "volatility" },
-  // Treasury curve
+  // Treasury curve (keyless via Cboe yield indices)
+  { key: "ust3m", symbol: "^IRX", name: "US 3M", kind: "rate" },
   { key: "ust5y", symbol: "^FVX", name: "US 5Y", kind: "rate" },
   { key: "ust10y", symbol: "^TNX", name: "US 10Y", kind: "rate" },
   { key: "ust30y", symbol: "^TYX", name: "US 30Y", kind: "rate" },
@@ -35,6 +38,24 @@ const INDEX_DEFINITIONS: IndexDefinition[] = [
   { key: "dxy", symbol: "DX-Y.NYB", name: "Dollar (DXY)", kind: "currency" },
   { key: "wti", symbol: "CL=F", name: "WTI Crude", kind: "commodity" },
   { key: "gold", symbol: "GC=F", name: "Gold", kind: "commodity" },
+];
+
+// Major global indices for the Top-Tens board. All confirmed keyless on Yahoo v8.
+// (Foreign sovereign 10Y yields are NOT available keyless, so the rates board
+// stays the US Treasury curve above.)
+const GLOBAL_INDEX_DEFINITIONS: IndexDefinition[] = [
+  { key: "ftse100", symbol: "^FTSE", name: "FTSE 100", kind: "index", region: "Europe" },
+  { key: "dax", symbol: "^GDAXI", name: "DAX", kind: "index", region: "Europe" },
+  { key: "cac40", symbol: "^FCHI", name: "CAC 40", kind: "index", region: "Europe" },
+  { key: "estoxx50", symbol: "^STOXX50E", name: "Euro Stoxx 50", kind: "index", region: "Europe" },
+  { key: "nikkei", symbol: "^N225", name: "Nikkei 225", kind: "index", region: "Asia" },
+  { key: "hangseng", symbol: "^HSI", name: "Hang Seng", kind: "index", region: "Asia" },
+  { key: "kospi", symbol: "^KS11", name: "KOSPI", kind: "index", region: "Asia" },
+  { key: "sensex", symbol: "^BSESN", name: "Sensex", kind: "index", region: "Asia" },
+  { key: "asx200", symbol: "^AXJO", name: "ASX 200", kind: "index", region: "Asia-Pacific" },
+  { key: "tsx", symbol: "^GSPTSE", name: "S&P/TSX", kind: "index", region: "Americas" },
+  { key: "bovespa", symbol: "^BVSP", name: "Bovespa", kind: "index", region: "Americas" },
+  { key: "ipc", symbol: "^MXX", name: "IPC Mexico", kind: "index", region: "Americas" },
 ];
 
 type YahooChartResult = {
@@ -115,6 +136,7 @@ async function fetchOneIndex(def: IndexDefinition, options: FetchIndicesOptions)
     changeAbs,
     changePercent,
     intraday,
+    ...(def.region ? { region: def.region } : {}),
   };
 }
 
@@ -125,6 +147,19 @@ async function fetchOneIndex(def: IndexDefinition, options: FetchIndicesOptions)
  */
 export async function fetchUsIndices(options: FetchIndicesOptions = {}): Promise<UsIndex[]> {
   const results = await Promise.allSettled(INDEX_DEFINITIONS.map((def) => fetchOneIndex(def, options)));
+  const indices: UsIndex[] = [];
+  for (const result of results) {
+    if (result.status === "fulfilled" && result.value) indices.push(result.value);
+  }
+  return indices;
+}
+
+/**
+ * Fetch major global indices (FTSE/DAX/Nikkei/…) best-effort for the Top-Tens
+ * board. Same keyless Yahoo path; a failed symbol is omitted.
+ */
+export async function fetchGlobalIndices(options: FetchIndicesOptions = {}): Promise<UsIndex[]> {
+  const results = await Promise.allSettled(GLOBAL_INDEX_DEFINITIONS.map((def) => fetchOneIndex(def, options)));
   const indices: UsIndex[] = [];
   for (const result of results) {
     if (result.status === "fulfilled" && result.value) indices.push(result.value);

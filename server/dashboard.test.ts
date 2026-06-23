@@ -21,6 +21,7 @@ vi.mock("./providers/coinpaprika", () => ({
 // tests stay hermetic and never touch the network.
 vi.mock("./providers/indices", () => ({
   fetchUsIndices: vi.fn(async () => []),
+  fetchGlobalIndices: vi.fn(async () => []),
 }));
 
 import { buildDashboardPayload, dashboardFallbackPayload } from "./dashboard";
