@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-25T09:50:35.825Z",
+  "generatedAt": "2026-06-26T09:57:31.099Z",
   "stale": false,
   "refreshInSec": 30,
   "source": {
@@ -43,16 +43,16 @@
       "name": "Bitcoin",
       "symbol": "BTC",
       "category": "Crypto",
-      "priceUsd": 61669.09792633354,
-      "marketCapUsd": 1236333009869,
-      "change24h": -1.309999942779541,
+      "priceUsd": 59688.19073646363,
+      "marketCapUsd": 1196648425611,
+      "change24h": -2.569999933242798,
       "sparkline7d": [
         0,
-        0.009999999776482582,
-        0.09000000357627869,
-        1.4299999475479126,
-        -1.309999942779541,
-        -3.619999885559082
+        -0.3499999940395355,
+        -0.5600000023841858,
+        -0.4099999964237213,
+        -2.569999933242798,
+        -4.510000228881836
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/btc-bitcoin/logo.png",
       "fallbackLogoUrls": [
@@ -66,16 +66,16 @@
       "name": "Ethereum",
       "symbol": "ETH",
       "category": "Crypto",
-      "priceUsd": 1645.895984902774,
-      "marketCapUsd": 198209189981,
-      "change24h": -1.0499999523162842,
+      "priceUsd": 1552.8945781833613,
+      "marketCapUsd": 187009373186,
+      "change24h": -5.039999961853027,
       "sparkline7d": [
         0,
-        -0.03999999910593033,
-        -0.23000000417232513,
-        1.7799999713897705,
-        -1.0499999523162842,
-        -5.420000076293945
+        -0.5199999809265137,
+        -0.4300000071525574,
+        -0.11999999731779099,
+        -5.039999961853027,
+        -8.25
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/eth-ethereum/logo.png",
       "fallbackLogoUrls": [
@@ -89,16 +89,16 @@
       "name": "Tether",
       "symbol": "USDT",
       "category": "Crypto",
-      "priceUsd": 0.9985578846475787,
-      "marketCapUsd": 186066697441,
-      "change24h": -0.03999999910593033,
+      "priceUsd": 0.9982680011643111,
+      "marketCapUsd": 186012681882,
+      "change24h": -0.05999999865889549,
       "sparkline7d": [
         0,
         0,
-        -0.019999999552965164,
-        -0.009999999776482582,
+        0,
         -0.03999999910593033,
-        -0.05000000074505806
+        -0.05999999865889549,
+        -0.07999999821186066
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/usdt-tether/logo.png",
       "fallbackLogoUrls": [
@@ -112,16 +112,16 @@
       "name": "BNB",
       "symbol": "BNB",
       "category": "Crypto",
-      "priceUsd": 568.1124629099406,
-      "marketCapUsd": 79072416143,
-      "change24h": -1.2999999523162842,
+      "priceUsd": 563.7120723880414,
+      "marketCapUsd": 78459950243,
+      "change24h": 0,
       "sparkline7d": [
         0,
-        0.009999999776482582,
-        -0.10000000149011612,
-        0.5600000023841858,
-        -1.2999999523162842,
-        -3.559999942779541
+        -0.4099999964237213,
+        -0.550000011920929,
+        0.3400000035762787,
+        0,
+        -1.5499999523162842
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/bnb-binance-coin/logo.png",
       "fallbackLogoUrls": [
@@ -135,16 +135,16 @@
       "name": "USDC",
       "symbol": "USDC",
       "category": "Crypto",
-      "priceUsd": 0.9998763930838585,
-      "marketCapUsd": 73800786329,
-      "change24h": -0.029999999329447746,
+      "priceUsd": 0.999579648084337,
+      "marketCapUsd": 73635833488,
+      "change24h": -0.05000000074505806,
       "sparkline7d": [
         0,
         -0.009999999776482582,
         -0.009999999776482582,
-        -0.019999999552965164,
         -0.029999999329447746,
-        0
+        -0.05000000074505806,
+        -0.029999999329447746
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/usdc-usd-coin/logo.png",
       "fallbackLogoUrls": [
@@ -158,16 +158,16 @@
       "name": "XRP",
       "symbol": "XRP",
       "category": "Crypto",
-      "priceUsd": 1.079421272590282,
-      "marketCapUsd": 66982300770,
-      "change24h": -0.6700000166893005,
+      "priceUsd": 1.031412942035393,
+      "marketCapUsd": 64196697713,
+      "change24h": -3.890000104904175,
       "sparkline7d": [
         0,
-        -0.019999999552965164,
-        -0.17000000178813934,
-        0.8299999833106995,
-        -0.6700000166893005,
-        -7.579999923706055
+        -0.23000000417232513,
+        -0.4099999964237213,
+        -0.07000000029802322,
+        -3.890000104904175,
+        -8.329999923706055
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/xrp-xrp/logo.png",
       "fallbackLogoUrls": [
@@ -181,16 +181,16 @@
       "name": "Solana",
       "symbol": "SOL",
       "category": "Crypto",
-      "priceUsd": 68.84108938674285,
-      "marketCapUsd": 39963554105,
-      "change24h": -0.3199999928474426,
+      "priceUsd": 69.02877420250078,
+      "marketCapUsd": 40080610458,
+      "change24h": 1.1200000047683716,
       "sparkline7d": [
         0,
-        -0.03999999910593033,
-        -0.10999999940395355,
-        1.9199999570846558,
-        -0.3199999928474426,
-        -3.1600000858306885
+        -0.6000000238418579,
+        -0.7300000190734863,
+        1.4500000476837158,
+        1.1200000047683716,
+        1.0199999809265137
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/sol-solana/logo.png",
       "fallbackLogoUrls": [
@@ -204,16 +204,16 @@
       "name": "TRON",
       "symbol": "TRX",
       "category": "Crypto",
-      "priceUsd": 0.3288044032562791,
-      "marketCapUsd": 28396632827,
-      "change24h": -0.7300000190734863,
+      "priceUsd": 0.32194501545265447,
+      "marketCapUsd": 27804233471,
+      "change24h": -1.9900000095367432,
       "sparkline7d": [
         0,
-        0.05999999865889549,
-        -0.03999999910593033,
-        0.5600000023841858,
-        -0.7300000190734863,
-        2.450000047683716
+        0.019999999552965164,
+        0.019999999552965164,
+        0.17000000178813934,
+        -1.9900000095367432,
+        0.20999999344348907
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/trx-tron/logo.png",
       "fallbackLogoUrls": [
@@ -227,16 +227,16 @@
       "name": "Hyperliquid",
       "symbol": "HYPE",
       "category": "Crypto",
-      "priceUsd": 63.44851579337181,
-      "marketCapUsd": 21187247402,
-      "change24h": 1.9700000286102295,
+      "priceUsd": 62.666725822013014,
+      "marketCapUsd": 20926185700,
+      "change24h": -0.550000011920929,
       "sparkline7d": [
         0,
-        0.17000000178813934,
-        0.07999999821186066,
-        0.5899999737739563,
-        1.9700000286102295,
-        -11.510000228881836
+        -0.8600000143051147,
+        -0.8399999737739563,
+        -1.7799999713897705,
+        -0.550000011920929,
+        -6.519999980926514
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/hype-hyperliquid/logo.png",
       "fallbackLogoUrls": [
@@ -250,16 +250,16 @@
       "name": "Lido Staked Ether",
       "symbol": "STETH",
       "category": "Crypto",
-      "priceUsd": 1648.298671191891,
-      "marketCapUsd": 16144094856,
-      "change24h": -0.9100000262260437,
+      "priceUsd": 1555.2001763992048,
+      "marketCapUsd": 15232251052,
+      "change24h": -5.130000114440918,
       "sparkline7d": [
         0,
-        -0.009999999776482582,
-        -0.33000001311302185,
-        2.1600000858306885,
-        -0.9100000262260437,
-        -5.320000171661377
+        -0.6200000047683716,
+        -0.5400000214576721,
+        0.4300000071525574,
+        -5.130000114440918,
+        -8.0600004196167
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/steth-lido-staked-ether/logo.png",
       "fallbackLogoUrls": [
@@ -268,44 +268,21 @@
       ]
     },
     {
-      "id": "doge-dogecoin",
-      "rank": 11,
-      "name": "Dogecoin",
-      "symbol": "DOGE",
-      "category": "Crypto",
-      "priceUsd": 0.07681095749712019,
-      "marketCapUsd": 11456177367,
-      "change24h": -2.299999952316284,
-      "sparkline7d": [
-        0,
-        0.019999999552965164,
-        -0.1599999964237213,
-        1.1200000047683716,
-        -2.299999952316284,
-        -9.229999542236328
-      ],
-      "logoUrl": "https://static.coinpaprika.com/coin/doge-dogecoin/logo.png",
-      "fallbackLogoUrls": [
-        "https://cryptoicons.org/api/icon/doge/200",
-        "https://cryptoicon-api.pages.dev/api/icon/doge"
-      ]
-    },
-    {
       "id": "usds-usds",
-      "rank": 12,
+      "rank": 11,
       "name": "Usds",
       "symbol": "USDS",
       "category": "Crypto",
-      "priceUsd": 0.9996903749866345,
-      "marketCapUsd": 11073764379,
-      "change24h": -0.029999999329447746,
+      "priceUsd": 0.9993395753037121,
+      "marketCapUsd": 11069878503,
+      "change24h": -0.03999999910593033,
       "sparkline7d": [
         0,
-        0,
-        0,
-        0,
+        0.029999999329447746,
+        -0.009999999776482582,
         -0.029999999329447746,
-        0
+        -0.03999999910593033,
+        -0.03999999910593033
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/usds-usds/logo.png",
       "fallbackLogoUrls": [
@@ -314,21 +291,44 @@
       ]
     },
     {
+      "id": "doge-dogecoin",
+      "rank": 12,
+      "name": "Dogecoin",
+      "symbol": "DOGE",
+      "category": "Crypto",
+      "priceUsd": 0.0739952224197429,
+      "marketCapUsd": 11036216967,
+      "change24h": -2.7899999618530273,
+      "sparkline7d": [
+        0,
+        -0.3799999952316284,
+        -0.25,
+        -0.6299999952316284,
+        -2.7899999618530273,
+        -10.079999923706055
+      ],
+      "logoUrl": "https://static.coinpaprika.com/coin/doge-dogecoin/logo.png",
+      "fallbackLogoUrls": [
+        "https://cryptoicons.org/api/icon/doge/200",
+        "https://cryptoicon-api.pages.dev/api/icon/doge"
+      ]
+    },
+    {
       "id": "leo-leo-token",
       "rank": 13,
       "name": "LEO Token",
       "symbol": "LEO",
       "category": "Crypto",
-      "priceUsd": 9.351415897675787,
-      "marketCapUsd": 8611523764,
-      "change24h": -1.6799999475479126,
+      "priceUsd": 9.34449586673386,
+      "marketCapUsd": 8605151252,
+      "change24h": -1.1399999856948853,
       "sparkline7d": [
         0,
-        0,
-        0.20999999344348907,
-        -0.27000001072883606,
-        -1.6799999475479126,
-        -2.930000066757202
+        0.2800000011920929,
+        0.8700000047683716,
+        0.7300000190734863,
+        -1.1399999856948853,
+        -2.2100000381469727
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/leo-leo-token/logo.png",
       "fallbackLogoUrls": [
@@ -342,16 +342,16 @@
       "name": "Wrapped Bitcoin",
       "symbol": "WBTC",
       "category": "Crypto",
-      "priceUsd": 61640.35416160504,
-      "marketCapUsd": 8085858378,
-      "change24h": -1.2699999809265137,
+      "priceUsd": 59613.6171590274,
+      "marketCapUsd": 7819995071,
+      "change24h": -2.7100000381469727,
       "sparkline7d": [
         0,
-        0.009999999776482582,
-        0.029999999329447746,
-        1.4299999475479126,
-        -1.2699999809265137,
-        -3.549999952316284
+        -0.38999998569488525,
+        -0.6700000166893005,
+        -0.3700000047683716,
+        -2.7100000381469727,
+        -4.489999771118164
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/wbtc-wrapped-bitcoin/logo.png",
       "fallbackLogoUrls": [
@@ -360,26 +360,26 @@
       ]
     },
     {
-      "id": "wsteth-wrapped-liquid-staked-ether-20",
+      "id": "wbt-whitebit",
       "rank": 15,
-      "name": "Wrapped Liquid Staked Ether 2.0",
-      "symbol": "WSTETH",
+      "name": "WhiteBIT Coin",
+      "symbol": "WBT",
       "category": "Crypto",
-      "priceUsd": 2037.9119321465564,
-      "marketCapUsd": 7246266632,
-      "change24h": -1.0099999904632568,
+      "priceUsd": 48.18352904869877,
+      "marketCapUsd": 6944138750,
+      "change24h": -3.2699999809265137,
       "sparkline7d": [
         0,
-        -0.03999999910593033,
-        -0.1899999976158142,
-        1.809999942779541,
-        -1.0099999904632568,
-        -5.340000152587891
+        -0.3799999952316284,
+        -0.5199999809265137,
+        -0.3499999940395355,
+        -3.2699999809265137,
+        -6.639999866485596
       ],
-      "logoUrl": "https://static.coinpaprika.com/coin/wsteth-wrapped-liquid-staked-ether-20/logo.png",
+      "logoUrl": "https://static.coinpaprika.com/coin/wbt-whitebit/logo.png",
       "fallbackLogoUrls": [
-        "https://cryptoicons.org/api/icon/wsteth/200",
-        "https://cryptoicon-api.pages.dev/api/icon/wsteth"
+        "https://cryptoicons.org/api/icon/wbt/200",
+        "https://cryptoicon-api.pages.dev/api/icon/wbt"
       ]
     }
   ],
@@ -390,40 +390,40 @@
       "name": "NVIDIA",
       "symbol": "NVDA",
       "category": "Stock",
-      "marketCapUsd": 4835700000000,
-      "priceUsd": 199,
-      "changePercent": -0.5596617751922522,
+      "marketCapUsd": 4756482133484,
+      "priceUsd": 195.74000549316406,
+      "changePercent": -2.1691304968875746,
       "logoUrl": "https://financialmodelingprep.com/image-stock/NVDA.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/NVDA.png"
       ]
     },
     {
-      "id": "stock-aapl",
-      "rank": 2,
-      "name": "Apple",
-      "symbol": "AAPL",
-      "category": "Stock",
-      "marketCapUsd": 4305345002747,
-      "priceUsd": 293.0799865722656,
-      "changePercent": -0.7719389532685097,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/AAPL.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/AAPL.png"
-      ]
-    },
-    {
       "id": "stock-googl",
-      "rank": 3,
+      "rank": 2,
       "name": "Alphabet",
       "symbol": "GOOGL",
       "category": "Stock",
-      "marketCapUsd": 4295407706299,
-      "priceUsd": 345.2900085449219,
-      "changePercent": -1.074375403448161,
+      "marketCapUsd": 4275752293701,
+      "priceUsd": 343.7099914550781,
+      "changePercent": 2.0728715116020355,
       "logoUrl": "https://financialmodelingprep.com/image-stock/GOOGL.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/GOOGL.png"
+      ]
+    },
+    {
+      "id": "stock-aapl",
+      "rank": 3,
+      "name": "Apple",
+      "symbol": "AAPL",
+      "category": "Stock",
+      "marketCapUsd": 4041953410339,
+      "priceUsd": 275.1499938964844,
+      "changePercent": -4.262352212996984,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/AAPL.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/AAPL.png"
       ]
     },
     {
@@ -432,9 +432,9 @@
       "name": "Microsoft",
       "symbol": "MSFT",
       "category": "Stock",
-      "marketCapUsd": 2715367736511,
-      "priceUsd": 365.4599914550781,
-      "changePercent": -1.6443781114467733,
+      "marketCapUsd": 2621526800232,
+      "priceUsd": 352.8299865722656,
+      "changePercent": -2.740028872959399,
       "logoUrl": "https://financialmodelingprep.com/image-stock/MSFT.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/MSFT.png"
@@ -446,9 +446,9 @@
       "name": "Amazon",
       "symbol": "AMZN",
       "category": "Stock",
-      "marketCapUsd": 2605082447510,
-      "priceUsd": 234.27000427246094,
-      "changePercent": 0.17960152148099448,
+      "marketCapUsd": 2524351138916,
+      "priceUsd": 227.00999450683594,
+      "changePercent": -2.1593007815575027,
       "logoUrl": "https://financialmodelingprep.com/image-stock/AMZN.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/AMZN.png"
@@ -460,9 +460,9 @@
       "name": "TSMC",
       "symbol": "TSM",
       "category": "Stock",
-      "marketCapUsd": 2420156626282,
-      "priceUsd": 440.8299865722656,
-      "changePercent": 1.5784080862086751,
+      "marketCapUsd": 2388095046387,
+      "priceUsd": 434.989990234375,
+      "changePercent": -3.9545162074351707,
       "logoUrl": "https://financialmodelingprep.com/image-stock/TSM.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/TSM.png"
@@ -474,9 +474,9 @@
       "name": "Broadcom",
       "symbol": "AVGO",
       "category": "Stock",
-      "marketCapUsd": 1807191134644,
-      "priceUsd": 382.07000732421875,
-      "changePercent": -1.176863030994973,
+      "marketCapUsd": 1792244317322,
+      "priceUsd": 378.9100036621094,
+      "changePercent": -1.9840610421053073,
       "logoUrl": "https://financialmodelingprep.com/image-stock/AVGO.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/AVGO.png"
@@ -495,31 +495,31 @@
       "fallbackLogoUrls": []
     },
     {
-      "id": "stock-meta",
-      "rank": 9,
-      "name": "Meta Platforms",
-      "symbol": "META",
-      "category": "Stock",
-      "marketCapUsd": 1410905056763,
-      "priceUsd": 557.6699829101562,
-      "changePercent": -0.7510423086841351,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/META.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/META.png"
-      ]
-    },
-    {
       "id": "stock-tsla",
-      "rank": 10,
+      "rank": 9,
       "name": "Tesla",
       "symbol": "TSLA",
       "category": "Stock",
-      "marketCapUsd": 1410378016415,
-      "priceUsd": 375.5299987792969,
-      "changePercent": -1.1971132271400584,
+      "marketCapUsd": 1408838165662,
+      "priceUsd": 375.1199951171875,
+      "changePercent": -0.03996959545808775,
       "logoUrl": "https://financialmodelingprep.com/image-stock/TSLA.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/TSLA.png"
+      ]
+    },
+    {
+      "id": "stock-meta",
+      "rank": 10,
+      "name": "Meta Platforms",
+      "symbol": "META",
+      "category": "Stock",
+      "marketCapUsd": 1373461087646,
+      "priceUsd": 542.8699951171875,
+      "changePercent": -2.282421556007049,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/META.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/META.png"
       ]
     },
     {
@@ -540,9 +540,9 @@
       "name": "Berkshire Hathaway",
       "symbol": "BRK-B",
       "category": "Stock",
-      "marketCapUsd": 1068789594727,
-      "priceUsd": 494.80999755859375,
-      "changePercent": 0.36917733833773997,
+      "marketCapUsd": 1053669594727,
+      "priceUsd": 487.80999755859375,
+      "changePercent": -1.0687898834238139,
       "logoUrl": "https://financialmodelingprep.com/image-stock/BRK-B.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/BRK-B.png"
@@ -554,9 +554,9 @@
       "name": "Eli Lilly",
       "symbol": "LLY",
       "category": "Stock",
-      "marketCapUsd": 996305441108,
-      "priceUsd": 1117.260009765625,
-      "changePercent": -1.0757850600191718,
+      "marketCapUsd": 1005606228350,
+      "priceUsd": 1127.68994140625,
+      "changePercent": 0.06210802029656309,
       "logoUrl": "https://financialmodelingprep.com/image-stock/LLY.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/LLY.png"
@@ -568,9 +568,9 @@
       "name": "Walmart",
       "symbol": "WMT",
       "category": "Stock",
-      "marketCapUsd": 950215000000,
-      "priceUsd": 119,
-      "changePercent": -0.468382042513264,
+      "marketCapUsd": 924503290253,
+      "priceUsd": 115.77999877929688,
+      "changePercent": -1.438667254485736,
       "logoUrl": "https://financialmodelingprep.com/image-stock/WMT.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/WMT.png"
@@ -582,9 +582,9 @@
       "name": "JPMorgan Chase",
       "symbol": "JPM",
       "category": "Stock",
-      "marketCapUsd": 905650233154,
-      "priceUsd": 333.45001220703125,
-      "changePercent": 0.11409159469666498,
+      "marketCapUsd": 910185906738,
+      "priceUsd": 335.1199951171875,
+      "changePercent": 0.04776799205610001,
       "logoUrl": "https://financialmodelingprep.com/image-stock/JPM.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/JPM.png"
@@ -599,8 +599,8 @@
       "symbol": "VOO",
       "category": "ETF",
       "aumUsd": 1000000000000,
-      "priceUsd": 675.6900024414062,
-      "changePercent": -0.2936474819800472,
+      "priceUsd": 675.7100219726562,
+      "changePercent": -0.7971918488130342,
       "logoUrl": "https://financialmodelingprep.com/image-stock/VOO.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/VOO.png"
@@ -613,8 +613,8 @@
       "symbol": "IVV",
       "category": "ETF",
       "aumUsd": 805280000000,
-      "priceUsd": 736.6599731445312,
-      "changePercent": -0.2572606721651969,
+      "priceUsd": 736.5,
+      "changePercent": -0.7840294302719474,
       "logoUrl": "https://financialmodelingprep.com/image-stock/IVV.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/IVV.png"
@@ -627,8 +627,8 @@
       "symbol": "SPY",
       "category": "ETF",
       "aumUsd": 743110000000,
-      "priceUsd": 733.239990234375,
-      "changePercent": -0.2625233239449482,
+      "priceUsd": 734.2999877929688,
+      "changePercent": -0.6238899891882748,
       "logoUrl": "https://financialmodelingprep.com/image-stock/SPY.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/SPY.png"
@@ -641,8 +641,8 @@
       "symbol": "VTI",
       "category": "ETF",
       "aumUsd": 629590000000,
-      "priceUsd": 363.6499938964844,
-      "changePercent": -0.3125125748330669,
+      "priceUsd": 363.9800109863281,
+      "changePercent": -0.682165445605508,
       "logoUrl": "https://financialmodelingprep.com/image-stock/VTI.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/VTI.png"
@@ -655,8 +655,8 @@
       "symbol": "QQQ",
       "category": "ETF",
       "aumUsd": 495180000000,
-      "priceUsd": 710.6199951171875,
-      "changePercent": -0.6639920645849683,
+      "priceUsd": 716.3800048828125,
+      "changePercent": -1.3114780563527935,
       "logoUrl": "https://financialmodelingprep.com/image-stock/QQQ.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/QQQ.png"
@@ -669,8 +669,8 @@
       "symbol": "VUG",
       "category": "ETF",
       "aumUsd": 317820000000,
-      "priceUsd": 83.83000183105469,
-      "changePercent": -0.4394241456029224,
+      "priceUsd": 83.05000305175781,
+      "changePercent": -1.43603020863487,
       "logoUrl": "https://financialmodelingprep.com/image-stock/VUG.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/VUG.png"
@@ -683,8 +683,8 @@
       "symbol": "VEA",
       "category": "ETF",
       "aumUsd": 231840000000,
-      "priceUsd": 70.27999877929688,
-      "changePercent": -0.05688412357926667,
+      "priceUsd": 71.16000366210938,
+      "changePercent": -0.4615949244941777,
       "logoUrl": "https://financialmodelingprep.com/image-stock/VEA.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/VEA.png"
@@ -697,8 +697,8 @@
       "symbol": "VTV",
       "category": "ETF",
       "aumUsd": 225700000000,
-      "priceUsd": 217.58999633789062,
-      "changePercent": -0.08724512924568556,
+      "priceUsd": 220.49000549316406,
+      "changePercent": 0.09533626068229535,
       "logoUrl": "https://financialmodelingprep.com/image-stock/VTV.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/VTV.png"
@@ -711,8 +711,8 @@
       "symbol": "IEFA",
       "category": "ETF",
       "aumUsd": 185920000000,
-      "priceUsd": 95.33000183105469,
-      "changePercent": 0.12604006694250872,
+      "priceUsd": 96.02999877929688,
+      "changePercent": -0.33212215868396544,
       "logoUrl": "https://financialmodelingprep.com/image-stock/IEFA.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/IEFA.png"
@@ -725,8 +725,8 @@
       "symbol": "GLD",
       "category": "ETF",
       "aumUsd": 157609420000,
-      "priceUsd": 365.9200134277344,
-      "changePercent": 0.3042723271207337,
+      "priceUsd": 369.4599914550781,
+      "changePercent": 0.12737505979622638,
       "logoUrl": "https://financialmodelingprep.com/image-stock/GLD.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/GLD.png"
@@ -739,8 +739,8 @@
       "symbol": "BND",
       "category": "ETF",
       "aumUsd": 152620000000,
-      "priceUsd": 73.55000305175781,
-      "changePercent": 0.09526359774943255,
+      "priceUsd": 73.5999984741211,
+      "changePercent": -0.06789280478187443,
       "logoUrl": "https://financialmodelingprep.com/image-stock/BND.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/BND.png"
@@ -753,8 +753,8 @@
       "symbol": "VXUS",
       "category": "ETF",
       "aumUsd": 148470000000,
-      "priceUsd": 84.33999633789062,
-      "changePercent": -0.10660187961605251,
+      "priceUsd": 85.08000183105469,
+      "changePercent": -0.6306948121990111,
       "logoUrl": "https://financialmodelingprep.com/image-stock/VXUS.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/VXUS.png"
@@ -767,8 +767,8 @@
       "symbol": "AGG",
       "category": "ETF",
       "aumUsd": 138698180000,
-      "priceUsd": 99.19000244140625,
-      "changePercent": 0.09082136091925352,
+      "priceUsd": 99.25,
+      "changePercent": -0.07047895191230713,
       "logoUrl": "https://financialmodelingprep.com/image-stock/AGG.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/AGG.png"
@@ -781,8 +781,8 @@
       "symbol": "IWF",
       "category": "ETF",
       "aumUsd": 133240000000,
-      "priceUsd": 119.66999816894531,
-      "changePercent": -0.23342958434396047,
+      "priceUsd": 118.0999984741211,
+      "changePercent": -1.3696337221538086,
       "logoUrl": "https://financialmodelingprep.com/image-stock/IWF.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/IWF.png"
@@ -795,8 +795,8 @@
       "symbol": "VWO",
       "category": "ETF",
       "aumUsd": 121700000000,
-      "priceUsd": 58.970001220703125,
-      "changePercent": 0.1528535172473487,
+      "priceUsd": 58.79999923706055,
+      "changePercent": -0.9934335050535907,
       "logoUrl": "https://financialmodelingprep.com/image-stock/VWO.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/VWO.png"
@@ -823,8 +823,8 @@
       "name": "Euro",
       "symbol": "EUR",
       "category": "Currency",
-      "rateVsUsd": 1.1340054205459102,
-      "changePercent": -0.45587017905946176,
+      "rateVsUsd": 1.1341983486072045,
+      "changePercent": 0.017012975229108957,
       "logoUrl": "https://flagcdn.com/w40/eu.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/eu.png"
@@ -836,8 +836,8 @@
       "name": "Japanese Yen",
       "symbol": "JPY",
       "category": "Currency",
-      "rateVsUsd": 0.006185056902523503,
-      "changePercent": -0.0927758535378534,
+      "rateVsUsd": 0.006178560395427865,
+      "changePercent": -0.1050355267222749,
       "logoUrl": "https://flagcdn.com/w40/jp.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/jp.png"
@@ -849,8 +849,8 @@
       "name": "British Pound",
       "symbol": "GBP",
       "category": "Currency",
-      "rateVsUsd": 1.3160838608636143,
-      "changePercent": -0.4158825000329088,
+      "rateVsUsd": 1.3160319006132708,
+      "changePercent": -0.003948095701849076,
       "logoUrl": "https://flagcdn.com/w40/gb.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/gb.png"
@@ -862,8 +862,8 @@
       "name": "Australian Dollar",
       "symbol": "AUD",
       "category": "Currency",
-      "rateVsUsd": 0.6899406651028012,
-      "changePercent": -0.5381537187801864,
+      "rateVsUsd": 0.6893223960846487,
+      "changePercent": -0.08961191149101301,
       "logoUrl": "https://flagcdn.com/w40/au.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/au.png"
@@ -875,8 +875,8 @@
       "name": "Canadian Dollar",
       "symbol": "CAD",
       "category": "Currency",
-      "rateVsUsd": 0.7025925665706457,
-      "changePercent": -0.32319258062248224,
+      "rateVsUsd": 0.702247191011236,
+      "changePercent": -0.04915730337078571,
       "logoUrl": "https://flagcdn.com/w40/ca.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/ca.png"
@@ -888,8 +888,8 @@
       "name": "Swiss Franc",
       "symbol": "CHF",
       "category": "Currency",
-      "rateVsUsd": 1.2304663467454164,
-      "changePercent": -0.3592961732496584,
+      "rateVsUsd": 1.2297551557484905,
+      "changePercent": -0.05779849232017268,
       "logoUrl": "https://flagcdn.com/w40/ch.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/ch.png"
@@ -901,8 +901,8 @@
       "name": "Chinese Yuan",
       "symbol": "CNY",
       "category": "Currency",
-      "rateVsUsd": 0.14682347413704502,
-      "changePercent": -0.36999515482535034,
+      "rateVsUsd": 0.14709776117207496,
+      "changePercent": 0.18681415668853868,
       "logoUrl": "https://flagcdn.com/w40/cn.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/cn.png"
@@ -914,8 +914,8 @@
       "name": "Hong Kong Dollar",
       "symbol": "HKD",
       "category": "Currency",
-      "rateVsUsd": 0.12754451303504924,
-      "changePercent": -0.005101780521398425,
+      "rateVsUsd": 0.12754125959747978,
+      "changePercent": -0.002550825191960597,
       "logoUrl": "https://flagcdn.com/w40/hk.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/hk.png"
@@ -927,8 +927,8 @@
       "name": "New Zealand Dollar",
       "symbol": "NZD",
       "category": "Currency",
-      "rateVsUsd": 0.564302240279894,
-      "changePercent": -0.6094464195022671,
+      "rateVsUsd": 0.563856780377784,
+      "changePercent": -0.07893994925290941,
       "logoUrl": "https://flagcdn.com/w40/nz.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/nz.png"
@@ -940,8 +940,8 @@
       "name": "Singapore Dollar",
       "symbol": "SGD",
       "category": "Currency",
-      "rateVsUsd": 0.7702973347712216,
-      "changePercent": -0.1771683869973834,
+      "rateVsUsd": 0.7705941280727441,
+      "changePercent": 0.03852970640364258,
       "logoUrl": "https://flagcdn.com/w40/sg.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/sg.png"
@@ -953,8 +953,8 @@
       "name": "Indian Rupee",
       "symbol": "INR",
       "category": "Currency",
-      "rateVsUsd": 0.010563008344776591,
-      "changePercent": 0.07394105841342763,
+      "rateVsUsd": 0.010594342621040365,
+      "changePercent": 0.2966415933891408,
       "logoUrl": "https://flagcdn.com/w40/in.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/in.png"
@@ -966,8 +966,8 @@
       "name": "South Korean Won",
       "symbol": "KRW",
       "category": "Currency",
-      "rateVsUsd": 0.000646650672840025,
-      "changePercent": -0.6647568916795444,
+      "rateVsUsd": 0.0006481217431882404,
+      "changePercent": 0.22749073185907182,
       "logoUrl": "https://flagcdn.com/w40/kr.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/kr.png"
@@ -979,8 +979,8 @@
       "name": "Swedish Krona",
       "symbol": "SEK",
       "category": "Currency",
-      "rateVsUsd": 0.10230074372640689,
-      "changePercent": -0.6935990424650383,
+      "rateVsUsd": 0.10246636541555235,
+      "changePercent": 0.16189685735657244,
       "logoUrl": "https://flagcdn.com/w40/se.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/se.png"
@@ -992,8 +992,8 @@
       "name": "Mexican Peso",
       "symbol": "MXN",
       "category": "Currency",
-      "rateVsUsd": 0.056754655300601024,
-      "changePercent": -0.7588097413690466,
+      "rateVsUsd": 0.05669287767377784,
+      "changePercent": -0.10885032513364308,
       "logoUrl": "https://flagcdn.com/w40/mx.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/mx.png"
@@ -1169,31 +1169,19 @@
       "name": "NVIDIA",
       "symbol": "NVDA",
       "category": "Stock",
-      "marketCapUsd": 4835700000000,
+      "marketCapUsd": 4756482133484,
       "logoUrl": "https://financialmodelingprep.com/image-stock/NVDA.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/NVDA.png"
       ]
     },
     {
-      "id": "stock-aapl",
-      "rank": 3,
-      "name": "Apple",
-      "symbol": "AAPL",
-      "category": "Stock",
-      "marketCapUsd": 4305345002747,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/AAPL.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/AAPL.png"
-      ]
-    },
-    {
       "id": "stock-googl",
-      "rank": 4,
+      "rank": 3,
       "name": "Alphabet",
       "symbol": "GOOGL",
       "category": "Stock",
-      "marketCapUsd": 4295407706299,
+      "marketCapUsd": 4275752293701,
       "logoUrl": "https://financialmodelingprep.com/image-stock/GOOGL.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/GOOGL.png"
@@ -1201,7 +1189,7 @@
     },
     {
       "id": "commodity-silver",
-      "rank": 5,
+      "rank": 4,
       "name": "Silver",
       "symbol": "XAG",
       "category": "Commodity",
@@ -1210,12 +1198,24 @@
       "fallbackLogoUrls": []
     },
     {
+      "id": "stock-aapl",
+      "rank": 5,
+      "name": "Apple",
+      "symbol": "AAPL",
+      "category": "Stock",
+      "marketCapUsd": 4041953410339,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/AAPL.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/AAPL.png"
+      ]
+    },
+    {
       "id": "stock-msft",
       "rank": 6,
       "name": "Microsoft",
       "symbol": "MSFT",
       "category": "Stock",
-      "marketCapUsd": 2715367736511,
+      "marketCapUsd": 2621526800232,
       "logoUrl": "https://financialmodelingprep.com/image-stock/MSFT.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/MSFT.png"
@@ -1227,7 +1227,7 @@
       "name": "Amazon",
       "symbol": "AMZN",
       "category": "Stock",
-      "marketCapUsd": 2605082447510,
+      "marketCapUsd": 2524351138916,
       "logoUrl": "https://financialmodelingprep.com/image-stock/AMZN.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/AMZN.png"
@@ -1239,7 +1239,7 @@
       "name": "TSMC",
       "symbol": "TSM",
       "category": "Stock",
-      "marketCapUsd": 2420156626282,
+      "marketCapUsd": 2388095046387,
       "logoUrl": "https://financialmodelingprep.com/image-stock/TSM.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/TSM.png"
@@ -1251,7 +1251,7 @@
       "name": "Broadcom",
       "symbol": "AVGO",
       "category": "Stock",
-      "marketCapUsd": 1807191134644,
+      "marketCapUsd": 1792244317322,
       "logoUrl": "https://financialmodelingprep.com/image-stock/AVGO.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/AVGO.png"
@@ -1278,27 +1278,27 @@
       "fallbackLogoUrls": []
     },
     {
-      "id": "stock-meta",
-      "rank": 12,
-      "name": "Meta Platforms",
-      "symbol": "META",
-      "category": "Stock",
-      "marketCapUsd": 1410905056763,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/META.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/META.png"
-      ]
-    },
-    {
       "id": "stock-tsla",
-      "rank": 13,
+      "rank": 12,
       "name": "Tesla",
       "symbol": "TSLA",
       "category": "Stock",
-      "marketCapUsd": 1410378016415,
+      "marketCapUsd": 1408838165662,
       "logoUrl": "https://financialmodelingprep.com/image-stock/TSLA.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/TSLA.png"
+      ]
+    },
+    {
+      "id": "stock-meta",
+      "rank": 13,
+      "name": "Meta Platforms",
+      "symbol": "META",
+      "category": "Stock",
+      "marketCapUsd": 1373461087646,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/META.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/META.png"
       ]
     },
     {
@@ -1317,7 +1317,7 @@
       "name": "Bitcoin",
       "symbol": "BTC",
       "category": "Crypto",
-      "marketCapUsd": 1236333009869,
+      "marketCapUsd": 1196648425611,
       "logoUrl": "https://static.coinpaprika.com/coin/btc-bitcoin/logo.png",
       "fallbackLogoUrls": [
         "https://cryptoicons.org/api/icon/btc/200",
@@ -1334,12 +1334,12 @@
       "https://cryptoicons.org/api/icon/night/200",
       "https://cryptoicon-api.pages.dev/api/icon/night"
     ],
-    "priceUsd": 0.03223758885154749,
-    "marketCapUsd": 535382513,
-    "volume24hUsd": 10285061.241652953,
+    "priceUsd": 0.030325746776887225,
+    "marketCapUsd": 503631788,
+    "volume24hUsd": 8135567.179291586,
     "athPriceUsd": 0.11939941535583412,
-    "change24h": 4.010000228881836,
-    "percentFromAth": -72.99
+    "change24h": -5.860000133514404,
+    "percentFromAth": -74.57
   },
   "valueSources": {
     "commodity-gold": {
@@ -1944,5 +1944,5 @@
       "notes": "Series C (more than $1B in committed capital) at a $39B post-money valuation announced September 16, 2025, led by Parkway Venture Capital with NVIDIA, Brookfield, Intel Capital, Salesforce, Qualcomm and T-Mobile."
     }
   },
-  "requestId": "6f421725-4076-40f0-8f6a-4194c997f838"
+  "requestId": "7fbc6b08-7af0-4d61-ad48-8f6d257432e2"
 }
