@@ -1,4 +1,4 @@
-import { memo, type CSSProperties, type ReactNode } from "react";
+import { memo, useEffect, useState, type CSSProperties, type ReactNode } from "react";
 
 import { useNow } from "../hooks/useNow";
 import { getMarketSession, type MarketMood } from "../lib/us-market";
@@ -19,8 +19,20 @@ export const MeridianShell = memo(function MeridianShell({ children, mood }: Mer
   const session = getMarketSession(useNow()).phase;
   const tone = mood?.tone ?? "neutral";
   const style = { "--mood-intensity": String(mood?.intensity ?? 0) } as CSSProperties;
+
+  // Entrance choreography gate. Sections render hidden, then transition in once
+  // this flips just after first paint. Gated on a timer (not rAF) so it fires
+  // even when the compositor is paused (background tab / offscreen) — and once
+  // set, the settled state is the elements' NORMAL style, so the page is never
+  // left blank if the transition itself doesn't run.
+  const [entered, setEntered] = useState(false);
+  useEffect(() => {
+    const id = setTimeout(() => setEntered(true), 40);
+    return () => clearTimeout(id);
+  }, []);
+
   return (
-    <div className="meridian-root" data-session={session} data-mood={tone} style={style}>
+    <div className="meridian-root" data-session={session} data-mood={tone} data-entered={entered ? "" : undefined} style={style}>
       <div className="meridian-wash" aria-hidden="true" />
       <main className="meridian">{children}</main>
       <footer className="meridian-footer">

@@ -550,6 +550,26 @@ html:not(.dark) :is(.rs, .mc, .heat, .mv-col, .ulc, .ml) {
   background: linear-gradient(180deg, #fff, color-mix(in srgb, var(--raise) 95%, #000) 100%);
 }
 
+/* ── Entrance choreography ──────────────────────────────────────────────────
+   Sections rise + fade in sequence on load. Gated by data-entered (set on a
+   timer after first paint): before it, sections are hidden; after, they
+   transition to their NORMAL style. The settled state is the normal style, so
+   if the transition can't run the page still lands fully visible. Suppressed
+   under reduced motion. */
+.meridian > * {
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.meridian-root:not([data-entered]) .meridian > * { opacity: 0; transform: translateY(18px); }
+.meridian-root[data-entered] .meridian > *:nth-child(1) { transition-delay: 0.02s; }
+.meridian-root[data-entered] .meridian > *:nth-child(2) { transition-delay: 0.10s; }
+.meridian-root[data-entered] .meridian > *:nth-child(3) { transition-delay: 0.18s; }
+.meridian-root[data-entered] .meridian > *:nth-child(4) { transition-delay: 0.26s; }
+.meridian-root[data-entered] .meridian > *:nth-child(5) { transition-delay: 0.34s; }
+.meridian-root[data-entered] .meridian > *:nth-child(6) { transition-delay: 0.42s; }
+.meridian-root[data-entered] .meridian > *:nth-child(7) { transition-delay: 0.50s; }
+.meridian-root[data-entered] .meridian > *:nth-child(8) { transition-delay: 0.58s; }
+.meridian-root[data-entered] .meridian > *:nth-child(n+9) { transition-delay: 0.66s; }
+
 /* ── Responsive ── */
 @media (max-width: 820px) {
   .rs { grid-template-columns: 1fr; gap: 0.85rem; }
@@ -586,4 +606,8 @@ html:not(.dark) :is(.rs, .mc, .heat, .mv-col, .ulc, .ml) {
   .lh-line { stroke-dashoffset: 0; }
   .meridian-wash { transition: none; }
   .heat-cell, .heat-cell::before { transition: none; }
+  /* No entrance reveal under reduced motion — render settled and visible, with
+     no hidden flash before the gate flips. */
+  .meridian > * { transition: none; }
+  .meridian-root:not([data-entered]) .meridian > * { opacity: 1; transform: none; }
 }
