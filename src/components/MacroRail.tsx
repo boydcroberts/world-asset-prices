@@ -7,7 +7,6 @@ import type { UsIndex } from "../types/dashboard";
 
 type MacroRailProps = { indices: UsIndex[] | undefined };
 
-const MACRO_KEYS = ["es", "nq", "dxy", "wti", "gold", "ust5y", "ust10y", "ust30y"] as const;
 const MACRO_LABEL: Record<string, string> = {
   es: "S&P Fut",
   nq: "NQ Fut",
@@ -18,6 +17,14 @@ const MACRO_LABEL: Record<string, string> = {
   ust10y: "10Y",
   ust30y: "30Y",
 };
+
+// Deliberate clusters — futures, macro, and the Treasury curve read as three
+// distinct instruments rather than one undifferentiated row of numbers.
+const MACRO_GROUPS: { label: string; keys: string[] }[] = [
+  { label: "Futures", keys: ["es", "nq"] },
+  { label: "Macro", keys: ["dxy", "wti", "gold"] },
+  { label: "Curve", keys: ["ust5y", "ust10y", "ust30y"] },
+];
 
 function MacroCell({ index }: { index: UsIndex }) {
   const value = index.kind === "rate" ? `${formatLevel(index.level)}%` : formatLevel(index.level);
@@ -30,20 +37,30 @@ function MacroCell({ index }: { index: UsIndex }) {
   );
 }
 
-/** Compact futures + macro backdrop: index futures, dollar, crude, gold, and the
- *  Treasury curve — the context a daily watcher scans alongside the indices. */
+/** Futures + macro backdrop, grouped into three labeled instrument clusters:
+ *  index futures, the dollar/crude/gold macro set, and the Treasury curve. */
 export const MacroRail = memo(function MacroRail({ indices }: MacroRailProps) {
-  const cells = MACRO_KEYS.map((key) => findIndex(indices, key)).filter(
-    (index): index is UsIndex => Boolean(index) && index!.level !== null,
-  );
-  if (!cells.length) return null;
+  const groups = MACRO_GROUPS.map((group) => ({
+    label: group.label,
+    cells: group.keys
+      .map((key) => findIndex(indices, key))
+      .filter((index): index is UsIndex => Boolean(index) && index!.level !== null),
+  })).filter((group) => group.cells.length > 0);
+
+  if (!groups.length) return null;
 
   return (
     <section className="mc" aria-label="Futures and macro backdrop">
-      <span className="mc-eyebrow">Futures &amp; Macro</span>
       <div className="mc-grid">
-        {cells.map((index) => (
-          <MacroCell key={index.key} index={index} />
+        {groups.map((group) => (
+          <div className="mc-group" key={group.label}>
+            <span className="mc-group-label">{group.label}</span>
+            <div className="mc-cells">
+              {group.cells.map((index) => (
+                <MacroCell key={index.key} index={index} />
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </section>
