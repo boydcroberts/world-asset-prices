@@ -259,7 +259,7 @@ html:not(.dark) .lh-canvas::after { background: linear-gradient(100deg, var(--ra
   padding: 0.45rem 0.6rem; margin: -0.3rem -0.1rem; cursor: pointer; text-align: left;
   transition: border-color var(--dur-fast, 160ms) ease, background var(--dur-fast, 160ms) ease;
 }
-.lh-rail-item:hover, .lh-rail-item:focus-visible { border-color: var(--hairline-strong); background: rgba(255, 255, 255, 0.03); outline: none; }
+.lh-rail-item:hover, .lh-rail-item:focus-visible { border-color: var(--hairline-strong); background: rgba(255, 255, 255, 0.03); }
 html:not(.dark) .lh-rail-item:hover, html:not(.dark) .lh-rail-item:focus-visible { background: rgba(0, 0, 0, 0.03); }
 .lh-rail-name { font-family: var(--font-body); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 .lh-rail-spark { height: 30px; }
@@ -379,7 +379,8 @@ html:not(.dark) .lh-rail-item:hover, html:not(.dark) .lh-rail-item:focus-visible
   opacity: var(--cell-accent-strength, 1);
   transition: background 0.5s ease, opacity 0.5s ease;
 }
-.heat-cell:hover, .heat-cell:focus-visible { filter: brightness(1.16); transform: translateY(-1px); outline: none; }
+.heat-cell:hover, .heat-cell:focus-visible { filter: brightness(1.16); transform: translateY(-1px); }
+.heat-cell:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
 .heat-cell-bot { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; }
 .heat-name { font-family: var(--font-body); font-size: 0.74rem; font-weight: 600; color: var(--bone); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .heat-chg { font-family: var(--font-mono); font-size: 0.8rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -546,6 +547,11 @@ html:not(.dark) .lh-rail-item:hover, html:not(.dark) .lh-rail-item:focus-visible
 }
 .meridian-footer-word { font-family: var(--font-display); font-weight: 600; letter-spacing: 0.14em; color: var(--dim); }
 .meridian-footer-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--muted); }
+
+/* Keyboard focus — a consistent brass ring on anything interactive that doesn't
+   define its own visible focus treatment. :where() keeps specificity 0 so the
+   bespoke focus styles (rows, rail items) still win. */
+:where(button, a, input, [tabindex]):focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
 
 /* ── Materiality: elevated instrument surfaces ──────────────────────────────
    A soft float shadow + a 1px top light + a faint vertical sheen give the cards
