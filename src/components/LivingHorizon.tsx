@@ -2,6 +2,7 @@ import { memo, useCallback, useEffect, useId, useMemo, useRef, useState } from "
 import clsx from "clsx";
 
 import { buildHorizonGeometry } from "../lib/horizon";
+import { Sparkline } from "./Sparkline";
 import { findIndex, getMarketSession } from "../lib/us-market";
 import { useNow } from "../hooks/useNow";
 import { useCountUp } from "../hooks/useCountUp";
@@ -36,18 +37,31 @@ export const LivingHorizon = memo(function LivingHorizon({ indices, narrative, i
   const available = INDEX_ORDER.map((key) => findIndex(indices, key)).filter((i): i is UsIndex => Boolean(i) && i!.level !== null);
   const selected = available.find((i) => i.key === selectedKey) ?? available[0];
 
+  // Accuracy: the headline level is the live quote (regularMarketPrice) while the
+  // intraday series is a separate 5-minute feed whose last bar lags by up to a
+  // few minutes. Coerce the trailing point to the live level so the now-dot sits
+  // exactly on the number shown (and the scale includes a fresh high/low).
+  const reconciled = useMemo(() => {
+    const pts = selected?.intraday ?? [];
+    const level = selected?.level;
+    if (pts.length < 2 || level == null || !Number.isFinite(level)) return pts;
+    const last = pts[pts.length - 1];
+    if (last.value === level) return pts;
+    return [...pts.slice(0, -1), { t: last.t, value: level }];
+  }, [selected]);
+
   const geometry = useMemo(
-    () => (selected ? buildHorizonGeometry(selected.intraday, selected.previousClose, { width: 1000, height: 300 }) : null),
-    [selected],
+    () => (selected ? buildHorizonGeometry(reconciled, selected.previousClose, { width: 1000, height: 300 }) : null),
+    [selected, reconciled],
   );
 
   // Open / intraday high / low — derived from the same series the chart draws, so
   // the hero carries the day's full shape (not just the headline number).
   const dayStats = useMemo(() => {
-    const values = (selected?.intraday ?? []).map((p) => p.value).filter((v): v is number => Number.isFinite(v));
+    const values = reconciled.map((p) => p.value).filter((v): v is number => Number.isFinite(v));
     if (values.length < 2) return null;
     return { open: values[0], high: Math.max(...values), low: Math.min(...values) };
-  }, [selected]);
+  }, [reconciled]);
 
   // Count the giant level in from the previous close on first load (cinematic),
   // then track live updates. Honors prefers-reduced-motion.
@@ -177,8 +191,16 @@ export const LivingHorizon = memo(function LivingHorizon({ indices, narrative, i
             {railIndices.map((index) => (
               <button key={index.key} type="button" className="lh-rail-item" onClick={() => setSelectedKey(index.key)} aria-label={`Show ${index.name}`}>
                 <span className="lh-rail-name">{index.name}</span>
-                <span className="lh-rail-level">{formatLevel(index.level)}</span>
-                <span className={clsx("lh-rail-change", trendClass(index.changePercent))}>{formatPercent(index.changePercent)}</span>
+                <Sparkline
+                  className="lh-rail-spark"
+                  points={index.intraday}
+                  previousClose={index.previousClose}
+                  endValue={index.level}
+                />
+                <span className="lh-rail-foot">
+                  <span className="lh-rail-level">{formatLevel(index.level)}</span>
+                  <span className={clsx("lh-rail-change", trendClass(index.changePercent))}>{formatPercent(index.changePercent)}</span>
+                </span>
               </button>
             ))}
           </div>

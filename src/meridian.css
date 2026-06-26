@@ -254,16 +254,25 @@ html:not(.dark) .lh-canvas::after { background: linear-gradient(100deg, var(--ra
 .lh-ladder dt { font-family: var(--font-body); font-size: 0.58rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 .lh-ladder dd { margin: 0; font-family: var(--font-mono); font-size: 0.9rem; font-weight: 600; color: var(--bone); font-variant-numeric: tabular-nums; }
 .lh-rail-item {
-  display: flex; flex-direction: column; gap: 0.1rem;
+  display: flex; flex-direction: column; gap: 0.34rem; min-width: 148px;
   background: none; border: 1px solid transparent; border-radius: 10px;
-  padding: 0.3rem 0.55rem; margin: -0.3rem -0.1rem; cursor: pointer; text-align: left;
+  padding: 0.45rem 0.6rem; margin: -0.3rem -0.1rem; cursor: pointer; text-align: left;
   transition: border-color var(--dur-fast, 160ms) ease, background var(--dur-fast, 160ms) ease;
 }
 .lh-rail-item:hover, .lh-rail-item:focus-visible { border-color: var(--hairline-strong); background: rgba(255, 255, 255, 0.03); outline: none; }
 html:not(.dark) .lh-rail-item:hover, html:not(.dark) .lh-rail-item:focus-visible { background: rgba(0, 0, 0, 0.03); }
 .lh-rail-name { font-family: var(--font-body); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.lh-rail-spark { height: 30px; }
+.lh-rail-foot { display: flex; align-items: baseline; gap: 0.5rem; }
 .lh-rail-level { font-family: var(--font-mono); font-size: 1.04rem; font-weight: 600; color: var(--bone); font-variant-numeric: tabular-nums; }
 .lh-rail-change { font-family: var(--font-mono); font-size: 0.82rem; font-variant-numeric: tabular-nums; }
+
+/* Sparkline — tiny accurate intraday trace (real points, colored vs prev close). */
+.spark { display: block; width: 100%; height: 32px; color: var(--muted); }
+.spark--up { color: var(--rise); }
+.spark--down { color: var(--fall); }
+.spark--empty { display: block; width: 100%; }
+.spark-line { stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; opacity: 0.92; filter: drop-shadow(0 0 4px currentColor); }
 .lh--empty { display: flex; align-items: center; justify-content: center; }
 .lh-unavailable { color: var(--dim); font-family: var(--font-mono); font-size: 0.9rem; }
 .lh--stale { opacity: 0.92; }
