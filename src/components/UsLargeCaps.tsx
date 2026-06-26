@@ -89,7 +89,7 @@ export const UsLargeCaps = memo(function UsLargeCaps({ stocks, onSelect }: UsLar
         </div>
         {visible.map((stock, index) => (
           <button key={stock.id} type="button" role="row" className="ulc-row" onClick={() => onSelect(stock.id)} aria-label={`Show ${stock.name} details`}>
-            <span role="cell" className="ulc-c-rank">{index + 1}</span>
+            <span role="cell" className={clsx("ulc-c-rank", index < 3 && "ulc-c-rank--top")}>{index + 1}</span>
             <span role="cell" className="ulc-c-name">
               <LogoMark name={stock.name} symbol={stock.symbol} logoUrl={stock.logoUrl} fallbackLogoUrls={stock.fallbackLogoUrls} />
               <span className="ulc-sym">{stock.symbol}</span>

@@ -398,12 +398,12 @@ function App() {
               <UsLargeCaps stocks={topStocks} onSelect={openAssetDetail} />
 
               <div className="markets" aria-label="Markets leaderboards">
-                <MarketList title="Private Companies" rows={marketLists.priv} onSelect={openAssetDetail} />
-                <MarketList title="ETFs" rows={marketLists.etfs} onSelect={openAssetDetail} />
-                <MarketList title="Commodities" rows={marketLists.commodities} onSelect={openAssetDetail} />
-                <MarketList title="Currencies" rows={marketLists.fx} onSelect={openAssetDetail} />
-                <MarketList title="Crypto" rows={marketLists.crypto} onSelect={openAssetDetail} />
-                <MarketList title="Global Indices" rows={marketLists.globalIndices} />
+                <MarketList title="Private Companies" basis="Valuation" rows={marketLists.priv} onSelect={openAssetDetail} />
+                <MarketList title="ETFs" basis="Net assets" rows={marketLists.etfs} onSelect={openAssetDetail} />
+                <MarketList title="Commodities" basis="Annual trade" rows={marketLists.commodities} onSelect={openAssetDetail} />
+                <MarketList title="Currencies" basis="Per USD" rows={marketLists.fx} onSelect={openAssetDetail} />
+                <MarketList title="Crypto" basis="Price · 24h" rows={marketLists.crypto} onSelect={openAssetDetail} />
+                <MarketList title="Global Indices" basis="Index level" rows={marketLists.globalIndices} />
               </div>
 
               <details className="beyond">

@@ -18,6 +18,8 @@ export type MarketRow = {
 
 type MarketListProps = {
   title: string;
+  /** What the value column represents (e.g. "Net assets", "Per USD") — a label, not decoration. */
+  basis?: string;
   rows: MarketRow[];
   /** When omitted, rows render non-interactive (e.g. indices have no detail view). */
   onSelect?: (id: string) => void;
@@ -29,18 +31,21 @@ type MarketListProps = {
  * ETFs, FX, commodities, private), rendered in the MERIDIAN type system. Each row
  * opens the detail drawer.
  */
-export const MarketList = memo(function MarketList({ title, rows, onSelect, limit = 10 }: MarketListProps) {
+export const MarketList = memo(function MarketList({ title, basis, rows, onSelect, limit = 10 }: MarketListProps) {
   const visible = rows.slice(0, limit);
   if (!visible.length) return null;
 
   return (
     <section className="ml" aria-label={title}>
-      <h3 className="ml-title">{title}</h3>
+      <div className="ml-head">
+        <h3 className="ml-title">{title}</h3>
+        {basis ? <span className="ml-basis">{basis}</span> : null}
+      </div>
       <ol className="ml-list">
         {visible.map((row, index) => {
           const inner = (
             <>
-              <span className="ml-rank">{index + 1}</span>
+              <span className={clsx("ml-rank", index < 3 && "ml-rank--top")}>{index + 1}</span>
               <LogoMark name={row.name} symbol={row.symbol} logoUrl={row.logoUrl} fallbackLogoUrls={row.fallbackLogoUrls} />
               <span className="ml-sym">{row.symbol}</span>
               <span className="ml-nm">{row.name}</span>
