@@ -106,6 +106,10 @@ html:not(.dark) body::after { opacity: 0.02; }
   display: grid;
   gap: 1.1rem;
 }
+/* Grid items default to min-width:auto (min-content) and would push the page
+   wider than the column on narrow screens; let every section shrink so inner
+   tables/lists reflow and ellipsize instead of overflowing the viewport. */
+.meridian > * { min-width: 0; }
 
 /* ── Masthead ── */
 .mh {
@@ -435,8 +439,12 @@ html:not(.dark) .lh-rail-item:hover, html:not(.dark) .lh-rail-item:focus-visible
 }
 
 /* ── Markets board (top-N leaderboards) ── */
-.markets { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.1rem; }
-.ml { border: 1px solid var(--hairline); border-radius: 14px; background: var(--raise); padding: 0.85rem 0.9rem 0.55rem; }
+/* min(340px, 100%) so a single column can shrink below 340px on narrow screens
+   instead of forcing the page wider than the viewport. */
+.markets { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 1.1rem; }
+/* min-width:0 lets the grid item shrink below its content's min-content so the
+   row's name column ellipsizes instead of overflowing the page. */
+.ml { min-width: 0; border: 1px solid var(--hairline); border-radius: 14px; background: var(--raise); padding: 0.85rem 0.9rem 0.55rem; }
 .ml-title { font-family: var(--font-body); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin: 0 0 0.4rem; }
 .ml-list { list-style: none; margin: 0; padding: 0; display: grid; }
 .ml-row {
@@ -491,12 +499,24 @@ html:not(.dark) .lh-rail-item:hover, html:not(.dark) .lh-rail-item:focus-visible
 }
 @media (max-width: 560px) {
   .mh-sub { display: none; }
-  .mh-search span { display: none; }
+  /* Collapse search to an icon-only circle (⌘K is meaningless on touch) so the
+     wordmark, session/clock, and controls all fit one line without colliding. */
+  .mh-search span, .mh-search kbd { display: none; }
+  .mh-search { padding: 0; width: 34px; height: 34px; justify-content: center; }
   .mh { gap: 0.5rem; }
   .mh-status { gap: 0.5rem; }
   .mh-session, .mh-clock { white-space: nowrap; font-size: 0.62rem; }
   .mh-word { font-size: 1rem; }
+  /* Hug content instead of a tall fixed card, removing the dead gap between the
+     readout and the index rail; the chart still fills the card as a backdrop. */
+  .lh { min-height: auto; }
+  .lh-readout { gap: 1.4rem; }
   .lh-rail { gap: 1.1rem; }
+}
+/* Very narrow: drop the long session label, keep the live clock + status dot. */
+@media (max-width: 380px) {
+  .mh-session { font-size: 0; gap: 0; }
+  .mh-session-dot { width: 8px; height: 8px; }
 }
 .mh-session, .mh-clock { white-space: nowrap; }
 
