@@ -185,7 +185,9 @@ describe("App", () => {
   it("renders the US-market hero from live indices", async () => {
     renderApp();
 
-    expect(await screen.findByText("5,000.00")).toBeInTheDocument();
+    // The hero level (the day's intraday high also reads 5,000.00 in the day
+    // ladder, so scope the assertion to the headline level element).
+    expect(await screen.findByText("5,000.00", { selector: ".lh-level span" })).toBeInTheDocument();
     expect(screen.getByText("Nasdaq Composite")).toBeInTheDocument();
     expect(screen.getByText("VIX")).toBeInTheDocument();
     // Breadth is derived from the live stock universe (AAPL is advancing).

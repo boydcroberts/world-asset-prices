@@ -41,6 +41,14 @@ export const LivingHorizon = memo(function LivingHorizon({ indices, narrative, i
     [selected],
   );
 
+  // Open / intraday high / low — derived from the same series the chart draws, so
+  // the hero carries the day's full shape (not just the headline number).
+  const dayStats = useMemo(() => {
+    const values = (selected?.intraday ?? []).map((p) => p.value).filter((v): v is number => Number.isFinite(v));
+    if (values.length < 2) return null;
+    return { open: values[0], high: Math.max(...values), low: Math.min(...values) };
+  }, [selected]);
+
   // Count the giant level in from the previous close on first load (cinematic),
   // then track live updates. Honors prefers-reduced-motion.
   const liveLevel = useCountUp(selected?.level ?? null, { from: selected?.previousClose ?? null });
@@ -125,13 +133,21 @@ export const LivingHorizon = memo(function LivingHorizon({ indices, narrative, i
             <svg className="lh-svg" viewBox={`0 0 ${geometry.width} ${geometry.height}`} preserveAspectRatio="none">
               <defs>
                 <linearGradient id={`fill-${gradientId}`} x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="currentColor" stopOpacity="0.26" />
+                  <stop offset="0%" stopColor="currentColor" stopOpacity="0.32" />
+                  <stop offset="55%" stopColor="currentColor" stopOpacity="0.08" />
                   <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
+                </linearGradient>
+                {/* Stroke brightens left→right so the line gains energy toward the
+                    leading "now" edge rather than reading as a flat trace. */}
+                <linearGradient id={`stroke-${gradientId}`} x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="currentColor" stopOpacity="0.4" />
+                  <stop offset="72%" stopColor="currentColor" stopOpacity="0.92" />
+                  <stop offset="100%" stopColor="currentColor" stopOpacity="1" />
                 </linearGradient>
               </defs>
               <line className="lh-baseline" x1="0" y1={geometry.baselineY} x2={geometry.width} y2={geometry.baselineY} vectorEffect="non-scaling-stroke" />
               <path d={geometry.area} fill={`url(#fill-${gradientId})`} />
-              <path className="lh-line" d={geometry.line} fill="none" vectorEffect="non-scaling-stroke" />
+              <path className="lh-line" d={geometry.line} fill="none" vectorEffect="non-scaling-stroke" style={{ stroke: `url(#stroke-${gradientId})` }} />
             </svg>
             {scrubPoint ? (
               <span className="lh-crosshair" style={{ left: `${scrubPoint.xPct}%` }}>
@@ -156,14 +172,26 @@ export const LivingHorizon = memo(function LivingHorizon({ indices, narrative, i
           <p className={clsx("lh-change", trendClass(displayChangePct))}>{changeText}</p>
           {narrative && !scrubPoint ? <p className="lh-narrative">{narrative}</p> : null}
         </div>
-        <div className="lh-rail">
-          {railIndices.map((index) => (
-            <button key={index.key} type="button" className="lh-rail-item" onClick={() => setSelectedKey(index.key)} aria-label={`Show ${index.name}`}>
-              <span className="lh-rail-name">{index.name}</span>
-              <span className="lh-rail-level">{formatLevel(index.level)}</span>
-              <span className={clsx("lh-rail-change", trendClass(index.changePercent))}>{formatPercent(index.changePercent)}</span>
-            </button>
-          ))}
+        <div className="lh-foot">
+          <div className="lh-rail">
+            {railIndices.map((index) => (
+              <button key={index.key} type="button" className="lh-rail-item" onClick={() => setSelectedKey(index.key)} aria-label={`Show ${index.name}`}>
+                <span className="lh-rail-name">{index.name}</span>
+                <span className="lh-rail-level">{formatLevel(index.level)}</span>
+                <span className={clsx("lh-rail-change", trendClass(index.changePercent))}>{formatPercent(index.changePercent)}</span>
+              </button>
+            ))}
+          </div>
+          {dayStats ? (
+            <dl className="lh-ladder" aria-label={`${selected.name} day range`}>
+              <div className="lh-ladder-item"><dt>Open</dt><dd>{formatLevel(dayStats.open)}</dd></div>
+              <div className="lh-ladder-item"><dt>High</dt><dd>{formatLevel(dayStats.high)}</dd></div>
+              <div className="lh-ladder-item"><dt>Low</dt><dd>{formatLevel(dayStats.low)}</dd></div>
+              {selected.previousClose != null ? (
+                <div className="lh-ladder-item"><dt>Prev close</dt><dd>{formatLevel(selected.previousClose)}</dd></div>
+              ) : null}
+            </dl>
+          ) : null}
         </div>
       </div>
     </section>
