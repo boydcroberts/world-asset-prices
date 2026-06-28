@@ -1,6 +1,6 @@
 {
   "_comment": "Per-stock daily stats (previous close + 52-week range) sourced from Yahoo v8 chart meta. Auto-refreshed daily by the refresh bot; do not hand-edit. Keep symbols in sync with PUBLIC_COMPANIES.",
-  "generatedAt": "2026-06-27T09:10:29.282Z",
+  "generatedAt": "2026-06-28T09:40:10.566Z",
   "stats": {
     "NVDA": {
       "prevClose": 195.74,
@@ -19,7 +19,7 @@
     },
     "GOOGL": {
       "prevClose": 343.71,
-      "low52w": 171.73,
+      "low52w": 172.77,
       "high52w": 408.61
     },
     "AMZN": {
@@ -94,7 +94,7 @@
     },
     "JNJ": {
       "prevClose": 244.88,
-      "low52w": 151.01,
+      "low52w": 151.52,
       "high52w": 255.11
     },
     "HD": {
@@ -144,7 +144,7 @@
     },
     "PEP": {
       "prevClose": 139.52,
-      "low52w": 128.11,
+      "low52w": 130.59,
       "high52w": 171.48
     },
     "CVX": {
@@ -154,7 +154,7 @@
     },
     "ABBV": {
       "prevClose": 243.14,
-      "low52w": 181.73,
+      "low52w": 181.75,
       "high52w": 253.35
     },
     "WFC": {
@@ -274,12 +274,12 @@
     },
     "C": {
       "prevClose": 144.98,
-      "low52w": 83.81,
+      "low52w": 84.61,
       "high52w": 147.96
     },
     "CAT": {
       "prevClose": 1057.01,
-      "low52w": 382.75,
+      "low52w": 384.25,
       "high52w": 1057.07
     },
     "CHTR": {
@@ -344,7 +344,7 @@
     },
     "GD": {
       "prevClose": 344.7,
-      "low52w": 288.62,
+      "low52w": 289.4,
       "high52w": 369.7
     },
     "GE": {
@@ -359,7 +359,7 @@
     },
     "GILD": {
       "prevClose": 123.84,
-      "low52w": 106.84,
+      "low52w": 107.75,
       "high52w": 157.29
     },
     "GM": {
@@ -369,7 +369,7 @@
     },
     "GS": {
       "prevClose": 1065.09,
-      "low52w": 685.39,
+      "low52w": 691.3,
       "high52w": 1125
     },
     "HON": {
@@ -494,7 +494,7 @@
     },
     "RTX": {
       "prevClose": 186.59,
-      "low52w": 141.93,
+      "low52w": 142.66,
       "high52w": 214.5
     },
     "SBUX": {
@@ -639,7 +639,7 @@
     },
     "REGN": {
       "prevClose": 620.14,
-      "low52w": 517.39,
+      "low52w": 518.9,
       "high52w": 821.11
     }
   }
