@@ -1,6 +1,6 @@
 {
   "_comment": "Per-stock daily stats (previous close + 52-week range) sourced from Yahoo v8 chart meta. Auto-refreshed daily by the refresh bot; do not hand-edit. Keep symbols in sync with PUBLIC_COMPANIES.",
-  "generatedAt": "2026-07-03T09:40:56.572Z",
+  "generatedAt": "2026-07-04T09:04:15.371Z",
   "stats": {
     "NVDA": {
       "prevClose": 197.58,
@@ -115,7 +115,7 @@
     "NFLX": {
       "prevClose": 74.19,
       "low52w": 70.86,
-      "high52w": 130.226
+      "high52w": 129.5
     },
     "ORCL": {
       "prevClose": 142.5,
@@ -295,7 +295,7 @@
     "CMCSA": {
       "prevClose": 23.73,
       "low52w": 22.13,
-      "high52w": 34.114
+      "high52w": 33.871
     },
     "COF": {
       "prevClose": 204.82,
@@ -344,7 +344,7 @@
     },
     "GD": {
       "prevClose": 361.27,
-      "low52w": 292.34,
+      "low52w": 293.72,
       "high52w": 373.6
     },
     "GE": {
@@ -354,7 +354,7 @@
     },
     "GEV": {
       "prevClose": 1134.35,
-      "low52w": 506.02,
+      "low52w": 511.5,
       "high52w": 1181.95
     },
     "GILD": {
@@ -465,7 +465,7 @@
     "NOW": {
       "prevClose": 105.8,
       "low52w": 81.24,
-      "high52w": 211.478
+      "high52w": 210.2
     },
     "PANW": {
       "prevClose": 352.04,
