@@ -1,6 +1,6 @@
 {
   "_comment": "Per-stock daily stats (previous close + 52-week range) sourced from Yahoo v8 chart meta. Auto-refreshed daily by the refresh bot; do not hand-edit. Keep symbols in sync with PUBLIC_COMPANIES.",
-  "generatedAt": "2026-07-05T09:26:25.834Z",
+  "generatedAt": "2026-07-06T11:11:21.578Z",
   "stats": {
     "NVDA": {
       "prevClose": 197.58,
@@ -28,17 +28,17 @@
       "high52w": 278.56
     },
     "META": {
-      "prevClose": 612.91,
+      "prevClose": 612.91003,
       "low52w": 520.26,
       "high52w": 796.25
     },
     "AVGO": {
-      "prevClose": 369.34,
+      "prevClose": 369.34003,
       "low52w": 269.58,
       "high52w": 495
     },
     "TSLA": {
-      "prevClose": 425.3,
+      "prevClose": 425.30002,
       "low52w": 288.77,
       "high52w": 498.83
     },
@@ -203,7 +203,7 @@
       "high52w": 259.92
     },
     "TXN": {
-      "prevClose": 298.41,
+      "prevClose": 298.40997,
       "low52w": 152.73,
       "high52w": 334.03
     },
@@ -218,7 +218,7 @@
       "high52w": 150.19
     },
     "ADP": {
-      "prevClose": 235.73,
+      "prevClose": 235.73001,
       "low52w": 188.16,
       "high52w": 315.98
     },
@@ -293,9 +293,9 @@
       "high52w": 99.33
     },
     "CMCSA": {
-      "prevClose": 23.73,
+      "prevClose": 23.730001,
       "low52w": 22.13,
-      "high52w": 33.871
+      "high52w": 33.870667
     },
     "COF": {
       "prevClose": 204.82,
@@ -383,7 +383,7 @@
       "high52w": 332.46
     },
     "INTU": {
-      "prevClose": 267.08,
+      "prevClose": 267.08002,
       "low52w": 252.84,
       "high52w": 813.7
     },
@@ -593,7 +593,7 @@
       "high52w": 179.8
     },
     "ASML": {
-      "prevClose": 1843.04,
+      "prevClose": 1843.0399,
       "low52w": 683.48,
       "high52w": 1999.96
     },
@@ -638,7 +638,7 @@
       "high52w": 445.91
     },
     "REGN": {
-      "prevClose": 624.72,
+      "prevClose": 624.72003,
       "low52w": 532.6,
       "high52w": 821.11
     }
