@@ -1,6 +1,6 @@
 {
   "_comment": "Per-stock daily stats (previous close + 52-week range) sourced from Yahoo v8 chart meta. Auto-refreshed daily by the refresh bot; do not hand-edit. Keep symbols in sync with PUBLIC_COMPANIES.",
-  "generatedAt": "2026-07-12T08:37:12.606Z",
+  "generatedAt": "2026-07-13T09:52:20.893Z",
   "stats": {
     "NVDA": {
       "prevClose": 202.78,
@@ -13,12 +13,12 @@
       "high52w": 317.4
     },
     "MSFT": {
-      "prevClose": 384.36,
+      "prevClose": 384.36002,
       "low52w": 349.2,
       "high52w": 555.45
     },
     "GOOGL": {
-      "prevClose": 358.89,
+      "prevClose": 358.88998,
       "low52w": 179.68,
       "high52w": 408.61
     },
@@ -28,17 +28,17 @@
       "high52w": 278.56
     },
     "META": {
-      "prevClose": 631.48,
+      "prevClose": 631.48004,
       "low52w": 520.26,
       "high52w": 796.25
     },
     "AVGO": {
-      "prevClose": 401.11,
+      "prevClose": 401.11002,
       "low52w": 269.58,
       "high52w": 495
     },
     "TSLA": {
-      "prevClose": 406.55,
+      "prevClose": 406.55002,
       "low52w": 297.82,
       "high52w": 498.83
     },
@@ -123,7 +123,7 @@
       "high52w": 345.72
     },
     "AMD": {
-      "prevClose": 546.72,
+      "prevClose": 546.72003,
       "low52w": 141.9,
       "high52w": 584.73
     },
@@ -193,7 +193,7 @@
       "high52w": 261.56
     },
     "INTC": {
-      "prevClose": 112.54,
+      "prevClose": 112.53999,
       "low52w": 18.97,
       "high52w": 142.35
     },
@@ -233,7 +233,7 @@
       "high52w": 739.67
     },
     "AMGN": {
-      "prevClose": 363.62,
+      "prevClose": 363.62003,
       "low52w": 269.77,
       "high52w": 391.29
     },
@@ -283,7 +283,7 @@
       "high52w": 1073.46
     },
     "CHTR": {
-      "prevClose": 134.35,
+      "prevClose": 134.34999,
       "low52w": 124.05,
       "high52w": 402.15
     },
@@ -418,12 +418,12 @@
       "high52w": 293.06
     },
     "LRCX": {
-      "prevClose": 353.17,
+      "prevClose": 353.16998,
       "low52w": 90.94,
       "high52w": 438.5
     },
     "MDLZ": {
-      "prevClose": 58.3,
+      "prevClose": 58.300003,
       "low52w": 51.2,
       "high52w": 71.15
     },
@@ -478,7 +478,7 @@
       "high52w": 28.75
     },
     "PLTR": {
-      "prevClose": 129.04,
+      "prevClose": 129.04001,
       "low52w": 106.37,
       "high52w": 207.52
     },
@@ -633,7 +633,7 @@
       "high52w": 170.46
     },
     "ADI": {
-      "prevClose": 393.64,
+      "prevClose": 393.63998,
       "low52w": 218.37,
       "high52w": 445.91
     },
