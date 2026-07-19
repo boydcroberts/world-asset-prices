@@ -1,6 +1,6 @@
 {
   "_comment": "Per-stock daily stats (previous close + 52-week range) sourced from Yahoo v8 chart meta. Auto-refreshed daily by the refresh bot; do not hand-edit. Keep symbols in sync with PUBLIC_COMPANIES.",
-  "generatedAt": "2026-07-18T08:16:44.811Z",
+  "generatedAt": "2026-07-19T08:41:55.700Z",
   "stats": {
     "NVDA": {
       "prevClose": 207.4,
@@ -19,7 +19,7 @@
     },
     "GOOGL": {
       "prevClose": 354.46,
-      "low52w": 183.71,
+      "low52w": 186.15,
       "high52w": 408.61
     },
     "AMZN": {
@@ -64,7 +64,7 @@
     },
     "WMT": {
       "prevClose": 114.95,
-      "low52w": 94.43,
+      "low52w": 95.1,
       "high52w": 135.16
     },
     "BRK-B": {
@@ -584,7 +584,7 @@
     },
     "NEM": {
       "prevClose": 90.83,
-      "low52w": 57.86,
+      "low52w": 58.97,
       "high52w": 134.88
     },
     "ANET": {
@@ -615,7 +615,7 @@
     "SAP": {
       "prevClose": 161.64,
       "low52w": 148.06,
-      "high52w": 309.73
+      "high52w": 308.55
     },
     "AZN": {
       "prevClose": 169.29,
