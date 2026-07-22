@@ -99,6 +99,18 @@ html:not(.dark) body::after { opacity: 0.02; }
 .meridian-root[data-session="closed"] .meridian-wash,
 .meridian-root[data-session="after"] .meridian-wash { opacity: 0.5; }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .meridian {
   width: min(1180px, 94vw);
   margin: 0 auto;
@@ -141,7 +153,7 @@ html:not(.dark) body::after { opacity: 0.02; }
   display: inline-flex; align-items: center; gap: 0.45rem;
   font-family: var(--font-body); font-size: 0.76rem; color: var(--dim);
   background: var(--raise); border: 1px solid var(--hairline);
-  border-radius: 999px; padding: 0.34rem 0.7rem; cursor: pointer;
+  border-radius: 999px; min-height: 34px; padding: 0.34rem 0.7rem; cursor: pointer;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 .mh-search:hover { border-color: var(--hairline-strong); color: var(--bone); }
@@ -423,7 +435,7 @@ html:not(.dark) .lh-rail-item:hover, html:not(.dark) .lh-rail-item:focus-visible
 .ulc-title { font-family: var(--font-body); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); margin: 0; display: flex; align-items: baseline; gap: 0.5rem; }
 .ulc-count { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); font-weight: 500; letter-spacing: 0; }
 .ulc-sort { display: flex; gap: 0.3rem; }
-.ulc-sort-btn { font-family: var(--font-body); font-size: 0.68rem; color: var(--muted); background: none; border: 1px solid var(--hairline); border-radius: 999px; padding: 0.22rem 0.6rem; cursor: pointer; transition: color 0.15s ease, border-color 0.15s ease; }
+.ulc-sort-btn { font-family: var(--font-body); font-size: 0.68rem; color: var(--muted); background: none; border: 1px solid var(--hairline); border-radius: 999px; min-height: 32px; padding: 0.32rem 0.7rem; cursor: pointer; transition: color 0.15s ease, border-color 0.15s ease; }
 .ulc-sort-btn:hover { color: var(--dim); }
 .ulc-sort-btn.active { color: var(--bone); border-color: var(--brass); }
 
@@ -603,8 +615,18 @@ html:not(.dark) :is(.rs, .mc, .heat, .mv-col, .ulc, .ml) {
      wordmark, session/clock, and controls all fit one line without colliding. */
   .mh-search span, .mh-search kbd { display: none; }
   .mh-search { padding: 0; width: 34px; height: 34px; justify-content: center; }
-  .mh { gap: 0.5rem; }
-  .mh-status { gap: 0.5rem; }
+  .mh {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand actions"
+      "status status";
+    row-gap: 0.35rem;
+    column-gap: 0.6rem;
+  }
+  .mh-brand { grid-area: brand; }
+  .mh-actions { grid-area: actions; justify-self: end; }
+  .mh-status { grid-area: status; justify-self: start; gap: 0.5rem; min-width: 0; }
   .mh-session, .mh-clock { white-space: nowrap; font-size: 0.62rem; }
   .mh-word { font-size: 1rem; }
   /* Hug content instead of a tall fixed card, removing the dead gap between the

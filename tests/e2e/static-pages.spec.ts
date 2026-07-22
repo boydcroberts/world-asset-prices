@@ -22,7 +22,9 @@ test("GitHub Pages static build serves dashboard and detail drawers without APIs
 
   await page.goto("/");
 
-  await expect(page.getByRole("heading", { level: 1, name: /Global Assets Dashboard/i })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: /MERIDIAN live US market/i })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 2, name: /Largest Companies/i })).toBeVisible();
+  await page.getByText("Watchlist, portfolio & full search").click();
   await expect(page.getByRole("heading", { level: 2, name: "Top 15 Public Companies" })).toBeVisible();
   await expect(page.locator(".coin-card").first()).toBeVisible({ timeout: 15_000 });
 
@@ -36,10 +38,11 @@ test("GitHub Pages static build serves dashboard and detail drawers without APIs
   await page.getByRole("button", { name: /Show SpaceX details/i }).first().click();
   const spacexDialog = page.getByRole("dialog", { name: /SpaceX/i });
   await expect(spacexDialog).toBeVisible({ timeout: 15_000 });
-  await expect(spacexDialog.getByText("curated-valuation")).toBeVisible();
-  await expect(spacexDialog.getByText(/Private-company valuations are curated snapshots/i).first()).toBeVisible();
+  await expect(spacexDialog.getByText("SPCX · Stock")).toBeVisible();
+  await expect(spacexDialog.getByText("derived-market-cap")).toBeVisible();
+  await expect(spacexDialog.getByText(/static GitHub Pages build/i)).toBeVisible();
 
   expect(apiRequests).toEqual([]);
   expect(staticDetailRequests.some((path) => path.endsWith("/stock-nvda-30D.json"))).toBe(true);
-  expect(staticDetailRequests.some((path) => path.endsWith("/private-spacex-30D.json"))).toBe(true);
+  expect(staticDetailRequests.some((path) => path.endsWith("/stock-spcx-30D.json"))).toBe(true);
 });

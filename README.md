@@ -1,6 +1,6 @@
 # World Asset Prices
 
-> The top 15 of every major market — stocks, ETFs, crypto, FX, private companies, and commodities — ranked by market cap, with live prices and honest, per-segment data provenance. No API key required.
+> **MERIDIAN**, a no-key financial command center: live US indices, breadth, sectors, movers, large caps, and global asset leaderboards with transparent data provenance and resilient fallbacks.
 
 ![React 19](https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white)
 ![TypeScript 5.9](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)
@@ -11,9 +11,9 @@
 
 **🔗 [Live demo → world-asset-prices.vercel.app](https://world-asset-prices.vercel.app)**
 
-[![World Asset Prices dashboard — dark-glass UI showing the top 15 global assets ranked by market cap, with live data-health badges](docs/screenshot.jpg)](https://world-asset-prices.vercel.app)
+[![World Asset Prices MERIDIAN dashboard — live market horizon, breadth, sectors, movers, and largest-company table](docs/screenshot.jpg)](https://world-asset-prices.vercel.app)
 
-<sub>Screenshot of the current build. To refresh it: `npm run dev`, open `http://localhost:5188` in dark mode at 1440px, and save a viewport capture to `docs/screenshot.jpg`.</sub>
+<sub>Screenshot of the current build. To refresh it: `npm run dev`, open `http://localhost:5188` at 1440px, and save a viewport capture to `docs/screenshot.jpg` and `public/site-preview.jpg`.</sub>
 
 ---
 
@@ -30,7 +30,7 @@
 | Layer | What |
 |---|---|
 | Frontend | React 19, TypeScript 5.9, Vite 7 |
-| Styling | Tailwind CSS v4 + custom CSS tokens (dark-glass design) |
+| Styling | Tailwind CSS v4 + custom CSS tokens (Meridian market-terminal design) |
 | State | TanStack React Query 5 |
 | Backend | Vercel Serverless Functions, Node 24 |
 | Data | CoinPaprika, Stooq, Yahoo Finance, Frankfurter/ECB, curated JSON manifest |
@@ -74,10 +74,12 @@ npm run verify:production  # check live site health, CSP, rankings, data
 ```
 
 Key behaviors:
-- **cmd+K** opens the global search modal (fuzzy match across every asset); **/** focuses the inline search bar
-- Click any card to open the detail drawer (provenance, source link, historical chart for stocks/ETFs)
+- The first screen is a live US-market command center: S&P 500/Nasdaq/Dow horizon, breadth, VIX, 10Y, macro rail, sector tape, movers, and a sortable largest-company table
+- The “Watchlist, portfolio & full search” section expands into the global top-15 boards for assets, public companies, ETFs, private companies, FX, and crypto
+- **cmd+K** opens the global search modal (fuzzy match across every asset); **/** focuses the inline search bar inside the expanded section
+- Click any row or card to open the detail drawer (provenance, source link, historical chart for stocks/ETFs when available)
 - Pin any card to the Watchlist via the pin icon
-- Portfolio Lab (bottom of page) simulates tradable holdings locally — nothing sent to the server
+- Portfolio Lab simulates tradable holdings locally — nothing sent to the server
 - Theme toggle in the top-right; system preference respected on first load
 
 ---
@@ -105,6 +107,8 @@ Tiers 1–4 are server-side; tier 5 is what lets a **cold, fully-offline load** 
 Every API response segment carries a `source` field: `live`, `fresh-cache`, `stale-cache`, `durable-cache`, or `fallback`. The hero shows a summary; section headers show per-segment age. When a provider fails, the UI is honest about it — no silent stale data.
 
 Private-company valuations (`server/data/asset-value-sources.json`) are curated verified marks with source URLs and `valueAsOf` dates, not live prices. The audit script enforces this and checks age.
+
+SpaceX is modeled as the public stock `SPCX`, not as a private-company valuation.
 
 ---
 

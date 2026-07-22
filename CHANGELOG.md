@@ -5,6 +5,19 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- MERIDIAN first-screen command center: live US index horizon, breadth/risk strip, macro rail, sector ribbon, movers, and sortable largest-company table.
+- Current Playwright smoke coverage for the Meridian surface, expanded global boards, static Pages build, and public SpaceX `SPCX` detail flow.
+
+### Fixed
+
+- Mobile masthead no longer overlaps the MERIDIAN wordmark with the market-status clock.
+- Restored a top-level accessible H1 for screen readers and document outline/SEO.
+- README, page metadata, roadmap, and preview screenshots now describe the current Meridian experience instead of the old global-assets-only UI.
+
 ## [1.0.0] — 2026-06-09
 
 ### Security

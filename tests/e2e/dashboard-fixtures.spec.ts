@@ -13,12 +13,14 @@ test("deterministic fixture renders detail drawer, portfolio, and responsive con
 
   await page.goto("/");
 
-  await expect(page.getByRole("heading", { name: "Global Assets Dashboard" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /MERIDIAN live US market/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /Largest Companies/i })).toBeVisible();
   await page.getByRole("button", { name: /Show NVIDIA details/i }).first().click();
   await expect(page.getByRole("dialog", { name: "NVIDIA" })).toBeVisible();
   await expect(page.locator(".detail-chart")).toBeVisible();
 
   await page.getByRole("button", { name: /Close asset detail/i }).click();
+  await page.getByText("Watchlist, portfolio & full search").click();
   await page.getByLabel("Holding quantity").fill("3");
   await page.getByRole("button", { name: "Save holding" }).click();
   await expect(page.locator("#section-portfolio")).toContainText("NVIDIA");

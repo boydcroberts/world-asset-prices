@@ -22,6 +22,7 @@ export const Masthead = memo(function Masthead({ theme, onToggleTheme, onOpenSea
 
   return (
     <header className="mh">
+      <h1 className="sr-only">MERIDIAN live US market command center</h1>
       <div className="mh-brand">
         <span className="mh-mark" aria-hidden="true" />
         <span className="mh-word">MERIDIAN</span>

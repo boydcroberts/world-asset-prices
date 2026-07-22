@@ -1,15 +1,12 @@
 # World Asset Prices — Roadmap
 
-**Status: Production-stable** · Last updated: 2026-06-09 · Stack: React 19 + TS 5.9 + Vite 7 + Tailwind v4
+**Status: Production-stable** · Last updated: 2026-07-22 · Stack: React 19 + TS 5.9 + Vite 7 + Tailwind v4
 
 ---
 
 ## Now
 
 These are the highest-confidence, lowest-risk improvements to tackle next.
-
-### SpaceX reclassification (time-critical)
-SpaceX lists on Nasdaq June 12, 2026 (IPO priced at $135/share, ~$1.77T — curated mark updated 2026-06-09). Once trading begins: move it from `topPrivateCompanies` to a live-quoted stock entry, drop the curated private mark, and update `audit-data.mjs` / `verify-production.mjs` pins.
 
 ### Crypto curation
 The live Coinpaprika top-15 includes STETH and WBTC, which are synthetic wrappers of ETH and BTC already in the list. They inflate the crypto section with duplicates. Plan: filter STETH and WBTC; replace with two of (ADA, AVAX, LINK, DOT, SUI). Keep stablecoins (USDT, USDC) — they have a legitimate market cap story and deserve their own category label.
@@ -76,6 +73,9 @@ Explicit decisions — not on the table.
 
 | Date | What |
 |---|---|
+| 2026-07-22 | GitHub showcase cleanup: README/metadata aligned to MERIDIAN, stale SpaceX-private screenshot refreshed, mobile masthead overlap fixed, H1 restored for accessibility/SEO, Playwright smoke specs updated for the current Meridian surface |
+| 2026-06-26 | MERIDIAN command-center front page: live S&P/Nasdaq/Dow horizon, breadth/risk strip, macro rail, sector ribbon, movers, sortable largest-company board, and classic global boards grouped under full search |
+| 2026-06-23 | SpaceX reclassified from curated private-company mark to public `SPCX` large-cap; audit and production verifier now enforce that it never appears in `topPrivateCompanies` |
 | 2026-06-09 | Full audit pass: security hardening (spoof-proof rate-limit keys, CSP `form-action` + hashed theme script, COOP, expanded Permissions-Policy), data corrections (SpaceX $1.77T IPO mark, Samsung $1.30T, gold $29.79T), theme FOUC fix, combobox a11y on search modal, react-vendor chunk isolation |
 | 2026-06-08 | Watchlist persistence (`wap.pinned-markets.v1`), skeleton loading states, client last-known-good localStorage tier |
 | 2026-06-07 | cmd+K global search modal — fuzzy match across all 90+ assets, keyboard navigation, lazy-loaded |
