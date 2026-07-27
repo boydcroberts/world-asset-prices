@@ -1,6 +1,6 @@
 {
   "_comment": "Per-stock daily stats (previous close + 52-week range) sourced from Yahoo v8 chart meta. Auto-refreshed daily by the refresh bot; do not hand-edit. Keep symbols in sync with PUBLIC_COMPANIES.",
-  "generatedAt": "2026-07-26T08:44:32.014Z",
+  "generatedAt": "2026-07-27T10:25:15.206Z",
   "stats": {
     "NVDA": {
       "prevClose": 208.76,
@@ -13,7 +13,7 @@
       "high52w": 334.99
     },
     "MSFT": {
-      "prevClose": 381.58,
+      "prevClose": 381.58002,
       "low52w": 349.2,
       "high52w": 555.45
     },
@@ -108,7 +108,7 @@
       "high52w": 167.25
     },
     "COST": {
-      "prevClose": 926.06,
+      "prevClose": 926.06006,
       "low52w": 844.06,
       "high52w": 1096.5
     },
@@ -173,7 +173,7 @@
       "high52w": 376.16
     },
     "CSCO": {
-      "prevClose": 112.76,
+      "prevClose": 112.759995,
       "low52w": 65.75,
       "high52w": 130.37
     },
@@ -193,7 +193,7 @@
       "high52w": 261.56
     },
     "INTC": {
-      "prevClose": 100.23,
+      "prevClose": 100.229996,
       "low52w": 18.97,
       "high52w": 142.35
     },
@@ -218,7 +218,7 @@
       "high52w": 150.88
     },
     "ADP": {
-      "prevClose": 242.88,
+      "prevClose": 242.87999,
       "low52w": 188.16,
       "high52w": 315.98
     },
@@ -373,9 +373,9 @@
       "high52w": 1153.99
     },
     "HON": {
-      "prevClose": 246.27,
-      "low52w": 195.868,
-      "high52w": 260.283
+      "prevClose": 246.26999,
+      "low52w": 195.86786,
+      "high52w": 260.28317
     },
     "IBM": {
       "prevClose": 206.65,
@@ -398,12 +398,12 @@
       "high52w": 153.87
     },
     "KLAC": {
-      "prevClose": 218.73,
+      "prevClose": 218.73001,
       "low52w": 83.224,
       "high52w": 307.37
     },
     "LIN": {
-      "prevClose": 506.32,
+      "prevClose": 506.32004,
       "low52w": 387.78,
       "high52w": 548.2
     },
@@ -478,7 +478,7 @@
       "high52w": 28.75
     },
     "PLTR": {
-      "prevClose": 123.37,
+      "prevClose": 123.369995,
       "low52w": 106.37,
       "high52w": 207.52
     },
@@ -633,12 +633,12 @@
       "high52w": 170.46
     },
     "ADI": {
-      "prevClose": 380.2,
+      "prevClose": 380.19998,
       "low52w": 218.37,
       "high52w": 445.91
     },
     "REGN": {
-      "prevClose": 651.91,
+      "prevClose": 651.91003,
       "low52w": 541,
       "high52w": 821.11
     }
