@@ -1,6 +1,6 @@
 {
   "_comment": "Per-stock daily stats (previous close + 52-week range) sourced from Yahoo v8 chart meta. Auto-refreshed daily by the refresh bot; do not hand-edit. Keep symbols in sync with PUBLIC_COMPANIES.",
-  "generatedAt": "2026-08-01T08:38:33.653Z",
+  "generatedAt": "2026-08-02T08:42:26.133Z",
   "stats": {
     "NVDA": {
       "prevClose": 195.04,
@@ -9,7 +9,7 @@
     },
     "AAPL": {
       "prevClose": 333.43,
-      "low52w": 201.5,
+      "low52w": 201.68,
       "high52w": 344.57
     },
     "MSFT": {
@@ -19,7 +19,7 @@
     },
     "GOOGL": {
       "prevClose": 333.66,
-      "low52w": 187.82,
+      "low52w": 190.12,
       "high52w": 408.61
     },
     "AMZN": {
@@ -34,7 +34,7 @@
     },
     "AVGO": {
       "prevClose": 387.84,
-      "low52w": 281.61,
+      "low52w": 281.87,
       "high52w": 495
     },
     "TSLA": {
@@ -84,7 +84,7 @@
     },
     "UNH": {
       "prevClose": 421.47,
-      "low52w": 234.6,
+      "low52w": 236.95,
       "high52w": 461.62
     },
     "XOM": {
@@ -94,7 +94,7 @@
     },
     "JNJ": {
       "prevClose": 255.82,
-      "low52w": 164.79,
+      "low52w": 166.64,
       "high52w": 274.9
     },
     "HD": {
@@ -154,7 +154,7 @@
     },
     "ABBV": {
       "prevClose": 257.41,
-      "low52w": 189.79,
+      "low52w": 190.75,
       "high52w": 267.47
     },
     "WFC": {
@@ -164,7 +164,7 @@
     },
     "MRK": {
       "prevClose": 129.79,
-      "low52w": 77.53,
+      "low52w": 77.58,
       "high52w": 135.05
     },
     "ADBE": {
@@ -194,7 +194,7 @@
     },
     "INTC": {
       "prevClose": 91.13,
-      "low52w": 18.97,
+      "low52w": 19.35,
       "high52w": 142.35
     },
     "QCOM": {
@@ -240,11 +240,11 @@
     "AMT": {
       "prevClose": 174.46,
       "low52w": 160.06,
-      "high52w": 217.39
+      "high52w": 214.79
     },
     "AXP": {
       "prevClose": 337.52,
-      "low52w": 288.34,
+      "low52w": 290.63,
       "high52w": 387.49
     },
     "BA": {
@@ -274,7 +274,7 @@
     },
     "C": {
       "prevClose": 132.32,
-      "low52w": 87.94,
+      "low52w": 89.68,
       "high52w": 147.96
     },
     "CAT": {
@@ -344,12 +344,12 @@
     },
     "GD": {
       "prevClose": 382.2,
-      "low52w": 306.03,
+      "low52w": 306.77,
       "high52w": 400
     },
     "GE": {
       "prevClose": 355.04,
-      "low52w": 261.71,
+      "low52w": 263.8,
       "high52w": 382.97
     },
     "GEV": {
@@ -364,12 +364,12 @@
     },
     "GM": {
       "prevClose": 88.4,
-      "low52w": 51.88,
+      "low52w": 52.09,
       "high52w": 91.85
     },
     "GS": {
       "prevClose": 1024.86,
-      "low52w": 694.05,
+      "low52w": 705.55,
       "high52w": 1153.99
     },
     "HON": {
@@ -409,7 +409,7 @@
     },
     "LMT": {
       "prevClose": 574.11,
-      "low52w": 417,
+      "low52w": 419,
       "high52w": 692
     },
     "LOW": {
@@ -419,7 +419,7 @@
     },
     "LRCX": {
       "prevClose": 297.72,
-      "low52w": 92.47,
+      "low52w": 94.11,
       "high52w": 438.5
     },
     "MDLZ": {
@@ -444,12 +444,12 @@
     },
     "MS": {
       "prevClose": 208.91,
-      "low52w": 136.17,
+      "low52w": 139.41,
       "high52w": 232.25
     },
     "MU": {
       "prevClose": 874.66,
-      "low52w": 103.38,
+      "low52w": 105.46,
       "high52w": 1255
     },
     "NEE": {
@@ -474,7 +474,7 @@
     },
     "PFE": {
       "prevClose": 24.91,
-      "low52w": 23.11,
+      "low52w": 23.4,
       "high52w": 28.75
     },
     "PLTR": {
@@ -549,7 +549,7 @@
     },
     "USB": {
       "prevClose": 62.9,
-      "low52w": 43.46,
+      "low52w": 43.83,
       "high52w": 64.84
     },
     "VRTX": {
@@ -584,7 +584,7 @@
     },
     "NEM": {
       "prevClose": 95.76,
-      "low52w": 61.83,
+      "low52w": 63.13,
       "high52w": 134.88
     },
     "ANET": {
@@ -594,7 +594,7 @@
     },
     "ASML": {
       "prevClose": 1651.44,
-      "low52w": 683.48,
+      "low52w": 684.24,
       "high52w": 1999.96
     },
     "NVO": {
@@ -629,7 +629,7 @@
     },
     "NVS": {
       "prevClose": 158.44,
-      "low52w": 112.34,
+      "low52w": 113.48,
       "high52w": 170.46
     },
     "ADI": {
