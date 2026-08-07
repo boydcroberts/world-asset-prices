@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MERIDIAN — Clean/Light spike</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" />
+<style>
+  :root{
+    --bg:#f4f6f9; --surface:#ffffff; --surface-2:#fbfcfd;
+    --line:rgba(15,23,42,.08); --line-2:rgba(15,23,42,.05);
+    --ink:#0f172a; --sub:#475569; --mut:#94a3b8;
+    --accent:#4f46e5; --accent-soft:#eef2ff;
+    --up:#059669; --up-bg:#ecfdf5; --down:#e11d48; --down-bg:#fff1f2;
+    --shadow:0 1px 2px rgba(16,24,40,.05), 0 6px 16px -8px rgba(16,24,40,.12);
+    --shadow-lg:0 1px 3px rgba(16,24,40,.06), 0 18px 40px -20px rgba(16,24,40,.22);
+    --num:"Inter",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Inter",system-ui,-apple-system,sans-serif;background:
+     radial-gradient(1200px 500px at 80% -10%, #eef2ff 0%, transparent 60%),
+     radial-gradient(900px 500px at -10% 0%, #ecfeff 0%, transparent 55%), var(--bg);
+     color:var(--ink);-webkit-font-smoothing:antialiased;padding:0 0 64px}
+  .tnum{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+  .up{color:var(--up)} .down{color:var(--down)}
+  .mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+
+  /* App bar */
+  .bar{display:flex;align-items:center;gap:20px;height:72px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.01em;font-size:20px}
+  .brand .dot{width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,var(--accent),#22d3ee);
+     box-shadow:0 4px 10px -2px rgba(79,70,229,.5)}
+  .brand small{font-weight:500;color:var(--mut);font-size:12.5px;letter-spacing:.04em;text-transform:uppercase}
+  .bar .spacer{flex:1}
+  .status{display:flex;align-items:center;gap:8px;color:var(--sub);font-size:13px;font-weight:500}
+  .status .live{width:7px;height:7px;border-radius:50%;background:var(--mut)}
+  .search{display:flex;align-items:center;gap:8px;padding:8px 13px;background:var(--surface);border:1px solid var(--line);
+     border-radius:10px;color:var(--mut);font-size:13.5px;box-shadow:var(--shadow)}
+  .search kbd{font-family:var(--num);font-size:11px;background:#f1f5f9;border:1px solid var(--line);border-radius:5px;padding:1px 6px;color:var(--sub)}
+
+  .spike-tag{display:inline-flex;gap:8px;align-items:center;font-size:11px;font-weight:600;letter-spacing:.08em;
+     text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border:1px solid #e0e7ff;
+     padding:5px 11px;border-radius:999px;margin:4px 0 18px}
+
+  /* Command box */
+  .cmd{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-lg);
+     padding:26px 28px;display:grid;grid-template-columns:minmax(320px,1.1fr) 2fr;gap:30px;align-items:center}
+  .cmd-hero .ey{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+  .cmd-hero .ey b{color:var(--accent);font-weight:700}
+  .cmd-hero .big{font-size:56px;font-weight:800;letter-spacing:-.03em;line-height:1.02;margin:6px 0 4px}
+  .cmd-hero .chg{font-size:19px;font-weight:700}
+  .cmd-hero .sub{color:var(--sub);font-size:14px;margin-top:8px;max-width:34ch}
+  .idx-rail{display:flex;gap:26px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+  .idx{display:flex;flex-direction:column;gap:2px}
+  .idx .idx-n{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--mut)}
+  .idx .idx-v{font-size:19px;font-weight:700}
+  .idx .idx-c{font-size:12.5px;font-weight:600}
+  .cmd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line-2);
+     border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .cell{background:var(--surface);padding:12px 14px}
+  .cell .l{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--mut)}
+  .cell .v{font-size:17px;font-weight:700;margin-top:3px}
+  .cell .d{font-size:12.5px;font-weight:600;margin-top:1px}
+  .cell.wide{grid-column:span 2}
+  .breadth-bar{height:7px;border-radius:99px;background:var(--down-bg);overflow:hidden;display:flex;margin-top:8px}
+  .breadth-bar i{display:block;height:100%}
+  .breadth-bar .a{background:var(--up)} .breadth-bar .d{background:#fda4af}
+
+  section{margin-top:34px}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:14px}
+  .sec-head h2{font-size:20px;font-weight:800;letter-spacing:-.02em}
+  .sec-head .basis{font-size:12.5px;color:var(--mut);font-weight:500}
+  .sec-head .more{margin-left:auto;font-size:13px;font-weight:600;color:var(--accent);cursor:pointer}
+
+  /* Hero leaderboard */
+  .board{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-lg);overflow:hidden}
+  .cols{display:grid;grid-template-columns:44px 1fr 150px 120px 120px;gap:14px;padding:12px 24px;
+     font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--mut);border-bottom:1px solid var(--line)}
+  .cols .r{text-align:right}
+  .row{display:grid;grid-template-columns:44px 1fr 150px 120px 120px;gap:14px;padding:14px 24px;align-items:center;
+     border-bottom:1px solid var(--line-2);transition:background .12s}
+  .row:last-child{border-bottom:0}
+  .row:hover{background:var(--surface-2)}
+  .rank{font-weight:700;color:var(--mut);font-size:15px}
+  .rank.top{color:var(--accent)}
+  .asset{display:flex;align-items:center;gap:12px;min-width:0}
+  .mono-badge{width:34px;height:34px;border-radius:10px;flex:none;display:grid;place-items:center;font-weight:700;
+     font-size:12px;color:#fff;letter-spacing:.02em}
+  .asset .nm{font-weight:600;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .asset .tk{font-size:12px;color:var(--mut);font-weight:500}
+  .tag{font-size:11px;font-weight:600;padding:3px 9px;border-radius:6px;background:#f1f5f9;color:var(--sub);justify-self:start}
+  .tag.stock{background:#eef2ff;color:#4338ca}.tag.crypto{background:#fff7ed;color:#c2410c}
+  .tag.commodity{background:#fefce8;color:#a16207}.tag.private{background:#f0fdfa;color:#0f766e}
+  .val{text-align:right;font-weight:700;font-size:16px}
+  .chg{text-align:right;font-weight:600;font-size:14px}
+
+  /* Category grid */
+  .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:16px 18px}
+  .card h3{font-size:14px;font-weight:700;display:flex;align-items:baseline;gap:8px;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:6px}
+  .card h3 span{margin-left:auto;font-size:11px;font-weight:500;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
+  .crow{display:grid;grid-template-columns:22px 30px 1fr auto;gap:10px;align-items:center;padding:8px 4px;border-bottom:1px solid var(--line-2)}
+  .crow:last-child{border-bottom:0}
+  .crow .rk{font-size:12px;color:var(--mut);font-weight:600}
+  .crow .rk.top{color:var(--accent)}
+  .cbadge{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;color:#fff;font-size:10px;font-weight:700}
+  .crow .cn{font-weight:600;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .crow .cn small{color:var(--mut);font-weight:500;margin-left:6px}
+  .crow .cv{text-align:right;font-weight:700;font-size:13.5px}
+  .crow .cv .cc{display:block;font-size:11.5px;font-weight:600}
+  .foot{color:var(--mut);font-size:12px;margin-top:26px;text-align:center}
+  @media(max-width:900px){.cmd{grid-template-columns:1fr}.cats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="bar">
+    <div class="brand"><span class="dot"></span>MERIDIAN <small>Markets</small></div>
+    <div class="spacer"></div>
+    <div class="status"><span class="live"></span>Market closed · 8:22 PM ET</div>
+    <div class="search">Search assets <kbd>⌘K</kbd></div>
+  </div>
+
+  <div class="spike-tag">◆ Design spike · Clean / Light · placeholder data</div>
+
+  <!-- CONDENSED COMMAND BOX -->
+  <div class="cmd">
+    <div class="cmd-hero">
+      <div class="ey">S&amp;P 500 · <b>Market closed</b></div>
+      <div class="big tnum">7,709.96</div>
+      <div class="chg up tnum">▲ +272.33 &nbsp;(+3.66%)</div>
+      <div class="sub">Broad advance — 8 of 11 sectors higher, led by Technology.</div>
+      <div class="idx-rail">
+        <div class="idx"><span class="idx-n">Nasdaq Composite</span><span class="idx-v tnum">26,348.35</span><span class="idx-c up tnum">▲ 4.88%</span></div>
+        <div class="idx"><span class="idx-n">Dow Jones</span><span class="idx-v tnum">53,885.10</span><span class="idx-c up tnum">▲ 3.21%</span></div>
+      </div>
+    </div>
+    <div class="cmd-grid">
+      <div class="cell wide">
+        <div class="l">Breadth</div>
+        <div class="v tnum"><span class="up">87</span> <span style="color:var(--mut)">/</span> <span class="down">40</span> <span class="up" style="font-size:13px">+47 net</span></div>
+        <div class="breadth-bar"><i class="a" style="width:68%"></i><i class="d" style="width:32%"></i></div>
+      </div>
+      <div class="cell"><div class="l">VIX</div><div class="v tnum">15.15</div><div class="d down tnum">▼ 5.25%</div></div>
+      <div class="cell"><div class="l">US 10Y</div><div class="v tnum">4.67%</div><div class="d down tnum">▼ 0.08</div></div>
+      <div class="cell"><div class="l">S&amp;P Fut</div><div class="v tnum">7,737.50</div><div class="d up tnum">▲ 1.43%</div></div>
+      <div class="cell"><div class="l">NQ Fut</div><div class="v tnum">29,571</div><div class="d up tnum">▲ 2.35%</div></div>
+      <div class="cell"><div class="l">Gold</div><div class="v tnum">4,303.90</div><div class="d up tnum">▲ 6.70%</div></div>
+      <div class="cell"><div class="l">WTI</div><div class="v tnum">78.22</div><div class="d down tnum">▼ 2.64%</div></div>
+      <div class="cell"><div class="l">DXY</div><div class="v tnum">99.96</div><div class="d tnum" style="color:var(--mut)">0.00%</div></div>
+      <div class="cell"><div class="l">Curve 5·10·30Y</div><div class="v tnum" style="font-size:15px">4.39 · 4.67 · 5.21</div><div class="d tnum" style="color:var(--mut)">inverted front</div></div>
+    </div>
+  </div>
+
+  <!-- HERO LEADERBOARD -->
+  <section>
+    <div class="sec-head">
+      <h2>Largest Assets</h2>
+      <span class="basis">by market value · worldwide</span>
+      <span class="more">See all 100 →</span>
+    </div>
+    <div class="board">
+      <div class="cols"><div>#</div><div>Asset</div><div>Class</div><div class="r">Market value</div><div class="r">Today</div></div>
+      <div id="hero"></div>
+    </div>
+  </section>
+
+  <!-- CATEGORY BOARDS -->
+  <section>
+    <div class="sec-head"><h2>By category</h2><span class="basis">top 10 each</span></div>
+    <div class="cats" id="cats"></div>
+  </section>
+
+  <div class="foot">Design spike — placeholder figures for layout only. Final build wires live, source-verified data.</div>
+</div>
+
+<script>
+const badge=(t,c)=>`<span class="mono-badge" style="background:${c}">${t}</span>`;
+const cbadge=(t,c)=>`<span class="cbadge" style="background:${c}">${t}</span>`;
+const chg=v=>v==null?`<span style="color:var(--mut)">—</span>`:`<span class="${v>=0?'up':'down'} tnum">${v>=0?'▲':'▼'} ${Math.abs(v).toFixed(2)}%</span>`;
+const C={stock:'#6366f1',crypto:'#f97316',commodity:'#d4a017',private:'#14b8a6',etf:'#0ea5e9',fx:'#64748b'};
+
+const hero=[
+ [1,'Gold','—','commodity','$22.4T',0.8],
+ [2,'NVIDIA','NVDA','stock','$4.74T',-7.73],
+ [3,'Apple','AAPL','stock','$4.17T',-4.45],
+ [4,'Microsoft','MSFT','stock','$3.81T',1.53],
+ [5,'Alphabet','GOOGL','stock','$3.09T',-3.48],
+ [6,'Amazon','AMZN','stock','$2.50T',-0.04],
+ [7,'Silver','—','commodity','$1.94T',1.20],
+ [8,'Broadcom','AVGO','stock','$1.74T',-6.91],
+ [9,'Saudi Aramco','2222','stock','$1.70T',null],
+ [10,'Bitcoin','BTC','crypto','$1.19T',0.36],
+];
+document.getElementById('hero').innerHTML=hero.map(([r,nm,tk,cls,val,c])=>`
+ <div class="row">
+   <div class="rank ${r<=3?'top':''} tnum">${r}</div>
+   <div class="asset">${badge((tk!=='—'?tk:nm).slice(0,3).toUpperCase(),C[cls])}
+     <div style="min-width:0"><div class="nm">${nm}</div><div class="tk mono">${tk}</div></div></div>
+   <div><span class="tag ${cls}">${cls[0].toUpperCase()+cls.slice(1)}</span></div>
+   <div class="val tnum">${val}</div>
+   <div class="chg">${chg(c)}</div>
+ </div>`).join('');
+
+const cats=[
+ ['Largest Stocks','market cap',[['NVDA','NVIDIA','$4.74T',-7.73],['AAPL','Apple','$4.17T',-4.45],['MSFT','Microsoft','$3.81T',1.53],['GOOGL','Alphabet','$3.09T',-3.48],['AMZN','Amazon','$2.50T',-0.04],['AVGO','Broadcom','$1.74T',-6.91],['TSLA','Tesla','$1.43T',-6.26],['META','Meta','$1.40T',-2.41],['LLY','Eli Lilly','$1.14T',9.62],['BRK','Berkshire','$1.08T',2.04]],'stock'],
+ ['Private Companies','valuation',[['ANT','Anthropic','$965B',null],['OPE','OpenAI','$852B',null],['BYT','ByteDance','$550B',null],['STR','Stripe','$159B',null],['DAT','Databricks','$134B',null],['WAY','Waymo','$126B',null],['REV','Revolut','$75B',null],['AND','Anduril','$61B',null],['CAN','Canva','$42B',null],['FIG','Figure AI','$39B',null]],'private'],
+ ['ETFs','net assets',[['VOO','Vanguard S&P','$1.03T',0.04],['IVV','iShares Core','$817B',-0.29],['SPY','SPDR S&P','$759B',0.01],['VTI','Vanguard Total','$663B',0.37],['QQQ','Invesco QQQ','$481B',-0.08],['VUG','Vanguard Grw','$226B',0.57],['VEA','Vanguard Dev','$223B',0.21],['VTV','Vanguard Val','$187B',-0.13],['IEFA','iShares Core','$182B',0.07],['BND','Vanguard Bond','$158B',0.14]],'etf'],
+ ['Commodities','market value',[['XAU','Gold','$22.4T',0.8],['XAG','Silver','$1.94T',1.2],['OIL','Crude Oil','$1.4T',-2.64],['CU','Copper','$210B',0.5],['NG','Natural Gas','$210B',-1.1],['AL','Aluminium','$240B',0.3],['PT','Platinum','$310B',0.9],['CO','Cobalt','$60B',-0.4],['NI','Nickel','$90B',0.2],['ZN','Zinc','$85B',-0.7]],'commodity'],
+ ['Currencies','per USD',[['USD','US Dollar','$1.00',0],['EUR','Euro','$1.1401',0.52],['JPY','Japanese Yen','$0.0062',0.12],['GBP','British Pound','$1.3218',0.44],['AUD','Australian $','$0.6902',0.13],['CAD','Canadian $','$0.7051',0.41],['CHF','Swiss Franc','$1.2368',0.57],['CNY','Chinese Yuan','$0.1471',0],['HKD','Hong Kong $','$0.1275',-0.02],['NZD','NZ Dollar','$0.5649',0.19]],'fx'],
+ ['Crypto','market cap',[['BTC','Bitcoin','$1.19T',0.36],['ETH','Ethereum','$189B',0.69],['USDT','Tether','$140B',0.01],['BNB','BNB','$82B',1.29],['SOL','Solana','$40B',6.19],['USDC','USD Coin','$38B',0.01],['XRP','XRP','$60B',0.35],['TRX','TRON','$28B',-1.06],['HYPE','Hyperliquid','$21B',-0.50],['STETH','Lido stETH','$18B',0.65]],'crypto'],
+];
+document.getElementById('cats').innerHTML=cats.map(([title,basis,rows,cls])=>`
+ <div class="card"><h3>${title}<span>${basis}</span></h3>
+ ${rows.map(([tk,nm,val,c],i)=>`
+   <div class="crow"><div class="rk ${i<3?'top':''} tnum">${i+1}</div>
+     ${cbadge(tk.slice(0,3),C[cls])}
+     <div class="cn">${nm}<small class="mono">${tk}</small></div>
+     <div class="cv tnum">${val}<span class="cc">${c==null?'':(c>=0?'<span class=up>▲ '+c.toFixed(2)+'%</span>':'<span class=down>▼ '+Math.abs(c).toFixed(2)+'%</span>')}</span></div>
+   </div>`).join('')}
+ </div>`).join('');
+</script>
+</body>
+</html>
