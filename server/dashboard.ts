@@ -304,7 +304,9 @@ function normalizeAssets(assets: unknown): DashboardAsset[] {
       const rightValue = right.marketCapUsd ?? Number.NEGATIVE_INFINITY;
       return rightValue - leftValue;
     })
-    .slice(0, 15)
+    // 60 (not 15) so the "Largest Assets" hero board has real depth behind its
+    // top-10 default view once expanded ("See all").
+    .slice(0, 60)
     .map((asset, index) => ({
       ...asset,
       rank: index + 1,

@@ -11,11 +11,10 @@ import { PortfolioLab } from "./components/PortfolioLab";
 import { WatchlistSection } from "./components/WatchlistSection";
 import { MeridianShell } from "./components/MeridianShell";
 import { Masthead } from "./components/Masthead";
-import { LivingHorizon } from "./components/LivingHorizon";
-import { RiskStrip } from "./components/RiskStrip";
+import { CommandBox } from "./components/CommandBox";
+import { LargestAssets, type LargestAssetRow } from "./components/LargestAssets";
 import { Movers } from "./components/Movers";
 import { SectorRibbon } from "./components/SectorRibbon";
-import { MacroRail } from "./components/MacroRail";
 import { UsLargeCaps } from "./components/UsLargeCaps";
 import { MarketList, type MarketRow } from "./components/MarketList";
 import { deriveBreadth, deriveMood, deriveMovers, deriveNarrative, deriveSectors, findIndex, getMarketSession } from "./lib/us-market";
@@ -322,8 +321,6 @@ function App() {
   // breadth are derived client-side from the live equity universe.
   const indices = dashboard?.indices;
   const sp = findIndex(indices, "sp500");
-  const vix = findIndex(indices, "vix");
-  const ust10y = findIndex(indices, "ust10y");
   const breadth = useMemo(() => deriveBreadth(topStocks), [topStocks]);
   const movers = useMemo(() => deriveMovers(topStocks), [topStocks]);
   const sectors = useMemo(() => deriveSectors(topStocks), [topStocks]);
@@ -332,6 +329,17 @@ function App() {
   const mood = useMemo(() => deriveMood(breadth, sp?.changePercent), [breadth, sp?.changePercent]);
   const narrative = useMemo(() => deriveNarrative(sectors, sp?.changePercent), [sectors, sp?.changePercent]);
   const isStale = dashboard?.stale ?? false;
+
+  // The Largest Assets hero board (topAssets) is a cross-category market-value
+  // ranking; it carries no daily change of its own. Attach a REAL change% only
+  // where a live feed backs it (stocks/crypto) — commodities and private
+  // companies render "—" rather than a fabricated number.
+  const largestAssetRows = useMemo<LargestAssetRow[]>(() => {
+    const changeById = new Map<string, number | null>();
+    for (const stock of topStocks) changeById.set(stock.id, stock.changePercent);
+    for (const crypto of topCryptos) changeById.set(crypto.id, crypto.change24h);
+    return topAssets.map((asset) => ({ ...asset, changePercent: changeById.get(asset.id) ?? null }));
+  }, [topAssets, topStocks, topCryptos]);
 
   // The classic "top-N" leaderboards (crypto / ETFs / FX / commodities / private),
   // mapped to a uniform row shape for the bottom Markets board.
@@ -390,11 +398,10 @@ function App() {
             </section>
           ) : (
             <>
-              <LivingHorizon indices={indices} narrative={narrative} isStale={isStale} />
-              <RiskStrip breadth={breadth} vix={vix} ust10y={ust10y} />
-              <MacroRail indices={indices} />
-              <SectorRibbon sectors={sectors} />
-              <Movers gainers={movers.gainers} losers={movers.losers} onSelect={openAssetDetail} />
+              <CommandBox indices={indices} breadth={breadth} narrative={narrative} isStale={isStale} />
+
+              <LargestAssets rows={largestAssetRows} onSelect={openAssetDetail} />
+
               <UsLargeCaps stocks={topStocks} onSelect={openAssetDetail} />
 
               <div className="markets" aria-label="Markets leaderboards">
@@ -405,6 +412,9 @@ function App() {
                 <MarketList title="Crypto" basis="Price · 24h" rows={marketLists.crypto} onSelect={openAssetDetail} />
                 <MarketList title="Global Indices" basis="Index level" rows={marketLists.globalIndices} />
               </div>
+
+              <SectorRibbon sectors={sectors} />
+              <Movers gainers={movers.gainers} losers={movers.losers} onSelect={openAssetDetail} />
 
               <details className="beyond">
                 <summary>Watchlist, portfolio &amp; full search</summary>
