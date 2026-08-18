@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T07:08:00.888Z",
+  "generatedAt": "2026-08-18T07:12:52.981Z",
   "stale": false,
   "refreshInSec": 30,
   "source": {
@@ -44,16 +44,16 @@
       "name": "Bitcoin",
       "symbol": "BTC",
       "category": "Crypto",
-      "priceUsd": 62989.544467452935,
-      "marketCapUsd": 1264256470114,
-      "change24h": -0.019999999552965164,
+      "priceUsd": 64276.06454136392,
+      "marketCapUsd": 1290141132966,
+      "change24h": 1.4199999570846558,
       "sparkline7d": [
         0,
-        -0.019999999552965164,
+        0.03999999910593033,
+        0.09000000357627869,
         0.019999999552965164,
-        0,
-        -0.019999999552965164,
-        -2.880000114440918
+        1.4199999570846558,
+        0.41999998688697815
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/btc-bitcoin/logo.png",
       "fallbackLogoUrls": [
@@ -67,16 +67,16 @@
       "name": "Ethereum",
       "symbol": "ETH",
       "category": "Crypto",
-      "priceUsd": 1878.4530136339854,
-      "marketCapUsd": 226215176211,
-      "change24h": 0,
+      "priceUsd": 1900.461544811928,
+      "marketCapUsd": 228865582541,
+      "change24h": 0.3700000047683716,
       "sparkline7d": [
         0,
-        -0.009999999776482582,
-        0,
-        -0.03999999910593033,
-        0,
-        -2.2300000190734863
+        -0.019999999552965164,
+        0.2199999988079071,
+        -0.27000001072883606,
+        0.3700000047683716,
+        1.3300000429153442
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/eth-ethereum/logo.png",
       "fallbackLogoUrls": [
@@ -90,16 +90,16 @@
       "name": "Tether",
       "symbol": "USDT",
       "category": "Crypto",
-      "priceUsd": 0.999139411668809,
-      "marketCapUsd": 182997110966,
-      "change24h": 0.009999999776482582,
+      "priceUsd": 0.9991297944205292,
+      "marketCapUsd": 182968373012,
+      "change24h": 0,
       "sparkline7d": [
         0,
+        0,
         0.009999999776482582,
         0,
         0,
-        0.009999999776482582,
-        -0.009999999776482582
+        0.009999999776482582
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/usdt-tether/logo.png",
       "fallbackLogoUrls": [
@@ -113,16 +113,16 @@
       "name": "BNB",
       "symbol": "BNB",
       "category": "Crypto",
-      "priceUsd": 604.9371218024696,
-      "marketCapUsd": 80556998687,
-      "change24h": -1.0199999809265137,
+      "priceUsd": 603.6434517166596,
+      "marketCapUsd": 80384725941,
+      "change24h": -0.05999999865889549,
       "sparkline7d": [
         0,
-        0.029999999329447746,
-        0.019999999552965164,
-        -0.36000001430511475,
-        -1.0199999809265137,
-        0.33000001311302185
+        -0.029999999329447746,
+        0.009999999776482582,
+        -0.09000000357627869,
+        -0.05999999865889549,
+        0.07999999821186066
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/bnb-binance-coin/logo.png",
       "fallbackLogoUrls": [
@@ -136,15 +136,15 @@
       "name": "USDC",
       "symbol": "USDC",
       "category": "Crypto",
-      "priceUsd": 1.0000529997567524,
-      "marketCapUsd": 71878327974,
-      "change24h": 0,
+      "priceUsd": 1.0000103755382928,
+      "marketCapUsd": 71855942578,
+      "change24h": -0.009999999776482582,
       "sparkline7d": [
         0,
+        0,
         0.009999999776482582,
-        0,
-        0,
-        0,
+        0.009999999776482582,
+        -0.009999999776482582,
         0.009999999776482582
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/usdc-usd-coin/logo.png",
@@ -159,16 +159,16 @@
       "name": "XRP",
       "symbol": "XRP",
       "category": "Crypto",
-      "priceUsd": 1.0001131097783362,
-      "marketCapUsd": 62684028206,
-      "change24h": -0.14000000059604645,
+      "priceUsd": 0.9977830159344432,
+      "marketCapUsd": 62537985057,
+      "change24h": -0.2800000011920929,
       "sparkline7d": [
         0,
-        0.03999999910593033,
-        0.05000000074505806,
-        -0.07999999821186066,
-        -0.14000000059604645,
-        -3.569999933242798
+        0.019999999552965164,
+        0.14000000059604645,
+        -0.20999999344348907,
+        -0.2800000011920929,
+        -0.6100000143051147
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/xrp-xrp/logo.png",
       "fallbackLogoUrls": [
@@ -182,16 +182,16 @@
       "name": "Solana",
       "symbol": "SOL",
       "category": "Crypto",
-      "priceUsd": 75.32012412941793,
-      "marketCapUsd": 43895415492,
-      "change24h": 0.25,
+      "priceUsd": 76.0084580057262,
+      "marketCapUsd": 44304996418,
+      "change24h": 0.699999988079071,
       "sparkline7d": [
         0,
-        0,
-        0.03999999910593033,
-        -0.009999999776482582,
-        0.25,
-        -1.4299999475479126
+        0.05999999865889549,
+        0.30000001192092896,
+        0.2199999988079071,
+        0.699999988079071,
+        0.49000000953674316
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/sol-solana/logo.png",
       "fallbackLogoUrls": [
@@ -205,16 +205,16 @@
       "name": "TRON",
       "symbol": "TRX",
       "category": "Crypto",
-      "priceUsd": 0.3310151346647206,
-      "marketCapUsd": 31415163931,
-      "change24h": -0.41999998688697815,
+      "priceUsd": 0.33293959544243584,
+      "marketCapUsd": 31598921477,
+      "change24h": 0.07999999821186066,
       "sparkline7d": [
         0,
-        0.05000000074505806,
-        0.009999999776482582,
-        0.05000000074505806,
-        -0.41999998688697815,
-        0.5
+        0.11999999731779099,
+        0.4099999964237213,
+        0.6100000143051147,
+        0.07999999821186066,
+        0.4000000059604645
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/trx-tron/logo.png",
       "fallbackLogoUrls": [
@@ -228,16 +228,16 @@
       "name": "Lido Staked Ether",
       "symbol": "STETH",
       "category": "Crypto",
-      "priceUsd": 1878.266306649302,
-      "marketCapUsd": 18396489635,
-      "change24h": 0.15000000596046448,
+      "priceUsd": 1894.3382804731739,
+      "marketCapUsd": 18553904959,
+      "change24h": 0.03999999910593033,
       "sparkline7d": [
         0,
-        -0.009999999776482582,
-        -0.009999999776482582,
-        0.3400000035762787,
-        0.15000000596046448,
-        -2.2300000190734863
+        0,
+        0.1599999964237213,
+        -0.6000000238418579,
+        0.03999999910593033,
+        1.2999999523162842
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/steth-lido-staked-ether/logo.png",
       "fallbackLogoUrls": [
@@ -251,16 +251,16 @@
       "name": "Hyperliquid",
       "symbol": "HYPE",
       "category": "Crypto",
-      "priceUsd": 57.08522737541185,
-      "marketCapUsd": 12698364162,
-      "change24h": 1.2400000095367432,
+      "priceUsd": 60.02764321434291,
+      "marketCapUsd": 13352891954,
+      "change24h": 1.2899999618530273,
       "sparkline7d": [
         0,
-        0.12999999523162842,
-        0.15000000596046448,
-        0.3100000023841858,
-        1.2400000095367432,
-        4.050000190734863
+        0.20000000298023224,
+        0.9700000286102295,
+        0.8500000238418579,
+        1.2899999618530273,
+        9.100000381469727
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/hype-hyperliquid/logo.png",
       "fallbackLogoUrls": [
@@ -274,16 +274,16 @@
       "name": "Dogecoin",
       "symbol": "DOGE",
       "category": "Crypto",
-      "priceUsd": 0.06971273158018429,
-      "marketCapUsd": 10397493323,
-      "change24h": -0.4399999976158142,
+      "priceUsd": 0.0698976571408351,
+      "marketCapUsd": 10425074545,
+      "change24h": -0.3400000035762787,
       "sparkline7d": [
         0,
-        0.07000000029802322,
-        0.07999999821186066,
-        0.18000000715255737,
-        -0.4399999976158142,
-        -0.6399999856948853
+        -0.029999999329447746,
+        0.029999999329447746,
+        -0.46000000834465027,
+        -0.3400000035762787,
+        -0.25999999046325684
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/doge-dogecoin/logo.png",
       "fallbackLogoUrls": [
@@ -297,15 +297,15 @@
       "name": "Usds",
       "symbol": "USDS",
       "category": "Crypto",
-      "priceUsd": 1.0000645711262668,
-      "marketCapUsd": 9897415055,
-      "change24h": 0.019999999552965164,
+      "priceUsd": 0.9999539496753348,
+      "marketCapUsd": 9896320260,
+      "change24h": -0.009999999776482582,
       "sparkline7d": [
         0,
+        0,
         0.009999999776482582,
-        0,
-        0,
-        0.019999999552965164,
+        0.009999999776482582,
+        -0.009999999776482582,
         0.019999999552965164
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/usds-usds/logo.png",
@@ -320,16 +320,16 @@
       "name": "Rain Protocol",
       "symbol": "RAIN",
       "category": "Crypto",
-      "priceUsd": 0.012680347657190982,
-      "marketCapUsd": 8806257274,
-      "change24h": -0.5099999904632568,
+      "priceUsd": 0.013088121169899177,
+      "marketCapUsd": 9089448126,
+      "change24h": 1.190000057220459,
       "sparkline7d": [
         0,
         0.009999999776482582,
-        -0.009999999776482582,
-        0.019999999552965164,
-        -0.5099999904632568,
-        0.44999998807907104
+        0.07999999821186066,
+        -0.2199999988079071,
+        1.190000057220459,
+        2.0799999237060547
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/rain-rain-protocol/logo.png",
       "fallbackLogoUrls": [
@@ -343,16 +343,16 @@
       "name": "LEO Token",
       "symbol": "LEO",
       "category": "Crypto",
-      "priceUsd": 9.252608992129538,
-      "marketCapUsd": 8548687052,
-      "change24h": 5.340000152587891,
+      "priceUsd": 9.48055630422253,
+      "marketCapUsd": 8730446469,
+      "change24h": 0.6000000238418579,
       "sparkline7d": [
         0,
-        -0.2199999988079071,
-        -1.5199999809265137,
-        2.680000066757202,
-        5.340000152587891,
-        -5.010000228881836
+        0,
+        -0.019999999552965164,
+        0.7200000286102295,
+        0.6000000238418579,
+        -0.25999999046325684
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/leo-leo-token/logo.png",
       "fallbackLogoUrls": [
@@ -366,16 +366,16 @@
       "name": "Wrapped Liquid Staked Ether 2.0",
       "symbol": "WSTETH",
       "category": "Crypto",
-      "priceUsd": 2332.153267579651,
-      "marketCapUsd": 8500976186,
-      "change24h": 0,
+      "priceUsd": 2359.4759172545905,
+      "marketCapUsd": 8600570496,
+      "change24h": 0.3100000023841858,
       "sparkline7d": [
         0,
-        0,
         -0.009999999776482582,
-        -0.07000000029802322,
-        0,
-        -2.1600000858306885
+        0.20000000298023224,
+        -0.30000001192092896,
+        0.3100000023841858,
+        1.3600000143051147
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/wsteth-wrapped-liquid-staked-ether-20/logo.png",
       "fallbackLogoUrls": [
@@ -1262,8 +1262,25 @@
       ]
     },
     {
-      "id": "stock-sap",
+      "id": "stock-shel",
       "rank": 53,
+      "name": "Shell",
+      "symbol": "SHEL",
+      "category": "Stock",
+      "marketCapUsd": 255445271558,
+      "priceUsd": 91.62000274658203,
+      "changePercent": 2.78352720317306,
+      "sector": "Energy",
+      "low52w": 68.625,
+      "high52w": 94.9,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/SHEL.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/SHEL.png"
+      ]
+    },
+    {
+      "id": "stock-sap",
+      "rank": 54,
       "name": "SAP",
       "symbol": "SAP",
       "category": "Stock",
@@ -1280,7 +1297,7 @@
     },
     {
       "id": "stock-txn",
-      "rank": 54,
+      "rank": 55,
       "name": "Texas Instruments",
       "symbol": "TXN",
       "category": "Stock",
@@ -1293,23 +1310,6 @@
       "logoUrl": "https://financialmodelingprep.com/image-stock/TXN.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/TXN.png"
-      ]
-    },
-    {
-      "id": "stock-shel",
-      "rank": 55,
-      "name": "Shell",
-      "symbol": "SHEL",
-      "category": "Stock",
-      "marketCapUsd": 252238958053,
-      "priceUsd": 90.47000122070312,
-      "changePercent": 1.4934026716795845,
-      "sector": "Energy",
-      "low52w": 68.625,
-      "high52w": 94.9,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/SHEL.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/SHEL.png"
       ]
     },
     {
@@ -2820,8 +2820,8 @@
       "name": "Euro",
       "symbol": "EUR",
       "category": "Currency",
-      "rateVsUsd": 1.156697858952263,
-      "changePercent": 0.2857043711611937,
+      "rateVsUsd": 1.1592993194912995,
+      "changePercent": 0.2249040679813258,
       "logoUrl": "https://flagcdn.com/w40/eu.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/eu.png"
@@ -2833,8 +2833,8 @@
       "name": "Japanese Yen",
       "symbol": "JPY",
       "category": "Currency",
-      "rateVsUsd": 0.0062889126470033335,
-      "changePercent": 0.20124520470412208,
+      "rateVsUsd": 0.006280223575959304,
+      "changePercent": -0.13816491867110922,
       "logoUrl": "https://flagcdn.com/w40/jp.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/jp.png"
@@ -2846,8 +2846,8 @@
       "name": "British Pound",
       "symbol": "GBP",
       "category": "Currency",
-      "rateVsUsd": 1.353656225464981,
-      "changePercent": 0.3329994314644023,
+      "rateVsUsd": 1.3559138181177204,
+      "changePercent": 0.1667773996284617,
       "logoUrl": "https://flagcdn.com/w40/gb.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/gb.png"
@@ -2859,8 +2859,8 @@
       "name": "Australian Dollar",
       "symbol": "AUD",
       "category": "Currency",
-      "rateVsUsd": 0.708215297450425,
-      "changePercent": 0.43201133144476583,
+      "rateVsUsd": 0.7125044531528322,
+      "changePercent": 0.6056287851798933,
       "logoUrl": "https://flagcdn.com/w40/au.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/au.png"
@@ -2872,8 +2872,8 @@
       "name": "Canadian Dollar",
       "symbol": "CAD",
       "category": "Currency",
-      "rateVsUsd": 0.7207207207207208,
-      "changePercent": 0.5333333333333418,
+      "rateVsUsd": 0.721552781585973,
+      "changePercent": 0.11544844505374642,
       "logoUrl": "https://flagcdn.com/w40/ca.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/ca.png"
@@ -2885,8 +2885,8 @@
       "name": "Swiss Franc",
       "symbol": "CHF",
       "category": "Currency",
-      "rateVsUsd": 1.2318456743739143,
-      "changePercent": 0.10470688232178679,
+      "rateVsUsd": 1.2347355813752485,
+      "changePercent": 0.23459976046130737,
       "logoUrl": "https://flagcdn.com/w40/ch.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/ch.png"
@@ -2898,8 +2898,8 @@
       "name": "Chinese Yuan",
       "symbol": "CNY",
       "category": "Currency",
-      "rateVsUsd": 0.14833934107664695,
-      "changePercent": 0.025217687983048565,
+      "rateVsUsd": 0.14838116152773245,
+      "changePercent": 0.028192420690268283,
       "logoUrl": "https://flagcdn.com/w40/cn.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/cn.png"
@@ -2911,8 +2911,8 @@
       "name": "Hong Kong Dollar",
       "symbol": "HKD",
       "category": "Currency",
-      "rateVsUsd": 0.1274323652721318,
-      "changePercent": -0.0050972946108969654,
+      "rateVsUsd": 0.12746485156718035,
+      "changePercent": 0.025492970313440316,
       "logoUrl": "https://flagcdn.com/w40/hk.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/hk.png"
@@ -2924,8 +2924,8 @@
       "name": "New Zealand Dollar",
       "symbol": "NZD",
       "category": "Currency",
-      "rateVsUsd": 0.5888934691714269,
-      "changePercent": 0.7596725752311432,
+      "rateVsUsd": 0.5916809656233359,
+      "changePercent": 0.473344772498669,
       "logoUrl": "https://flagcdn.com/w40/nz.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/nz.png"
@@ -2937,8 +2937,8 @@
       "name": "Singapore Dollar",
       "symbol": "SGD",
       "category": "Currency",
-      "rateVsUsd": 0.7824113919098662,
-      "changePercent": 0.15648227838196835,
+      "rateVsUsd": 0.7834534628643058,
+      "changePercent": 0.13318708868693097,
       "logoUrl": "https://flagcdn.com/w40/sg.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/sg.png"
@@ -2950,8 +2950,8 @@
       "name": "Indian Rupee",
       "symbol": "INR",
       "category": "Currency",
-      "rateVsUsd": 0.010478885046631038,
-      "changePercent": 0.010478885046620201,
+      "rateVsUsd": 0.01045915699194645,
+      "changePercent": -0.18826482585502866,
       "logoUrl": "https://flagcdn.com/w40/in.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/in.png"
@@ -2963,8 +2963,8 @@
       "name": "South Korean Won",
       "symbol": "KRW",
       "category": "Currency",
-      "rateVsUsd": 0.0007085816321469315,
-      "changePercent": 0.6391406321965256,
+      "rateVsUsd": 0.0007082604415295592,
+      "changePercent": -0.04532866825790374,
       "logoUrl": "https://flagcdn.com/w40/kr.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/kr.png"
@@ -2976,8 +2976,8 @@
       "name": "Swedish Krona",
       "symbol": "SEK",
       "category": "Currency",
-      "rateVsUsd": 0.10516463523646268,
-      "changePercent": 0.5552692740485113,
+      "rateVsUsd": 0.10538185113759709,
+      "changePercent": 0.20654842822969907,
       "logoUrl": "https://flagcdn.com/w40/se.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/se.png"
@@ -2989,8 +2989,8 @@
       "name": "Mexican Peso",
       "symbol": "MXN",
       "category": "Currency",
-      "rateVsUsd": 0.05883771968533588,
-      "changePercent": 0.3383168881906979,
+      "rateVsUsd": 0.05879205836875555,
+      "changePercent": -0.07760551704676949,
       "logoUrl": "https://flagcdn.com/w40/mx.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/mx.png"
@@ -3289,8 +3289,21 @@
       "fallbackLogoUrls": []
     },
     {
-      "id": "stock-tsla",
+      "id": "btc-bitcoin",
       "rank": 14,
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "category": "Crypto",
+      "marketCapUsd": 1290141132966,
+      "logoUrl": "https://static.coinpaprika.com/coin/btc-bitcoin/logo.png",
+      "fallbackLogoUrls": [
+        "https://cryptoicons.org/api/icon/btc/200",
+        "https://cryptoicon-api.pages.dev/api/icon/btc"
+      ]
+    },
+    {
+      "id": "stock-tsla",
+      "rank": 15,
       "name": "Tesla",
       "symbol": "TSLA",
       "category": "Stock",
@@ -3298,19 +3311,6 @@
       "logoUrl": "https://financialmodelingprep.com/image-stock/TSLA.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/TSLA.png"
-      ]
-    },
-    {
-      "id": "btc-bitcoin",
-      "rank": 15,
-      "name": "Bitcoin",
-      "symbol": "BTC",
-      "category": "Crypto",
-      "marketCapUsd": 1264256470114,
-      "logoUrl": "https://static.coinpaprika.com/coin/btc-bitcoin/logo.png",
-      "fallbackLogoUrls": [
-        "https://cryptoicons.org/api/icon/btc/200",
-        "https://cryptoicon-api.pages.dev/api/icon/btc"
       ]
     },
     {
@@ -3824,8 +3824,20 @@
       ]
     },
     {
-      "id": "stock-sap",
+      "id": "stock-shel",
       "rank": 59,
+      "name": "Shell",
+      "symbol": "SHEL",
+      "category": "Stock",
+      "marketCapUsd": 255445271558,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/SHEL.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/SHEL.png"
+      ]
+    },
+    {
+      "id": "stock-sap",
+      "rank": 60,
       "name": "SAP",
       "symbol": "SAP",
       "category": "Stock",
@@ -3833,18 +3845,6 @@
       "logoUrl": "https://financialmodelingprep.com/image-stock/SAP.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/SAP.png"
-      ]
-    },
-    {
-      "id": "stock-txn",
-      "rank": 60,
-      "name": "Texas Instruments",
-      "symbol": "TXN",
-      "category": "Stock",
-      "marketCapUsd": 254443788720,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/TXN.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/TXN.png"
       ]
     }
   ],
@@ -3857,12 +3857,12 @@
       "https://cryptoicons.org/api/icon/night/200",
       "https://cryptoicon-api.pages.dev/api/icon/night"
     ],
-    "priceUsd": 0.017449568808928905,
-    "marketCapUsd": 289791958,
-    "volume24hUsd": 2247391.3673498896,
+    "priceUsd": 0.017283496521661126,
+    "marketCapUsd": 287033929,
+    "volume24hUsd": 2369464.960592437,
     "athPriceUsd": 0.11939941535583412,
-    "change24h": 1.0800000429153442,
-    "percentFromAth": -85.4
+    "change24h": 0.5400000214576721,
+    "percentFromAth": -85.55
   },
   "indices": [
     {
@@ -3870,322 +3870,326 @@
       "symbol": "^GSPC",
       "name": "S&P 500",
       "kind": "index",
-      "level": 7785.76,
-      "previousClose": 7757.64,
-      "changeAbs": 28.11999999999989,
-      "changePercent": 0.3624813732011268,
+      "level": 7745.06,
+      "previousClose": 7753.11,
+      "changeAbs": -8.049999999999272,
+      "changePercent": -0.103829302047814,
       "intraday": [
         {
-          "t": "2026-08-14T13:30:00.000Z",
-          "value": 7803.2099609375
+          "t": "2026-08-17T13:30:00.000Z",
+          "value": 7775.60009765625
         },
         {
-          "t": "2026-08-14T13:35:00.000Z",
-          "value": 7803.0498046875
+          "t": "2026-08-17T13:35:00.000Z",
+          "value": 7774.89013671875
         },
         {
-          "t": "2026-08-14T13:40:00.000Z",
-          "value": 7805.7001953125
+          "t": "2026-08-17T13:40:00.000Z",
+          "value": 7775.93017578125
         },
         {
-          "t": "2026-08-14T13:45:00.000Z",
-          "value": 7801.419921875
+          "t": "2026-08-17T13:45:00.000Z",
+          "value": 7780.60986328125
         },
         {
-          "t": "2026-08-14T13:50:00.000Z",
-          "value": 7807.259765625
+          "t": "2026-08-17T13:50:00.000Z",
+          "value": 7779.490234375
         },
         {
-          "t": "2026-08-14T13:55:00.000Z",
-          "value": 7806.27978515625
+          "t": "2026-08-17T13:55:00.000Z",
+          "value": 7774.0498046875
         },
         {
-          "t": "2026-08-14T14:00:00.000Z",
-          "value": 7808.14990234375
+          "t": "2026-08-17T14:00:00.000Z",
+          "value": 7775.31005859375
         },
         {
-          "t": "2026-08-14T14:05:00.000Z",
-          "value": 7807.08984375
+          "t": "2026-08-17T14:05:00.000Z",
+          "value": 7775.60009765625
         },
         {
-          "t": "2026-08-14T14:10:00.000Z",
-          "value": 7804.8701171875
+          "t": "2026-08-17T14:10:00.000Z",
+          "value": 7777.85986328125
         },
         {
-          "t": "2026-08-14T14:15:00.000Z",
-          "value": 7800.14013671875
+          "t": "2026-08-17T14:15:00.000Z",
+          "value": 7774.5400390625
         },
         {
-          "t": "2026-08-14T14:20:00.000Z",
-          "value": 7796.72998046875
+          "t": "2026-08-17T14:20:00.000Z",
+          "value": 7773.1201171875
         },
         {
-          "t": "2026-08-14T14:25:00.000Z",
-          "value": 7795.330078125
+          "t": "2026-08-17T14:25:00.000Z",
+          "value": 7774.47998046875
         },
         {
-          "t": "2026-08-14T14:30:00.000Z",
-          "value": 7790.75
+          "t": "2026-08-17T14:30:00.000Z",
+          "value": 7776.35986328125
         },
         {
-          "t": "2026-08-14T14:35:00.000Z",
-          "value": 7795.75
+          "t": "2026-08-17T14:35:00.000Z",
+          "value": 7771.330078125
         },
         {
-          "t": "2026-08-14T14:40:00.000Z",
-          "value": 7792.9501953125
+          "t": "2026-08-17T14:40:00.000Z",
+          "value": 7771.93994140625
         },
         {
-          "t": "2026-08-14T14:45:00.000Z",
-          "value": 7793.990234375
+          "t": "2026-08-17T14:45:00.000Z",
+          "value": 7773.41015625
         },
         {
-          "t": "2026-08-14T14:50:00.000Z",
-          "value": 7791.81982421875
+          "t": "2026-08-17T14:50:00.000Z",
+          "value": 7770.18994140625
         },
         {
-          "t": "2026-08-14T14:55:00.000Z",
-          "value": 7789.31982421875
+          "t": "2026-08-17T14:55:00.000Z",
+          "value": 7773.7998046875
         },
         {
-          "t": "2026-08-14T15:00:00.000Z",
-          "value": 7790.89990234375
+          "t": "2026-08-17T15:00:00.000Z",
+          "value": 7775.68994140625
         },
         {
-          "t": "2026-08-14T15:05:00.000Z",
-          "value": 7787.9501953125
+          "t": "2026-08-17T15:05:00.000Z",
+          "value": 7774.16015625
         },
         {
-          "t": "2026-08-14T15:10:00.000Z",
-          "value": 7786.080078125
+          "t": "2026-08-17T15:10:00.000Z",
+          "value": 7774.169921875
         },
         {
-          "t": "2026-08-14T15:15:00.000Z",
-          "value": 7787.18994140625
+          "t": "2026-08-17T15:15:00.000Z",
+          "value": 7777.93017578125
         },
         {
-          "t": "2026-08-14T15:20:00.000Z",
-          "value": 7781.35986328125
+          "t": "2026-08-17T15:20:00.000Z",
+          "value": 7777.7099609375
         },
         {
-          "t": "2026-08-14T15:25:00.000Z",
-          "value": 7784.39990234375
+          "t": "2026-08-17T15:25:00.000Z",
+          "value": 7777.919921875
         },
         {
-          "t": "2026-08-14T15:30:00.000Z",
-          "value": 7783.009765625
+          "t": "2026-08-17T15:30:00.000Z",
+          "value": 7773.14013671875
         },
         {
-          "t": "2026-08-14T15:35:00.000Z",
-          "value": 7782.5
+          "t": "2026-08-17T15:35:00.000Z",
+          "value": 7770.3701171875
         },
         {
-          "t": "2026-08-14T15:40:00.000Z",
-          "value": 7781.81982421875
+          "t": "2026-08-17T15:40:00.000Z",
+          "value": 7771.68994140625
         },
         {
-          "t": "2026-08-14T15:45:00.000Z",
-          "value": 7780.52978515625
+          "t": "2026-08-17T15:45:00.000Z",
+          "value": 7772.02001953125
         },
         {
-          "t": "2026-08-14T15:50:00.000Z",
-          "value": 7783.14013671875
+          "t": "2026-08-17T15:50:00.000Z",
+          "value": 7774.18017578125
         },
         {
-          "t": "2026-08-14T15:55:00.000Z",
-          "value": 7783.64990234375
+          "t": "2026-08-17T15:55:00.000Z",
+          "value": 7774.22998046875
         },
         {
-          "t": "2026-08-14T16:00:00.000Z",
-          "value": 7785.93994140625
+          "t": "2026-08-17T16:00:00.000Z",
+          "value": 7773.08984375
         },
         {
-          "t": "2026-08-14T16:05:00.000Z",
-          "value": 7783.669921875
+          "t": "2026-08-17T16:05:00.000Z",
+          "value": 7772.2001953125
         },
         {
-          "t": "2026-08-14T16:10:00.000Z",
-          "value": 7787.16015625
+          "t": "2026-08-17T16:10:00.000Z",
+          "value": 7774.14013671875
         },
         {
-          "t": "2026-08-14T16:15:00.000Z",
-          "value": 7787.52001953125
+          "t": "2026-08-17T16:15:00.000Z",
+          "value": 7775.93017578125
         },
         {
-          "t": "2026-08-14T16:20:00.000Z",
-          "value": 7788.080078125
+          "t": "2026-08-17T16:20:00.000Z",
+          "value": 7774.2099609375
         },
         {
-          "t": "2026-08-14T16:25:00.000Z",
-          "value": 7788.6298828125
+          "t": "2026-08-17T16:25:00.000Z",
+          "value": 7773.56005859375
         },
         {
-          "t": "2026-08-14T16:30:00.000Z",
-          "value": 7785.64013671875
+          "t": "2026-08-17T16:30:00.000Z",
+          "value": 7771.31982421875
         },
         {
-          "t": "2026-08-14T16:35:00.000Z",
-          "value": 7786.4501953125
+          "t": "2026-08-17T16:35:00.000Z",
+          "value": 7773.169921875
         },
         {
-          "t": "2026-08-14T16:40:00.000Z",
-          "value": 7783.10986328125
+          "t": "2026-08-17T16:40:00.000Z",
+          "value": 7770.009765625
         },
         {
-          "t": "2026-08-14T16:45:00.000Z",
-          "value": 7782.919921875
+          "t": "2026-08-17T16:45:00.000Z",
+          "value": 7770.990234375
         },
         {
-          "t": "2026-08-14T16:50:00.000Z",
-          "value": 7780.6298828125
+          "t": "2026-08-17T16:50:00.000Z",
+          "value": 7769.10009765625
         },
         {
-          "t": "2026-08-14T16:55:00.000Z",
-          "value": 7778.39013671875
+          "t": "2026-08-17T16:55:00.000Z",
+          "value": 7767.77001953125
         },
         {
-          "t": "2026-08-14T17:00:00.000Z",
-          "value": 7779.580078125
+          "t": "2026-08-17T17:00:00.000Z",
+          "value": 7767.1201171875
         },
         {
-          "t": "2026-08-14T17:05:00.000Z",
-          "value": 7780.1201171875
+          "t": "2026-08-17T17:05:00.000Z",
+          "value": 7766.39013671875
         },
         {
-          "t": "2026-08-14T17:10:00.000Z",
-          "value": 7781.4501953125
+          "t": "2026-08-17T17:10:00.000Z",
+          "value": 7763.91015625
         },
         {
-          "t": "2026-08-14T17:20:00.000Z",
-          "value": 7781.31005859375
+          "t": "2026-08-17T17:15:00.000Z",
+          "value": 7762.68994140625
         },
         {
-          "t": "2026-08-14T17:25:00.000Z",
-          "value": 7779.08984375
+          "t": "2026-08-17T17:20:00.000Z",
+          "value": 7758.3798828125
         },
         {
-          "t": "2026-08-14T17:30:00.000Z",
-          "value": 7779.759765625
+          "t": "2026-08-17T17:25:00.000Z",
+          "value": 7756.39990234375
         },
         {
-          "t": "2026-08-14T17:35:00.000Z",
-          "value": 7777.43994140625
+          "t": "2026-08-17T17:30:00.000Z",
+          "value": 7755.56005859375
         },
         {
-          "t": "2026-08-14T17:40:00.000Z",
-          "value": 7777.5498046875
+          "t": "2026-08-17T17:35:00.000Z",
+          "value": 7752.509765625
         },
         {
-          "t": "2026-08-14T17:45:00.000Z",
-          "value": 7777.5400390625
+          "t": "2026-08-17T17:40:00.000Z",
+          "value": 7758.2001953125
         },
         {
-          "t": "2026-08-14T17:50:00.000Z",
-          "value": 7779.27001953125
+          "t": "2026-08-17T17:45:00.000Z",
+          "value": 7755.490234375
         },
         {
-          "t": "2026-08-14T17:55:00.000Z",
-          "value": 7779.9501953125
+          "t": "2026-08-17T17:50:00.000Z",
+          "value": 7755.9501953125
         },
         {
-          "t": "2026-08-14T18:00:00.000Z",
-          "value": 7782.0498046875
+          "t": "2026-08-17T17:55:00.000Z",
+          "value": 7754.7099609375
         },
         {
-          "t": "2026-08-14T18:05:00.000Z",
-          "value": 7782.8701171875
+          "t": "2026-08-17T18:00:00.000Z",
+          "value": 7754.72998046875
         },
         {
-          "t": "2026-08-14T18:10:00.000Z",
-          "value": 7783.39013671875
+          "t": "2026-08-17T18:05:00.000Z",
+          "value": 7753.990234375
         },
         {
-          "t": "2026-08-14T18:15:00.000Z",
-          "value": 7783.5400390625
+          "t": "2026-08-17T18:10:00.000Z",
+          "value": 7757.16015625
         },
         {
-          "t": "2026-08-14T18:20:00.000Z",
-          "value": 7783.08984375
+          "t": "2026-08-17T18:15:00.000Z",
+          "value": 7756.43994140625
         },
         {
-          "t": "2026-08-14T18:25:00.000Z",
-          "value": 7780.8798828125
+          "t": "2026-08-17T18:20:00.000Z",
+          "value": 7757.41015625
         },
         {
-          "t": "2026-08-14T18:30:00.000Z",
-          "value": 7780.35009765625
+          "t": "2026-08-17T18:25:00.000Z",
+          "value": 7756.47998046875
         },
         {
-          "t": "2026-08-14T18:35:00.000Z",
-          "value": 7781.56005859375
+          "t": "2026-08-17T18:30:00.000Z",
+          "value": 7753.31005859375
         },
         {
-          "t": "2026-08-14T18:40:00.000Z",
-          "value": 7783.6201171875
+          "t": "2026-08-17T18:35:00.000Z",
+          "value": 7755.759765625
         },
         {
-          "t": "2026-08-14T18:45:00.000Z",
-          "value": 7783.85009765625
+          "t": "2026-08-17T18:40:00.000Z",
+          "value": 7757.16015625
         },
         {
-          "t": "2026-08-14T18:50:00.000Z",
-          "value": 7785.169921875
+          "t": "2026-08-17T18:45:00.000Z",
+          "value": 7757.85986328125
         },
         {
-          "t": "2026-08-14T18:55:00.000Z",
-          "value": 7783.41015625
+          "t": "2026-08-17T18:50:00.000Z",
+          "value": 7756.81005859375
         },
         {
-          "t": "2026-08-14T19:00:00.000Z",
-          "value": 7781.419921875
+          "t": "2026-08-17T18:55:00.000Z",
+          "value": 7755.830078125
         },
         {
-          "t": "2026-08-14T19:05:00.000Z",
-          "value": 7783.10986328125
+          "t": "2026-08-17T19:00:00.000Z",
+          "value": 7753.830078125
         },
         {
-          "t": "2026-08-14T19:10:00.000Z",
-          "value": 7781.990234375
+          "t": "2026-08-17T19:05:00.000Z",
+          "value": 7753.39013671875
         },
         {
-          "t": "2026-08-14T19:15:00.000Z",
-          "value": 7781.740234375
+          "t": "2026-08-17T19:10:00.000Z",
+          "value": 7752.60009765625
         },
         {
-          "t": "2026-08-14T19:20:00.000Z",
-          "value": 7782.85986328125
+          "t": "2026-08-17T19:15:00.000Z",
+          "value": 7754.22021484375
         },
         {
-          "t": "2026-08-14T19:25:00.000Z",
-          "value": 7783.330078125
+          "t": "2026-08-17T19:20:00.000Z",
+          "value": 7753.41015625
         },
         {
-          "t": "2026-08-14T19:30:00.000Z",
-          "value": 7783.91015625
+          "t": "2026-08-17T19:25:00.000Z",
+          "value": 7751.72998046875
         },
         {
-          "t": "2026-08-14T19:35:00.000Z",
-          "value": 7783.1298828125
+          "t": "2026-08-17T19:30:00.000Z",
+          "value": 7749.85986328125
         },
         {
-          "t": "2026-08-14T19:40:00.000Z",
-          "value": 7783.5400390625
+          "t": "2026-08-17T19:35:00.000Z",
+          "value": 7750.33984375
         },
         {
-          "t": "2026-08-14T19:45:00.000Z",
-          "value": 7783.8701171875
+          "t": "2026-08-17T19:40:00.000Z",
+          "value": 7750.0400390625
         },
         {
-          "t": "2026-08-14T19:50:00.000Z",
-          "value": 7784.2001953125
+          "t": "2026-08-17T19:45:00.000Z",
+          "value": 7753.10009765625
         },
         {
-          "t": "2026-08-14T19:55:00.000Z",
-          "value": 7786.009765625
+          "t": "2026-08-17T19:50:00.000Z",
+          "value": 7747.4599609375
         },
         {
-          "t": "2026-08-14T20:00:00.000Z",
-          "value": 7785.759765625
+          "t": "2026-08-17T19:55:00.000Z",
+          "value": 7746.14013671875
+        },
+        {
+          "t": "2026-08-17T20:00:00.000Z",
+          "value": 7745.06005859375
         }
       ]
     },
@@ -4194,326 +4198,326 @@
       "symbol": "^IXIC",
       "name": "Nasdaq Composite",
       "kind": "index",
-      "level": 26729.164,
-      "previousClose": 26690.62,
-      "changeAbs": 38.54400000000169,
-      "changePercent": 0.1444102834628858,
+      "level": 26644.91,
+      "previousClose": 26605.36,
+      "changeAbs": 39.54999999999927,
+      "changePercent": 0.1486542561348513,
       "intraday": [
         {
-          "t": "2026-08-14T13:30:00.000Z",
-          "value": 26839.857421875
+          "t": "2026-08-17T13:30:00.000Z",
+          "value": 26734.458984375
         },
         {
-          "t": "2026-08-14T13:35:00.000Z",
-          "value": 26834.638671875
+          "t": "2026-08-17T13:35:00.000Z",
+          "value": 26726.6953125
         },
         {
-          "t": "2026-08-14T13:40:00.000Z",
-          "value": 26828.486328125
+          "t": "2026-08-17T13:40:00.000Z",
+          "value": 26725.84375
         },
         {
-          "t": "2026-08-14T13:45:00.000Z",
-          "value": 26815.732421875
+          "t": "2026-08-17T13:45:00.000Z",
+          "value": 26756.9921875
         },
         {
-          "t": "2026-08-14T13:50:00.000Z",
-          "value": 26819.296875
+          "t": "2026-08-17T13:50:00.000Z",
+          "value": 26770.947265625
         },
         {
-          "t": "2026-08-14T13:55:00.000Z",
-          "value": 26810.640625
+          "t": "2026-08-17T13:55:00.000Z",
+          "value": 26747.6640625
         },
         {
-          "t": "2026-08-14T14:00:00.000Z",
-          "value": 26823.265625
+          "t": "2026-08-17T14:00:00.000Z",
+          "value": 26735
         },
         {
-          "t": "2026-08-14T14:05:00.000Z",
-          "value": 26813.599609375
+          "t": "2026-08-17T14:05:00.000Z",
+          "value": 26736.78125
         },
         {
-          "t": "2026-08-14T14:10:00.000Z",
-          "value": 26810.4140625
+          "t": "2026-08-17T14:10:00.000Z",
+          "value": 26754.94921875
         },
         {
-          "t": "2026-08-14T14:15:00.000Z",
-          "value": 26774.5078125
+          "t": "2026-08-17T14:15:00.000Z",
+          "value": 26735.111328125
         },
         {
-          "t": "2026-08-14T14:20:00.000Z",
-          "value": 26750.703125
+          "t": "2026-08-17T14:20:00.000Z",
+          "value": 26714.12109375
         },
         {
-          "t": "2026-08-14T14:25:00.000Z",
-          "value": 26749.923828125
+          "t": "2026-08-17T14:25:00.000Z",
+          "value": 26724.826171875
         },
         {
-          "t": "2026-08-14T14:30:00.000Z",
-          "value": 26738.953125
+          "t": "2026-08-17T14:30:00.000Z",
+          "value": 26729.70703125
         },
         {
-          "t": "2026-08-14T14:35:00.000Z",
-          "value": 26762.845703125
+          "t": "2026-08-17T14:35:00.000Z",
+          "value": 26725.044921875
         },
         {
-          "t": "2026-08-14T14:40:00.000Z",
-          "value": 26753.34375
+          "t": "2026-08-17T14:40:00.000Z",
+          "value": 26734.177734375
         },
         {
-          "t": "2026-08-14T14:45:00.000Z",
-          "value": 26751.380859375
+          "t": "2026-08-17T14:45:00.000Z",
+          "value": 26732.83203125
         },
         {
-          "t": "2026-08-14T14:50:00.000Z",
-          "value": 26744.33203125
+          "t": "2026-08-17T14:50:00.000Z",
+          "value": 26726.01171875
         },
         {
-          "t": "2026-08-14T14:55:00.000Z",
-          "value": 26723.68359375
+          "t": "2026-08-17T14:55:00.000Z",
+          "value": 26750.341796875
         },
         {
-          "t": "2026-08-14T15:00:00.000Z",
-          "value": 26717.47265625
+          "t": "2026-08-17T15:00:00.000Z",
+          "value": 26764.65234375
         },
         {
-          "t": "2026-08-14T15:05:00.000Z",
-          "value": 26707.16796875
+          "t": "2026-08-17T15:05:00.000Z",
+          "value": 26759.841796875
         },
         {
-          "t": "2026-08-14T15:10:00.000Z",
-          "value": 26697.498046875
+          "t": "2026-08-17T15:10:00.000Z",
+          "value": 26760.279296875
         },
         {
-          "t": "2026-08-14T15:15:00.000Z",
-          "value": 26706.72265625
+          "t": "2026-08-17T15:15:00.000Z",
+          "value": 26776.44921875
         },
         {
-          "t": "2026-08-14T15:20:00.000Z",
-          "value": 26671.6875
+          "t": "2026-08-17T15:20:00.000Z",
+          "value": 26775.17578125
         },
         {
-          "t": "2026-08-14T15:25:00.000Z",
-          "value": 26685.580078125
+          "t": "2026-08-17T15:25:00.000Z",
+          "value": 26777.21484375
         },
         {
-          "t": "2026-08-14T15:30:00.000Z",
-          "value": 26670.6015625
+          "t": "2026-08-17T15:30:00.000Z",
+          "value": 26753.900390625
         },
         {
-          "t": "2026-08-14T15:35:00.000Z",
-          "value": 26671.453125
+          "t": "2026-08-17T15:35:00.000Z",
+          "value": 26743.03125
         },
         {
-          "t": "2026-08-14T15:40:00.000Z",
-          "value": 26673.00390625
+          "t": "2026-08-17T15:40:00.000Z",
+          "value": 26750.84765625
         },
         {
-          "t": "2026-08-14T15:45:00.000Z",
-          "value": 26668.794921875
+          "t": "2026-08-17T15:45:00.000Z",
+          "value": 26751.283203125
         },
         {
-          "t": "2026-08-14T15:50:00.000Z",
-          "value": 26685.810546875
+          "t": "2026-08-17T15:50:00.000Z",
+          "value": 26772.275390625
         },
         {
-          "t": "2026-08-14T15:55:00.000Z",
-          "value": 26693.998046875
+          "t": "2026-08-17T15:55:00.000Z",
+          "value": 26771.556640625
         },
         {
-          "t": "2026-08-14T16:00:00.000Z",
-          "value": 26697.6875
+          "t": "2026-08-17T16:00:00.000Z",
+          "value": 26754.154296875
         },
         {
-          "t": "2026-08-14T16:05:00.000Z",
-          "value": 26686.021484375
+          "t": "2026-08-17T16:05:00.000Z",
+          "value": 26741.52734375
         },
         {
-          "t": "2026-08-14T16:10:00.000Z",
-          "value": 26703.841796875
+          "t": "2026-08-17T16:10:00.000Z",
+          "value": 26741.484375
         },
         {
-          "t": "2026-08-14T16:15:00.000Z",
-          "value": 26702.197265625
+          "t": "2026-08-17T16:15:00.000Z",
+          "value": 26747.978515625
         },
         {
-          "t": "2026-08-14T16:20:00.000Z",
-          "value": 26710.609375
+          "t": "2026-08-17T16:20:00.000Z",
+          "value": 26732.048828125
         },
         {
-          "t": "2026-08-14T16:25:00.000Z",
-          "value": 26718.626953125
+          "t": "2026-08-17T16:25:00.000Z",
+          "value": 26741.615234375
         },
         {
-          "t": "2026-08-14T16:30:00.000Z",
-          "value": 26691.21484375
+          "t": "2026-08-17T16:30:00.000Z",
+          "value": 26730.998046875
         },
         {
-          "t": "2026-08-14T16:35:00.000Z",
-          "value": 26698.939453125
+          "t": "2026-08-17T16:35:00.000Z",
+          "value": 26734.451171875
         },
         {
-          "t": "2026-08-14T16:40:00.000Z",
-          "value": 26687.939453125
+          "t": "2026-08-17T16:40:00.000Z",
+          "value": 26717.162109375
         },
         {
-          "t": "2026-08-14T16:45:00.000Z",
-          "value": 26687.869140625
+          "t": "2026-08-17T16:45:00.000Z",
+          "value": 26720.40625
         },
         {
-          "t": "2026-08-14T16:50:00.000Z",
-          "value": 26677.560546875
+          "t": "2026-08-17T16:50:00.000Z",
+          "value": 26712.91015625
         },
         {
-          "t": "2026-08-14T16:55:00.000Z",
-          "value": 26673.171875
+          "t": "2026-08-17T16:55:00.000Z",
+          "value": 26707.787109375
         },
         {
-          "t": "2026-08-14T17:00:00.000Z",
-          "value": 26675.73828125
+          "t": "2026-08-17T17:00:00.000Z",
+          "value": 26701.625
         },
         {
-          "t": "2026-08-14T17:05:00.000Z",
-          "value": 26681.412109375
+          "t": "2026-08-17T17:05:00.000Z",
+          "value": 26696.650390625
         },
         {
-          "t": "2026-08-14T17:10:00.000Z",
-          "value": 26687.189453125
+          "t": "2026-08-17T17:10:00.000Z",
+          "value": 26675.666015625
         },
         {
-          "t": "2026-08-14T17:15:00.000Z",
-          "value": 26685.828125
+          "t": "2026-08-17T17:15:00.000Z",
+          "value": 26674.9140625
         },
         {
-          "t": "2026-08-14T17:20:00.000Z",
-          "value": 26678.861328125
+          "t": "2026-08-17T17:20:00.000Z",
+          "value": 26659.98828125
         },
         {
-          "t": "2026-08-14T17:25:00.000Z",
-          "value": 26677.873046875
+          "t": "2026-08-17T17:25:00.000Z",
+          "value": 26652.271484375
         },
         {
-          "t": "2026-08-14T17:30:00.000Z",
-          "value": 26683.61328125
+          "t": "2026-08-17T17:30:00.000Z",
+          "value": 26652.474609375
         },
         {
-          "t": "2026-08-14T17:35:00.000Z",
-          "value": 26679.037109375
+          "t": "2026-08-17T17:35:00.000Z",
+          "value": 26649.490234375
         },
         {
-          "t": "2026-08-14T17:40:00.000Z",
-          "value": 26680.92578125
+          "t": "2026-08-17T17:40:00.000Z",
+          "value": 26670.0703125
         },
         {
-          "t": "2026-08-14T17:45:00.000Z",
-          "value": 26683.044921875
+          "t": "2026-08-17T17:45:00.000Z",
+          "value": 26658.345703125
         },
         {
-          "t": "2026-08-14T17:50:00.000Z",
-          "value": 26688.3046875
+          "t": "2026-08-17T17:50:00.000Z",
+          "value": 26654.4296875
         },
         {
-          "t": "2026-08-14T17:55:00.000Z",
-          "value": 26694.673828125
+          "t": "2026-08-17T17:55:00.000Z",
+          "value": 26647.728515625
         },
         {
-          "t": "2026-08-14T18:00:00.000Z",
-          "value": 26701.1796875
+          "t": "2026-08-17T18:00:00.000Z",
+          "value": 26637.958984375
         },
         {
-          "t": "2026-08-14T18:05:00.000Z",
-          "value": 26700.44140625
+          "t": "2026-08-17T18:05:00.000Z",
+          "value": 26637.30078125
         },
         {
-          "t": "2026-08-14T18:10:00.000Z",
-          "value": 26694.341796875
+          "t": "2026-08-17T18:10:00.000Z",
+          "value": 26649.744140625
         },
         {
-          "t": "2026-08-14T18:15:00.000Z",
-          "value": 26697.189453125
+          "t": "2026-08-17T18:15:00.000Z",
+          "value": 26648.23046875
         },
         {
-          "t": "2026-08-14T18:20:00.000Z",
-          "value": 26693.9921875
+          "t": "2026-08-17T18:20:00.000Z",
+          "value": 26653.201171875
         },
         {
-          "t": "2026-08-14T18:25:00.000Z",
-          "value": 26682.048828125
+          "t": "2026-08-17T18:25:00.000Z",
+          "value": 26652.224609375
         },
         {
-          "t": "2026-08-14T18:30:00.000Z",
-          "value": 26683.078125
+          "t": "2026-08-17T18:30:00.000Z",
+          "value": 26650.775390625
         },
         {
-          "t": "2026-08-14T18:35:00.000Z",
-          "value": 26688.474609375
+          "t": "2026-08-17T18:35:00.000Z",
+          "value": 26657.3046875
         },
         {
-          "t": "2026-08-14T18:40:00.000Z",
-          "value": 26698.208984375
+          "t": "2026-08-17T18:40:00.000Z",
+          "value": 26662.404296875
         },
         {
-          "t": "2026-08-14T18:45:00.000Z",
-          "value": 26694.677734375
+          "t": "2026-08-17T18:45:00.000Z",
+          "value": 26664.498046875
         },
         {
-          "t": "2026-08-14T18:50:00.000Z",
-          "value": 26699.388671875
+          "t": "2026-08-17T18:50:00.000Z",
+          "value": 26669.41796875
         },
         {
-          "t": "2026-08-14T18:55:00.000Z",
-          "value": 26692.984375
+          "t": "2026-08-17T18:55:00.000Z",
+          "value": 26663.673828125
         },
         {
-          "t": "2026-08-14T19:00:00.000Z",
-          "value": 26686.3671875
+          "t": "2026-08-17T19:00:00.000Z",
+          "value": 26655.896484375
         },
         {
-          "t": "2026-08-14T19:05:00.000Z",
-          "value": 26693.431640625
+          "t": "2026-08-17T19:05:00.000Z",
+          "value": 26656.767578125
         },
         {
-          "t": "2026-08-14T19:10:00.000Z",
-          "value": 26685.646484375
+          "t": "2026-08-17T19:10:00.000Z",
+          "value": 26649.263671875
         },
         {
-          "t": "2026-08-14T19:15:00.000Z",
-          "value": 26690.2265625
+          "t": "2026-08-17T19:15:00.000Z",
+          "value": 26657.87890625
         },
         {
-          "t": "2026-08-14T19:20:00.000Z",
-          "value": 26691.935546875
+          "t": "2026-08-17T19:20:00.000Z",
+          "value": 26659.755859375
         },
         {
-          "t": "2026-08-14T19:25:00.000Z",
-          "value": 26701.255859375
+          "t": "2026-08-17T19:25:00.000Z",
+          "value": 26655.5859375
         },
         {
-          "t": "2026-08-14T19:30:00.000Z",
-          "value": 26706.267578125
+          "t": "2026-08-17T19:30:00.000Z",
+          "value": 26650.275390625
         },
         {
-          "t": "2026-08-14T19:35:00.000Z",
-          "value": 26706.732421875
+          "t": "2026-08-17T19:35:00.000Z",
+          "value": 26655.80078125
         },
         {
-          "t": "2026-08-14T19:40:00.000Z",
-          "value": 26709.169921875
+          "t": "2026-08-17T19:40:00.000Z",
+          "value": 26652.88671875
         },
         {
-          "t": "2026-08-14T19:45:00.000Z",
-          "value": 26716.6640625
+          "t": "2026-08-17T19:45:00.000Z",
+          "value": 26665.037109375
         },
         {
-          "t": "2026-08-14T19:50:00.000Z",
-          "value": 26723.29296875
+          "t": "2026-08-17T19:50:00.000Z",
+          "value": 26642.755859375
         },
         {
-          "t": "2026-08-14T19:55:00.000Z",
-          "value": 26730.638671875
+          "t": "2026-08-17T19:55:00.000Z",
+          "value": 26649.08203125
         },
         {
-          "t": "2026-08-14T20:00:00.000Z",
-          "value": 26729.1640625
+          "t": "2026-08-17T20:00:00.000Z",
+          "value": 26644.91015625
         }
       ]
     },
@@ -4522,326 +4526,326 @@
       "symbol": "^DJI",
       "name": "Dow Jones",
       "kind": "index",
-      "level": 53732.41,
-      "previousClose": 54036.93,
-      "changeAbs": -304.5199999999968,
-      "changePercent": -0.5635405268211884,
+      "level": 53459.8,
+      "previousClose": 53975.98,
+      "changeAbs": -516.1800000000003,
+      "changePercent": -0.9563142716445356,
       "intraday": [
         {
-          "t": "2026-08-14T13:30:00.000Z",
-          "value": 53818.51171875
+          "t": "2026-08-17T13:30:00.000Z",
+          "value": 53556.37890625
         },
         {
-          "t": "2026-08-14T13:35:00.000Z",
-          "value": 53790.05078125
+          "t": "2026-08-17T13:35:00.000Z",
+          "value": 53566.51953125
         },
         {
-          "t": "2026-08-14T13:40:00.000Z",
-          "value": 53808.7109375
+          "t": "2026-08-17T13:40:00.000Z",
+          "value": 53598.75
         },
         {
-          "t": "2026-08-14T13:45:00.000Z",
-          "value": 53827.58984375
+          "t": "2026-08-17T13:45:00.000Z",
+          "value": 53645.76171875
         },
         {
-          "t": "2026-08-14T13:50:00.000Z",
-          "value": 53875.94921875
+          "t": "2026-08-17T13:50:00.000Z",
+          "value": 53572.12890625
         },
         {
-          "t": "2026-08-14T13:55:00.000Z",
-          "value": 53852.80078125
+          "t": "2026-08-17T13:55:00.000Z",
+          "value": 53557.19921875
         },
         {
-          "t": "2026-08-14T14:00:00.000Z",
-          "value": 53824.2890625
+          "t": "2026-08-17T14:00:00.000Z",
+          "value": 53606.8984375
         },
         {
-          "t": "2026-08-14T14:05:00.000Z",
-          "value": 53809.94140625
+          "t": "2026-08-17T14:05:00.000Z",
+          "value": 53637.66015625
         },
         {
-          "t": "2026-08-14T14:10:00.000Z",
-          "value": 53807.140625
+          "t": "2026-08-17T14:10:00.000Z",
+          "value": 53603.671875
         },
         {
-          "t": "2026-08-14T14:15:00.000Z",
-          "value": 53828.1484375
+          "t": "2026-08-17T14:15:00.000Z",
+          "value": 53592.80859375
         },
         {
-          "t": "2026-08-14T14:20:00.000Z",
-          "value": 53822
+          "t": "2026-08-17T14:20:00.000Z",
+          "value": 53587.44921875
         },
         {
-          "t": "2026-08-14T14:25:00.000Z",
-          "value": 53811.69140625
+          "t": "2026-08-17T14:25:00.000Z",
+          "value": 53560.171875
         },
         {
-          "t": "2026-08-14T14:30:00.000Z",
-          "value": 53765.94140625
+          "t": "2026-08-17T14:30:00.000Z",
+          "value": 53578.0703125
         },
         {
-          "t": "2026-08-14T14:35:00.000Z",
-          "value": 53764.53125
+          "t": "2026-08-17T14:35:00.000Z",
+          "value": 53513.80859375
         },
         {
-          "t": "2026-08-14T14:40:00.000Z",
-          "value": 53747.578125
+          "t": "2026-08-17T14:40:00.000Z",
+          "value": 53508.01171875
         },
         {
-          "t": "2026-08-14T14:45:00.000Z",
-          "value": 53763.80859375
+          "t": "2026-08-17T14:45:00.000Z",
+          "value": 53538.91015625
         },
         {
-          "t": "2026-08-14T14:50:00.000Z",
-          "value": 53742.1484375
+          "t": "2026-08-17T14:50:00.000Z",
+          "value": 53519.16015625
         },
         {
-          "t": "2026-08-14T14:55:00.000Z",
-          "value": 53747.9296875
+          "t": "2026-08-17T14:55:00.000Z",
+          "value": 53513.75
         },
         {
-          "t": "2026-08-14T15:00:00.000Z",
-          "value": 53768.87109375
+          "t": "2026-08-17T15:00:00.000Z",
+          "value": 53515.28125
         },
         {
-          "t": "2026-08-14T15:05:00.000Z",
-          "value": 53756.3515625
+          "t": "2026-08-17T15:05:00.000Z",
+          "value": 53524.26953125
         },
         {
-          "t": "2026-08-14T15:10:00.000Z",
-          "value": 53741.46875
+          "t": "2026-08-17T15:10:00.000Z",
+          "value": 53529.26171875
         },
         {
-          "t": "2026-08-14T15:15:00.000Z",
-          "value": 53744.12890625
+          "t": "2026-08-17T15:15:00.000Z",
+          "value": 53555.1796875
         },
         {
-          "t": "2026-08-14T15:20:00.000Z",
-          "value": 53741.5703125
+          "t": "2026-08-17T15:20:00.000Z",
+          "value": 53559.62890625
         },
         {
-          "t": "2026-08-14T15:25:00.000Z",
-          "value": 53733.41015625
+          "t": "2026-08-17T15:25:00.000Z",
+          "value": 53557.30078125
         },
         {
-          "t": "2026-08-14T15:30:00.000Z",
-          "value": 53737.1796875
+          "t": "2026-08-17T15:30:00.000Z",
+          "value": 53522.421875
         },
         {
-          "t": "2026-08-14T15:35:00.000Z",
-          "value": 53736.30859375
+          "t": "2026-08-17T15:35:00.000Z",
+          "value": 53527.26953125
         },
         {
-          "t": "2026-08-14T15:40:00.000Z",
-          "value": 53718.16015625
+          "t": "2026-08-17T15:40:00.000Z",
+          "value": 53516.08984375
         },
         {
-          "t": "2026-08-14T15:45:00.000Z",
-          "value": 53702.4296875
+          "t": "2026-08-17T15:45:00.000Z",
+          "value": 53519.8203125
         },
         {
-          "t": "2026-08-14T15:50:00.000Z",
-          "value": 53695.53125
+          "t": "2026-08-17T15:50:00.000Z",
+          "value": 53530.16015625
         },
         {
-          "t": "2026-08-14T15:55:00.000Z",
-          "value": 53690.01171875
+          "t": "2026-08-17T15:55:00.000Z",
+          "value": 53516.01953125
         },
         {
-          "t": "2026-08-14T16:00:00.000Z",
-          "value": 53706.03125
+          "t": "2026-08-17T16:00:00.000Z",
+          "value": 53543.828125
         },
         {
-          "t": "2026-08-14T16:05:00.000Z",
-          "value": 53702.140625
+          "t": "2026-08-17T16:05:00.000Z",
+          "value": 53552.5
         },
         {
-          "t": "2026-08-14T16:10:00.000Z",
-          "value": 53731.05078125
+          "t": "2026-08-17T16:10:00.000Z",
+          "value": 53584.4609375
         },
         {
-          "t": "2026-08-14T16:15:00.000Z",
-          "value": 53726.87890625
+          "t": "2026-08-17T16:15:00.000Z",
+          "value": 53593.671875
         },
         {
-          "t": "2026-08-14T16:20:00.000Z",
-          "value": 53725.37890625
+          "t": "2026-08-17T16:20:00.000Z",
+          "value": 53602.41015625
         },
         {
-          "t": "2026-08-14T16:25:00.000Z",
-          "value": 53724.69921875
+          "t": "2026-08-17T16:25:00.000Z",
+          "value": 53590.83984375
         },
         {
-          "t": "2026-08-14T16:30:00.000Z",
-          "value": 53735.05859375
+          "t": "2026-08-17T16:30:00.000Z",
+          "value": 53557.078125
         },
         {
-          "t": "2026-08-14T16:35:00.000Z",
-          "value": 53742.421875
+          "t": "2026-08-17T16:35:00.000Z",
+          "value": 53574.9296875
         },
         {
-          "t": "2026-08-14T16:40:00.000Z",
-          "value": 53732.26953125
+          "t": "2026-08-17T16:40:00.000Z",
+          "value": 53553.6796875
         },
         {
-          "t": "2026-08-14T16:45:00.000Z",
-          "value": 53719.8515625
+          "t": "2026-08-17T16:45:00.000Z",
+          "value": 53541.6015625
         },
         {
-          "t": "2026-08-14T16:50:00.000Z",
-          "value": 53705.53125
+          "t": "2026-08-17T16:50:00.000Z",
+          "value": 53516.5703125
         },
         {
-          "t": "2026-08-14T16:55:00.000Z",
-          "value": 53680.19921875
+          "t": "2026-08-17T16:55:00.000Z",
+          "value": 53511.078125
         },
         {
-          "t": "2026-08-14T17:00:00.000Z",
-          "value": 53694.83984375
+          "t": "2026-08-17T17:00:00.000Z",
+          "value": 53519.78125
         },
         {
-          "t": "2026-08-14T17:05:00.000Z",
-          "value": 53702.921875
+          "t": "2026-08-17T17:05:00.000Z",
+          "value": 53528.44140625
         },
         {
-          "t": "2026-08-14T17:10:00.000Z",
-          "value": 53720.71875
+          "t": "2026-08-17T17:10:00.000Z",
+          "value": 53546.7890625
         },
         {
-          "t": "2026-08-14T17:15:00.000Z",
-          "value": 53722.05078125
+          "t": "2026-08-17T17:15:00.000Z",
+          "value": 53534.3515625
         },
         {
-          "t": "2026-08-14T17:20:00.000Z",
-          "value": 53724.87109375
+          "t": "2026-08-17T17:20:00.000Z",
+          "value": 53492.44921875
         },
         {
-          "t": "2026-08-14T17:25:00.000Z",
-          "value": 53729.6484375
+          "t": "2026-08-17T17:25:00.000Z",
+          "value": 53476.4296875
         },
         {
-          "t": "2026-08-14T17:30:00.000Z",
-          "value": 53726.171875
+          "t": "2026-08-17T17:30:00.000Z",
+          "value": 53444.62109375
         },
         {
-          "t": "2026-08-14T17:35:00.000Z",
-          "value": 53700.23046875
+          "t": "2026-08-17T17:35:00.000Z",
+          "value": 53402.75
         },
         {
-          "t": "2026-08-14T17:40:00.000Z",
-          "value": 53701.421875
+          "t": "2026-08-17T17:40:00.000Z",
+          "value": 53453.12109375
         },
         {
-          "t": "2026-08-14T17:45:00.000Z",
-          "value": 53708.7890625
+          "t": "2026-08-17T17:45:00.000Z",
+          "value": 53434.33984375
         },
         {
-          "t": "2026-08-14T17:50:00.000Z",
-          "value": 53719.16015625
+          "t": "2026-08-17T17:50:00.000Z",
+          "value": 53444.5703125
         },
         {
-          "t": "2026-08-14T17:55:00.000Z",
-          "value": 53727.5
+          "t": "2026-08-17T17:55:00.000Z",
+          "value": 53444.37890625
         },
         {
-          "t": "2026-08-14T18:00:00.000Z",
-          "value": 53740.9296875
+          "t": "2026-08-17T18:00:00.000Z",
+          "value": 53460.55859375
         },
         {
-          "t": "2026-08-14T18:05:00.000Z",
-          "value": 53747.91015625
+          "t": "2026-08-17T18:05:00.000Z",
+          "value": 53454.421875
         },
         {
-          "t": "2026-08-14T18:10:00.000Z",
-          "value": 53763.1484375
+          "t": "2026-08-17T18:10:00.000Z",
+          "value": 53470.73828125
         },
         {
-          "t": "2026-08-14T18:15:00.000Z",
-          "value": 53766.69140625
+          "t": "2026-08-17T18:15:00.000Z",
+          "value": 53474.3203125
         },
         {
-          "t": "2026-08-14T18:20:00.000Z",
-          "value": 53774.0703125
+          "t": "2026-08-17T18:20:00.000Z",
+          "value": 53486.3515625
         },
         {
-          "t": "2026-08-14T18:25:00.000Z",
-          "value": 53772.1796875
+          "t": "2026-08-17T18:25:00.000Z",
+          "value": 53490.78125
         },
         {
-          "t": "2026-08-14T18:30:00.000Z",
-          "value": 53767.9609375
+          "t": "2026-08-17T18:30:00.000Z",
+          "value": 53459.21875
         },
         {
-          "t": "2026-08-14T18:35:00.000Z",
-          "value": 53779.390625
+          "t": "2026-08-17T18:35:00.000Z",
+          "value": 53486.69140625
         },
         {
-          "t": "2026-08-14T18:40:00.000Z",
-          "value": 53778.41015625
+          "t": "2026-08-17T18:40:00.000Z",
+          "value": 53483.44140625
         },
         {
-          "t": "2026-08-14T18:45:00.000Z",
-          "value": 53798.25
+          "t": "2026-08-17T18:45:00.000Z",
+          "value": 53502.08984375
         },
         {
-          "t": "2026-08-14T18:50:00.000Z",
-          "value": 53804.62890625
+          "t": "2026-08-17T18:50:00.000Z",
+          "value": 53485.640625
         },
         {
-          "t": "2026-08-14T18:55:00.000Z",
-          "value": 53793.76171875
+          "t": "2026-08-17T18:55:00.000Z",
+          "value": 53475.62890625
         },
         {
-          "t": "2026-08-14T19:00:00.000Z",
-          "value": 53768.73828125
+          "t": "2026-08-17T19:00:00.000Z",
+          "value": 53486.421875
         },
         {
-          "t": "2026-08-14T19:05:00.000Z",
-          "value": 53765.66015625
+          "t": "2026-08-17T19:05:00.000Z",
+          "value": 53494.53125
         },
         {
-          "t": "2026-08-14T19:10:00.000Z",
-          "value": 53770.19921875
+          "t": "2026-08-17T19:10:00.000Z",
+          "value": 53503.73046875
         },
         {
-          "t": "2026-08-14T19:15:00.000Z",
-          "value": 53763.0703125
+          "t": "2026-08-17T19:15:00.000Z",
+          "value": 53505.828125
         },
         {
-          "t": "2026-08-14T19:20:00.000Z",
-          "value": 53772.359375
+          "t": "2026-08-17T19:20:00.000Z",
+          "value": 53489.51953125
         },
         {
-          "t": "2026-08-14T19:25:00.000Z",
-          "value": 53758.171875
+          "t": "2026-08-17T19:25:00.000Z",
+          "value": 53482.859375
         },
         {
-          "t": "2026-08-14T19:30:00.000Z",
-          "value": 53764.390625
+          "t": "2026-08-17T19:30:00.000Z",
+          "value": 53459.2109375
         },
         {
-          "t": "2026-08-14T19:35:00.000Z",
-          "value": 53753.1796875
+          "t": "2026-08-17T19:35:00.000Z",
+          "value": 53457.23046875
         },
         {
-          "t": "2026-08-14T19:40:00.000Z",
-          "value": 53754.37109375
+          "t": "2026-08-17T19:40:00.000Z",
+          "value": 53458.2890625
         },
         {
-          "t": "2026-08-14T19:45:00.000Z",
-          "value": 53740.69921875
+          "t": "2026-08-17T19:45:00.000Z",
+          "value": 53468.30859375
         },
         {
-          "t": "2026-08-14T19:50:00.000Z",
-          "value": 53720.8515625
+          "t": "2026-08-17T19:50:00.000Z",
+          "value": 53465.78125
         },
         {
-          "t": "2026-08-14T19:55:00.000Z",
-          "value": 53733.51171875
+          "t": "2026-08-17T19:55:00.000Z",
+          "value": 53466.6796875
         },
         {
-          "t": "2026-08-14T20:00:00.000Z",
-          "value": 53732.41015625
+          "t": "2026-08-17T20:00:00.000Z",
+          "value": 53459.80078125
         }
       ]
     },
@@ -4850,10 +4854,10 @@
       "symbol": "^VIX",
       "name": "VIX",
       "kind": "volatility",
-      "level": 14.25,
-      "previousClose": 15.46,
-      "changeAbs": -1.2100000000000009,
-      "changePercent": -7.826649417852528,
+      "level": 15.19,
+      "previousClose": 14.55,
+      "changeAbs": 0.6399999999999988,
+      "changePercent": 4.398625429553256,
       "intraday": []
     },
     {
@@ -4861,10 +4865,10 @@
       "symbol": "^IRX",
       "name": "US 3M",
       "kind": "rate",
-      "level": 3.697,
-      "previousClose": 3.718,
-      "changeAbs": -0.020999999999999908,
-      "changePercent": -0.564819795589024,
+      "level": 3.703,
+      "previousClose": 3.73,
+      "changeAbs": -0.027000000000000135,
+      "changePercent": -0.723860589812336,
       "intraday": []
     },
     {
@@ -4872,10 +4876,10 @@
       "symbol": "^FVX",
       "name": "US 5Y",
       "kind": "rate",
-      "level": 4.362,
-      "previousClose": 4.405,
-      "changeAbs": -0.04300000000000015,
-      "changePercent": -0.976163450624294,
+      "level": 4.376,
+      "previousClose": 4.385,
+      "changeAbs": -0.008999999999999453,
+      "changePercent": -0.20524515393385298,
       "intraday": []
     },
     {
@@ -4883,10 +4887,10 @@
       "symbol": "^TNX",
       "name": "US 10Y",
       "kind": "rate",
-      "level": 4.696,
-      "previousClose": 4.699,
-      "changeAbs": -0.0030000000000001137,
-      "changePercent": -0.06384337092998753,
+      "level": 4.724,
+      "previousClose": 4.684,
+      "changeAbs": 0.040000000000000036,
+      "changePercent": 0.853970964987191,
       "intraday": []
     },
     {
@@ -4894,10 +4898,10 @@
       "symbol": "^TYX",
       "name": "US 30Y",
       "kind": "rate",
-      "level": 5.2650003,
-      "previousClose": 5.243,
-      "changeAbs": 0.022000299999999307,
-      "changePercent": 0.41961281708943937,
+      "level": 5.309,
+      "previousClose": 5.236,
+      "changeAbs": 0.0730000000000004,
+      "changePercent": 1.3941940412528724,
       "intraday": []
     },
     {
@@ -4905,10 +4909,10 @@
       "symbol": "ES=F",
       "name": "S&P Futures",
       "kind": "future",
-      "level": 7805,
-      "previousClose": 7747.5,
-      "changeAbs": 57.5,
-      "changePercent": 0.7421748951274605,
+      "level": 7739.75,
+      "previousClose": 7822.5,
+      "changeAbs": -82.75,
+      "changePercent": -1.0578459571748162,
       "intraday": []
     },
     {
@@ -4916,10 +4920,10 @@
       "symbol": "NQ=F",
       "name": "Nasdaq Futures",
       "kind": "future",
-      "level": 30141.75,
-      "previousClose": 29626,
-      "changeAbs": 515.75,
-      "changePercent": 1.740869506514548,
+      "level": 29890.25,
+      "previousClose": 30188.5,
+      "changeAbs": -298.25,
+      "changePercent": -0.9879589910065091,
       "intraday": []
     },
     {
@@ -4927,10 +4931,10 @@
       "symbol": "DX-Y.NYB",
       "name": "Dollar (DXY)",
       "kind": "currency",
-      "level": 99.636,
-      "previousClose": 99.82,
-      "changeAbs": -0.1839999999999975,
-      "changePercent": -0.18433179723502055,
+      "level": 99.642,
+      "previousClose": 99.96,
+      "changeAbs": -0.31799999999999784,
+      "changePercent": -0.318127250900358,
       "intraday": []
     },
     {
@@ -4938,10 +4942,10 @@
       "symbol": "CL=F",
       "name": "WTI Crude",
       "kind": "commodity",
-      "level": 82.4,
-      "previousClose": 83.2,
-      "changeAbs": -0.7999999999999972,
-      "changePercent": -0.9615384615384581,
+      "level": 85.26,
+      "previousClose": 81.25,
+      "changeAbs": 4.010000000000005,
+      "changePercent": 4.9353846153846215,
       "intraday": []
     },
     {
@@ -4949,10 +4953,10 @@
       "symbol": "GC=F",
       "name": "Gold",
       "kind": "commodity",
-      "level": 4437.3,
-      "previousClose": 4383,
-      "changeAbs": 54.30000000000018,
-      "changePercent": 1.23887748117728,
+      "level": 4455,
+      "previousClose": 4363.6,
+      "changeAbs": 91.39999999999964,
+      "changePercent": 2.0946007883398945,
       "intraday": []
     }
   ],
@@ -4962,10 +4966,10 @@
       "symbol": "^FTSE",
       "name": "FTSE 100",
       "kind": "index",
-      "level": 10750.11,
-      "previousClose": 10901.1,
-      "changeAbs": -150.98999999999978,
-      "changePercent": -1.3850895781159678,
+      "level": 10720.3,
+      "previousClose": 10844.2,
+      "changeAbs": -123.90000000000146,
+      "changePercent": -1.142546245919491,
       "intraday": [],
       "region": "Europe"
     },
@@ -4974,10 +4978,10 @@
       "symbol": "^GDAXI",
       "name": "DAX",
       "kind": "index",
-      "level": 26440.31,
-      "previousClose": 26319.45,
-      "changeAbs": 120.86000000000058,
-      "changePercent": 0.4592041247062556,
+      "level": 26338.6,
+      "previousClose": 26391.42,
+      "changeAbs": -52.81999999999971,
+      "changePercent": -0.20014080333684098,
       "intraday": [],
       "region": "Europe"
     },
@@ -4986,10 +4990,10 @@
       "symbol": "^FCHI",
       "name": "CAC 40",
       "kind": "index",
-      "level": 8636.8,
-      "previousClose": 8726.03,
-      "changeAbs": -89.23000000000138,
-      "changePercent": -1.0225726934241732,
+      "level": 8579.6,
+      "previousClose": 8674.94,
+      "changeAbs": -95.34000000000015,
+      "changePercent": -1.0990277742555008,
       "intraday": [],
       "region": "Europe"
     },
@@ -4998,10 +5002,10 @@
       "symbol": "^STOXX50E",
       "name": "Euro Stoxx 50",
       "kind": "index",
-      "level": 6539.59,
-      "previousClose": 6535.62,
-      "changeAbs": 3.9700000000002547,
-      "changePercent": 0.06074404570645563,
+      "level": 6530.45,
+      "previousClose": 6533.99,
+      "changeAbs": -3.5399999999999636,
+      "changePercent": -0.05417822800463367,
       "intraday": [],
       "region": "Europe"
     },
@@ -5010,10 +5014,10 @@
       "symbol": "^N225",
       "name": "Nikkei 225",
       "kind": "index",
-      "level": 68713.8,
-      "previousClose": 65606.71,
-      "changeAbs": 3107.0899999999965,
-      "changePercent": 4.735933260485088,
+      "level": 67460.73,
+      "previousClose": 67524.06,
+      "changeAbs": -63.330000000001746,
+      "changePercent": -0.09378879172846204,
       "intraday": [],
       "region": "Asia"
     },
@@ -5022,10 +5026,10 @@
       "symbol": "^HSI",
       "name": "Hang Seng",
       "kind": "index",
-      "level": 25116.85,
-      "previousClose": 25668.03,
-      "changeAbs": -551.1800000000003,
-      "changePercent": -2.1473404854209703,
+      "level": 25501.74,
+      "previousClose": 25652.82,
+      "changeAbs": -151.0799999999981,
+      "changePercent": -0.5889410988733329,
       "intraday": [],
       "region": "Asia"
     },
@@ -5034,10 +5038,10 @@
       "symbol": "^KS11",
       "name": "KOSPI",
       "kind": "index",
-      "level": 6977.94,
-      "previousClose": 6258.77,
-      "changeAbs": 719.1699999999992,
-      "changePercent": 11.490596395138327,
+      "level": 6869.83,
+      "previousClose": 6299.66,
+      "changeAbs": 570.1700000000001,
+      "changePercent": 9.05080591650978,
       "intraday": [],
       "region": "Asia"
     },
@@ -5046,10 +5050,10 @@
       "symbol": "^BSESN",
       "name": "Sensex",
       "kind": "index",
-      "level": 78009.25,
-      "previousClose": 78542.44,
-      "changeAbs": -533.1900000000023,
-      "changePercent": -0.678855915349717,
+      "level": 77379.15,
+      "previousClose": 77966.35,
+      "changeAbs": -587.2000000000116,
+      "changePercent": -0.7531454274825121,
       "intraday": [],
       "region": "Asia"
     },
@@ -5058,10 +5062,10 @@
       "symbol": "^AXJO",
       "name": "ASX 200",
       "kind": "index",
-      "level": 9115.2,
-      "previousClose": 9263.6,
-      "changeAbs": -148.39999999999964,
-      "changePercent": -1.6019689969342332,
+      "level": 9070,
+      "previousClose": 9250.6,
+      "changeAbs": -180.60000000000036,
+      "changePercent": -1.952305796380779,
       "intraday": [],
       "region": "Asia-Pacific"
     },
@@ -5070,10 +5074,10 @@
       "symbol": "^GSPTSE",
       "name": "S&P/TSX",
       "kind": "index",
-      "level": 36730.27,
-      "previousClose": 36381.2,
-      "changeAbs": 349.0699999999997,
-      "changePercent": 0.9594790716084125,
+      "level": 36667.9,
+      "previousClose": 36458.3,
+      "changeAbs": 209.59999999999854,
+      "changePercent": 0.574903382768803,
       "intraday": [],
       "region": "Americas"
     },
@@ -5082,10 +5086,10 @@
       "symbol": "^BVSP",
       "name": "Bovespa",
       "kind": "index",
-      "level": 166934.2,
-      "previousClose": 172513,
-      "changeAbs": -5578.799999999988,
-      "changePercent": -3.233843246595902,
+      "level": 166783.56,
+      "previousClose": 172180,
+      "changeAbs": -5396.440000000002,
+      "changePercent": -3.1341851550702766,
       "intraday": [],
       "region": "Americas"
     },
@@ -5094,10 +5098,10 @@
       "symbol": "^MXX",
       "name": "IPC Mexico",
       "kind": "index",
-      "level": 64397.45,
-      "previousClose": 66438.58,
-      "changeAbs": -2041.1300000000047,
-      "changePercent": -3.0722059381762894,
+      "level": 64255,
+      "previousClose": 65564.76,
+      "changeAbs": -1309.7599999999948,
+      "changePercent": -1.9976584982542374,
       "intraday": [],
       "region": "Americas"
     }
@@ -5794,5 +5798,5 @@
       "notes": "Series C (more than $1B in committed capital) at a $39B post-money valuation announced September 16, 2025, led by Parkway Venture Capital with NVIDIA, Brookfield, Intel Capital, Salesforce, Qualcomm and T-Mobile."
     }
   },
-  "requestId": "6fbf1ced-c1f0-4138-a630-dc72d997fa4e"
+  "requestId": "e6888ee3-4044-4366-88c9-12936ecda32f"
 }
