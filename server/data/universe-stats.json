@@ -1,6 +1,6 @@
 {
   "_comment": "Per-stock daily stats (previous close + 52-week range) sourced from Yahoo v8 chart meta. Auto-refreshed daily by the refresh bot; do not hand-edit. Keep symbols in sync with PUBLIC_COMPANIES.",
-  "generatedAt": "2026-08-22T07:08:27.203Z",
+  "generatedAt": "2026-08-23T07:09:35.880Z",
   "stats": {
     "NVDA": {
       "prevClose": 216.85,
@@ -194,7 +194,7 @@
     },
     "INTC": {
       "prevClose": 92.13,
-      "low52w": 23.65,
+      "low52w": 23.68,
       "high52w": 142.35
     },
     "QCOM": {
@@ -220,7 +220,7 @@
     "ADP": {
       "prevClose": 279.21,
       "low52w": 188.16,
-      "high52w": 308.9
+      "high52w": 307.8
     },
     "AIG": {
       "prevClose": 75.75,
@@ -240,7 +240,7 @@
     "AMT": {
       "prevClose": 175.72,
       "low52w": 160.06,
-      "high52w": 214.79
+      "high52w": 211.92
     },
     "AXP": {
       "prevClose": 331.15,
@@ -444,7 +444,7 @@
     },
     "MS": {
       "prevClose": 207.45,
-      "low52w": 144.67,
+      "low52w": 145.66,
       "high52w": 232.25
     },
     "MU": {
