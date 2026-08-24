@@ -1,6 +1,6 @@
 {
   "_comment": "Per-stock daily stats (previous close + 52-week range) sourced from Yahoo v8 chart meta. Auto-refreshed daily by the refresh bot; do not hand-edit. Keep symbols in sync with PUBLIC_COMPANIES.",
-  "generatedAt": "2026-08-23T07:09:35.880Z",
+  "generatedAt": "2026-08-24T07:35:49.679Z",
   "stats": {
     "NVDA": {
       "prevClose": 216.85,
@@ -8,7 +8,7 @@
       "high52w": 236.54
     },
     "AAPL": {
-      "prevClose": 311.3,
+      "prevClose": 311.30002,
       "low52w": 224.69,
       "high52w": 344.57
     },
@@ -23,7 +23,7 @@
       "high52w": 408.61
     },
     "AMZN": {
-      "prevClose": 260.11,
+      "prevClose": 260.11002,
       "low52w": 196,
       "high52w": 287.2
     },
@@ -38,7 +38,7 @@
       "high52w": 495
     },
     "TSLA": {
-      "prevClose": 345.13,
+      "prevClose": 345.12997,
       "low52w": 297.38,
       "high52w": 498.83
     },
@@ -173,7 +173,7 @@
       "high52w": 370.86
     },
     "CSCO": {
-      "prevClose": 109.59,
+      "prevClose": 109.590004,
       "low52w": 66.13,
       "high52w": 130.37
     },
@@ -188,7 +188,7 @@
       "high52w": 341.75
     },
     "TMUS": {
-      "prevClose": 181.22,
+      "prevClose": 181.21999,
       "low52w": 165.66,
       "high52w": 258.66
     },
@@ -228,7 +228,7 @@
       "high52w": 87.29
     },
     "AMAT": {
-      "prevClose": 496.21,
+      "prevClose": 496.21002,
       "low52w": 154.47,
       "high52w": 739.67
     },
@@ -373,9 +373,9 @@
       "high52w": 1153.99
     },
     "HON": {
-      "prevClose": 218.32,
-      "low52w": 195.868,
-      "high52w": 260.283
+      "prevClose": 218.31999,
+      "low52w": 195.86786,
+      "high52w": 260.28317
     },
     "IBM": {
       "prevClose": 233.69,
@@ -498,7 +498,7 @@
       "high52w": 226.88
     },
     "SBUX": {
-      "prevClose": 103.99,
+      "prevClose": 103.990005,
       "low52w": 77.99,
       "high52w": 110.51
     },
@@ -638,7 +638,7 @@
       "high52w": 445.91
     },
     "REGN": {
-      "prevClose": 826.64,
+      "prevClose": 826.63995,
       "low52w": 541,
       "high52w": 847
     }
