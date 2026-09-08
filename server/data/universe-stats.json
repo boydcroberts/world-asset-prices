@@ -1,6 +1,6 @@
 {
   "_comment": "Per-stock daily stats (previous close + 52-week range) sourced from Yahoo v8 chart meta. Auto-refreshed daily by the refresh bot; do not hand-edit. Keep symbols in sync with PUBLIC_COMPANIES.",
-  "generatedAt": "2026-09-07T12:52:20.444Z",
+  "generatedAt": "2026-09-08T11:33:03.658Z",
   "stats": {
     "NVDA": {
       "prevClose": 228.45,
@@ -44,7 +44,7 @@
     },
     "TSM": {
       "prevClose": 417.01,
-      "low52w": 241.62,
+      "low52w": 246.93,
       "high52w": 479
     },
     "SPCX": {
@@ -89,7 +89,7 @@
     },
     "XOM": {
       "prevClose": 162.21,
-      "low52w": 108.35,
+      "low52w": 110.39,
       "high52w": 176.41
     },
     "JNJ": {
@@ -124,7 +124,7 @@
     },
     "AMD": {
       "prevClose": 456.16,
-      "low52w": 149.22,
+      "low52w": 149.85,
       "high52w": 584.73
     },
     "CRM": {
@@ -190,7 +190,7 @@
     "TMUS": {
       "prevClose": 188.02,
       "low52w": 165.66,
-      "high52w": 247.25
+      "high52w": 244.24
     },
     "INTC": {
       "prevClose": 91.67,
@@ -255,7 +255,7 @@
     "BKNG": {
       "prevClose": 195.13,
       "low52w": 150.14,
-      "high52w": 225.54
+      "high52w": 224.996
     },
     "BLK": {
       "prevClose": 1126.15,
@@ -339,7 +339,7 @@
     },
     "FDX": {
       "prevClose": 324.31,
-      "low52w": 178.936,
+      "low52w": 179.146,
       "high52w": 345.37
     },
     "GD": {
@@ -369,7 +369,7 @@
     },
     "GS": {
       "prevClose": 1037.93,
-      "low52w": 733.57,
+      "low52w": 738.54,
       "high52w": 1153.99
     },
     "HON": {
@@ -399,7 +399,7 @@
     },
     "KLAC": {
       "prevClose": 172.94,
-      "low52w": 90.674,
+      "low52w": 91.023,
       "high52w": 307.37
     },
     "LIN": {
@@ -444,17 +444,17 @@
     },
     "MS": {
       "prevClose": 217.15,
-      "low52w": 147.25,
+      "low52w": 148.35,
       "high52w": 232.25
     },
     "MU": {
       "prevClose": 958.16,
-      "low52w": 128.4,
+      "low52w": 131.56,
       "high52w": 1255
     },
     "NEE": {
       "prevClose": 84.06,
-      "low52w": 69.24,
+      "low52w": 69.37,
       "high52w": 98.75
     },
     "NKE": {
@@ -584,7 +584,7 @@
     },
     "NEM": {
       "prevClose": 130.43,
-      "low52w": 75.22,
+      "low52w": 75.45,
       "high52w": 135.29
     },
     "ANET": {
