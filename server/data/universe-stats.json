@@ -1,644 +1,644 @@
 {
   "_comment": "Per-stock daily stats (previous close + 52-week range) sourced from Yahoo v8 chart meta. Auto-refreshed daily by the refresh bot; do not hand-edit. Keep symbols in sync with PUBLIC_COMPANIES.",
-  "generatedAt": "2026-09-24T12:02:56.754Z",
+  "generatedAt": "2026-09-25T12:03:11.537Z",
   "stats": {
     "NVDA": {
-      "prevClose": 228.87,
+      "prevClose": 225.51,
       "low52w": 164.27,
       "high52w": 236.54
     },
     "AAPL": {
-      "prevClose": 339.75,
+      "prevClose": 337.02,
       "low52w": 243.42,
       "high52w": 345.34
     },
     "MSFT": {
-      "prevClose": 498,
+      "prevClose": 500.59,
       "low52w": 349.2,
       "high52w": 553.72
     },
     "GOOGL": {
-      "prevClose": 351.16,
+      "prevClose": 337.83,
       "low52w": 235.84,
       "high52w": 408.61
     },
     "AMZN": {
-      "prevClose": 254.98,
+      "prevClose": 249.27,
       "low52w": 196,
       "high52w": 287.2
     },
     "META": {
-      "prevClose": 736.595,
+      "prevClose": 744.1,
       "low52w": 520.26,
-      "high52w": 763.9
+      "high52w": 779.82
     },
     "AVGO": {
-      "prevClose": 364.54,
+      "prevClose": 354.99,
       "low52w": 289.96,
       "high52w": 495
     },
     "TSLA": {
-      "prevClose": 378.9,
+      "prevClose": 380.12,
       "low52w": 297.38,
       "high52w": 498.83
     },
     "TSM": {
-      "prevClose": 452,
+      "prevClose": 446.57,
       "low52w": 266.82,
       "high52w": 479
     },
     "SPCX": {
-      "prevClose": 154.72,
+      "prevClose": 148.36,
       "low52w": 104.83,
       "high52w": 225.64
     },
     "LLY": {
-      "prevClose": 1170.14,
-      "low52w": 712.05,
+      "prevClose": 1150.99,
+      "low52w": 716.08,
       "high52w": 1292.65
     },
     "JPM": {
-      "prevClose": 340,
+      "prevClose": 337.53,
       "low52w": 279.1,
       "high52w": 366.5
     },
     "WMT": {
-      "prevClose": 110.12,
+      "prevClose": 110.53,
       "low52w": 98.88,
       "high52w": 135.16
     },
     "BRK-B": {
-      "prevClose": 503.49,
+      "prevClose": 507.17,
       "low52w": 464.01,
       "high52w": 537.74
     },
     "V": {
-      "prevClose": 362.04,
+      "prevClose": 361.52,
       "low52w": 293.89,
       "high52w": 385.57
     },
     "MA": {
-      "prevClose": 555.89,
+      "prevClose": 559.92,
       "low52w": 464.52,
       "high52w": 601.23
     },
     "UNH": {
-      "prevClose": 372.95,
+      "prevClose": 371.29,
       "low52w": 255.97,
       "high52w": 461.62
     },
     "XOM": {
-      "prevClose": 158.71,
+      "prevClose": 161.23,
       "low52w": 110.39,
       "high52w": 176.41
     },
     "JNJ": {
-      "prevClose": 269.19,
-      "low52w": 175.91,
+      "prevClose": 269.17,
+      "low52w": 177.32,
       "high52w": 281.07
     },
     "HD": {
-      "prevClose": 305.35,
+      "prevClose": 296.72,
       "low52w": 289.1,
       "high52w": 411.41
     },
     "PG": {
-      "prevClose": 148.22,
+      "prevClose": 147.39,
       "low52w": 137.62,
       "high52w": 167.25
     },
     "COST": {
-      "prevClose": 899.41,
+      "prevClose": 904.7,
       "low52w": 844.06,
       "high52w": 1096.5
     },
     "NFLX": {
-      "prevClose": 72.16,
+      "prevClose": 71.36,
       "low52w": 65.08,
       "high52w": 124.86
     },
     "ORCL": {
-      "prevClose": 149.2,
+      "prevClose": 144.56,
       "low52w": 114.5,
       "high52w": 322.54
     },
     "AMD": {
-      "prevClose": 623.77,
-      "low52w": 154.78,
-      "high52w": 624.69
+      "prevClose": 614.61,
+      "low52w": 157.05,
+      "high52w": 630.8
     },
     "CRM": {
-      "prevClose": 233.28,
+      "prevClose": 237.58,
       "low52w": 146.32,
       "high52w": 269.11
     },
     "BAC": {
-      "prevClose": 56.2,
+      "prevClose": 56,
       "low52w": 46.12,
       "high52w": 65.23
     },
     "KO": {
-      "prevClose": 88.61,
+      "prevClose": 88.09,
       "low52w": 65.35,
       "high52w": 92.49
     },
     "PEP": {
-      "prevClose": 131.19,
+      "prevClose": 130.18,
       "low52w": 127.98,
       "high52w": 171.48
     },
     "CVX": {
-      "prevClose": 202.41,
+      "prevClose": 205.51,
       "low52w": 146.49,
       "high52w": 217.78
     },
     "ABBV": {
-      "prevClose": 265.21,
+      "prevClose": 265.08,
       "low52w": 190.75,
       "high52w": 269.39
     },
     "WFC": {
-      "prevClose": 83.15,
+      "prevClose": 81.9,
       "low52w": 72.78,
       "high52w": 97.76
     },
     "MRK": {
-      "prevClose": 150.91,
-      "low52w": 77.58,
+      "prevClose": 148.08,
+      "low52w": 77.69,
       "high52w": 156.92
     },
     "ADBE": {
-      "prevClose": 238.25,
+      "prevClose": 240.69,
       "low52w": 190.12,
       "high52w": 363.7
     },
     "CSCO": {
-      "prevClose": 106.44,
+      "prevClose": 106.43,
       "low52w": 66.81,
       "high52w": 130.37
     },
     "ACN": {
-      "prevClose": 183.72,
+      "prevClose": 183.52,
       "low52w": 118.15,
       "high52w": 291.09
     },
     "MCD": {
-      "prevClose": 250.35,
+      "prevClose": 238.32,
       "low52w": 234.03,
       "high52w": 341.75
     },
     "TMUS": {
-      "prevClose": 162.41,
+      "prevClose": 165.66,
       "low52w": 161.14,
-      "high52w": 242.31
+      "high52w": 240.95
     },
     "INTC": {
-      "prevClose": 123.86,
-      "low52w": 31.21,
+      "prevClose": 122.6,
+      "low52w": 32.89,
       "high52w": 142.35
     },
     "QCOM": {
-      "prevClose": 198.27,
+      "prevClose": 197.24,
       "low52w": 121.99,
       "high52w": 259.92
     },
     "TXN": {
-      "prevClose": 271.41,
+      "prevClose": 272.62,
       "low52w": 152.73,
       "high52w": 334.03
     },
     "ABT": {
-      "prevClose": 103.69,
+      "prevClose": 103.49,
       "low52w": 81.97,
       "high52w": 135.45
     },
     "ABNB": {
-      "prevClose": 161.81,
+      "prevClose": 149.58,
       "low52w": 110.81,
       "high52w": 193.453
     },
     "ADP": {
-      "prevClose": 269.64,
+      "prevClose": 263.68,
       "low52w": 188.16,
       "high52w": 294.35
     },
     "AIG": {
-      "prevClose": 75.18,
+      "prevClose": 75.58,
       "low52w": 71.25,
       "high52w": 87.29
     },
     "AMAT": {
-      "prevClose": 472.46,
-      "low52w": 196.2,
+      "prevClose": 474.38,
+      "low52w": 197.39,
       "high52w": 739.67
     },
     "AMGN": {
-      "prevClose": 410.24,
+      "prevClose": 406.09,
       "low52w": 269.77,
       "high52w": 447.03
     },
     "AMT": {
-      "prevClose": 175.25,
+      "prevClose": 170.78,
       "low52w": 160.06,
-      "high52w": 197.41
+      "high52w": 196.08
     },
     "AXP": {
-      "prevClose": 305.07,
+      "prevClose": 301.96,
       "low52w": 290.97,
       "high52w": 387.49
     },
     "BA": {
-      "prevClose": 197.72,
+      "prevClose": 199.93,
       "low52w": 176.77,
       "high52w": 254.35
     },
     "BKNG": {
-      "prevClose": 164.22,
+      "prevClose": 155.9,
       "low52w": 150.14,
       "high52w": 224.996
     },
     "BLK": {
-      "prevClose": 1066.66,
+      "prevClose": 1060.89,
       "low52w": 917.39,
       "high52w": 1219.94
     },
     "BMY": {
-      "prevClose": 62.25,
+      "prevClose": 61.15,
       "low52w": 42.52,
       "high52w": 68.64
     },
     "BX": {
-      "prevClose": 124.01,
+      "prevClose": 119.27,
       "low52w": 101.73,
       "high52w": 178.29
     },
     "C": {
-      "prevClose": 132.47,
+      "prevClose": 131.93,
       "low52w": 93.66,
       "high52w": 147.96
     },
     "CAT": {
-      "prevClose": 808.01,
-      "low52w": 459.58,
+      "prevClose": 812.02,
+      "low52w": 462.38,
       "high52w": 1073.46
     },
     "CHTR": {
-      "prevClose": 117.26,
+      "prevClose": 116.61,
       "low52w": 111.55,
       "high52w": 285.82
     },
     "CL": {
-      "prevClose": 87.05,
+      "prevClose": 85.93,
       "low52w": 74.55,
       "high52w": 99.33
     },
     "CMCSA": {
-      "prevClose": 22.42,
+      "prevClose": 22.55,
       "low52w": 21.28,
       "high52w": 32.86
     },
     "COF": {
-      "prevClose": 200.55,
+      "prevClose": 196.1,
       "low52w": 174.24,
       "high52w": 259.64
     },
     "COP": {
-      "prevClose": 125.27,
+      "prevClose": 128.09,
       "low52w": 85.57,
       "high52w": 141.62
     },
     "CRWD": {
-      "prevClose": 250.06,
+      "prevClose": 262.49,
       "low52w": 85.68,
-      "high52w": 263.19
+      "high52w": 263.87
     },
     "DE": {
-      "prevClose": 703.12,
+      "prevClose": 709.48,
       "low52w": 433,
       "high52w": 721.22
     },
     "DHR": {
-      "prevClose": 221.09,
+      "prevClose": 221.56,
       "low52w": 160.93,
       "high52w": 242.8
     },
     "DIS": {
-      "prevClose": 103.82,
+      "prevClose": 103.46,
       "low52w": 92.19,
       "high52w": 117.09
     },
     "DUK": {
-      "prevClose": 116.31,
-      "low52w": 113.9,
+      "prevClose": 114.17,
+      "low52w": 113.16,
       "high52w": 134.49
     },
     "EMR": {
-      "prevClose": 154.19,
+      "prevClose": 154.59,
       "low52w": 122.64,
       "high52w": 166.35
     },
     "FDX": {
-      "prevClose": 295.94,
+      "prevClose": 291.5,
       "low52w": 180.991,
       "high52w": 345.37
     },
     "GD": {
-      "prevClose": 343.39,
+      "prevClose": 343.33,
       "low52w": 306.77,
       "high52w": 400
     },
     "GE": {
-      "prevClose": 319.22,
+      "prevClose": 319.8,
       "low52w": 268.91,
       "high52w": 388.84
     },
     "GEV": {
-      "prevClose": 950.28,
+      "prevClose": 951.82,
       "low52w": 530.16,
       "high52w": 1195.94
     },
     "GILD": {
-      "prevClose": 152.67,
+      "prevClose": 151.37,
       "low52w": 108.46,
       "high52w": 157.29
     },
     "GM": {
-      "prevClose": 83.45,
+      "prevClose": 83.77,
       "low52w": 54.33,
       "high52w": 91.85
     },
     "GS": {
-      "prevClose": 949.49,
+      "prevClose": 936.36,
       "low52w": 740.01,
       "high52w": 1153.99
     },
     "HON": {
-      "prevClose": 211.85,
+      "prevClose": 212.57,
       "low52w": 195.868,
       "high52w": 260.283
     },
     "IBM": {
-      "prevClose": 231.38,
+      "prevClose": 232.76,
       "low52w": 199.19,
       "high52w": 332.46
     },
     "INTU": {
-      "prevClose": 292.35,
+      "prevClose": 286.8,
       "low52w": 252.84,
       "high52w": 703.96
     },
     "ISRG": {
-      "prevClose": 402.09,
+      "prevClose": 398.3,
       "low52w": 328.57,
       "high52w": 603.88
     },
     "KKR": {
-      "prevClose": 98.44,
+      "prevClose": 97.21,
       "low52w": 82.67,
       "high52w": 144.84
     },
     "KLAC": {
-      "prevClose": 188.32,
+      "prevClose": 187.86,
       "low52w": 98.097,
       "high52w": 307.37
     },
     "LIN": {
-      "prevClose": 464.91,
+      "prevClose": 469.72,
       "low52w": 387.78,
       "high52w": 548.2
     },
     "LMT": {
-      "prevClose": 522.34,
+      "prevClose": 524.68,
       "low52w": 437.25,
       "high52w": 692
     },
     "LOW": {
-      "prevClose": 196.08,
-      "low52w": 188.22,
+      "prevClose": 191.36,
+      "low52w": 187.5,
       "high52w": 293.06
     },
     "LRCX": {
-      "prevClose": 310.63,
-      "low52w": 125.02,
+      "prevClose": 307.28,
+      "low52w": 126.37,
       "high52w": 438.5
     },
     "MDLZ": {
-      "prevClose": 61.08,
+      "prevClose": 61.44,
       "low52w": 51.2,
       "high52w": 66.65
     },
     "MDT": {
-      "prevClose": 90.77,
+      "prevClose": 89.3,
       "low52w": 73.31,
       "high52w": 106.33
     },
     "MMM": {
-      "prevClose": 169.3,
+      "prevClose": 170.3,
       "low52w": 139.34,
       "high52w": 184.9
     },
     "MO": {
-      "prevClose": 68.64,
+      "prevClose": 68.95,
       "low52w": 54.7,
       "high52w": 77.06
     },
     "MS": {
-      "prevClose": 200.18,
+      "prevClose": 198.39,
       "low52w": 151.84,
       "high52w": 232.25
     },
     "MU": {
-      "prevClose": 1096.16,
-      "low52w": 154.65,
+      "prevClose": 1071.88,
+      "low52w": 155.18,
       "high52w": 1255
     },
     "NEE": {
-      "prevClose": 79.26,
-      "low52w": 73.59,
+      "prevClose": 77.02,
+      "low52w": 74.63,
       "high52w": 98.75
     },
     "NKE": {
-      "prevClose": 36.1,
+      "prevClose": 36.05,
       "low52w": 35.35,
       "high52w": 76.97
     },
     "NOW": {
-      "prevClose": 137,
+      "prevClose": 140.78,
       "low52w": 81.24,
       "high52w": 192.966
     },
     "PANW": {
-      "prevClose": 374.57,
+      "prevClose": 393.3,
       "low52w": 139.57,
       "high52w": 398.88
     },
     "PFE": {
-      "prevClose": 27.93,
-      "low52w": 23.58,
+      "prevClose": 28.18,
+      "low52w": 23.61,
       "high52w": 29.21
     },
     "PLTR": {
-      "prevClose": 184.99,
+      "prevClose": 191.79,
       "low52w": 106.37,
       "high52w": 207.52
     },
     "PM": {
-      "prevClose": 190.23,
+      "prevClose": 190.84,
       "low52w": 142.11,
       "high52w": 207.76
     },
     "PYPL": {
-      "prevClose": 52.89,
+      "prevClose": 52.51,
       "low52w": 38.46,
       "high52w": 79.215
     },
     "RTX": {
-      "prevClose": 190.99,
+      "prevClose": 192.19,
       "low52w": 155.64,
       "high52w": 226.88
     },
     "SBUX": {
-      "prevClose": 95.11,
+      "prevClose": 94.14,
       "low52w": 77.99,
       "high52w": 110.51
     },
     "SCHW": {
-      "prevClose": 100.35,
+      "prevClose": 99.5,
       "low52w": 83.96,
       "high52w": 114.53
     },
     "SO": {
-      "prevClose": 85.15,
-      "low52w": 83.21,
+      "prevClose": 83.47,
+      "low52w": 82.835,
       "high52w": 100.84
     },
     "SPGI": {
-      "prevClose": 402.44,
+      "prevClose": 406.5,
       "low52w": 361.031,
       "high52w": 522.469
     },
     "T": {
-      "prevClose": 25.1,
+      "prevClose": 25.3,
       "low52w": 19.89,
       "high52w": 29.44
     },
     "TGT": {
-      "prevClose": 159.02,
+      "prevClose": 156.26,
       "low52w": 83.44,
       "high52w": 170.75
     },
     "TMO": {
-      "prevClose": 658.52,
+      "prevClose": 665.3,
       "low52w": 435.27,
-      "high52w": 671.47
+      "high52w": 682.98
     },
     "UBER": {
-      "prevClose": 69.89,
+      "prevClose": 69.42,
       "low52w": 65.41,
       "high52w": 101.295
     },
     "UNP": {
-      "prevClose": 274.41,
+      "prevClose": 275.53,
       "low52w": 215.53,
       "high52w": 315.99
     },
     "UPS": {
-      "prevClose": 95.87,
+      "prevClose": 95.82,
       "low52w": 82,
       "high52w": 122.41
     },
     "USB": {
-      "prevClose": 59.44,
+      "prevClose": 58.48,
       "low52w": 45.02,
       "high52w": 66.08
     },
     "VRTX": {
-      "prevClose": 514.99,
-      "low52w": 377.02,
+      "prevClose": 516.34,
+      "low52w": 379.72,
       "high52w": 560.25
     },
     "VZ": {
-      "prevClose": 46.45,
+      "prevClose": 46.52,
       "low52w": 38.39,
       "high52w": 51.68
     },
     "WM": {
-      "prevClose": 207.68,
+      "prevClose": 207.88,
       "low52w": 194.11,
       "high52w": 248.13
     },
     "SHW": {
-      "prevClose": 328.35,
+      "prevClose": 326.46,
       "low52w": 289.86,
       "high52w": 377.77
     },
     "APD": {
-      "prevClose": 287.86,
+      "prevClose": 286.97,
       "low52w": 229.11,
       "high52w": 314.87
     },
     "FCX": {
-      "prevClose": 74.35,
-      "low52w": 35.15,
+      "prevClose": 72.58,
+      "low52w": 35.29,
       "high52w": 80.24
     },
     "NEM": {
-      "prevClose": 127.26,
+      "prevClose": 123.55,
       "low52w": 76.05,
       "high52w": 135.29
     },
     "ANET": {
-      "prevClose": 205.19,
+      "prevClose": 203.47,
       "low52w": 114.52,
       "high52w": 214.89
     },
     "ASML": {
-      "prevClose": 1747.9,
+      "prevClose": 1744.61,
       "low52w": 935.41,
       "high52w": 1999.96
     },
     "NVO": {
-      "prevClose": 39.4,
+      "prevClose": 38.17,
       "low52w": 35.12,
       "high52w": 64.16
     },
     "BABA": {
-      "prevClose": 116.31,
+      "prevClose": 110.8,
       "low52w": 91.99,
       "high52w": 192.67
     },
     "TM": {
-      "prevClose": 192.06,
+      "prevClose": 190.36,
       "low52w": 166.1,
       "high52w": 248.9
     },
     "SAP": {
-      "prevClose": 210.68,
+      "prevClose": 210.62,
       "low52w": 144.97,
       "high52w": 281.37
     },
     "AZN": {
-      "prevClose": 168.37,
-      "low52w": 145.8,
+      "prevClose": 163.33,
+      "low52w": 146.66,
       "high52w": 212.71
     },
     "SHEL": {
-      "prevClose": 93.93,
+      "prevClose": 95.41,
       "low52w": 68.625,
       "high52w": 99.155
     },
     "NVS": {
-      "prevClose": 141.28,
+      "prevClose": 142.71,
       "low52w": 121.57,
       "high52w": 170.46
     },
     "ADI": {
-      "prevClose": 390.37,
+      "prevClose": 385.23,
       "low52w": 223.47,
       "high52w": 445.91
     },
     "REGN": {
-      "prevClose": 803.9,
+      "prevClose": 801.82,
       "low52w": 541,
       "high52w": 859.34
     }
