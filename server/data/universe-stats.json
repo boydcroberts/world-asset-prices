@@ -1,6 +1,6 @@
 {
   "_comment": "Per-stock daily stats (previous close + 52-week range) sourced from Yahoo v8 chart meta. Auto-refreshed daily by the refresh bot; do not hand-edit. Keep symbols in sync with PUBLIC_COMPANIES.",
-  "generatedAt": "2026-09-26T11:38:11.771Z",
+  "generatedAt": "2026-09-27T12:17:00.515Z",
   "stats": {
     "NVDA": {
       "prevClose": 224.58,
@@ -100,7 +100,7 @@
     "HD": {
       "prevClose": 292.18,
       "low52w": 289.1,
-      "high52w": 411.41
+      "high52w": 410.95
     },
     "PG": {
       "prevClose": 145.68,
@@ -125,7 +125,7 @@
     "AMD": {
       "prevClose": 629.26,
       "low52w": 159.33,
-      "high52w": 638.95
+      "high52w": 639
     },
     "CRM": {
       "prevClose": 238.22,
@@ -234,7 +234,7 @@
     },
     "AMGN": {
       "prevClose": 406.04,
-      "low52w": 269.77,
+      "low52w": 270.67,
       "high52w": 447.03
     },
     "AMT": {
@@ -279,7 +279,7 @@
     },
     "CAT": {
       "prevClose": 805.25,
-      "low52w": 462.38,
+      "low52w": 467.46,
       "high52w": 1073.46
     },
     "CHTR": {
@@ -454,7 +454,7 @@
     },
     "NEE": {
       "prevClose": 75.62,
-      "low52w": 74.63,
+      "low52w": 75.12,
       "high52w": 98.75
     },
     "NKE": {
@@ -579,7 +579,7 @@
     },
     "FCX": {
       "prevClose": 72.08,
-      "low52w": 35.29,
+      "low52w": 36.05,
       "high52w": 80.24
     },
     "NEM": {
@@ -619,7 +619,7 @@
     },
     "AZN": {
       "prevClose": 164.56,
-      "low52w": 146.66,
+      "low52w": 147.38,
       "high52w": 212.71
     },
     "SHEL": {
