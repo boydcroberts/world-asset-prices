@@ -1,6 +1,6 @@
 {
   "_comment": "Per-stock daily stats (previous close + 52-week range) sourced from Yahoo v8 chart meta. Auto-refreshed daily by the refresh bot; do not hand-edit. Keep symbols in sync with PUBLIC_COMPANIES.",
-  "generatedAt": "2026-09-28T14:17:19.371Z",
+  "generatedAt": "2026-09-29T13:11:26.625Z",
   "stats": {
     "NVDA": {
       "prevClose": 225.07,
@@ -54,7 +54,7 @@
     },
     "LLY": {
       "prevClose": 1183.46,
-      "low52w": 716.08,
+      "low52w": 725.31,
       "high52w": 1292.65
     },
     "JPM": {
@@ -94,13 +94,13 @@
     },
     "JNJ": {
       "prevClose": 271.22,
-      "low52w": 179.8,
+      "low52w": 181.07,
       "high52w": 281.07
     },
     "HD": {
       "prevClose": 293.2,
       "low52w": 289.1,
-      "high52w": 410.95
+      "high52w": 407
     },
     "PG": {
       "prevClose": 146.23,
@@ -139,12 +139,12 @@
     },
     "KO": {
       "prevClose": 87.81,
-      "low52w": 65.35,
+      "low52w": 65.84,
       "high52w": 92.49
     },
     "PEP": {
       "prevClose": 128.63,
-      "low52w": 126.721,
+      "low52w": 126.72,
       "high52w": 171.48
     },
     "CVX": {
@@ -164,7 +164,7 @@
     },
     "MRK": {
       "prevClose": 148.78,
-      "low52w": 78.03,
+      "low52w": 78.4,
       "high52w": 156.92
     },
     "ADBE": {
@@ -184,7 +184,7 @@
     },
     "MCD": {
       "prevClose": 236.5,
-      "low52w": 234.03,
+      "low52w": 233.23,
       "high52w": 341.75
     },
     "TMUS": {
@@ -220,7 +220,7 @@
     "ADP": {
       "prevClose": 263.67,
       "low52w": 188.16,
-      "high52w": 294.35
+      "high52w": 293.91
     },
     "AIG": {
       "prevClose": 74.17,
@@ -234,7 +234,7 @@
     },
     "AMGN": {
       "prevClose": 414.61,
-      "low52w": 270.67,
+      "low52w": 274.02,
       "high52w": 447.03
     },
     "AMT": {
@@ -270,7 +270,7 @@
     "BX": {
       "prevClose": 118.42,
       "low52w": 101.73,
-      "high52w": 177.23
+      "high52w": 177
     },
     "C": {
       "prevClose": 134.28,
@@ -279,7 +279,7 @@
     },
     "CAT": {
       "prevClose": 821.58,
-      "low52w": 467.46,
+      "low52w": 470.24,
       "high52w": 1073.46
     },
     "CHTR": {
@@ -385,7 +385,7 @@
     "INTU": {
       "prevClose": 275.79,
       "low52w": 252.84,
-      "high52w": 703.96
+      "high52w": 702.12
     },
     "ISRG": {
       "prevClose": 405.18,
@@ -449,7 +449,7 @@
     },
     "MU": {
       "prevClose": 1082.28,
-      "low52w": 159.97,
+      "low52w": 163.96,
       "high52w": 1255
     },
     "NEE": {
@@ -509,7 +509,7 @@
     },
     "SO": {
       "prevClose": 82.88,
-      "low52w": 82.09,
+      "low52w": 81.91,
       "high52w": 100.84
     },
     "SPGI": {
@@ -554,7 +554,7 @@
     },
     "VRTX": {
       "prevClose": 526.19,
-      "low52w": 384.39,
+      "low52w": 385.86,
       "high52w": 560.25
     },
     "VZ": {
@@ -579,7 +579,7 @@
     },
     "FCX": {
       "prevClose": 72.31,
-      "low52w": 36.05,
+      "low52w": 37.2,
       "high52w": 80.24
     },
     "NEM": {
@@ -619,7 +619,7 @@
     },
     "AZN": {
       "prevClose": 166.58,
-      "low52w": 147.38,
+      "low52w": 147.92,
       "high52w": 212.71
     },
     "SHEL": {
