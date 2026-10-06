@@ -1,11 +1,11 @@
 {
   "_comment": "Per-stock daily stats (previous close + 52-week range) sourced from Yahoo v8 chart meta. Auto-refreshed daily by the refresh bot; do not hand-edit. Keep symbols in sync with PUBLIC_COMPANIES.",
-  "generatedAt": "2026-10-05T15:05:28.123Z",
+  "generatedAt": "2026-10-06T13:29:18.855Z",
   "stats": {
     "NVDA": {
       "prevClose": 233.95,
       "low52w": 164.27,
-      "high52w": 237.88
+      "high52w": 240.1
     },
     "AAPL": {
       "prevClose": 333.69,
@@ -45,7 +45,7 @@
     "TSM": {
       "prevClose": 472.78,
       "low52w": 266.82,
-      "high52w": 482.85
+      "high52w": 487.47
     },
     "SPCX": {
       "prevClose": 158.96,
@@ -139,7 +139,7 @@
     },
     "KO": {
       "prevClose": 85.65,
-      "low52w": 65.84,
+      "low52w": 65.87,
       "high52w": 92.49
     },
     "PEP": {
@@ -210,7 +210,7 @@
     "ABT": {
       "prevClose": 97.5,
       "low52w": 81.97,
-      "high52w": 135.24
+      "high52w": 135.13
     },
     "ABNB": {
       "prevClose": 162.43,
@@ -255,7 +255,7 @@
     "BKNG": {
       "prevClose": 159.02,
       "low52w": 150.14,
-      "high52w": 224.996
+      "high52w": 220.806
     },
     "BLK": {
       "prevClose": 1059.63,
@@ -270,7 +270,7 @@
     "BX": {
       "prevClose": 111.75,
       "low52w": 101.73,
-      "high52w": 170
+      "high52w": 169.21
     },
     "C": {
       "prevClose": 128.5,
@@ -310,7 +310,7 @@
     "CRWD": {
       "prevClose": 270.04,
       "low52w": 85.68,
-      "high52w": 273.535
+      "high52w": 274.23
     },
     "DE": {
       "prevClose": 687,
@@ -359,7 +359,7 @@
     },
     "GILD": {
       "prevClose": 144.74,
-      "low52w": 112.41,
+      "low52w": 112.82,
       "high52w": 157.29
     },
     "GM": {
@@ -460,7 +460,7 @@
     "NKE": {
       "prevClose": 33.87,
       "low52w": 31.97,
-      "high52w": 72.39
+      "high52w": 71.58
     },
     "NOW": {
       "prevClose": 134.38,
@@ -535,7 +535,7 @@
     "UBER": {
       "prevClose": 68.11,
       "low52w": 65.41,
-      "high52w": 101.295
+      "high52w": 100.69
     },
     "UNP": {
       "prevClose": 278.28,
@@ -554,7 +554,7 @@
     },
     "VRTX": {
       "prevClose": 504.73,
-      "low52w": 400.74,
+      "low52w": 400.86,
       "high52w": 560.25
     },
     "VZ": {
@@ -605,7 +605,7 @@
     "BABA": {
       "prevClose": 105.85,
       "low52w": 91.99,
-      "high52w": 189.61
+      "high52w": 188.66
     },
     "TM": {
       "prevClose": 181.49,
