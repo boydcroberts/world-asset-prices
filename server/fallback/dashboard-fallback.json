@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T13:34:25.702Z",
+  "generatedAt": "2026-10-10T12:50:05.867Z",
   "stale": false,
   "refreshInSec": 30,
   "source": {
@@ -44,16 +44,16 @@
       "name": "Bitcoin",
       "symbol": "BTC",
       "category": "Crypto",
-      "priceUsd": 82880.46844604239,
-      "marketCapUsd": 1665543599045,
-      "change24h": 0.33000001311302185,
+      "priceUsd": 82811.18432586652,
+      "marketCapUsd": 1664183414743,
+      "change24h": 0.41999998688697815,
       "sparkline7d": [
         0,
-        -0.18000000715255737,
-        -0.23000000417232513,
-        0.47999998927116394,
-        0.33000001311302185,
-        -3.7100000381469727
+        0,
+        -0.05999999865889549,
+        0.11999999731779099,
+        0.41999998688697815,
+        -2.369999885559082
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/btc-bitcoin/logo.png",
       "fallbackLogoUrls": [
@@ -67,16 +67,16 @@
       "name": "Ethereum",
       "symbol": "ETH",
       "category": "Crypto",
-      "priceUsd": 2493.4078201759335,
-      "marketCapUsd": 304492250172,
-      "change24h": -1.5199999809265137,
+      "priceUsd": 2497.1403215739456,
+      "marketCapUsd": 304955380797,
+      "change24h": 0.5799999833106995,
       "sparkline7d": [
         0,
-        -0.05999999865889549,
-        -0.1899999976158142,
-        -0.33000001311302185,
-        -1.5199999809265137,
-        -8.609999656677246
+        0.019999999552965164,
+        -0.019999999552965164,
+        0.1599999964237213,
+        0.5799999833106995,
+        -6.849999904632568
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/eth-ethereum/logo.png",
       "fallbackLogoUrls": [
@@ -90,16 +90,16 @@
       "name": "Tether",
       "symbol": "USDT",
       "category": "Crypto",
-      "priceUsd": 0.9994130141335865,
-      "marketCapUsd": 184135607231,
-      "change24h": -0.009999999776482582,
+      "priceUsd": 0.9995727102620481,
+      "marketCapUsd": 184174226412,
+      "change24h": 0.029999999329447746,
       "sparkline7d": [
         0,
+        0,
+        0,
         -0.009999999776482582,
-        0.009999999776482582,
-        0.009999999776482582,
-        -0.009999999776482582,
-        -0.07000000029802322
+        0.029999999329447746,
+        -0.03999999910593033
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/usdt-tether/logo.png",
       "fallbackLogoUrls": [
@@ -113,16 +113,16 @@
       "name": "BNB",
       "symbol": "BNB",
       "category": "Crypto",
-      "priceUsd": 741.3392313447391,
-      "marketCapUsd": 98715849110,
-      "change24h": -2.2699999809265137,
+      "priceUsd": 748.5443510773758,
+      "marketCapUsd": 99675245079,
+      "change24h": 1.4500000476837158,
       "sparkline7d": [
         0,
-        -0.09000000357627869,
-        -0.09000000357627869,
-        -0.3700000047683716,
-        -2.2699999809265137,
-        -4.800000190734863
+        0.05999999865889549,
+        -0.05999999865889549,
+        0.07999999821186066,
+        1.4500000476837158,
+        -3.240000009536743
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/bnb-binance-coin/logo.png",
       "fallbackLogoUrls": [
@@ -136,16 +136,16 @@
       "name": "XRP",
       "symbol": "XRP",
       "category": "Crypto",
-      "priceUsd": 1.3879964933544513,
-      "marketCapUsd": 87572829375,
-      "change24h": -1.25,
+      "priceUsd": 1.404267825509505,
+      "marketCapUsd": 88650966108,
+      "change24h": 1.850000023841858,
       "sparkline7d": [
         0,
-        -0.10000000149011612,
-        -0.27000001072883606,
-        -1.0399999618530273,
-        -1.25,
-        -9.100000381469727
+        0.10000000149011612,
+        -0.029999999329447746,
+        -0.23999999463558197,
+        1.850000023841858,
+        -5.329999923706055
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/xrp-xrp/logo.png",
       "fallbackLogoUrls": [
@@ -159,16 +159,16 @@
       "name": "USDC",
       "symbol": "USDC",
       "category": "Crypto",
-      "priceUsd": 1.0001135436938773,
-      "marketCapUsd": 73129942057,
-      "change24h": 0,
+      "priceUsd": 1.0003927579170948,
+      "marketCapUsd": 72970348415,
+      "change24h": 0.029999999329447746,
       "sparkline7d": [
         0,
-        -0.019999999552965164,
+        0,
+        0,
         -0.009999999776482582,
-        0,
-        0,
-        -0.009999999776482582
+        0.029999999329447746,
+        0.019999999552965164
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/usdc-usd-coin/logo.png",
       "fallbackLogoUrls": [
@@ -182,16 +182,16 @@
       "name": "Solana",
       "symbol": "SOL",
       "category": "Crypto",
-      "priceUsd": 110.10958778848835,
-      "marketCapUsd": 64821225293,
-      "change24h": -2.0999999046325684,
+      "priceUsd": 109.78655537356197,
+      "marketCapUsd": 64641409611,
+      "change24h": 0.4099999964237213,
       "sparkline7d": [
         0,
-        -0.2199999988079071,
-        -0.4000000059604645,
-        -0.41999998688697815,
-        -2.0999999046325684,
-        -9.390000343322754
+        0.05999999865889549,
+        -0.10999999940395355,
+        -0.05999999865889549,
+        0.4099999964237213,
+        -8.079999923706055
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/sol-solana/logo.png",
       "fallbackLogoUrls": [
@@ -205,16 +205,16 @@
       "name": "TRON",
       "symbol": "TRX",
       "category": "Crypto",
-      "priceUsd": 0.332420305931501,
-      "marketCapUsd": 31576141183,
-      "change24h": -0.6399999856948853,
+      "priceUsd": 0.33102745412273765,
+      "marketCapUsd": 31444365465,
+      "change24h": -0.3400000035762787,
       "sparkline7d": [
         0,
-        -0.05000000074505806,
-        -0.10000000149011612,
-        0.09000000357627869,
-        -0.6399999856948853,
-        -0.8100000023841858
+        0,
+        -0.07999999821186066,
+        0.03999999910593033,
+        -0.3400000035762787,
+        -1.4299999475479126
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/trx-tron/logo.png",
       "fallbackLogoUrls": [
@@ -228,16 +228,16 @@
       "name": "Lido Staked Ether",
       "symbol": "STETH",
       "category": "Crypto",
-      "priceUsd": 2493.691491303484,
-      "marketCapUsd": 24424209448,
-      "change24h": -1.4700000286102295,
+      "priceUsd": 2497.131967128167,
+      "marketCapUsd": 24457906841,
+      "change24h": 0.7599999904632568,
       "sparkline7d": [
         0,
-        0.07000000029802322,
-        -0.20999999344348907,
-        -0.1899999976158142,
-        -1.4700000286102295,
-        -8.5600004196167
+        0.1899999976158142,
+        -0.019999999552965164,
+        0.4399999976158142,
+        0.7599999904632568,
+        -6.900000095367432
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/steth-lido-staked-ether/logo.png",
       "fallbackLogoUrls": [
@@ -251,16 +251,16 @@
       "name": "Zcash",
       "symbol": "ZEC",
       "category": "Crypto",
-      "priceUsd": 1223.7705227280537,
-      "marketCapUsd": 19982054289,
-      "change24h": 1.1299999952316284,
+      "priceUsd": 1227.6692735140723,
+      "marketCapUsd": 20045714140,
+      "change24h": 1.2599999904632568,
       "sparkline7d": [
         0,
-        -0.10000000149011612,
-        -0.029999999329447746,
-        -0.1599999964237213,
-        1.1299999952316284,
-        -11.65999984741211
+        -0.019999999552965164,
+        0,
+        0.2800000011920929,
+        1.2599999904632568,
+        -5.730000019073486
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/zec-zcash/logo.png",
       "fallbackLogoUrls": [
@@ -274,16 +274,16 @@
       "name": "Hyperliquid",
       "symbol": "HYPE",
       "category": "Crypto",
-      "priceUsd": 85.38490156481996,
-      "marketCapUsd": 18993505393,
-      "change24h": -0.8899999856948853,
+      "priceUsd": 84.3376283510934,
+      "marketCapUsd": 18760543955,
+      "change24h": -0.8500000238418579,
       "sparkline7d": [
         0,
-        -0.20000000298023224,
-        -0.46000000834465027,
-        -0.7799999713897705,
-        -0.8899999856948853,
-        -5.199999809265137
+        0.05000000074505806,
+        0.09000000357627869,
+        0.10000000149011612,
+        -0.8500000238418579,
+        -4.71999979019165
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/hype-hyperliquid/logo.png",
       "fallbackLogoUrls": [
@@ -297,16 +297,16 @@
       "name": "Dogecoin",
       "symbol": "DOGE",
       "category": "Crypto",
-      "priceUsd": 0.08473248393559998,
-      "marketCapUsd": 14526175503,
-      "change24h": -2.9700000286102295,
+      "priceUsd": 0.08591771384846113,
+      "marketCapUsd": 14729366262,
+      "change24h": 1.9600000381469727,
       "sparkline7d": [
         0,
-        -0.14000000059604645,
-        -0.11999999731779099,
-        -0.7200000286102295,
-        -2.9700000286102295,
-        -11.819999694824219
+        0.14000000059604645,
+        0.009999999776482582,
+        -0.4099999964237213,
+        1.9600000381469727,
+        -7.380000114440918
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/doge-dogecoin/logo.png",
       "fallbackLogoUrls": [
@@ -320,16 +320,16 @@
       "name": "Wrapped Liquid Staked Ether 2.0",
       "symbol": "WSTETH",
       "category": "Crypto",
-      "priceUsd": 3106.0007156402785,
-      "marketCapUsd": 11321742222,
-      "change24h": -1.5199999809265137,
+      "priceUsd": 3111.004000534774,
+      "marketCapUsd": 11339979791,
+      "change24h": 0.6000000238418579,
       "sparkline7d": [
         0,
-        -0.07000000029802322,
-        -0.1899999976158142,
-        -0.33000001311302185,
-        -1.5199999809265137,
-        -8.579999923706055
+        0.03999999910593033,
+        -0.029999999329447746,
+        0.15000000596046448,
+        0.6000000238418579,
+        -6.829999923706055
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/wsteth-wrapped-liquid-staked-ether-20/logo.png",
       "fallbackLogoUrls": [
@@ -343,16 +343,16 @@
       "name": "Usds",
       "symbol": "USDS",
       "category": "Crypto",
-      "priceUsd": 1.0001220086491762,
-      "marketCapUsd": 10154384378,
-      "change24h": 0,
+      "priceUsd": 1.000421516307545,
+      "marketCapUsd": 10145992374,
+      "change24h": 0.03999999910593033,
       "sparkline7d": [
         0,
-        -0.019999999552965164,
+        0,
+        0,
         -0.009999999776482582,
-        0,
-        0,
-        -0.019999999552965164
+        0.03999999910593033,
+        0.019999999552965164
       ],
       "logoUrl": "https://static.coinpaprika.com/coin/usds-usds/logo.png",
       "fallbackLogoUrls": [
@@ -361,26 +361,26 @@
       ]
     },
     {
-      "id": "xmr-monero",
+      "id": "link-chainlink",
       "rank": 15,
-      "name": "Monero",
-      "symbol": "XMR",
+      "name": "Chainlink",
+      "symbol": "LINK",
       "category": "Crypto",
-      "priceUsd": 536.2006422560783,
-      "marketCapUsd": 10088800073,
-      "change24h": -2.3299999237060547,
+      "priceUsd": 12.996643208978233,
+      "marketCapUsd": 9966475454,
+      "change24h": 2.0199999809265137,
       "sparkline7d": [
         0,
-        -0.3700000047683716,
-        -0.05999999865889549,
-        -1.2899999618530273,
-        -2.3299999237060547,
-        -2.049999952316284
+        0.3100000023841858,
+        0.36000001430511475,
+        0.7799999713897705,
+        2.0199999809265137,
+        -6.289999961853027
       ],
-      "logoUrl": "https://static.coinpaprika.com/coin/xmr-monero/logo.png",
+      "logoUrl": "https://static.coinpaprika.com/coin/link-chainlink/logo.png",
       "fallbackLogoUrls": [
-        "https://cryptoicons.org/api/icon/xmr/200",
-        "https://cryptoicon-api.pages.dev/api/icon/xmr"
+        "https://cryptoicons.org/api/icon/link/200",
+        "https://cryptoicon-api.pages.dev/api/icon/link"
       ]
     }
   ],
@@ -391,9 +391,9 @@
       "name": "NVIDIA",
       "symbol": "NVDA",
       "category": "Stock",
-      "marketCapUsd": 5715415155136,
-      "priceUsd": 232.35000610351562,
-      "changePercent": -2.1560592481089715,
+      "marketCapUsd": 5639898193973,
+      "priceUsd": 229.27999877929688,
+      "changePercent": -0.52065308083266,
       "sector": "Technology",
       "low52w": 164.27,
       "high52w": 243.37,
@@ -408,9 +408,9 @@
       "name": "Apple",
       "symbol": "AAPL",
       "category": "Stock",
-      "marketCapUsd": 4878713855219,
-      "priceUsd": 332.1700134277344,
-      "changePercent": -1.3366164411042387,
+      "marketCapUsd": 4944366551147,
+      "priceUsd": 336.6400146484375,
+      "changePercent": -1.1103887408385278,
       "sector": "Technology",
       "low52w": 243.42,
       "high52w": 345.34,
@@ -425,9 +425,9 @@
       "name": "Alphabet",
       "symbol": "GOOGL",
       "category": "Stock",
-      "marketCapUsd": 4282018314406,
-      "priceUsd": 353.4150085449219,
-      "changePercent": 0.8316714821460413,
+      "marketCapUsd": 4260754466329,
+      "priceUsd": 351.6600036621094,
+      "changePercent": 0.9675855356482684,
       "sector": "Communication Services",
       "low52w": 235.84,
       "high52w": 408.61,
@@ -442,9 +442,9 @@
       "name": "Microsoft",
       "symbol": "MSFT",
       "category": "Stock",
-      "marketCapUsd": 3939596126237,
-      "priceUsd": 530.3400268554688,
-      "changePercent": 0.10948860908123662,
+      "marketCapUsd": 3974732476104,
+      "priceUsd": 535.0700073242188,
+      "changePercent": 2.3841884625664904,
       "sector": "Technology",
       "low52w": 349.2,
       "high52w": 553.72,
@@ -459,9 +459,9 @@
       "name": "Amazon",
       "symbol": "AMZN",
       "category": "Stock",
-      "marketCapUsd": 2781895890911,
-      "priceUsd": 258.6099853515625,
-      "changePercent": -0.5040068668965512,
+      "marketCapUsd": 2822988127408,
+      "priceUsd": 262.42999267578125,
+      "changePercent": 3.2944944799579816,
       "sector": "Consumer Discretionary",
       "low52w": 196,
       "high52w": 287.2,
@@ -476,9 +476,9 @@
       "name": "TSMC",
       "symbol": "TSM",
       "category": "Stock",
-      "marketCapUsd": 2396413020688,
-      "priceUsd": 462.04998779296875,
-      "changePercent": -2.1495155033950106,
+      "marketCapUsd": 2351083236138,
+      "priceUsd": 453.30999755859375,
+      "changePercent": -1.028339906861323,
       "sector": "Technology",
       "low52w": 266.82,
       "high52w": 487.47,
@@ -493,9 +493,9 @@
       "name": "SpaceX",
       "symbol": "SPCX",
       "category": "Stock",
-      "marketCapUsd": 2174073410952,
-      "priceUsd": 164.90499877929688,
-      "changePercent": -1.6079959550734602,
+      "marketCapUsd": 2143289366351,
+      "priceUsd": 162.57000732421875,
+      "changePercent": 1.2455672443288017,
       "sector": "Communication Services",
       "low52w": 104.83,
       "high52w": 225.64,
@@ -510,9 +510,9 @@
       "name": "Meta Platforms",
       "symbol": "META",
       "category": "Stock",
-      "marketCapUsd": 1835410129067,
-      "priceUsd": 723.0499877929688,
-      "changePercent": 0.24122607380582614,
+      "marketCapUsd": 1824291803276,
+      "priceUsd": 718.6699829101562,
+      "changePercent": -0.30795504027573367,
       "sector": "Communication Services",
       "low52w": 520.26,
       "high52w": 779.82,
@@ -527,9 +527,9 @@
       "name": "Broadcom",
       "symbol": "AVGO",
       "category": "Stock",
-      "marketCapUsd": 1735185073320,
-      "priceUsd": 364.7200927734375,
-      "changePercent": -3.1313662921469523,
+      "marketCapUsd": 1720055567723,
+      "priceUsd": 361.5400085449219,
+      "changePercent": 0.38874008577827757,
       "sector": "Technology",
       "low52w": 289.96,
       "high52w": 495,
@@ -557,9 +557,9 @@
       "name": "Tesla",
       "symbol": "TSLA",
       "category": "Stock",
-      "marketCapUsd": 1444563963913,
-      "priceUsd": 384.6300048828125,
-      "changePercent": 1.805141442209708,
+      "marketCapUsd": 1437315444987,
+      "priceUsd": 382.70001220703125,
+      "changePercent": 2.0533365885416663,
       "sector": "Consumer Discretionary",
       "low52w": 297.38,
       "high52w": 498.83,
@@ -587,9 +587,9 @@
       "name": "Micron",
       "symbol": "MU",
       "category": "Stock",
-      "marketCapUsd": 1181548850310,
-      "priceUsd": 1047.719482421875,
-      "changePercent": -3.702253453871783,
+      "marketCapUsd": 1160438254101,
+      "priceUsd": 1029,
+      "changePercent": -0.6603336422613453,
       "sector": "Technology",
       "low52w": 179.61,
       "high52w": 1255,
@@ -604,9 +604,9 @@
       "name": "Berkshire Hathaway",
       "symbol": "BRK-B",
       "category": "Stock",
-      "marketCapUsd": 1107907163086,
-      "priceUsd": 512.9199829101562,
-      "changePercent": 1.3155261940813532,
+      "marketCapUsd": 1113739189453,
+      "priceUsd": 515.6199951171875,
+      "changePercent": 0.8843660961039869,
       "sector": "Financials",
       "low52w": 464.01,
       "high52w": 537.74,
@@ -621,9 +621,9 @@
       "name": "Eli Lilly",
       "symbol": "LLY",
       "category": "Stock",
-      "marketCapUsd": 1097938562345,
-      "priceUsd": 1165.8599853515625,
-      "changePercent": -1.9230781553635445,
+      "marketCapUsd": 1110567346104,
+      "priceUsd": 1179.27001953125,
+      "changePercent": 0.798340031561712,
       "sector": "Health Care",
       "low52w": 783.85,
       "high52w": 1292.65,
@@ -638,9 +638,9 @@
       "name": "AMD",
       "symbol": "AMD",
       "category": "Stock",
-      "marketCapUsd": 1018742183379,
-      "priceUsd": 624.7650146484375,
-      "changePercent": -3.266185450649137,
+      "marketCapUsd": 991568161335,
+      "priceUsd": 608.0999755859375,
+      "changePercent": -2.0268132393604517,
       "sector": "Technology",
       "low52w": 188.22,
       "high52w": 658.52,
@@ -655,9 +655,9 @@
       "name": "JPMorgan Chase",
       "symbol": "JPM",
       "category": "Stock",
-      "marketCapUsd": 887668561480,
-      "priceUsd": 331.2799987792969,
-      "changePercent": 0.5158076276767071,
+      "marketCapUsd": 892250503223,
+      "priceUsd": 332.989990234375,
+      "changePercent": 0.4646221856614908,
       "sector": "Financials",
       "low52w": 279.1,
       "high52w": 366.5,
@@ -672,9 +672,9 @@
       "name": "Walmart",
       "symbol": "WMT",
       "category": "Stock",
-      "marketCapUsd": 882028993003,
-      "priceUsd": 110.83439636230469,
-      "changePercent": 2.4726297728408753,
+      "marketCapUsd": 886132195857,
+      "priceUsd": 111.3499984741211,
+      "changePercent": 0.7145427587925935,
       "sector": "Consumer Staples",
       "low52w": 98.88,
       "high52w": 135.16,
@@ -689,9 +689,9 @@
       "name": "Visa",
       "symbol": "V",
       "category": "Stock",
-      "marketCapUsd": 712368823802,
-      "priceUsd": 378.0899963378906,
-      "changePercent": 1.6097813324081167,
+      "marketCapUsd": 726236013886,
+      "priceUsd": 385.45001220703125,
+      "changePercent": 2.7537887094879627,
       "sector": "Financials",
       "low52w": 293.89,
       "high52w": 385.57,
@@ -701,31 +701,14 @@
       ]
     },
     {
-      "id": "stock-asml",
-      "rank": 20,
-      "name": "ASML",
-      "symbol": "ASML",
-      "category": "Stock",
-      "marketCapUsd": 706117427954,
-      "priceUsd": 1823.5699462890625,
-      "changePercent": 1.031044803711022,
-      "sector": "Technology",
-      "low52w": 935.41,
-      "high52w": 1999.96,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/ASML.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/ASML.png"
-      ]
-    },
-    {
       "id": "stock-xom",
-      "rank": 21,
+      "rank": 20,
       "name": "Exxon Mobil",
       "symbol": "XOM",
       "category": "Stock",
-      "marketCapUsd": 699335969060,
-      "priceUsd": 168.72000122070312,
-      "changePercent": 2.8466938254819345,
+      "marketCapUsd": 700247863120,
+      "priceUsd": 168.94000244140625,
+      "changePercent": 0.2254404612044659,
       "sector": "Energy",
       "low52w": 110.39,
       "high52w": 176.41,
@@ -735,14 +718,31 @@
       ]
     },
     {
+      "id": "stock-asml",
+      "rank": 21,
+      "name": "ASML",
+      "symbol": "ASML",
+      "category": "Stock",
+      "marketCapUsd": 689378041192,
+      "priceUsd": 1780.3399658203125,
+      "changePercent": 0.5961139920732141,
+      "sector": "Technology",
+      "low52w": 935.41,
+      "high52w": 1999.96,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/ASML.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/ASML.png"
+      ]
+    },
+    {
       "id": "stock-jnj",
       "rank": 22,
       "name": "Johnson & Johnson",
       "symbol": "JNJ",
       "category": "Stock",
-      "marketCapUsd": 617018868419,
-      "priceUsd": 256.3200988769531,
-      "changePercent": -0.8241056773251553,
+      "marketCapUsd": 629343602677,
+      "priceUsd": 261.44000244140625,
+      "changePercent": 1.9299007530142465,
       "sector": "Health Care",
       "low52w": 184.66,
       "high52w": 281.07,
@@ -757,9 +757,9 @@
       "name": "Intel",
       "symbol": "INTC",
       "category": "Stock",
-      "marketCapUsd": 541928456874,
-      "priceUsd": 107.82499694824219,
-      "changePercent": -4.6808725705072645,
+      "marketCapUsd": 526222206230,
+      "priceUsd": 104.69999694824219,
+      "changePercent": -2.2226401305171937,
       "sector": "Technology",
       "low52w": 32.89,
       "high52w": 142.35,
@@ -774,9 +774,9 @@
       "name": "Mastercard",
       "symbol": "MA",
       "category": "Stock",
-      "marketCapUsd": 509986946045,
-      "priceUsd": 577.1799926757812,
-      "changePercent": 1.2489900494301134,
+      "marketCapUsd": 520554628843,
+      "priceUsd": 589.1400146484375,
+      "changePercent": 2.660883936856343,
       "sector": "Financials",
       "low52w": 464.52,
       "high52w": 601.23,
@@ -791,9 +791,9 @@
       "name": "Palantir",
       "symbol": "PLTR",
       "category": "Stock",
-      "marketCapUsd": 485325810726,
-      "priceUsd": 202.44580078125,
-      "changePercent": 4.288996899469398,
+      "marketCapUsd": 501158146140,
+      "priceUsd": 209.0500030517578,
+      "changePercent": 5.166517281294804,
       "sector": "Technology",
       "low52w": 106.37,
       "high52w": 207.52,
@@ -808,9 +808,9 @@
       "name": "AbbVie",
       "symbol": "ABBV",
       "category": "Stock",
-      "marketCapUsd": 482157730146,
-      "priceUsd": 272.8999938964844,
-      "changePercent": 0.5675095432209468,
+      "marketCapUsd": 488465193196,
+      "priceUsd": 276.4700012207031,
+      "changePercent": 1.4866754352481863,
       "sector": "Health Care",
       "low52w": 190.75,
       "high52w": 274.94,
@@ -825,9 +825,9 @@
       "name": "Cisco",
       "symbol": "CSCO",
       "category": "Stock",
-      "marketCapUsd": 458664783738,
-      "priceUsd": 116.37000274658203,
-      "changePercent": -0.8688962036101622,
+      "marketCapUsd": 466626468894,
+      "priceUsd": 118.38999938964844,
+      "changePercent": 3.046391669987324,
       "sector": "Technology",
       "low52w": 66.81,
       "high52w": 130.37,
@@ -842,9 +842,9 @@
       "name": "Chevron",
       "symbol": "CVX",
       "category": "Stock",
-      "marketCapUsd": 421527111707,
-      "priceUsd": 211.65249633789062,
-      "changePercent": 3.159573201681843,
+      "marketCapUsd": 422179359491,
+      "priceUsd": 211.97999572753906,
+      "changePercent": 0.18431671040174824,
       "sector": "Energy",
       "low52w": 146.49,
       "high52w": 217.78,
@@ -859,9 +859,9 @@
       "name": "Costco",
       "symbol": "COST",
       "category": "Stock",
-      "marketCapUsd": 420183035137,
-      "priceUsd": 947.469970703125,
-      "changePercent": 0.553989992371982,
+      "marketCapUsd": 419939127101,
+      "priceUsd": 946.9199829101562,
+      "changePercent": -0.10549593740439163,
       "sector": "Consumer Staples",
       "low52w": 844.06,
       "high52w": 1096.5,
@@ -871,14 +871,31 @@
       ]
     },
     {
-      "id": "stock-amat",
+      "id": "stock-orcl",
       "rank": 30,
+      "name": "Oracle",
+      "symbol": "ORCL",
+      "category": "Stock",
+      "marketCapUsd": 406673452446,
+      "priceUsd": 141.39999389648438,
+      "changePercent": 4.69808144569573,
+      "sector": "Technology",
+      "low52w": 114.5,
+      "high52w": 322.54,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/ORCL.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/ORCL.png"
+      ]
+    },
+    {
+      "id": "stock-amat",
+      "rank": 31,
       "name": "Applied Materials",
       "symbol": "AMAT",
       "category": "Stock",
-      "marketCapUsd": 412136402635,
-      "priceUsd": 519.0900268554688,
-      "changePercent": -0.2996203100991505,
+      "marketCapUsd": 402561230064,
+      "priceUsd": 507.0299987792969,
+      "changePercent": -0.4984597250040462,
       "sector": "Technology",
       "low52w": 203.4,
       "high52w": 739.67,
@@ -889,13 +906,13 @@
     },
     {
       "id": "stock-lrcx",
-      "rank": 31,
+      "rank": 32,
       "name": "Lam Research",
       "symbol": "LRCX",
       "category": "Stock",
-      "marketCapUsd": 407423560233,
-      "priceUsd": 325.7900085449219,
-      "changePercent": -1.1289464523316792,
+      "marketCapUsd": 398732076017,
+      "priceUsd": 318.8399963378906,
+      "changePercent": -0.5458696971550423,
       "sector": "Technology",
       "low52w": 131.02,
       "high52w": 438.5,
@@ -905,31 +922,14 @@
       ]
     },
     {
-      "id": "stock-orcl",
-      "rank": 32,
-      "name": "Oracle",
-      "symbol": "ORCL",
-      "category": "Stock",
-      "marketCapUsd": 403337267799,
-      "priceUsd": 140.24000549316406,
-      "changePercent": -2.312618073861758,
-      "sector": "Technology",
-      "low52w": 114.5,
-      "high52w": 322.54,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/ORCL.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/ORCL.png"
-      ]
-    },
-    {
       "id": "stock-bac",
       "rank": 33,
       "name": "Bank of America",
       "symbol": "BAC",
       "category": "Stock",
-      "marketCapUsd": 379880476948,
-      "priceUsd": 53.529998779296875,
-      "changePercent": 0.018682323050956413,
+      "marketCapUsd": 385486789883,
+      "priceUsd": 54.31999969482422,
+      "changePercent": 1.3621938697970055,
       "sector": "Financials",
       "low52w": 46.12,
       "high52w": 65.23,
@@ -944,9 +944,9 @@
       "name": "Coca-Cola",
       "symbol": "KO",
       "category": "Stock",
-      "marketCapUsd": 377285117925,
-      "priceUsd": 87.69010162353516,
-      "changePercent": 2.179097673660176,
+      "marketCapUsd": 378833587482,
+      "priceUsd": 88.05000305175781,
+      "changePercent": 0.3190190859722189,
       "sector": "Consumer Staples",
       "low52w": 66,
       "high52w": 92.49,
@@ -961,9 +961,9 @@
       "name": "Caterpillar",
       "symbol": "CAT",
       "category": "Stock",
-      "marketCapUsd": 366434458295,
-      "priceUsd": 795.4949951171875,
-      "changePercent": -2.2240938166413713,
+      "marketCapUsd": 368726116313,
+      "priceUsd": 800.469970703125,
+      "changePercent": 0.5400819803716594,
       "sector": "Industrials",
       "low52w": 491.3,
       "high52w": 1073.46,
@@ -978,9 +978,9 @@
       "name": "Merck",
       "symbol": "MRK",
       "category": "Stock",
-      "marketCapUsd": 351888263847,
-      "priceUsd": 142.47500610351562,
-      "changePercent": -0.2205994092614098,
+      "marketCapUsd": 359606465478,
+      "priceUsd": 145.60000610351562,
+      "changePercent": 2.2507855637596927,
       "sector": "Health Care",
       "low52w": 82.01,
       "high52w": 156.92,
@@ -995,9 +995,9 @@
       "name": "Procter & Gamble",
       "symbol": "PG",
       "category": "Stock",
-      "marketCapUsd": 350433336346,
-      "priceUsd": 150.49099731445312,
-      "changePercent": 1.806925527298831,
+      "marketCapUsd": 352154168051,
+      "priceUsd": 151.22999572753906,
+      "changePercent": 0.41832385626764157,
       "sector": "Consumer Staples",
       "low52w": 137.62,
       "high52w": 167.25,
@@ -1012,9 +1012,9 @@
       "name": "UnitedHealth",
       "symbol": "UNH",
       "category": "Stock",
-      "marketCapUsd": 342824503073,
-      "priceUsd": 377.5,
-      "changePercent": 0.40427682323527364,
+      "marketCapUsd": 344459151869,
+      "priceUsd": 379.29998779296875,
+      "changePercent": 2.311652089922243,
       "sector": "Health Care",
       "low52w": 255.97,
       "high52w": 461.62,
@@ -1029,9 +1029,9 @@
       "name": "Palo Alto Networks",
       "symbol": "PANW",
       "category": "Stock",
-      "marketCapUsd": 331531568756,
-      "priceUsd": 406.7872009277344,
-      "changePercent": 0.3001210463629908,
+      "marketCapUsd": 341305699005,
+      "priceUsd": 418.7799987792969,
+      "changePercent": 5.08908375892017,
       "sector": "Technology",
       "low52w": 139.57,
       "high52w": 432.33,
@@ -1046,9 +1046,9 @@
       "name": "GE Aerospace",
       "symbol": "GE",
       "category": "Stock",
-      "marketCapUsd": 316945823926,
-      "priceUsd": 303.7799987792969,
-      "changePercent": 0.0526970487111753,
+      "marketCapUsd": 321557400736,
+      "priceUsd": 308.20001220703125,
+      "changePercent": 0.8474893514712334,
       "sector": "Industrials",
       "low52w": 268.91,
       "high52w": 388.84,
@@ -1063,9 +1063,9 @@
       "name": "Philip Morris",
       "symbol": "PM",
       "category": "Stock",
-      "marketCapUsd": 312779609795,
-      "priceUsd": 200.68499755859375,
-      "changePercent": 4.149150219831726,
+      "marketCapUsd": 313566690205,
+      "priceUsd": 201.19000244140625,
+      "changePercent": 0.3416385832803444,
       "sector": "Consumer Staples",
       "low52w": 142.11,
       "high52w": 207.76,
@@ -1075,31 +1075,14 @@
       ]
     },
     {
-      "id": "stock-nflx",
-      "rank": 42,
-      "name": "Netflix",
-      "symbol": "NFLX",
-      "category": "Stock",
-      "marketCapUsd": 300714285855,
-      "priceUsd": 71.41500091552734,
-      "changePercent": 2.4605465072128276,
-      "sector": "Communication Services",
-      "low52w": 65.08,
-      "high52w": 124.86,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/NFLX.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/NFLX.png"
-      ]
-    },
-    {
       "id": "stock-ms",
-      "rank": 43,
+      "rank": 42,
       "name": "Morgan Stanley",
       "symbol": "MS",
       "category": "Stock",
-      "marketCapUsd": 295827629546,
-      "priceUsd": 187.55499267578125,
-      "changePercent": -1.1359481968366232,
+      "marketCapUsd": 299715654744,
+      "priceUsd": 190.02000427246094,
+      "changePercent": 1.3807697044586569,
       "sector": "Financials",
       "low52w": 151.84,
       "high52w": 232.25,
@@ -1109,14 +1092,31 @@
       ]
     },
     {
+      "id": "stock-nflx",
+      "rank": 43,
+      "name": "Netflix",
+      "symbol": "NFLX",
+      "category": "Stock",
+      "marketCapUsd": 296019252850,
+      "priceUsd": 70.30000305175781,
+      "changePercent": -1.7744822526787492,
+      "sector": "Communication Services",
+      "low52w": 65.08,
+      "high52w": 124.86,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/NFLX.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/NFLX.png"
+      ]
+    },
+    {
       "id": "stock-nvs",
       "rank": 44,
       "name": "Novartis",
       "symbol": "NVS",
       "category": "Stock",
-      "marketCapUsd": 290968187977,
-      "priceUsd": 142.94000244140625,
-      "changePercent": -0.23729589516593463,
+      "marketCapUsd": 292617016281,
+      "priceUsd": 143.75,
+      "changePercent": 0.4401900503074312,
       "sector": "Health Care",
       "low52w": 121.57,
       "high52w": 170.46,
@@ -1131,9 +1131,9 @@
       "name": "Toyota",
       "symbol": "TM",
       "category": "Stock",
-      "marketCapUsd": 290901644150,
-      "priceUsd": 184.47000122070312,
-      "changePercent": 0.8528791321978724,
+      "marketCapUsd": 292210523078,
+      "priceUsd": 185.3000030517578,
+      "changePercent": -0.3334751227636484,
       "sector": "Consumer Discretionary",
       "low52w": 166.1,
       "high52w": 248.9,
@@ -1148,9 +1148,9 @@
       "name": "Home Depot",
       "symbol": "HD",
       "category": "Stock",
-      "marketCapUsd": 290888953365,
-      "priceUsd": 291.7300109863281,
-      "changePercent": 2.085597153769865,
+      "marketCapUsd": 289901786843,
+      "priceUsd": 290.739990234375,
+      "changePercent": -1.5908508548690081,
       "sector": "Consumer Discretionary",
       "low52w": 277.15,
       "high52w": 397.63,
@@ -1165,12 +1165,12 @@
       "name": "Shell",
       "symbol": "SHEL",
       "category": "Stock",
-      "marketCapUsd": 280454465840,
-      "priceUsd": 100.58999633789062,
-      "changePercent": 3.86163793277298,
+      "marketCapUsd": 279311357951,
+      "priceUsd": 100.18000030517578,
+      "changePercent": -0.019959775273674242,
       "sector": "Energy",
       "low52w": 68.625,
-      "high52w": 100.17,
+      "high52w": 100.6,
       "logoUrl": "https://financialmodelingprep.com/image-stock/SHEL.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/SHEL.png"
@@ -1182,12 +1182,12 @@
       "name": "Arista Networks",
       "symbol": "ANET",
       "category": "Stock",
-      "marketCapUsd": 271559637759,
-      "priceUsd": 215.66000366210938,
-      "changePercent": -0.07876399846668095,
+      "marketCapUsd": 272919578874,
+      "priceUsd": 216.74000549316406,
+      "changePercent": 2.7934576680882466,
       "sector": "Technology",
       "low52w": 114.52,
-      "high52w": 217.318,
+      "high52w": 217.32,
       "logoUrl": "https://financialmodelingprep.com/image-stock/ANET.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/ANET.png"
@@ -1199,9 +1199,9 @@
       "name": "GE Vernova",
       "symbol": "GEV",
       "category": "Stock",
-      "marketCapUsd": 269553025439,
-      "priceUsd": 1003.0999755859375,
-      "changePercent": 0.6027515656497877,
+      "marketCapUsd": 269991040352,
+      "priceUsd": 1004.72998046875,
+      "changePercent": 0.5770953405524687,
       "sector": "Industrials",
       "low52w": 530.16,
       "high52w": 1195.94,
@@ -1216,9 +1216,9 @@
       "name": "Alibaba",
       "symbol": "BABA",
       "category": "Stock",
-      "marketCapUsd": 262789534848,
-      "priceUsd": 109.53500366210938,
-      "changePercent": 2.369162301036799,
+      "marketCapUsd": 267191949964,
+      "priceUsd": 111.37000274658203,
+      "changePercent": 5.334344790108793,
       "sector": "Consumer Discretionary",
       "low52w": 91.99,
       "high52w": 182.5,
@@ -1228,65 +1228,14 @@
       ]
     },
     {
-      "id": "stock-sap",
-      "rank": 51,
-      "name": "SAP",
-      "symbol": "SAP",
-      "category": "Stock",
-      "marketCapUsd": 262701517800,
-      "priceUsd": 214.27999877929688,
-      "changePercent": 1.974967296100928,
-      "sector": "Technology",
-      "low52w": 144.97,
-      "high52w": 281.37,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/SAP.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/SAP.png"
-      ]
-    },
-    {
-      "id": "stock-klac",
-      "rank": 52,
-      "name": "KLA",
-      "symbol": "KLAC",
-      "category": "Stock",
-      "marketCapUsd": 262679840416,
-      "priceUsd": 201.08999633789062,
-      "changePercent": 2.1643023613730694,
-      "sector": "Technology",
-      "low52w": 98.097,
-      "high52w": 307.37,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/KLAC.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/KLAC.png"
-      ]
-    },
-    {
-      "id": "stock-txn",
-      "rank": 53,
-      "name": "Texas Instruments",
-      "symbol": "TXN",
-      "category": "Stock",
-      "marketCapUsd": 261920227155,
-      "priceUsd": 287.7950134277344,
-      "changePercent": -0.41005833354060595,
-      "sector": "Technology",
-      "low52w": 152.73,
-      "high52w": 334.03,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/TXN.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/TXN.png"
-      ]
-    },
-    {
       "id": "stock-gs",
-      "rank": 54,
+      "rank": 51,
       "name": "Goldman Sachs",
       "symbol": "GS",
       "category": "Stock",
-      "marketCapUsd": 260609572631,
-      "priceUsd": 883.4000244140625,
-      "changePercent": -0.4294333456495684,
+      "marketCapUsd": 264126056179,
+      "priceUsd": 895.3200073242188,
+      "changePercent": 1.5666308180529727,
       "sector": "Financials",
       "low52w": 740.01,
       "high52w": 1153.99,
@@ -1296,14 +1245,48 @@
       ]
     },
     {
+      "id": "stock-sap",
+      "rank": 52,
+      "name": "SAP",
+      "symbol": "SAP",
+      "category": "Stock",
+      "marketCapUsd": 263314504358,
+      "priceUsd": 214.77999877929688,
+      "changePercent": 1.0967280674496993,
+      "sector": "Technology",
+      "low52w": 144.97,
+      "high52w": 281.37,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/SAP.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/SAP.png"
+      ]
+    },
+    {
+      "id": "stock-txn",
+      "rank": 53,
+      "name": "Texas Instruments",
+      "symbol": "TXN",
+      "category": "Stock",
+      "marketCapUsd": 258229778932,
+      "priceUsd": 283.739990234375,
+      "changePercent": -1.547539821521509,
+      "sector": "Technology",
+      "low52w": 152.73,
+      "high52w": 334.03,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/TXN.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/TXN.png"
+      ]
+    },
+    {
       "id": "stock-wfc",
-      "rank": 55,
+      "rank": 54,
       "name": "Wells Fargo",
       "symbol": "WFC",
       "category": "Stock",
-      "marketCapUsd": 250721367634,
-      "priceUsd": 81.93000030517578,
-      "changePercent": 2.080737983024889,
+      "marketCapUsd": 255678883839,
+      "priceUsd": 83.55000305175781,
+      "changePercent": 1.8405692976082473,
       "sector": "Financials",
       "low52w": 72.78,
       "high52w": 97.76,
@@ -1313,14 +1296,31 @@
       ]
     },
     {
+      "id": "stock-klac",
+      "rank": 55,
+      "name": "KLA",
+      "symbol": "KLAC",
+      "category": "Stock",
+      "marketCapUsd": 255469189167,
+      "priceUsd": 195.57000732421875,
+      "changePercent": -0.5845835074121843,
+      "sector": "Technology",
+      "low52w": 98.097,
+      "high52w": 307.37,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/KLAC.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/KLAC.png"
+      ]
+    },
+    {
       "id": "stock-rtx",
       "rank": 56,
       "name": "RTX",
       "symbol": "RTX",
       "category": "Stock",
-      "marketCapUsd": 247345336510,
-      "priceUsd": 183.6699981689453,
-      "changePercent": 1.891710955811229,
+      "marketCapUsd": 250442712426,
+      "priceUsd": 185.97000122070312,
+      "changePercent": 0.9116073692024163,
       "sector": "Industrials",
       "low52w": 155.64,
       "high52w": 226.88,
@@ -1335,9 +1335,9 @@
       "name": "AstraZeneca",
       "symbol": "AZN",
       "category": "Stock",
-      "marketCapUsd": 246625892123,
-      "priceUsd": 159.02499389648438,
-      "changePercent": -0.6838659152608229,
+      "marketCapUsd": 246897297785,
+      "priceUsd": 159.1999969482422,
+      "changePercent": 0.3719796659997313,
       "sector": "Health Care",
       "low52w": 153.41,
       "high52w": 212.71,
@@ -1352,9 +1352,9 @@
       "name": "Thermo Fisher Scientific",
       "symbol": "TMO",
       "category": "Stock",
-      "marketCapUsd": 243086879673,
-      "priceUsd": 654.125,
-      "changePercent": -1.1985318551188633,
+      "marketCapUsd": 244534352471,
+      "priceUsd": 658.02001953125,
+      "changePercent": 0.9643520036901481,
       "sector": "Health Care",
       "low52w": 435.27,
       "high52w": 694.33,
@@ -1364,31 +1364,14 @@
       ]
     },
     {
-      "id": "stock-lin",
-      "rank": 59,
-      "name": "Linde",
-      "symbol": "LIN",
-      "category": "Stock",
-      "marketCapUsd": 221927719482,
-      "priceUsd": 479.739990234375,
-      "changePercent": -0.8760712768347902,
-      "sector": "Materials",
-      "low52w": 387.78,
-      "high52w": 548.2,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/LIN.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/LIN.png"
-      ]
-    },
-    {
       "id": "stock-amgn",
-      "rank": 60,
+      "rank": 59,
       "name": "Amgen",
       "symbol": "AMGN",
       "category": "Stock",
-      "marketCapUsd": 220365577963,
-      "priceUsd": 408.30499267578125,
-      "changePercent": -1.1559521943010396,
+      "marketCapUsd": 223908764021,
+      "priceUsd": 414.8699951171875,
+      "changePercent": 1.8235801878037263,
       "sector": "Health Care",
       "low52w": 288,
       "high52w": 447.03,
@@ -1398,14 +1381,31 @@
       ]
     },
     {
+      "id": "stock-lin",
+      "rank": 60,
+      "name": "Linde",
+      "symbol": "LIN",
+      "category": "Stock",
+      "marketCapUsd": 223773503082,
+      "priceUsd": 483.7300109863281,
+      "changePercent": 0.4214264036388076,
+      "sector": "Materials",
+      "low52w": 387.78,
+      "high52w": 548.2,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/LIN.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/LIN.png"
+      ]
+    },
+    {
       "id": "stock-c",
       "rank": 61,
       "name": "Citigroup",
       "symbol": "C",
       "category": "Stock",
-      "marketCapUsd": 219513975164,
-      "priceUsd": 128.00320434570312,
-      "changePercent": 0.5602988025006824,
+      "marketCapUsd": 222320931353,
+      "priceUsd": 129.63999938964844,
+      "changePercent": 1.221939792815498,
       "sector": "Financials",
       "low52w": 93.66,
       "high52w": 147.96,
@@ -1420,9 +1420,9 @@
       "name": "IBM",
       "symbol": "IBM",
       "category": "Stock",
-      "marketCapUsd": 211409617118,
-      "priceUsd": 224.93130493164062,
-      "changePercent": 2.005036021786148,
+      "marketCapUsd": 213476142785,
+      "priceUsd": 227.1300048828125,
+      "changePercent": 0.24052999219387516,
       "sector": "Technology",
       "low52w": 199.19,
       "high52w": 332.46,
@@ -1437,9 +1437,9 @@
       "name": "American Express",
       "symbol": "AXP",
       "category": "Stock",
-      "marketCapUsd": 206458317791,
-      "priceUsd": 302.5799865722656,
-      "changePercent": -0.5488951282610929,
+      "marketCapUsd": 210272540781,
+      "priceUsd": 308.1700134277344,
+      "changePercent": 0.37130359500192245,
       "sector": "Financials",
       "low52w": 290.97,
       "high52w": 387.49,
@@ -1454,9 +1454,9 @@
       "name": "Analog Devices",
       "symbol": "ADI",
       "category": "Stock",
-      "marketCapUsd": 198095864453,
-      "priceUsd": 406.69500732421875,
-      "changePercent": -0.8254469068916392,
+      "marketCapUsd": 197849883123,
+      "priceUsd": 406.19000244140625,
+      "changePercent": 0.06405105348366545,
       "sector": "Technology",
       "low52w": 223.47,
       "high52w": 445.91,
@@ -1466,14 +1466,31 @@
       ]
     },
     {
-      "id": "stock-crm",
+      "id": "stock-gild",
       "rank": 65,
+      "name": "Gilead Sciences",
+      "symbol": "GILD",
+      "category": "Stock",
+      "marketCapUsd": 187688134627,
+      "priceUsd": 151.1699981689453,
+      "changePercent": 2.7668240441504546,
+      "sector": "Health Care",
+      "low52w": 114.02,
+      "high52w": 157.29,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/GILD.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/GILD.png"
+      ]
+    },
+    {
+      "id": "stock-crm",
+      "rank": 66,
       "name": "Salesforce",
       "symbol": "CRM",
       "category": "Stock",
-      "marketCapUsd": 188234870499,
-      "priceUsd": 229.8350067138672,
-      "changePercent": 2.355878204309693,
+      "marketCapUsd": 187657473999,
+      "priceUsd": 229.1300048828125,
+      "changePercent": 0.6302311789070937,
       "sector": "Technology",
       "low52w": 146.32,
       "high52w": 269.11,
@@ -1484,13 +1501,13 @@
     },
     {
       "id": "stock-dis",
-      "rank": 66,
+      "rank": 67,
       "name": "Disney",
       "symbol": "DIS",
       "category": "Stock",
-      "marketCapUsd": 186362396693,
-      "priceUsd": 107.31999969482422,
-      "changePercent": 2.429014263731055,
+      "marketCapUsd": 187630055803,
+      "priceUsd": 108.05000305175781,
+      "changePercent": 0.9247179635324213,
       "sector": "Communication Services",
       "low52w": 92.19,
       "high52w": 117.09,
@@ -1501,13 +1518,13 @@
     },
     {
       "id": "stock-qcom",
-      "rank": 67,
+      "rank": 68,
       "name": "Qualcomm",
       "symbol": "QCOM",
       "category": "Stock",
-      "marketCapUsd": 182958597076,
-      "priceUsd": 173.5850067138672,
-      "changePercent": -1.9958182509783293,
+      "marketCapUsd": 184977000000,
+      "priceUsd": 175.5,
+      "changePercent": -0.2897562638486398,
       "sector": "Technology",
       "low52w": 121.99,
       "high52w": 259.92,
@@ -1517,65 +1534,14 @@
       ]
     },
     {
-      "id": "stock-gild",
-      "rank": 68,
-      "name": "Gilead Sciences",
-      "symbol": "GILD",
-      "category": "Stock",
-      "marketCapUsd": 182374216542,
-      "priceUsd": 146.88999938964844,
-      "changePercent": 0.027238263294820007,
-      "sector": "Health Care",
-      "low52w": 114.02,
-      "high52w": 157.29,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/GILD.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/GILD.png"
-      ]
-    },
-    {
-      "id": "stock-vz",
-      "rank": 69,
-      "name": "Verizon",
-      "symbol": "VZ",
-      "category": "Stock",
-      "marketCapUsd": 178045875851,
-      "priceUsd": 42.63999938964844,
-      "changePercent": -6.838541862249432,
-      "sector": "Communication Services",
-      "low52w": 38.39,
-      "high52w": 51.68,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/VZ.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/VZ.png"
-      ]
-    },
-    {
-      "id": "stock-de",
-      "rank": 70,
-      "name": "Deere",
-      "symbol": "DE",
-      "category": "Stock",
-      "marketCapUsd": 175988415402,
-      "priceUsd": 651.9600219726562,
-      "changePercent": -0.7520137048780222,
-      "sector": "Industrials",
-      "low52w": 433,
-      "high52w": 721.22,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/DE.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/DE.png"
-      ]
-    },
-    {
       "id": "stock-blk",
-      "rank": 71,
+      "rank": 69,
       "name": "BlackRock",
       "symbol": "BLK",
       "category": "Stock",
-      "marketCapUsd": 173475978094,
-      "priceUsd": 1065.3094482421875,
-      "changePercent": -0.385769285446282,
+      "marketCapUsd": 176257393361,
+      "priceUsd": 1082.3900146484375,
+      "changePercent": 1.5765927465946172,
       "sector": "Financials",
       "low52w": 917.39,
       "high52w": 1219.94,
@@ -1585,14 +1551,48 @@
       ]
     },
     {
+      "id": "stock-vz",
+      "rank": 70,
+      "name": "Verizon",
+      "symbol": "VZ",
+      "category": "Stock",
+      "marketCapUsd": 173912080371,
+      "priceUsd": 41.650001525878906,
+      "changePercent": -8.757321811974576,
+      "sector": "Communication Services",
+      "low52w": 38.39,
+      "high52w": 51.68,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/VZ.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/VZ.png"
+      ]
+    },
+    {
+      "id": "stock-abt",
+      "rank": 71,
+      "name": "Abbott",
+      "symbol": "ABT",
+      "category": "Stock",
+      "marketCapUsd": 173484520948,
+      "priceUsd": 99.5999984741211,
+      "changePercent": 1.1270164220947292,
+      "sector": "Health Care",
+      "low52w": 81.97,
+      "high52w": 134.5,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/ABT.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/ABT.png"
+      ]
+    },
+    {
       "id": "stock-pep",
       "rank": 72,
       "name": "PepsiCo",
       "symbol": "PEP",
       "category": "Stock",
-      "marketCapUsd": 172595713932,
-      "priceUsd": 126.27999877929688,
-      "changePercent": 2.060938155093244,
+      "marketCapUsd": 172172018568,
+      "priceUsd": 125.97000122070312,
+      "changePercent": -1.8466563653552113,
       "sector": "Consumer Staples",
       "low52w": 123.47,
       "high52w": 171.48,
@@ -1602,31 +1602,14 @@
       ]
     },
     {
-      "id": "stock-abt",
-      "rank": 73,
-      "name": "Abbott",
-      "symbol": "ABT",
-      "category": "Stock",
-      "marketCapUsd": 171943013177,
-      "priceUsd": 98.71499633789062,
-      "changePercent": -0.015196659687409075,
-      "sector": "Health Care",
-      "low52w": 81.97,
-      "high52w": 135.13,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/ABT.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/ABT.png"
-      ]
-    },
-    {
       "id": "stock-nvo",
-      "rank": 74,
+      "rank": 73,
       "name": "Novo Nordisk",
       "symbol": "NVO",
       "category": "Stock",
-      "marketCapUsd": 170543019520,
-      "priceUsd": 38.32569885253906,
-      "changePercent": 0.1717168127001163,
+      "marketCapUsd": 171941604914,
+      "priceUsd": 38.63999938964844,
+      "changePercent": 1.271129313716253,
       "sector": "Health Care",
       "low52w": 35.12,
       "high52w": 64.16,
@@ -1637,13 +1620,13 @@
     },
     {
       "id": "stock-schw",
-      "rank": 75,
+      "rank": 74,
       "name": "Charles Schwab",
       "symbol": "SCHW",
       "category": "Stock",
-      "marketCapUsd": 168818319269,
-      "priceUsd": 97.06999969482422,
-      "changePercent": 1.5589032170163428,
+      "marketCapUsd": 168174832693,
+      "priceUsd": 96.69999694824219,
+      "changePercent": -0.1858000121364657,
       "sector": "Financials",
       "low52w": 83.96,
       "high52w": 114.53,
@@ -1653,31 +1636,31 @@
       ]
     },
     {
-      "id": "stock-tmus",
-      "rank": 76,
-      "name": "T-Mobile US",
-      "symbol": "TMUS",
+      "id": "stock-de",
+      "rank": 75,
+      "name": "Deere",
+      "symbol": "DE",
       "category": "Stock",
-      "marketCapUsd": 167979815010,
-      "priceUsd": 155.22000122070312,
-      "changePercent": -7.414255162121611,
-      "sector": "Communication Services",
-      "low52w": 160.81,
-      "high52w": 231.02,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/TMUS.png",
+      "marketCapUsd": 167612248917,
+      "priceUsd": 620.9299926757812,
+      "changePercent": -4.841232042576279,
+      "sector": "Industrials",
+      "low52w": 433,
+      "high52w": 721.22,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/DE.png",
       "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/TMUS.png"
+        "https://images.financialmodelingprep.com/symbol/DE.png"
       ]
     },
     {
       "id": "stock-mcd",
-      "rank": 77,
+      "rank": 76,
       "name": "McDonald's",
       "symbol": "MCD",
       "category": "Stock",
-      "marketCapUsd": 167771785249,
-      "priceUsd": 236.1300048828125,
-      "changePercent": 2.273910638778805,
+      "marketCapUsd": 167132323344,
+      "priceUsd": 235.22999572753906,
+      "changePercent": -0.6923647031962435,
       "sector": "Consumer Discretionary",
       "low52w": 229.2,
       "high52w": 341.75,
@@ -1688,13 +1671,13 @@
     },
     {
       "id": "stock-unp",
-      "rank": 78,
+      "rank": 77,
       "name": "Union Pacific",
       "symbol": "UNP",
       "category": "Stock",
-      "marketCapUsd": 164488236752,
-      "priceUsd": 277.04998779296875,
-      "changePercent": 0.8628177490056587,
+      "marketCapUsd": 165254131862,
+      "priceUsd": 278.3399963378906,
+      "changePercent": 0.05391866633977759,
       "sector": "Industrials",
       "low52w": 215.53,
       "high52w": 315.99,
@@ -1705,13 +1688,13 @@
     },
     {
       "id": "stock-cop",
-      "rank": 79,
+      "rank": 78,
       "name": "ConocoPhillips",
       "symbol": "COP",
       "category": "Stock",
-      "marketCapUsd": 163555978763,
-      "priceUsd": 134.25,
-      "changePercent": 3.3925064499980757,
+      "marketCapUsd": 163373242089,
+      "priceUsd": 134.10000610351562,
+      "changePercent": -0.07451110021189541,
       "sector": "Energy",
       "low52w": 85.57,
       "high52w": 141.62,
@@ -1722,13 +1705,13 @@
     },
     {
       "id": "stock-nee",
-      "rank": 80,
+      "rank": 79,
       "name": "NextEra Energy",
       "symbol": "NEE",
       "category": "Stock",
-      "marketCapUsd": 160341910737,
-      "priceUsd": 76.88999938964844,
-      "changePercent": -0.22060811101941963,
+      "marketCapUsd": 161363723644,
+      "priceUsd": 77.37999725341797,
+      "changePercent": 0.01938506226067843,
       "sector": "Utilities",
       "low52w": 74.41,
       "high52w": 98.75,
@@ -1739,13 +1722,13 @@
     },
     {
       "id": "stock-pfe",
-      "rank": 81,
+      "rank": 80,
       "name": "Pfizer",
       "symbol": "PFE",
       "category": "Stock",
-      "marketCapUsd": 158701004270,
-      "priceUsd": 27.844999313354492,
-      "changePercent": -0.5535738808768136,
+      "marketCapUsd": 161180270081,
+      "priceUsd": 28.280000686645508,
+      "changePercent": 1.6169625822691682,
       "sector": "Health Care",
       "low52w": 23.62,
       "high52w": 29.21,
@@ -1755,31 +1738,31 @@
       ]
     },
     {
-      "id": "stock-t",
-      "rank": 82,
-      "name": "AT&T",
-      "symbol": "T",
+      "id": "stock-tmus",
+      "rank": 81,
+      "name": "T-Mobile US",
+      "symbol": "TMUS",
       "category": "Stock",
-      "marketCapUsd": 156546104971,
-      "priceUsd": 22.530000686645508,
-      "changePercent": -7.928072388044508,
+      "marketCapUsd": 160793976456,
+      "priceUsd": 148.5800018310547,
+      "changePercent": -13.268342869035852,
       "sector": "Communication Services",
-      "low52w": 19.89,
-      "high52w": 29.44,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/T.png",
+      "low52w": 153.61,
+      "high52w": 231.02,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/TMUS.png",
       "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/T.png"
+        "https://images.financialmodelingprep.com/symbol/TMUS.png"
       ]
     },
     {
       "id": "stock-dhr",
-      "rank": 83,
+      "rank": 82,
       "name": "Danaher",
       "symbol": "DHR",
       "category": "Stock",
-      "marketCapUsd": 153650003798,
-      "priceUsd": 217.08999633789062,
-      "changePercent": -0.6771302841695421,
+      "marketCapUsd": 155575141782,
+      "priceUsd": 219.80999755859375,
+      "changePercent": 1.0806573892181284,
       "sector": "Health Care",
       "low52w": 160.93,
       "high52w": 242.8,
@@ -1789,14 +1772,31 @@
       ]
     },
     {
+      "id": "stock-t",
+      "rank": 83,
+      "name": "AT&T",
+      "symbol": "T",
+      "category": "Stock",
+      "marketCapUsd": 154114183320,
+      "priceUsd": 22.18000030517578,
+      "changePercent": -9.864877353750769,
+      "sector": "Communication Services",
+      "low52w": 19.89,
+      "high52w": 29.44,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/T.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/T.png"
+      ]
+    },
+    {
       "id": "stock-isrg",
       "rank": 84,
       "name": "Intuitive Surgical",
       "symbol": "ISRG",
       "category": "Stock",
-      "marketCapUsd": 148394297000,
-      "priceUsd": 419,
-      "changePercent": 1.0807681173405428,
+      "marketCapUsd": 150150942454,
+      "priceUsd": 423.9599914550781,
+      "changePercent": 2.058205496997689,
       "sector": "Health Care",
       "low52w": 328.57,
       "high52w": 603.88,
@@ -1811,9 +1811,9 @@
       "name": "Boeing",
       "symbol": "BA",
       "category": "Stock",
-      "marketCapUsd": 148145647533,
-      "priceUsd": 187.92999267578125,
-      "changePercent": -0.20709819680264616,
+      "marketCapUsd": 150069107096,
+      "priceUsd": 190.3699951171875,
+      "changePercent": 1.3846701375019916,
       "sector": "Industrials",
       "low52w": 176.77,
       "high52w": 254.35,
@@ -1823,31 +1823,14 @@
       ]
     },
     {
-      "id": "stock-now",
-      "rank": 86,
-      "name": "ServiceNow",
-      "symbol": "NOW",
-      "category": "Stock",
-      "marketCapUsd": 145992241082,
-      "priceUsd": 141.55999755859375,
-      "changePercent": 2.6764325513844534,
-      "sector": "Technology",
-      "low52w": 81.24,
-      "high52w": 192.966,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/NOW.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/NOW.png"
-      ]
-    },
-    {
       "id": "stock-uber",
-      "rank": 87,
+      "rank": 86,
       "name": "Uber",
       "symbol": "UBER",
       "category": "Stock",
-      "marketCapUsd": 143591225864,
-      "priceUsd": 70.54000091552734,
-      "changePercent": 3.0533249313766846,
+      "marketCapUsd": 145565760349,
+      "priceUsd": 71.51000213623047,
+      "changePercent": 1.8008429585457528,
       "sector": "Industrials",
       "low52w": 65.41,
       "high52w": 100.35,
@@ -1857,14 +1840,31 @@
       ]
     },
     {
+      "id": "stock-now",
+      "rank": 87,
+      "name": "ServiceNow",
+      "symbol": "NOW",
+      "category": "Stock",
+      "marketCapUsd": 145270327229,
+      "priceUsd": 140.86000061035156,
+      "changePercent": 0.8014889153796717,
+      "sector": "Technology",
+      "low52w": 81.24,
+      "high52w": 192.966,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/NOW.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/NOW.png"
+      ]
+    },
+    {
       "id": "stock-bx",
       "rank": 88,
       "name": "Blackstone",
       "symbol": "BX",
       "category": "Stock",
-      "marketCapUsd": 137060261510,
-      "priceUsd": 112.2052001953125,
-      "changePercent": 0.3534569316809746,
+      "marketCapUsd": 139606875494,
+      "priceUsd": 114.29000091552734,
+      "changePercent": 1.4063270622663995,
       "sector": "Financials",
       "low52w": 101.73,
       "high52w": 166.39,
@@ -1879,9 +1879,9 @@
       "name": "Honeywell",
       "symbol": "HON",
       "category": "Stock",
-      "marketCapUsd": 130722651317,
-      "priceUsd": 206.3000030517578,
-      "changePercent": -0.8697308866667632,
+      "marketCapUsd": 131628770712,
+      "priceUsd": 207.72999572753906,
+      "changePercent": 0.5469485612483389,
       "sector": "Industrials",
       "low52w": 195.868,
       "high52w": 260.283,
@@ -1896,9 +1896,9 @@
       "name": "Vertex Pharmaceuticals",
       "symbol": "VRTX",
       "category": "Stock",
-      "marketCapUsd": 128303717174,
-      "priceUsd": 505.5199890136719,
-      "changePercent": -0.023734472416761205,
+      "marketCapUsd": 129461069306,
+      "priceUsd": 510.0799865722656,
+      "changePercent": 1.3571756725813462,
       "sector": "Health Care",
       "low52w": 402.58,
       "high52w": 560.25,
@@ -1913,9 +1913,9 @@
       "name": "Accenture",
       "symbol": "ACN",
       "category": "Stock",
-      "marketCapUsd": 126640322472,
-      "priceUsd": 206.27499389648438,
-      "changePercent": 4.89981382042534,
+      "marketCapUsd": 128350145632,
+      "priceUsd": 209.05999755859375,
+      "changePercent": 0.31669748492981975,
       "sector": "Technology",
       "low52w": 118.15,
       "high52w": 291.09,
@@ -1930,9 +1930,9 @@
       "name": "Newmont",
       "symbol": "NEM",
       "category": "Stock",
-      "marketCapUsd": 125330700349,
-      "priceUsd": 117.4000015258789,
-      "changePercent": 3.399684275038665,
+      "marketCapUsd": 125800418043,
+      "priceUsd": 117.83999633789062,
+      "changePercent": 1.9818228800438147,
       "sector": "Materials",
       "low52w": 76.05,
       "high52w": 135.29,
@@ -1947,9 +1947,9 @@
       "name": "Booking Holdings",
       "symbol": "BKNG",
       "category": "Stock",
-      "marketCapUsd": 123655098406,
-      "priceUsd": 159.5800018310547,
-      "changePercent": 2.380189793452674,
+      "marketCapUsd": 124244001742,
+      "priceUsd": 160.33999633789062,
+      "changePercent": 0.2312910782588149,
       "sector": "Consumer Discretionary",
       "low52w": 150.14,
       "high52w": 220.806,
@@ -1964,9 +1964,9 @@
       "name": "Capital One",
       "symbol": "COF",
       "category": "Stock",
-      "marketCapUsd": 121848757880,
-      "priceUsd": 197.8000030517578,
-      "changePercent": 0.972461293936957,
+      "marketCapUsd": 122748141816,
+      "priceUsd": 199.25999450683594,
+      "changePercent": -0.07021338674226088,
       "sector": "Financials",
       "low52w": 174.24,
       "high52w": 259.64,
@@ -1981,9 +1981,9 @@
       "name": "Bristol Myers Squibb",
       "symbol": "BMY",
       "category": "Stock",
-      "marketCapUsd": 120655785854,
-      "priceUsd": 59.084999084472656,
-      "changePercent": -0.9969854482696774,
+      "marketCapUsd": 120727258041,
+      "priceUsd": 59.119998931884766,
+      "changePercent": -0.7387526328328352,
       "sector": "Health Care",
       "low52w": 42.52,
       "high52w": 68.64,
@@ -1993,31 +1993,14 @@
       ]
     },
     {
-      "id": "stock-mo",
-      "rank": 96,
-      "name": "Altria",
-      "symbol": "MO",
-      "category": "Stock",
-      "marketCapUsd": 119388879362,
-      "priceUsd": 71.49500274658203,
-      "changePercent": 3.0484329008100834,
-      "sector": "Consumer Staples",
-      "low52w": 54.7,
-      "high52w": 77.06,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/MO.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/MO.png"
-      ]
-    },
-    {
       "id": "stock-spgi",
-      "rank": 97,
+      "rank": 96,
       "name": "S&P Global",
       "symbol": "SPGI",
       "category": "Stock",
-      "marketCapUsd": 119344245964,
-      "priceUsd": 403.19000244140625,
-      "changePercent": 2.0269250572919284,
+      "marketCapUsd": 120714727470,
+      "priceUsd": 407.82000732421875,
+      "changePercent": 1.263875878186063,
       "sector": "Financials",
       "low52w": 361.031,
       "high52w": 522.469,
@@ -2027,14 +2010,31 @@
       ]
     },
     {
+      "id": "stock-mo",
+      "rank": 97,
+      "name": "Altria",
+      "symbol": "MO",
+      "category": "Stock",
+      "marketCapUsd": 119697805166,
+      "priceUsd": 71.68000030517578,
+      "changePercent": 0.37107093072292235,
+      "sector": "Consumer Staples",
+      "low52w": 54.7,
+      "high52w": 77.06,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/MO.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/MO.png"
+      ]
+    },
+    {
       "id": "stock-lmt",
       "rank": 98,
       "name": "Lockheed Martin",
       "symbol": "LMT",
       "category": "Stock",
-      "marketCapUsd": 116206563892,
-      "priceUsd": 504.010009765625,
-      "changePercent": 0.9594987712080791,
+      "marketCapUsd": 117493107916,
+      "priceUsd": 509.5899963378906,
+      "changePercent": 0.3216806845259447,
       "sector": "Industrials",
       "low52w": 437.25,
       "high52w": 692,
@@ -2049,9 +2049,9 @@
       "name": "Medtronic",
       "symbol": "MDT",
       "category": "Stock",
-      "marketCapUsd": 113200578949,
-      "priceUsd": 88.16999816894531,
-      "changePercent": 3.1107451396857764,
+      "marketCapUsd": 113598591510,
+      "priceUsd": 88.4800033569336,
+      "changePercent": 0.873296574017369,
       "sector": "Health Care",
       "low52w": 73.31,
       "high52w": 106.33,
@@ -2066,26 +2066,43 @@
       "name": "ADP",
       "symbol": "ADP",
       "category": "Stock",
-      "marketCapUsd": 108673758847,
-      "priceUsd": 271.864990234375,
-      "changePercent": 2.979162967566288,
+      "marketCapUsd": 108280026427,
+      "priceUsd": 270.8800048828125,
+      "changePercent": 0.05540755838380741,
       "sector": "Industrials",
       "low52w": 188.16,
-      "high52w": 291.34,
+      "high52w": 288,
       "logoUrl": "https://financialmodelingprep.com/image-stock/ADP.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/ADP.png"
       ]
     },
     {
-      "id": "stock-low",
+      "id": "stock-fcx",
       "rank": 101,
+      "name": "Freeport-McMoRan",
+      "symbol": "FCX",
+      "category": "Stock",
+      "marketCapUsd": 105933799910,
+      "priceUsd": 73.69000244140625,
+      "changePercent": 3.6063303218365554,
+      "sector": "Materials",
+      "low52w": 38.54,
+      "high52w": 80.24,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/FCX.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/FCX.png"
+      ]
+    },
+    {
+      "id": "stock-low",
+      "rank": 102,
       "name": "Lowe's",
       "symbol": "LOW",
       "category": "Stock",
-      "marketCapUsd": 104664384257,
-      "priceUsd": 186.6649932861328,
-      "changePercent": 2.82306559773759,
+      "marketCapUsd": 104291517810,
+      "priceUsd": 186,
+      "changePercent": -1.5091342335186626,
       "sector": "Consumer Discretionary",
       "low52w": 178.45,
       "high52w": 293.06,
@@ -2096,13 +2113,13 @@
     },
     {
       "id": "stock-sbux",
-      "rank": 102,
+      "rank": 103,
       "name": "Starbucks",
       "symbol": "SBUX",
       "category": "Stock",
-      "marketCapUsd": 104664348457,
-      "priceUsd": 91.83499908447266,
-      "changePercent": -1.864715660961041,
+      "marketCapUsd": 103427775000,
+      "priceUsd": 90.75,
+      "changePercent": -2.639201802381712,
       "sector": "Consumer Discretionary",
       "low52w": 77.99,
       "high52w": 110.51,
@@ -2112,31 +2129,14 @@
       ]
     },
     {
-      "id": "stock-fcx",
-      "rank": 103,
-      "name": "Freeport-McMoRan",
-      "symbol": "FCX",
-      "category": "Stock",
-      "marketCapUsd": 104273419865,
-      "priceUsd": 72.53500366210938,
-      "changePercent": 0.9112460519050912,
-      "sector": "Materials",
-      "low52w": 38.54,
-      "high52w": 80.24,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/FCX.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/FCX.png"
-      ]
-    },
-    {
       "id": "stock-abnb",
       "rank": 104,
       "name": "Airbnb",
       "symbol": "ABNB",
       "category": "Stock",
-      "marketCapUsd": 98476025788,
-      "priceUsd": 163.39010620117188,
-      "changePercent": 1.7183005672488822,
+      "marketCapUsd": 99970667114,
+      "priceUsd": 165.8699951171875,
+      "changePercent": 1.6173467605143113,
       "sector": "Consumer Discretionary",
       "low52w": 110.81,
       "high52w": 193.453,
@@ -2151,9 +2151,9 @@
       "name": "Southern Company",
       "symbol": "SO",
       "category": "Stock",
-      "marketCapUsd": 96666076871,
-      "priceUsd": 85.75,
-      "changePercent": 0.36282771535580793,
+      "marketCapUsd": 97139541306,
+      "priceUsd": 86.16999816894531,
+      "changePercent": 0.03482490009903869,
       "sector": "Utilities",
       "low52w": 81.69,
       "high52w": 100.84,
@@ -2168,9 +2168,9 @@
       "name": "Adobe",
       "symbol": "ADBE",
       "category": "Stock",
-      "marketCapUsd": 95958487015,
-      "priceUsd": 241.40499877929688,
-      "changePercent": 3.7096699657588452,
+      "marketCapUsd": 96302326698,
+      "priceUsd": 242.27000427246094,
+      "changePercent": 0.5061208348728173,
       "sector": "Technology",
       "low52w": 190.12,
       "high52w": 363.7,
@@ -2185,9 +2185,9 @@
       "name": "Duke Energy",
       "symbol": "DUK",
       "category": "Stock",
-      "marketCapUsd": 90565688546,
-      "priceUsd": 116.16999816894531,
-      "changePercent": 0.5975044760523974,
+      "marketCapUsd": 90939897336,
+      "priceUsd": 116.6500015258789,
+      "changePercent": -0.14552172069944097,
       "sector": "Utilities",
       "low52w": 112.4,
       "high52w": 134.49,
@@ -2202,9 +2202,9 @@
       "name": "Emerson Electric",
       "symbol": "EMR",
       "category": "Stock",
-      "marketCapUsd": 89307943291,
-      "priceUsd": 159.4499969482422,
-      "changePercent": 0.16332492508460944,
+      "marketCapUsd": 90640984026,
+      "priceUsd": 161.8300018310547,
+      "changePercent": 1.7350863337239546,
       "sector": "Industrials",
       "low52w": 122.64,
       "high52w": 166.35,
@@ -2219,9 +2219,9 @@
       "name": "General Dynamics",
       "symbol": "GD",
       "category": "Stock",
-      "marketCapUsd": 88625371054,
-      "priceUsd": 327.7200012207031,
-      "changePercent": 0.3337113004632549,
+      "marketCapUsd": 89585394807,
+      "priceUsd": 331.2699890136719,
+      "changePercent": 0.893900745784609,
       "sector": "Industrials",
       "low52w": 306.77,
       "high52w": 400,
@@ -2236,9 +2236,9 @@
       "name": "U.S. Bancorp",
       "symbol": "USB",
       "category": "Stock",
-      "marketCapUsd": 87790326974,
-      "priceUsd": 56.55500030517578,
-      "changePercent": 0.6854198062591766,
+      "marketCapUsd": 88605286842,
+      "priceUsd": 57.08000183105469,
+      "changePercent": 0.09645213687801653,
       "sector": "Financials",
       "low52w": 45.02,
       "high52w": 66.08,
@@ -2248,14 +2248,48 @@
       ]
     },
     {
-      "id": "stock-mmm",
+      "id": "stock-amt",
       "rank": 111,
+      "name": "American Tower",
+      "symbol": "AMT",
+      "category": "Stock",
+      "marketCapUsd": 84904348893,
+      "priceUsd": 182.24000549316406,
+      "changePercent": 9.279528374157692,
+      "sector": "Real Estate",
+      "low52w": 160.06,
+      "high52w": 196.08,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/AMT.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/AMT.png"
+      ]
+    },
+    {
+      "id": "stock-wm",
+      "rank": 112,
+      "name": "Waste Management",
+      "symbol": "WM",
+      "category": "Stock",
+      "marketCapUsd": 83861116815,
+      "priceUsd": 208.8300018310547,
+      "changePercent": -0.6115689831498567,
+      "sector": "Industrials",
+      "low52w": 194.11,
+      "high52w": 248.13,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/WM.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/WM.png"
+      ]
+    },
+    {
+      "id": "stock-mmm",
+      "rank": 113,
       "name": "3M",
       "symbol": "MMM",
       "category": "Stock",
-      "marketCapUsd": 84978952622,
-      "priceUsd": 162.92999267578125,
-      "changePercent": 0.49962538599879436,
+      "marketCapUsd": 83429905131,
+      "priceUsd": 159.9600067138672,
+      "changePercent": -2.2249347714748207,
       "sector": "Industrials",
       "low52w": 139.34,
       "high52w": 184.9,
@@ -2266,13 +2300,13 @@
     },
     {
       "id": "stock-intu",
-      "rank": 112,
+      "rank": 114,
       "name": "Intuit",
       "symbol": "INTU",
       "category": "Stock",
-      "marketCapUsd": 84522933000,
-      "priceUsd": 309,
-      "changePercent": 4.44128979922936,
+      "marketCapUsd": 82813326750,
+      "priceUsd": 302.75,
+      "changePercent": -0.37185731209687883,
       "sector": "Technology",
       "low52w": 252.84,
       "high52w": 689.17,
@@ -2282,48 +2316,14 @@
       ]
     },
     {
-      "id": "stock-wm",
-      "rank": 113,
-      "name": "Waste Management",
-      "symbol": "WM",
-      "category": "Stock",
-      "marketCapUsd": 84061904815,
-      "priceUsd": 209.3300018310547,
-      "changePercent": 0.18665733275327356,
-      "sector": "Industrials",
-      "low52w": 194.11,
-      "high52w": 248.13,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/WM.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/WM.png"
-      ]
-    },
-    {
-      "id": "stock-amt",
-      "rank": 114,
-      "name": "American Tower",
-      "symbol": "AMT",
-      "category": "Stock",
-      "marketCapUsd": 82807830245,
-      "priceUsd": 177.74000549316406,
-      "changePercent": 6.956315737852964,
-      "sector": "Real Estate",
-      "low52w": 160.06,
-      "high52w": 196.08,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/AMT.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/AMT.png"
-      ]
-    },
-    {
       "id": "stock-kkr",
       "rank": 115,
       "name": "KKR",
       "symbol": "KKR",
       "category": "Stock",
-      "marketCapUsd": 80386568594,
-      "priceUsd": 89.52999877929688,
-      "changePercent": -0.15612938630882872,
+      "marketCapUsd": 81661546610,
+      "priceUsd": 90.94999694824219,
+      "changePercent": 1.5520287497121317,
       "sector": "Financials",
       "low52w": 82.67,
       "high52w": 144.84,
@@ -2338,9 +2338,9 @@
       "name": "UPS",
       "symbol": "UPS",
       "category": "Stock",
-      "marketCapUsd": 79781607136,
-      "priceUsd": 93.86000061035156,
-      "changePercent": 1.701160050223812,
+      "marketCapUsd": 80385110947,
+      "priceUsd": 94.56999969482422,
+      "changePercent": 0.4887893898886615,
       "sector": "Industrials",
       "low52w": 82,
       "high52w": 122.41,
@@ -2355,9 +2355,9 @@
       "name": "Sherwin-Williams",
       "symbol": "SHW",
       "category": "Stock",
-      "marketCapUsd": 78638655721,
-      "priceUsd": 318.8450012207031,
-      "changePercent": 1.220635308159722,
+      "marketCapUsd": 78765669347,
+      "priceUsd": 319.3599853515625,
+      "changePercent": -0.5171063013013152,
       "sector": "Materials",
       "low52w": 289.86,
       "high52w": 377.77,
@@ -2367,31 +2367,14 @@
       ]
     },
     {
-      "id": "stock-mdlz",
-      "rank": 118,
-      "name": "Mondelez",
-      "symbol": "MDLZ",
-      "category": "Stock",
-      "marketCapUsd": 77545296304,
-      "priceUsd": 60.40999984741211,
-      "changePercent": 1.7345905143349727,
-      "sector": "Consumer Staples",
-      "low52w": 51.2,
-      "high52w": 66.65,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/MDLZ.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/MDLZ.png"
-      ]
-    },
-    {
       "id": "stock-regn",
-      "rank": 119,
+      "rank": 118,
       "name": "Regeneron",
       "symbol": "REGN",
       "category": "Stock",
-      "marketCapUsd": 77333549191,
-      "priceUsd": 737.6400146484375,
-      "changePercent": -0.6036739815073714,
+      "marketCapUsd": 78266613751,
+      "priceUsd": 746.5399780273438,
+      "changePercent": 0.9424365546660491,
       "sector": "Health Care",
       "low52w": 541,
       "high52w": 859.34,
@@ -2401,31 +2384,31 @@
       ]
     },
     {
-      "id": "stock-cmcsa",
-      "rank": 120,
-      "name": "Comcast",
-      "symbol": "CMCSA",
+      "id": "stock-mdlz",
+      "rank": 119,
+      "name": "Mondelez",
+      "symbol": "MDLZ",
       "category": "Stock",
-      "marketCapUsd": 74301997708,
-      "priceUsd": 20.79990005493164,
-      "changePercent": -0.6690541789319993,
-      "sector": "Communication Services",
-      "low52w": 20.745,
-      "high52w": 32.86,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/CMCSA.png",
+      "marketCapUsd": 77545296304,
+      "priceUsd": 60.40999984741211,
+      "changePercent": -0.42854813348919124,
+      "sector": "Consumer Staples",
+      "low52w": 51.2,
+      "high52w": 66.65,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/MDLZ.png",
       "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/CMCSA.png"
+        "https://images.financialmodelingprep.com/symbol/MDLZ.png"
       ]
     },
     {
       "id": "stock-gm",
-      "rank": 121,
+      "rank": 120,
       "name": "General Motors",
       "symbol": "GM",
       "category": "Stock",
-      "marketCapUsd": 74116874387,
-      "priceUsd": 82.19999694824219,
-      "changePercent": 1.494007838303732,
+      "marketCapUsd": 74594762706,
+      "priceUsd": 82.7300033569336,
+      "changePercent": 0.5713631861580216,
       "sector": "Consumer Discretionary",
       "low52w": 54.33,
       "high52w": 91.85,
@@ -2435,14 +2418,31 @@
       ]
     },
     {
+      "id": "stock-cmcsa",
+      "rank": 121,
+      "name": "Comcast",
+      "symbol": "CMCSA",
+      "category": "Stock",
+      "marketCapUsd": 73802242186,
+      "priceUsd": 20.65999984741211,
+      "changePercent": -2.5931171739174514,
+      "sector": "Communication Services",
+      "low52w": 20.75,
+      "high52w": 32.86,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/CMCSA.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/CMCSA.png"
+      ]
+    },
+    {
       "id": "stock-cl",
       "rank": 122,
       "name": "Colgate-Palmolive",
       "symbol": "CL",
       "category": "Stock",
-      "marketCapUsd": 70368654360,
-      "priceUsd": 87.94000244140625,
-      "changePercent": 0.8370627696436834,
+      "marketCapUsd": 70632712209,
+      "priceUsd": 88.2699966430664,
+      "changePercent": 0.17021861446482262,
       "sector": "Consumer Staples",
       "low52w": 74.55,
       "high52w": 99.33,
@@ -2452,14 +2452,31 @@
       ]
     },
     {
-      "id": "stock-tgt",
+      "id": "stock-crwd",
       "rank": 123,
+      "name": "CrowdStrike",
+      "symbol": "CRWD",
+      "category": "Stock",
+      "marketCapUsd": 70015559775,
+      "priceUsd": 275.0400085449219,
+      "changePercent": 4.573973820357357,
+      "sector": "Technology",
+      "low52w": 85.68,
+      "high52w": 286.99,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/CRWD.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/CRWD.png"
+      ]
+    },
+    {
+      "id": "stock-tgt",
+      "rank": 124,
       "name": "Target",
       "symbol": "TGT",
       "category": "Stock",
-      "marketCapUsd": 69863686173,
-      "priceUsd": 153.82000732421875,
-      "changePercent": 1.9215526929623397,
+      "marketCapUsd": 69781928162,
+      "priceUsd": 153.63999938964844,
+      "changePercent": -0.736529661682106,
       "sector": "Consumer Discretionary",
       "low52w": 83.44,
       "high52w": 170.75,
@@ -2470,13 +2487,13 @@
     },
     {
       "id": "stock-fdx",
-      "rank": 124,
+      "rank": 125,
       "name": "FedEx",
       "symbol": "FDX",
       "category": "Stock",
-      "marketCapUsd": 69290277144,
-      "priceUsd": 290.3949890136719,
-      "changePercent": 0.4479380884371678,
+      "marketCapUsd": 69604045931,
+      "priceUsd": 291.7099914550781,
+      "changePercent": 0.013711199327359373,
       "sector": "Industrials",
       "low52w": 180.991,
       "high52w": 345.37,
@@ -2486,31 +2503,14 @@
       ]
     },
     {
-      "id": "stock-crwd",
-      "rank": 125,
-      "name": "CrowdStrike",
-      "symbol": "CRWD",
-      "category": "Stock",
-      "marketCapUsd": 68029948114,
-      "priceUsd": 267.239990234375,
-      "changePercent": 0.6781156699724993,
-      "sector": "Technology",
-      "low52w": 85.68,
-      "high52w": 286.99,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/CRWD.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/CRWD.png"
-      ]
-    },
-    {
       "id": "stock-apd",
       "rank": 126,
       "name": "Air Products",
       "symbol": "APD",
       "category": "Stock",
-      "marketCapUsd": 61978799740,
-      "priceUsd": 278.3299865722656,
-      "changePercent": 0.07550214737006344,
+      "marketCapUsd": 62631260235,
+      "priceUsd": 281.260009765625,
+      "changePercent": 1.074499502506565,
       "sector": "Materials",
       "low52w": 229.11,
       "high52w": 314.87,
@@ -2525,9 +2525,9 @@
       "name": "Nike",
       "symbol": "NKE",
       "category": "Stock",
-      "marketCapUsd": 50505684562,
-      "priceUsd": 34.10499954223633,
-      "changePercent": -0.7421433578686593,
+      "marketCapUsd": 51401621124,
+      "priceUsd": 34.709999084472656,
+      "changePercent": -0.10073655353962065,
       "sector": "Consumer Discretionary",
       "low52w": 31.97,
       "high52w": 70.44,
@@ -2542,9 +2542,9 @@
       "name": "PayPal",
       "symbol": "PYPL",
       "category": "Stock",
-      "marketCapUsd": 48440824066,
-      "priceUsd": 54.915000915527344,
-      "changePercent": -0.06369260140611299,
+      "marketCapUsd": 48983317061,
+      "priceUsd": 55.529998779296875,
+      "changePercent": 0.9269334411066372,
       "sector": "Financials",
       "low52w": 38.46,
       "high52w": 79.215,
@@ -2559,9 +2559,9 @@
       "name": "American International Group",
       "symbol": "AIG",
       "category": "Stock",
-      "marketCapUsd": 41000847499,
-      "priceUsd": 77.33000183105469,
-      "changePercent": 2.2072453490017065,
+      "marketCapUsd": 40847087212,
+      "priceUsd": 77.04000091552734,
+      "changePercent": 0.03895716858503913,
       "sector": "Financials",
       "low52w": 71.25,
       "high52w": 87.29,
@@ -2576,12 +2576,12 @@
       "name": "Charter Communications",
       "symbol": "CHTR",
       "category": "Stock",
-      "marketCapUsd": 14708442442,
-      "priceUsd": 106.20999908447266,
-      "changePercent": -0.7011975650031204,
+      "marketCapUsd": 14316530951,
+      "priceUsd": 103.37999725341797,
+      "changePercent": -5.735390486534178,
       "sector": "Communication Services",
       "low52w": 104.91,
-      "high52w": 275.58,
+      "high52w": 269.68,
       "logoUrl": "https://financialmodelingprep.com/image-stock/CHTR.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/CHTR.png"
@@ -2596,8 +2596,8 @@
       "symbol": "VOO",
       "category": "ETF",
       "aumUsd": 1028910000000,
-      "priceUsd": 713.9151000976562,
-      "changePercent": 0.23378028749122498,
+      "priceUsd": 715.5900268554688,
+      "changePercent": 0.2873067930675132,
       "logoUrl": "https://financialmodelingprep.com/image-stock/VOO.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/VOO.png"
@@ -2610,8 +2610,8 @@
       "symbol": "IVV",
       "category": "ETF",
       "aumUsd": 816860000000,
-      "priceUsd": 780.0604248046875,
-      "changePercent": 0.2313385008186017,
+      "priceUsd": 781.969970703125,
+      "changePercent": 0.29628269221992354,
       "logoUrl": "https://financialmodelingprep.com/image-stock/IVV.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/IVV.png"
@@ -2624,8 +2624,8 @@
       "symbol": "SPY",
       "category": "ETF",
       "aumUsd": 758880000000,
-      "priceUsd": 776.6749877929688,
-      "changePercent": 0.23423618146738648,
+      "priceUsd": 778.5700073242188,
+      "changePercent": 0.30016710284924036,
       "logoUrl": "https://financialmodelingprep.com/image-stock/SPY.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/SPY.png"
@@ -2638,8 +2638,8 @@
       "symbol": "VTI",
       "category": "ETF",
       "aumUsd": 663370000000,
-      "priceUsd": 380.9599914550781,
-      "changePercent": 0.26581898028642426,
+      "priceUsd": 381.94000244140625,
+      "changePercent": 0.26776986708927036,
       "logoUrl": "https://financialmodelingprep.com/image-stock/VTI.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/VTI.png"
@@ -2652,8 +2652,8 @@
       "symbol": "QQQ",
       "category": "ETF",
       "aumUsd": 480530000000,
-      "priceUsd": 752.5850219726562,
-      "changePercent": 0.0046553956887629535,
+      "priceUsd": 751.27001953125,
+      "changePercent": -0.17008415154886394,
       "logoUrl": "https://financialmodelingprep.com/image-stock/QQQ.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/QQQ.png"
@@ -2666,8 +2666,8 @@
       "symbol": "VUG",
       "category": "ETF",
       "aumUsd": 226420000000,
-      "priceUsd": 91.92870330810547,
-      "changePercent": -0.1100678827936633,
+      "priceUsd": 91.97000122070312,
+      "changePercent": 0.14155584494384785,
       "logoUrl": "https://financialmodelingprep.com/image-stock/VUG.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/VUG.png"
@@ -2680,8 +2680,8 @@
       "symbol": "VEA",
       "category": "ETF",
       "aumUsd": 222800000000,
-      "priceUsd": 70.13130187988281,
-      "changePercent": 0.6188019376254827,
+      "priceUsd": 70.3499984741211,
+      "changePercent": 0.2850989934311078,
       "logoUrl": "https://financialmodelingprep.com/image-stock/VEA.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/VEA.png"
@@ -2694,8 +2694,8 @@
       "symbol": "VTV",
       "category": "ETF",
       "aumUsd": 187190000000,
-      "priceUsd": 219.55999755859375,
-      "changePercent": 0.7387018274351701,
+      "priceUsd": 220.58999633789062,
+      "changePercent": 0.5011576004360806,
       "logoUrl": "https://financialmodelingprep.com/image-stock/VTV.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/VTV.png"
@@ -2708,8 +2708,8 @@
       "symbol": "IEFA",
       "category": "ETF",
       "aumUsd": 181520000000,
-      "priceUsd": 96.16999816894531,
-      "changePercent": 0.4806175831917685,
+      "priceUsd": 96.5199966430664,
+      "changePercent": 0.30135433442434545,
       "logoUrl": "https://financialmodelingprep.com/image-stock/IEFA.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/IEFA.png"
@@ -2722,8 +2722,8 @@
       "symbol": "BND",
       "category": "ETF",
       "aumUsd": 158120000000,
-      "priceUsd": 70.1449966430664,
-      "changePercent": -0.007134544124925868,
+      "priceUsd": 70.22000122070312,
+      "changePercent": 0.09978573528383358,
       "logoUrl": "https://financialmodelingprep.com/image-stock/BND.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/BND.png"
@@ -2736,8 +2736,8 @@
       "symbol": "VXUS",
       "category": "ETF",
       "aumUsd": 155590000000,
-      "priceUsd": 84.58899688720703,
-      "changePercent": -0.013004240085687301,
+      "priceUsd": 84.81999969482422,
+      "changePercent": 0.26004872892571357,
       "logoUrl": "https://financialmodelingprep.com/image-stock/VXUS.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/VXUS.png"
@@ -2750,8 +2750,8 @@
       "symbol": "GLD",
       "category": "ETF",
       "aumUsd": 138960000000,
-      "priceUsd": 383.6700134277344,
-      "changePercent": 1.5402956808803925,
+      "priceUsd": 384.5799865722656,
+      "changePercent": 0.15625177581414845,
       "logoUrl": "https://financialmodelingprep.com/image-stock/GLD.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/GLD.png"
@@ -2764,8 +2764,8 @@
       "symbol": "AGG",
       "category": "ETF",
       "aumUsd": 138260000000,
-      "priceUsd": 94.51499938964844,
-      "changePercent": 0.2918097751619647,
+      "priceUsd": 94.58999633789062,
+      "changePercent": 0.06346933181902266,
       "logoUrl": "https://financialmodelingprep.com/image-stock/AGG.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/AGG.png"
@@ -2778,8 +2778,8 @@
       "symbol": "IWF",
       "category": "ETF",
       "aumUsd": 125590000000,
-      "priceUsd": 128.0500030517578,
-      "changePercent": -0.05463008749389029,
+      "priceUsd": 127.91000366210938,
+      "changePercent": -0.06250035393023505,
       "logoUrl": "https://financialmodelingprep.com/image-stock/IWF.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/IWF.png"
@@ -2792,8 +2792,8 @@
       "symbol": "VWO",
       "category": "ETF",
       "aumUsd": 123810000000,
-      "priceUsd": 59.755001068115234,
-      "changePercent": 0.8353067171825466,
+      "priceUsd": 59.7599983215332,
+      "changePercent": 0,
       "logoUrl": "https://financialmodelingprep.com/image-stock/VWO.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/VWO.png"
@@ -2820,8 +2820,8 @@
       "name": "Euro",
       "symbol": "EUR",
       "category": "Currency",
-      "rateVsUsd": 1.1186057697685605,
-      "changePercent": 0.0805396154233397,
+      "rateVsUsd": 1.1205988480243843,
+      "changePercent": 0.1781752168358742,
       "logoUrl": "https://flagcdn.com/w40/eu.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/eu.png"
@@ -2833,8 +2833,8 @@
       "name": "Japanese Yen",
       "symbol": "JPY",
       "category": "Currency",
-      "rateVsUsd": 0.006317917614354309,
-      "changePercent": -0.03158958807177093,
+      "rateVsUsd": 0.00631911532385466,
+      "changePercent": 0.01895734597156126,
       "logoUrl": "https://flagcdn.com/w40/jp.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/jp.png"
@@ -2846,8 +2846,8 @@
       "name": "British Pound",
       "symbol": "GBP",
       "category": "Currency",
-      "rateVsUsd": 1.320689928418606,
-      "changePercent": 0.017168969069461762,
+      "rateVsUsd": 1.3220343464523208,
+      "changePercent": 0.10179664467681473,
       "logoUrl": "https://flagcdn.com/w40/gb.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/gb.png"
@@ -2859,8 +2859,8 @@
       "name": "Australian Dollar",
       "symbol": "AUD",
       "category": "Currency",
-      "rateVsUsd": 0.6943480072212194,
-      "changePercent": -0.11109568115537295,
+      "rateVsUsd": 0.6981290142418319,
+      "changePercent": 0.5445406311086223,
       "logoUrl": "https://flagcdn.com/w40/au.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/au.png"
@@ -2872,8 +2872,8 @@
       "name": "Canadian Dollar",
       "symbol": "CAD",
       "category": "Currency",
-      "rateVsUsd": 0.7011639321273314,
-      "changePercent": -0.06310475389144654,
+      "rateVsUsd": 0.7029382820188387,
+      "changePercent": 0.25305778152676617,
       "logoUrl": "https://flagcdn.com/w40/ca.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/ca.png"
@@ -2885,8 +2885,8 @@
       "name": "Swiss Franc",
       "symbol": "CHF",
       "category": "Currency",
-      "rateVsUsd": 1.1994434582353788,
-      "changePercent": -0.10195269395000296,
+      "rateVsUsd": 1.2032680760946732,
+      "changePercent": 0.31886604016509634,
       "logoUrl": "https://flagcdn.com/w40/ch.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/ch.png"
@@ -2898,8 +2898,8 @@
       "name": "Chinese Yuan",
       "symbol": "CNY",
       "category": "Currency",
-      "rateVsUsd": 0.14920251257031167,
-      "changePercent": 0.03431657789115544,
+      "rateVsUsd": 0.1494299248367478,
+      "changePercent": 0.15241852333348965,
       "logoUrl": "https://flagcdn.com/w40/cn.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/cn.png"
@@ -2912,7 +2912,7 @@
       "symbol": "HKD",
       "category": "Currency",
       "rateVsUsd": 0.1274274937560528,
-      "changePercent": 0.010194199500472146,
+      "changePercent": 0,
       "logoUrl": "https://flagcdn.com/w40/hk.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/hk.png"
@@ -2924,8 +2924,8 @@
       "name": "New Zealand Dollar",
       "symbol": "NZD",
       "category": "Currency",
-      "rateVsUsd": 0.558909009613235,
-      "changePercent": -0.10619271182650558,
+      "rateVsUsd": 0.5613877505192837,
+      "changePercent": 0.4434963229102361,
       "logoUrl": "https://flagcdn.com/w40/nz.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/nz.png"
@@ -2937,8 +2937,8 @@
       "name": "Singapore Dollar",
       "symbol": "SGD",
       "category": "Currency",
-      "rateVsUsd": 0.7800312012480499,
-      "changePercent": -0.12480499219968691,
+      "rateVsUsd": 0.7810059356451109,
+      "changePercent": 0.12496094970321665,
       "logoUrl": "https://flagcdn.com/w40/sg.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/sg.png"
@@ -2950,8 +2950,8 @@
       "name": "Indian Rupee",
       "symbol": "INR",
       "category": "Currency",
-      "rateVsUsd": 0.010332713370531101,
-      "changePercent": -0.05166356685265983,
+      "rateVsUsd": 0.010338054378166029,
+      "changePercent": 0.05169027189083447,
       "logoUrl": "https://flagcdn.com/w40/in.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/in.png"
@@ -2963,8 +2963,8 @@
       "name": "South Korean Won",
       "symbol": "KRW",
       "category": "Currency",
-      "rateVsUsd": 0.0007443466869128966,
-      "changePercent": -0.35505336965744677,
+      "rateVsUsd": 0.0007454397721936056,
+      "changePercent": 0.14685163512213215,
       "logoUrl": "https://flagcdn.com/w40/kr.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/kr.png"
@@ -2976,8 +2976,8 @@
       "name": "Swedish Krona",
       "symbol": "SEK",
       "category": "Currency",
-      "rateVsUsd": 0.09992805180270206,
-      "changePercent": 0.34874890079143345,
+      "rateVsUsd": 0.10034518744481015,
+      "changePercent": 0.4174359797704057,
       "logoUrl": "https://flagcdn.com/w40/se.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/se.png"
@@ -2989,8 +2989,8 @@
       "name": "Mexican Peso",
       "symbol": "MXN",
       "category": "Currency",
-      "rateVsUsd": 0.055516385661227914,
-      "changePercent": 0.4530137069956336,
+      "rateVsUsd": 0.05494475305080741,
+      "changePercent": -1.0296646721721365,
       "logoUrl": "https://flagcdn.com/w40/mx.png",
       "fallbackLogoUrls": [
         "https://flagcdn.com/w80/mx.png"
@@ -3156,7 +3156,7 @@
       "name": "NVIDIA",
       "symbol": "NVDA",
       "category": "Stock",
-      "marketCapUsd": 5715415155136,
+      "marketCapUsd": 5639898193973,
       "logoUrl": "https://financialmodelingprep.com/image-stock/NVDA.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/NVDA.png"
@@ -3168,7 +3168,7 @@
       "name": "Apple",
       "symbol": "AAPL",
       "category": "Stock",
-      "marketCapUsd": 4878713855219,
+      "marketCapUsd": 4944366551147,
       "logoUrl": "https://financialmodelingprep.com/image-stock/AAPL.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/AAPL.png"
@@ -3180,7 +3180,7 @@
       "name": "Alphabet",
       "symbol": "GOOGL",
       "category": "Stock",
-      "marketCapUsd": 4282018314406,
+      "marketCapUsd": 4260754466329,
       "logoUrl": "https://financialmodelingprep.com/image-stock/GOOGL.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/GOOGL.png"
@@ -3202,7 +3202,7 @@
       "name": "Microsoft",
       "symbol": "MSFT",
       "category": "Stock",
-      "marketCapUsd": 3939596126237,
+      "marketCapUsd": 3974732476104,
       "logoUrl": "https://financialmodelingprep.com/image-stock/MSFT.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/MSFT.png"
@@ -3214,7 +3214,7 @@
       "name": "Amazon",
       "symbol": "AMZN",
       "category": "Stock",
-      "marketCapUsd": 2781895890911,
+      "marketCapUsd": 2822988127408,
       "logoUrl": "https://financialmodelingprep.com/image-stock/AMZN.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/AMZN.png"
@@ -3226,7 +3226,7 @@
       "name": "TSMC",
       "symbol": "TSM",
       "category": "Stock",
-      "marketCapUsd": 2396413020688,
+      "marketCapUsd": 2351083236138,
       "logoUrl": "https://financialmodelingprep.com/image-stock/TSM.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/TSM.png"
@@ -3238,7 +3238,7 @@
       "name": "SpaceX",
       "symbol": "SPCX",
       "category": "Stock",
-      "marketCapUsd": 2174073410952,
+      "marketCapUsd": 2143289366351,
       "logoUrl": "https://financialmodelingprep.com/image-stock/SPCX.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/SPCX.png"
@@ -3250,7 +3250,7 @@
       "name": "Meta Platforms",
       "symbol": "META",
       "category": "Stock",
-      "marketCapUsd": 1835410129067,
+      "marketCapUsd": 1824291803276,
       "logoUrl": "https://financialmodelingprep.com/image-stock/META.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/META.png"
@@ -3262,7 +3262,7 @@
       "name": "Broadcom",
       "symbol": "AVGO",
       "category": "Stock",
-      "marketCapUsd": 1735185073320,
+      "marketCapUsd": 1720055567723,
       "logoUrl": "https://financialmodelingprep.com/image-stock/AVGO.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/AVGO.png"
@@ -3284,7 +3284,7 @@
       "name": "Bitcoin",
       "symbol": "BTC",
       "category": "Crypto",
-      "marketCapUsd": 1665543599045,
+      "marketCapUsd": 1664183414743,
       "logoUrl": "https://static.coinpaprika.com/coin/btc-bitcoin/logo.png",
       "fallbackLogoUrls": [
         "https://cryptoicons.org/api/icon/btc/200",
@@ -3297,7 +3297,7 @@
       "name": "Tesla",
       "symbol": "TSLA",
       "category": "Stock",
-      "marketCapUsd": 1444563963913,
+      "marketCapUsd": 1437315444987,
       "logoUrl": "https://financialmodelingprep.com/image-stock/TSLA.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/TSLA.png"
@@ -3319,7 +3319,7 @@
       "name": "Micron",
       "symbol": "MU",
       "category": "Stock",
-      "marketCapUsd": 1181548850310,
+      "marketCapUsd": 1160438254101,
       "logoUrl": "https://financialmodelingprep.com/image-stock/MU.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/MU.png"
@@ -3331,7 +3331,7 @@
       "name": "Berkshire Hathaway",
       "symbol": "BRK-B",
       "category": "Stock",
-      "marketCapUsd": 1107907163086,
+      "marketCapUsd": 1113739189453,
       "logoUrl": "https://financialmodelingprep.com/image-stock/BRK-B.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/BRK-B.png"
@@ -3343,7 +3343,7 @@
       "name": "Eli Lilly",
       "symbol": "LLY",
       "category": "Stock",
-      "marketCapUsd": 1097938562345,
+      "marketCapUsd": 1110567346104,
       "logoUrl": "https://financialmodelingprep.com/image-stock/LLY.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/LLY.png"
@@ -3355,7 +3355,7 @@
       "name": "AMD",
       "symbol": "AMD",
       "category": "Stock",
-      "marketCapUsd": 1018742183379,
+      "marketCapUsd": 991568161335,
       "logoUrl": "https://financialmodelingprep.com/image-stock/AMD.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/AMD.png"
@@ -3377,7 +3377,7 @@
       "name": "JPMorgan Chase",
       "symbol": "JPM",
       "category": "Stock",
-      "marketCapUsd": 887668561480,
+      "marketCapUsd": 892250503223,
       "logoUrl": "https://financialmodelingprep.com/image-stock/JPM.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/JPM.png"
@@ -3389,7 +3389,7 @@
       "name": "Walmart",
       "symbol": "WMT",
       "category": "Stock",
-      "marketCapUsd": 882028993003,
+      "marketCapUsd": 886132195857,
       "logoUrl": "https://financialmodelingprep.com/image-stock/WMT.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/WMT.png"
@@ -3411,34 +3411,34 @@
       "name": "Visa",
       "symbol": "V",
       "category": "Stock",
-      "marketCapUsd": 712368823802,
+      "marketCapUsd": 726236013886,
       "logoUrl": "https://financialmodelingprep.com/image-stock/V.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/V.png"
       ]
     },
     {
-      "id": "stock-asml",
-      "rank": 25,
-      "name": "ASML",
-      "symbol": "ASML",
-      "category": "Stock",
-      "marketCapUsd": 706117427954,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/ASML.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/ASML.png"
-      ]
-    },
-    {
       "id": "stock-xom",
-      "rank": 26,
+      "rank": 25,
       "name": "Exxon Mobil",
       "symbol": "XOM",
       "category": "Stock",
-      "marketCapUsd": 699335969060,
+      "marketCapUsd": 700247863120,
       "logoUrl": "https://financialmodelingprep.com/image-stock/XOM.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/XOM.png"
+      ]
+    },
+    {
+      "id": "stock-asml",
+      "rank": 26,
+      "name": "ASML",
+      "symbol": "ASML",
+      "category": "Stock",
+      "marketCapUsd": 689378041192,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/ASML.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/ASML.png"
       ]
     },
     {
@@ -3447,7 +3447,7 @@
       "name": "Johnson & Johnson",
       "symbol": "JNJ",
       "category": "Stock",
-      "marketCapUsd": 617018868419,
+      "marketCapUsd": 629343602677,
       "logoUrl": "https://financialmodelingprep.com/image-stock/JNJ.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/JNJ.png"
@@ -3469,7 +3469,7 @@
       "name": "Intel",
       "symbol": "INTC",
       "category": "Stock",
-      "marketCapUsd": 541928456874,
+      "marketCapUsd": 526222206230,
       "logoUrl": "https://financialmodelingprep.com/image-stock/INTC.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/INTC.png"
@@ -3481,7 +3481,7 @@
       "name": "Mastercard",
       "symbol": "MA",
       "category": "Stock",
-      "marketCapUsd": 509986946045,
+      "marketCapUsd": 520554628843,
       "logoUrl": "https://financialmodelingprep.com/image-stock/MA.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/MA.png"
@@ -3493,7 +3493,7 @@
       "name": "Palantir",
       "symbol": "PLTR",
       "category": "Stock",
-      "marketCapUsd": 485325810726,
+      "marketCapUsd": 501158146140,
       "logoUrl": "https://financialmodelingprep.com/image-stock/PLTR.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/PLTR.png"
@@ -3505,7 +3505,7 @@
       "name": "AbbVie",
       "symbol": "ABBV",
       "category": "Stock",
-      "marketCapUsd": 482157730146,
+      "marketCapUsd": 488465193196,
       "logoUrl": "https://financialmodelingprep.com/image-stock/ABBV.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/ABBV.png"
@@ -3517,7 +3517,7 @@
       "name": "Cisco",
       "symbol": "CSCO",
       "category": "Stock",
-      "marketCapUsd": 458664783738,
+      "marketCapUsd": 466626468894,
       "logoUrl": "https://financialmodelingprep.com/image-stock/CSCO.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/CSCO.png"
@@ -3529,7 +3529,7 @@
       "name": "Chevron",
       "symbol": "CVX",
       "category": "Stock",
-      "marketCapUsd": 421527111707,
+      "marketCapUsd": 422179359491,
       "logoUrl": "https://financialmodelingprep.com/image-stock/CVX.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/CVX.png"
@@ -3541,19 +3541,31 @@
       "name": "Costco",
       "symbol": "COST",
       "category": "Stock",
-      "marketCapUsd": 420183035137,
+      "marketCapUsd": 419939127101,
       "logoUrl": "https://financialmodelingprep.com/image-stock/COST.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/COST.png"
       ]
     },
     {
-      "id": "stock-amat",
+      "id": "stock-orcl",
       "rank": 36,
+      "name": "Oracle",
+      "symbol": "ORCL",
+      "category": "Stock",
+      "marketCapUsd": 406673452446,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/ORCL.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/ORCL.png"
+      ]
+    },
+    {
+      "id": "stock-amat",
+      "rank": 37,
       "name": "Applied Materials",
       "symbol": "AMAT",
       "category": "Stock",
-      "marketCapUsd": 412136402635,
+      "marketCapUsd": 402561230064,
       "logoUrl": "https://financialmodelingprep.com/image-stock/AMAT.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/AMAT.png"
@@ -3561,26 +3573,14 @@
     },
     {
       "id": "stock-lrcx",
-      "rank": 37,
+      "rank": 38,
       "name": "Lam Research",
       "symbol": "LRCX",
       "category": "Stock",
-      "marketCapUsd": 407423560233,
+      "marketCapUsd": 398732076017,
       "logoUrl": "https://financialmodelingprep.com/image-stock/LRCX.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/LRCX.png"
-      ]
-    },
-    {
-      "id": "stock-orcl",
-      "rank": 38,
-      "name": "Oracle",
-      "symbol": "ORCL",
-      "category": "Stock",
-      "marketCapUsd": 403337267799,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/ORCL.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/ORCL.png"
       ]
     },
     {
@@ -3589,7 +3589,7 @@
       "name": "Bank of America",
       "symbol": "BAC",
       "category": "Stock",
-      "marketCapUsd": 379880476948,
+      "marketCapUsd": 385486789883,
       "logoUrl": "https://financialmodelingprep.com/image-stock/BAC.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/BAC.png"
@@ -3601,7 +3601,7 @@
       "name": "Coca-Cola",
       "symbol": "KO",
       "category": "Stock",
-      "marketCapUsd": 377285117925,
+      "marketCapUsd": 378833587482,
       "logoUrl": "https://financialmodelingprep.com/image-stock/KO.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/KO.png"
@@ -3613,7 +3613,7 @@
       "name": "Caterpillar",
       "symbol": "CAT",
       "category": "Stock",
-      "marketCapUsd": 366434458295,
+      "marketCapUsd": 368726116313,
       "logoUrl": "https://financialmodelingprep.com/image-stock/CAT.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/CAT.png"
@@ -3625,7 +3625,7 @@
       "name": "Merck",
       "symbol": "MRK",
       "category": "Stock",
-      "marketCapUsd": 351888263847,
+      "marketCapUsd": 359606465478,
       "logoUrl": "https://financialmodelingprep.com/image-stock/MRK.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/MRK.png"
@@ -3637,7 +3637,7 @@
       "name": "Procter & Gamble",
       "symbol": "PG",
       "category": "Stock",
-      "marketCapUsd": 350433336346,
+      "marketCapUsd": 352154168051,
       "logoUrl": "https://financialmodelingprep.com/image-stock/PG.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/PG.png"
@@ -3649,7 +3649,7 @@
       "name": "UnitedHealth",
       "symbol": "UNH",
       "category": "Stock",
-      "marketCapUsd": 342824503073,
+      "marketCapUsd": 344459151869,
       "logoUrl": "https://financialmodelingprep.com/image-stock/UNH.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/UNH.png"
@@ -3661,7 +3661,7 @@
       "name": "Palo Alto Networks",
       "symbol": "PANW",
       "category": "Stock",
-      "marketCapUsd": 331531568756,
+      "marketCapUsd": 341305699005,
       "logoUrl": "https://financialmodelingprep.com/image-stock/PANW.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/PANW.png"
@@ -3673,7 +3673,7 @@
       "name": "GE Aerospace",
       "symbol": "GE",
       "category": "Stock",
-      "marketCapUsd": 316945823926,
+      "marketCapUsd": 321557400736,
       "logoUrl": "https://financialmodelingprep.com/image-stock/GE.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/GE.png"
@@ -3685,7 +3685,7 @@
       "name": "Philip Morris",
       "symbol": "PM",
       "category": "Stock",
-      "marketCapUsd": 312779609795,
+      "marketCapUsd": 313566690205,
       "logoUrl": "https://financialmodelingprep.com/image-stock/PM.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/PM.png"
@@ -3697,7 +3697,7 @@
       "name": "Ethereum",
       "symbol": "ETH",
       "category": "Crypto",
-      "marketCapUsd": 304492250172,
+      "marketCapUsd": 304955380797,
       "logoUrl": "https://static.coinpaprika.com/coin/eth-ethereum/logo.png",
       "fallbackLogoUrls": [
         "https://cryptoicons.org/api/icon/eth/200",
@@ -3705,27 +3705,27 @@
       ]
     },
     {
-      "id": "stock-nflx",
-      "rank": 49,
-      "name": "Netflix",
-      "symbol": "NFLX",
-      "category": "Stock",
-      "marketCapUsd": 300714285855,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/NFLX.png",
-      "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/NFLX.png"
-      ]
-    },
-    {
       "id": "stock-ms",
-      "rank": 50,
+      "rank": 49,
       "name": "Morgan Stanley",
       "symbol": "MS",
       "category": "Stock",
-      "marketCapUsd": 295827629546,
+      "marketCapUsd": 299715654744,
       "logoUrl": "https://financialmodelingprep.com/image-stock/MS.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/MS.png"
+      ]
+    },
+    {
+      "id": "stock-nflx",
+      "rank": 50,
+      "name": "Netflix",
+      "symbol": "NFLX",
+      "category": "Stock",
+      "marketCapUsd": 296019252850,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/NFLX.png",
+      "fallbackLogoUrls": [
+        "https://images.financialmodelingprep.com/symbol/NFLX.png"
       ]
     },
     {
@@ -3734,7 +3734,7 @@
       "name": "Novartis",
       "symbol": "NVS",
       "category": "Stock",
-      "marketCapUsd": 290968187977,
+      "marketCapUsd": 292617016281,
       "logoUrl": "https://financialmodelingprep.com/image-stock/NVS.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/NVS.png"
@@ -3746,7 +3746,7 @@
       "name": "Toyota",
       "symbol": "TM",
       "category": "Stock",
-      "marketCapUsd": 290901644150,
+      "marketCapUsd": 292210523078,
       "logoUrl": "https://financialmodelingprep.com/image-stock/TM.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/TM.png"
@@ -3758,7 +3758,7 @@
       "name": "Home Depot",
       "symbol": "HD",
       "category": "Stock",
-      "marketCapUsd": 290888953365,
+      "marketCapUsd": 289901786843,
       "logoUrl": "https://financialmodelingprep.com/image-stock/HD.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/HD.png"
@@ -3770,7 +3770,7 @@
       "name": "Shell",
       "symbol": "SHEL",
       "category": "Stock",
-      "marketCapUsd": 280454465840,
+      "marketCapUsd": 279311357951,
       "logoUrl": "https://financialmodelingprep.com/image-stock/SHEL.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/SHEL.png"
@@ -3782,7 +3782,7 @@
       "name": "Arista Networks",
       "symbol": "ANET",
       "category": "Stock",
-      "marketCapUsd": 271559637759,
+      "marketCapUsd": 272919578874,
       "logoUrl": "https://financialmodelingprep.com/image-stock/ANET.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/ANET.png"
@@ -3794,7 +3794,7 @@
       "name": "GE Vernova",
       "symbol": "GEV",
       "category": "Stock",
-      "marketCapUsd": 269553025439,
+      "marketCapUsd": 269991040352,
       "logoUrl": "https://financialmodelingprep.com/image-stock/GEV.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/GEV.png"
@@ -3806,34 +3806,34 @@
       "name": "Alibaba",
       "symbol": "BABA",
       "category": "Stock",
-      "marketCapUsd": 262789534848,
+      "marketCapUsd": 267191949964,
       "logoUrl": "https://financialmodelingprep.com/image-stock/BABA.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/BABA.png"
       ]
     },
     {
-      "id": "stock-sap",
+      "id": "stock-gs",
       "rank": 58,
-      "name": "SAP",
-      "symbol": "SAP",
+      "name": "Goldman Sachs",
+      "symbol": "GS",
       "category": "Stock",
-      "marketCapUsd": 262701517800,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/SAP.png",
+      "marketCapUsd": 264126056179,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/GS.png",
       "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/SAP.png"
+        "https://images.financialmodelingprep.com/symbol/GS.png"
       ]
     },
     {
-      "id": "stock-klac",
+      "id": "stock-sap",
       "rank": 59,
-      "name": "KLA",
-      "symbol": "KLAC",
+      "name": "SAP",
+      "symbol": "SAP",
       "category": "Stock",
-      "marketCapUsd": 262679840416,
-      "logoUrl": "https://financialmodelingprep.com/image-stock/KLAC.png",
+      "marketCapUsd": 263314504358,
+      "logoUrl": "https://financialmodelingprep.com/image-stock/SAP.png",
       "fallbackLogoUrls": [
-        "https://images.financialmodelingprep.com/symbol/KLAC.png"
+        "https://images.financialmodelingprep.com/symbol/SAP.png"
       ]
     },
     {
@@ -3842,7 +3842,7 @@
       "name": "Texas Instruments",
       "symbol": "TXN",
       "category": "Stock",
-      "marketCapUsd": 261920227155,
+      "marketCapUsd": 258229778932,
       "logoUrl": "https://financialmodelingprep.com/image-stock/TXN.png",
       "fallbackLogoUrls": [
         "https://images.financialmodelingprep.com/symbol/TXN.png"
@@ -3858,12 +3858,12 @@
       "https://cryptoicons.org/api/icon/night/200",
       "https://cryptoicon-api.pages.dev/api/icon/night"
     ],
-    "priceUsd": 0.04529193433742713,
-    "marketCapUsd": 752181243,
-    "volume24hUsd": 21241855.667867817,
+    "priceUsd": 0.04826176577754875,
+    "marketCapUsd": 801502420,
+    "volume24hUsd": 22366128.77831112,
     "athPriceUsd": 0.11939941535583412,
-    "change24h": 2.6600000858306885,
-    "percentFromAth": -61.92
+    "change24h": 7.150000095367432,
+    "percentFromAth": -59.73
   },
   "indices": [
     {
@@ -3871,18 +3871,326 @@
       "symbol": "^GSPC",
       "name": "S&P 500",
       "kind": "index",
-      "level": 7793.67,
+      "level": 7811.54,
       "previousClose": 7722.72,
-      "changeAbs": 70.94999999999982,
-      "changePercent": 0.9187177574740482,
+      "changeAbs": 88.81999999999971,
+      "changePercent": 1.1501129135848471,
       "intraday": [
         {
           "t": "2026-10-09T13:30:00.000Z",
-          "value": 7793.240234375
+          "value": 7792.56005859375
         },
         {
-          "t": "2026-10-09T13:34:24.000Z",
-          "value": 7793.6298828125
+          "t": "2026-10-09T13:35:00.000Z",
+          "value": 7793.8798828125
+        },
+        {
+          "t": "2026-10-09T13:40:00.000Z",
+          "value": 7782.330078125
+        },
+        {
+          "t": "2026-10-09T13:45:00.000Z",
+          "value": 7784.18994140625
+        },
+        {
+          "t": "2026-10-09T13:50:00.000Z",
+          "value": 7783.509765625
+        },
+        {
+          "t": "2026-10-09T13:55:00.000Z",
+          "value": 7786.169921875
+        },
+        {
+          "t": "2026-10-09T14:00:00.000Z",
+          "value": 7782.52978515625
+        },
+        {
+          "t": "2026-10-09T14:05:00.000Z",
+          "value": 7787.35986328125
+        },
+        {
+          "t": "2026-10-09T14:10:00.000Z",
+          "value": 7788.16015625
+        },
+        {
+          "t": "2026-10-09T14:15:00.000Z",
+          "value": 7791.14013671875
+        },
+        {
+          "t": "2026-10-09T14:20:00.000Z",
+          "value": 7793.52978515625
+        },
+        {
+          "t": "2026-10-09T14:25:00.000Z",
+          "value": 7792.52001953125
+        },
+        {
+          "t": "2026-10-09T14:30:00.000Z",
+          "value": 7792.47998046875
+        },
+        {
+          "t": "2026-10-09T14:35:00.000Z",
+          "value": 7790.5498046875
+        },
+        {
+          "t": "2026-10-09T14:40:00.000Z",
+          "value": 7789.2099609375
+        },
+        {
+          "t": "2026-10-09T14:45:00.000Z",
+          "value": 7791.81982421875
+        },
+        {
+          "t": "2026-10-09T14:50:00.000Z",
+          "value": 7797.5
+        },
+        {
+          "t": "2026-10-09T14:55:00.000Z",
+          "value": 7800.759765625
+        },
+        {
+          "t": "2026-10-09T15:00:00.000Z",
+          "value": 7800.75
+        },
+        {
+          "t": "2026-10-09T15:05:00.000Z",
+          "value": 7794.330078125
+        },
+        {
+          "t": "2026-10-09T15:10:00.000Z",
+          "value": 7798.2900390625
+        },
+        {
+          "t": "2026-10-09T15:15:00.000Z",
+          "value": 7803.35986328125
+        },
+        {
+          "t": "2026-10-09T15:20:00.000Z",
+          "value": 7801.93017578125
+        },
+        {
+          "t": "2026-10-09T15:25:00.000Z",
+          "value": 7798.759765625
+        },
+        {
+          "t": "2026-10-09T15:30:00.000Z",
+          "value": 7795.7900390625
+        },
+        {
+          "t": "2026-10-09T15:35:00.000Z",
+          "value": 7799
+        },
+        {
+          "t": "2026-10-09T15:40:00.000Z",
+          "value": 7799.259765625
+        },
+        {
+          "t": "2026-10-09T15:45:00.000Z",
+          "value": 7799.0498046875
+        },
+        {
+          "t": "2026-10-09T15:50:00.000Z",
+          "value": 7801.27978515625
+        },
+        {
+          "t": "2026-10-09T15:55:00.000Z",
+          "value": 7799.6201171875
+        },
+        {
+          "t": "2026-10-09T16:00:00.000Z",
+          "value": 7800.419921875
+        },
+        {
+          "t": "2026-10-09T16:05:00.000Z",
+          "value": 7802.580078125
+        },
+        {
+          "t": "2026-10-09T16:10:00.000Z",
+          "value": 7803.8701171875
+        },
+        {
+          "t": "2026-10-09T16:15:00.000Z",
+          "value": 7805.72021484375
+        },
+        {
+          "t": "2026-10-09T16:20:00.000Z",
+          "value": 7805.18017578125
+        },
+        {
+          "t": "2026-10-09T16:25:00.000Z",
+          "value": 7806.56982421875
+        },
+        {
+          "t": "2026-10-09T16:30:00.000Z",
+          "value": 7806.58984375
+        },
+        {
+          "t": "2026-10-09T16:35:00.000Z",
+          "value": 7805.9599609375
+        },
+        {
+          "t": "2026-10-09T16:40:00.000Z",
+          "value": 7806.52978515625
+        },
+        {
+          "t": "2026-10-09T16:45:00.000Z",
+          "value": 7809.009765625
+        },
+        {
+          "t": "2026-10-09T16:50:00.000Z",
+          "value": 7809.47998046875
+        },
+        {
+          "t": "2026-10-09T16:55:00.000Z",
+          "value": 7808.6298828125
+        },
+        {
+          "t": "2026-10-09T17:00:00.000Z",
+          "value": 7810.25
+        },
+        {
+          "t": "2026-10-09T17:05:00.000Z",
+          "value": 7807.06982421875
+        },
+        {
+          "t": "2026-10-09T17:10:00.000Z",
+          "value": 7806.31982421875
+        },
+        {
+          "t": "2026-10-09T17:15:00.000Z",
+          "value": 7804.77001953125
+        },
+        {
+          "t": "2026-10-09T17:20:00.000Z",
+          "value": 7805.5
+        },
+        {
+          "t": "2026-10-09T17:25:00.000Z",
+          "value": 7807.08984375
+        },
+        {
+          "t": "2026-10-09T17:30:00.000Z",
+          "value": 7806.1298828125
+        },
+        {
+          "t": "2026-10-09T17:35:00.000Z",
+          "value": 7807.60986328125
+        },
+        {
+          "t": "2026-10-09T17:40:00.000Z",
+          "value": 7807.93017578125
+        },
+        {
+          "t": "2026-10-09T17:45:00.000Z",
+          "value": 7808.72998046875
+        },
+        {
+          "t": "2026-10-09T17:50:00.000Z",
+          "value": 7809.47998046875
+        },
+        {
+          "t": "2026-10-09T17:55:00.000Z",
+          "value": 7810.64990234375
+        },
+        {
+          "t": "2026-10-09T18:00:00.000Z",
+          "value": 7808.31005859375
+        },
+        {
+          "t": "2026-10-09T18:05:00.000Z",
+          "value": 7811.169921875
+        },
+        {
+          "t": "2026-10-09T18:10:00.000Z",
+          "value": 7811.4599609375
+        },
+        {
+          "t": "2026-10-09T18:15:00.000Z",
+          "value": 7812.2099609375
+        },
+        {
+          "t": "2026-10-09T18:20:00.000Z",
+          "value": 7812.97998046875
+        },
+        {
+          "t": "2026-10-09T18:25:00.000Z",
+          "value": 7812.68994140625
+        },
+        {
+          "t": "2026-10-09T18:30:00.000Z",
+          "value": 7811.68017578125
+        },
+        {
+          "t": "2026-10-09T18:35:00.000Z",
+          "value": 7812.56982421875
+        },
+        {
+          "t": "2026-10-09T18:40:00.000Z",
+          "value": 7811.60009765625
+        },
+        {
+          "t": "2026-10-09T18:45:00.000Z",
+          "value": 7815.14990234375
+        },
+        {
+          "t": "2026-10-09T18:50:00.000Z",
+          "value": 7814.89990234375
+        },
+        {
+          "t": "2026-10-09T18:55:00.000Z",
+          "value": 7816.31982421875
+        },
+        {
+          "t": "2026-10-09T19:00:00.000Z",
+          "value": 7816.39013671875
+        },
+        {
+          "t": "2026-10-09T19:05:00.000Z",
+          "value": 7816.5498046875
+        },
+        {
+          "t": "2026-10-09T19:10:00.000Z",
+          "value": 7817.22998046875
+        },
+        {
+          "t": "2026-10-09T19:15:00.000Z",
+          "value": 7817.9501953125
+        },
+        {
+          "t": "2026-10-09T19:20:00.000Z",
+          "value": 7818.47998046875
+        },
+        {
+          "t": "2026-10-09T19:25:00.000Z",
+          "value": 7815.58984375
+        },
+        {
+          "t": "2026-10-09T19:30:00.000Z",
+          "value": 7816.91015625
+        },
+        {
+          "t": "2026-10-09T19:35:00.000Z",
+          "value": 7814.669921875
+        },
+        {
+          "t": "2026-10-09T19:40:00.000Z",
+          "value": 7812.740234375
+        },
+        {
+          "t": "2026-10-09T19:45:00.000Z",
+          "value": 7813.25
+        },
+        {
+          "t": "2026-10-09T19:50:00.000Z",
+          "value": 7810.27001953125
+        },
+        {
+          "t": "2026-10-09T19:55:00.000Z",
+          "value": 7811.08984375
+        },
+        {
+          "t": "2026-10-09T20:00:00.000Z",
+          "value": 7811.5400390625
         }
       ]
     },
@@ -3891,18 +4199,326 @@
       "symbol": "^IXIC",
       "name": "Nasdaq Composite",
       "kind": "index",
-      "level": 27369.916,
+      "level": 27366.17,
       "previousClose": 27190.86,
-      "changeAbs": 179.0560000000005,
-      "changePercent": 0.6585153981889521,
+      "changeAbs": 175.30999999999767,
+      "changePercent": 0.6447387099929817,
       "intraday": [
         {
           "t": "2026-10-09T13:30:00.000Z",
-          "value": 27362.58203125
+          "value": 27356.21875
         },
         {
-          "t": "2026-10-09T13:34:23.000Z",
-          "value": 27369.916015625
+          "t": "2026-10-09T13:35:00.000Z",
+          "value": 27338.43359375
+        },
+        {
+          "t": "2026-10-09T13:40:00.000Z",
+          "value": 27278.14453125
+        },
+        {
+          "t": "2026-10-09T13:45:00.000Z",
+          "value": 27271.779296875
+        },
+        {
+          "t": "2026-10-09T13:50:00.000Z",
+          "value": 27265.443359375
+        },
+        {
+          "t": "2026-10-09T13:55:00.000Z",
+          "value": 27272.763671875
+        },
+        {
+          "t": "2026-10-09T14:00:00.000Z",
+          "value": 27275.275390625
+        },
+        {
+          "t": "2026-10-09T14:05:00.000Z",
+          "value": 27299.3671875
+        },
+        {
+          "t": "2026-10-09T14:10:00.000Z",
+          "value": 27287.6875
+        },
+        {
+          "t": "2026-10-09T14:15:00.000Z",
+          "value": 27307.146484375
+        },
+        {
+          "t": "2026-10-09T14:20:00.000Z",
+          "value": 27303.84375
+        },
+        {
+          "t": "2026-10-09T14:25:00.000Z",
+          "value": 27311.806640625
+        },
+        {
+          "t": "2026-10-09T14:30:00.000Z",
+          "value": 27323.9453125
+        },
+        {
+          "t": "2026-10-09T14:35:00.000Z",
+          "value": 27314.015625
+        },
+        {
+          "t": "2026-10-09T14:40:00.000Z",
+          "value": 27296.037109375
+        },
+        {
+          "t": "2026-10-09T14:45:00.000Z",
+          "value": 27306.103515625
+        },
+        {
+          "t": "2026-10-09T14:50:00.000Z",
+          "value": 27340.3125
+        },
+        {
+          "t": "2026-10-09T14:55:00.000Z",
+          "value": 27346.619140625
+        },
+        {
+          "t": "2026-10-09T15:00:00.000Z",
+          "value": 27346.689453125
+        },
+        {
+          "t": "2026-10-09T15:05:00.000Z",
+          "value": 27298.513671875
+        },
+        {
+          "t": "2026-10-09T15:10:00.000Z",
+          "value": 27304.365234375
+        },
+        {
+          "t": "2026-10-09T15:15:00.000Z",
+          "value": 27328.6015625
+        },
+        {
+          "t": "2026-10-09T15:20:00.000Z",
+          "value": 27329.9609375
+        },
+        {
+          "t": "2026-10-09T15:25:00.000Z",
+          "value": 27307.06640625
+        },
+        {
+          "t": "2026-10-09T15:30:00.000Z",
+          "value": 27301.62890625
+        },
+        {
+          "t": "2026-10-09T15:35:00.000Z",
+          "value": 27334.634765625
+        },
+        {
+          "t": "2026-10-09T15:40:00.000Z",
+          "value": 27334.009765625
+        },
+        {
+          "t": "2026-10-09T15:45:00.000Z",
+          "value": 27334.228515625
+        },
+        {
+          "t": "2026-10-09T15:50:00.000Z",
+          "value": 27344.3046875
+        },
+        {
+          "t": "2026-10-09T15:55:00.000Z",
+          "value": 27333.01953125
+        },
+        {
+          "t": "2026-10-09T16:00:00.000Z",
+          "value": 27336.560546875
+        },
+        {
+          "t": "2026-10-09T16:05:00.000Z",
+          "value": 27354.935546875
+        },
+        {
+          "t": "2026-10-09T16:10:00.000Z",
+          "value": 27345.23046875
+        },
+        {
+          "t": "2026-10-09T16:15:00.000Z",
+          "value": 27350.787109375
+        },
+        {
+          "t": "2026-10-09T16:20:00.000Z",
+          "value": 27348.650390625
+        },
+        {
+          "t": "2026-10-09T16:25:00.000Z",
+          "value": 27349.435546875
+        },
+        {
+          "t": "2026-10-09T16:30:00.000Z",
+          "value": 27350.17578125
+        },
+        {
+          "t": "2026-10-09T16:35:00.000Z",
+          "value": 27342.228515625
+        },
+        {
+          "t": "2026-10-09T16:40:00.000Z",
+          "value": 27344.91015625
+        },
+        {
+          "t": "2026-10-09T16:45:00.000Z",
+          "value": 27359.822265625
+        },
+        {
+          "t": "2026-10-09T16:50:00.000Z",
+          "value": 27362.384765625
+        },
+        {
+          "t": "2026-10-09T16:55:00.000Z",
+          "value": 27349.4375
+        },
+        {
+          "t": "2026-10-09T17:00:00.000Z",
+          "value": 27353.73828125
+        },
+        {
+          "t": "2026-10-09T17:05:00.000Z",
+          "value": 27341.310546875
+        },
+        {
+          "t": "2026-10-09T17:10:00.000Z",
+          "value": 27335.66796875
+        },
+        {
+          "t": "2026-10-09T17:15:00.000Z",
+          "value": 27329.296875
+        },
+        {
+          "t": "2026-10-09T17:20:00.000Z",
+          "value": 27331.796875
+        },
+        {
+          "t": "2026-10-09T17:25:00.000Z",
+          "value": 27339.96484375
+        },
+        {
+          "t": "2026-10-09T17:30:00.000Z",
+          "value": 27328.73828125
+        },
+        {
+          "t": "2026-10-09T17:35:00.000Z",
+          "value": 27334.30859375
+        },
+        {
+          "t": "2026-10-09T17:40:00.000Z",
+          "value": 27333.85546875
+        },
+        {
+          "t": "2026-10-09T17:45:00.000Z",
+          "value": 27345.640625
+        },
+        {
+          "t": "2026-10-09T17:50:00.000Z",
+          "value": 27348.185546875
+        },
+        {
+          "t": "2026-10-09T17:55:00.000Z",
+          "value": 27347.166015625
+        },
+        {
+          "t": "2026-10-09T18:00:00.000Z",
+          "value": 27336.818359375
+        },
+        {
+          "t": "2026-10-09T18:05:00.000Z",
+          "value": 27348.16796875
+        },
+        {
+          "t": "2026-10-09T18:10:00.000Z",
+          "value": 27352.62890625
+        },
+        {
+          "t": "2026-10-09T18:15:00.000Z",
+          "value": 27357.31640625
+        },
+        {
+          "t": "2026-10-09T18:20:00.000Z",
+          "value": 27364.109375
+        },
+        {
+          "t": "2026-10-09T18:25:00.000Z",
+          "value": 27357.615234375
+        },
+        {
+          "t": "2026-10-09T18:30:00.000Z",
+          "value": 27348.34375
+        },
+        {
+          "t": "2026-10-09T18:35:00.000Z",
+          "value": 27358.732421875
+        },
+        {
+          "t": "2026-10-09T18:40:00.000Z",
+          "value": 27355.689453125
+        },
+        {
+          "t": "2026-10-09T18:45:00.000Z",
+          "value": 27376.42578125
+        },
+        {
+          "t": "2026-10-09T18:50:00.000Z",
+          "value": 27373.845703125
+        },
+        {
+          "t": "2026-10-09T18:55:00.000Z",
+          "value": 27374.623046875
+        },
+        {
+          "t": "2026-10-09T19:00:00.000Z",
+          "value": 27370.75
+        },
+        {
+          "t": "2026-10-09T19:05:00.000Z",
+          "value": 27374.55859375
+        },
+        {
+          "t": "2026-10-09T19:10:00.000Z",
+          "value": 27382.009765625
+        },
+        {
+          "t": "2026-10-09T19:15:00.000Z",
+          "value": 27383.49609375
+        },
+        {
+          "t": "2026-10-09T19:20:00.000Z",
+          "value": 27385.7265625
+        },
+        {
+          "t": "2026-10-09T19:25:00.000Z",
+          "value": 27374.205078125
+        },
+        {
+          "t": "2026-10-09T19:30:00.000Z",
+          "value": 27375.203125
+        },
+        {
+          "t": "2026-10-09T19:35:00.000Z",
+          "value": 27367.12890625
+        },
+        {
+          "t": "2026-10-09T19:40:00.000Z",
+          "value": 27357.373046875
+        },
+        {
+          "t": "2026-10-09T19:45:00.000Z",
+          "value": 27363.91796875
+        },
+        {
+          "t": "2026-10-09T19:50:00.000Z",
+          "value": 27362.681640625
+        },
+        {
+          "t": "2026-10-09T19:55:00.000Z",
+          "value": 27364.31640625
+        },
+        {
+          "t": "2026-10-09T20:00:00.000Z",
+          "value": 27366.169921875
         }
       ]
     },
@@ -3911,18 +4527,326 @@
       "symbol": "^DJI",
       "name": "Dow Jones",
       "kind": "index",
-      "level": 51287.14,
+      "level": 51654.95,
       "previousClose": 51176.96,
-      "changeAbs": 110.18000000000029,
-      "changePercent": 0.21529219398729485,
+      "changeAbs": 477.98999999999796,
+      "changePercent": 0.9339945162823231,
       "intraday": [
         {
           "t": "2026-10-09T13:30:00.000Z",
-          "value": 51299.44140625
+          "value": 51303.421875
         },
         {
-          "t": "2026-10-09T13:34:23.000Z",
-          "value": 51287.140625
+          "t": "2026-10-09T13:35:00.000Z",
+          "value": 51352.55078125
+        },
+        {
+          "t": "2026-10-09T13:40:00.000Z",
+          "value": 51309.98046875
+        },
+        {
+          "t": "2026-10-09T13:45:00.000Z",
+          "value": 51380.26171875
+        },
+        {
+          "t": "2026-10-09T13:50:00.000Z",
+          "value": 51385.96875
+        },
+        {
+          "t": "2026-10-09T13:55:00.000Z",
+          "value": 51387.23046875
+        },
+        {
+          "t": "2026-10-09T14:00:00.000Z",
+          "value": 51340.8984375
+        },
+        {
+          "t": "2026-10-09T14:05:00.000Z",
+          "value": 51378.26953125
+        },
+        {
+          "t": "2026-10-09T14:10:00.000Z",
+          "value": 51390.37109375
+        },
+        {
+          "t": "2026-10-09T14:15:00.000Z",
+          "value": 51387.76953125
+        },
+        {
+          "t": "2026-10-09T14:20:00.000Z",
+          "value": 51422.26953125
+        },
+        {
+          "t": "2026-10-09T14:25:00.000Z",
+          "value": 51406.76171875
+        },
+        {
+          "t": "2026-10-09T14:30:00.000Z",
+          "value": 51365.91015625
+        },
+        {
+          "t": "2026-10-09T14:35:00.000Z",
+          "value": 51385.44921875
+        },
+        {
+          "t": "2026-10-09T14:40:00.000Z",
+          "value": 51389.51171875
+        },
+        {
+          "t": "2026-10-09T14:45:00.000Z",
+          "value": 51415.05859375
+        },
+        {
+          "t": "2026-10-09T14:50:00.000Z",
+          "value": 51437.6484375
+        },
+        {
+          "t": "2026-10-09T14:55:00.000Z",
+          "value": 51456.94140625
+        },
+        {
+          "t": "2026-10-09T15:00:00.000Z",
+          "value": 51459.609375
+        },
+        {
+          "t": "2026-10-09T15:05:00.000Z",
+          "value": 51447.44921875
+        },
+        {
+          "t": "2026-10-09T15:10:00.000Z",
+          "value": 51499.6015625
+        },
+        {
+          "t": "2026-10-09T15:15:00.000Z",
+          "value": 51517.078125
+        },
+        {
+          "t": "2026-10-09T15:20:00.000Z",
+          "value": 51488.05859375
+        },
+        {
+          "t": "2026-10-09T15:25:00.000Z",
+          "value": 51493.9609375
+        },
+        {
+          "t": "2026-10-09T15:30:00.000Z",
+          "value": 51480.26953125
+        },
+        {
+          "t": "2026-10-09T15:35:00.000Z",
+          "value": 51478.33984375
+        },
+        {
+          "t": "2026-10-09T15:40:00.000Z",
+          "value": 51487.69921875
+        },
+        {
+          "t": "2026-10-09T15:45:00.000Z",
+          "value": 51490.9296875
+        },
+        {
+          "t": "2026-10-09T15:50:00.000Z",
+          "value": 51521.26953125
+        },
+        {
+          "t": "2026-10-09T15:55:00.000Z",
+          "value": 51529.69140625
+        },
+        {
+          "t": "2026-10-09T16:00:00.000Z",
+          "value": 51548.87109375
+        },
+        {
+          "t": "2026-10-09T16:05:00.000Z",
+          "value": 51537.55078125
+        },
+        {
+          "t": "2026-10-09T16:10:00.000Z",
+          "value": 51558.078125
+        },
+        {
+          "t": "2026-10-09T16:15:00.000Z",
+          "value": 51582.62890625
+        },
+        {
+          "t": "2026-10-09T16:20:00.000Z",
+          "value": 51581.98046875
+        },
+        {
+          "t": "2026-10-09T16:25:00.000Z",
+          "value": 51586.578125
+        },
+        {
+          "t": "2026-10-09T16:30:00.000Z",
+          "value": 51589.078125
+        },
+        {
+          "t": "2026-10-09T16:35:00.000Z",
+          "value": 51598.328125
+        },
+        {
+          "t": "2026-10-09T16:40:00.000Z",
+          "value": 51609.26171875
+        },
+        {
+          "t": "2026-10-09T16:45:00.000Z",
+          "value": 51614.37890625
+        },
+        {
+          "t": "2026-10-09T16:50:00.000Z",
+          "value": 51610.359375
+        },
+        {
+          "t": "2026-10-09T16:55:00.000Z",
+          "value": 51616.2109375
+        },
+        {
+          "t": "2026-10-09T17:00:00.000Z",
+          "value": 51646.44921875
+        },
+        {
+          "t": "2026-10-09T17:05:00.000Z",
+          "value": 51628.6796875
+        },
+        {
+          "t": "2026-10-09T17:10:00.000Z",
+          "value": 51608.71875
+        },
+        {
+          "t": "2026-10-09T17:15:00.000Z",
+          "value": 51606.44140625
+        },
+        {
+          "t": "2026-10-09T17:20:00.000Z",
+          "value": 51595.859375
+        },
+        {
+          "t": "2026-10-09T17:25:00.000Z",
+          "value": 51609.05859375
+        },
+        {
+          "t": "2026-10-09T17:30:00.000Z",
+          "value": 51624.80859375
+        },
+        {
+          "t": "2026-10-09T17:35:00.000Z",
+          "value": 51634.19140625
+        },
+        {
+          "t": "2026-10-09T17:40:00.000Z",
+          "value": 51652.16015625
+        },
+        {
+          "t": "2026-10-09T17:45:00.000Z",
+          "value": 51634.7109375
+        },
+        {
+          "t": "2026-10-09T17:50:00.000Z",
+          "value": 51639.37890625
+        },
+        {
+          "t": "2026-10-09T17:55:00.000Z",
+          "value": 51663.6484375
+        },
+        {
+          "t": "2026-10-09T18:00:00.000Z",
+          "value": 51656.87890625
+        },
+        {
+          "t": "2026-10-09T18:05:00.000Z",
+          "value": 51670.19140625
+        },
+        {
+          "t": "2026-10-09T18:10:00.000Z",
+          "value": 51670.12890625
+        },
+        {
+          "t": "2026-10-09T18:15:00.000Z",
+          "value": 51676.51171875
+        },
+        {
+          "t": "2026-10-09T18:20:00.000Z",
+          "value": 51678.44921875
+        },
+        {
+          "t": "2026-10-09T18:25:00.000Z",
+          "value": 51688.80859375
+        },
+        {
+          "t": "2026-10-09T18:30:00.000Z",
+          "value": 51705.33984375
+        },
+        {
+          "t": "2026-10-09T18:35:00.000Z",
+          "value": 51710.76171875
+        },
+        {
+          "t": "2026-10-09T18:40:00.000Z",
+          "value": 51691.94921875
+        },
+        {
+          "t": "2026-10-09T18:45:00.000Z",
+          "value": 51723.76171875
+        },
+        {
+          "t": "2026-10-09T18:50:00.000Z",
+          "value": 51716.87890625
+        },
+        {
+          "t": "2026-10-09T18:55:00.000Z",
+          "value": 51748.359375
+        },
+        {
+          "t": "2026-10-09T19:00:00.000Z",
+          "value": 51753.76171875
+        },
+        {
+          "t": "2026-10-09T19:05:00.000Z",
+          "value": 51740.48046875
+        },
+        {
+          "t": "2026-10-09T19:10:00.000Z",
+          "value": 51733.640625
+        },
+        {
+          "t": "2026-10-09T19:15:00.000Z",
+          "value": 51738.921875
+        },
+        {
+          "t": "2026-10-09T19:20:00.000Z",
+          "value": 51733.859375
+        },
+        {
+          "t": "2026-10-09T19:25:00.000Z",
+          "value": 51714.37109375
+        },
+        {
+          "t": "2026-10-09T19:30:00.000Z",
+          "value": 51718.46875
+        },
+        {
+          "t": "2026-10-09T19:35:00.000Z",
+          "value": 51737.328125
+        },
+        {
+          "t": "2026-10-09T19:40:00.000Z",
+          "value": 51723.26171875
+        },
+        {
+          "t": "2026-10-09T19:45:00.000Z",
+          "value": 51711.890625
+        },
+        {
+          "t": "2026-10-09T19:50:00.000Z",
+          "value": 51673.171875
+        },
+        {
+          "t": "2026-10-09T19:55:00.000Z",
+          "value": 51652.87109375
+        },
+        {
+          "t": "2026-10-09T20:00:00.000Z",
+          "value": 51654.94921875
         }
       ]
     },
@@ -3931,10 +4855,10 @@
       "symbol": "^VIX",
       "name": "VIX",
       "kind": "volatility",
-      "level": 15.14,
+      "level": 14.84,
       "previousClose": 15.52,
-      "changeAbs": -0.379999999999999,
-      "changePercent": -2.448453608247416,
+      "changeAbs": -0.6799999999999997,
+      "changePercent": -4.381443298969071,
       "intraday": []
     },
     {
@@ -3942,10 +4866,10 @@
       "symbol": "^IRX",
       "name": "US 3M",
       "kind": "rate",
-      "level": 4.053,
+      "level": 4.057,
       "previousClose": 4.018,
-      "changeAbs": 0.03500000000000014,
-      "changePercent": 0.8710801393728259,
+      "changeAbs": 0.03900000000000059,
+      "changePercent": 0.9706321553011595,
       "intraday": []
     },
     {
@@ -3953,10 +4877,10 @@
       "symbol": "^FVX",
       "name": "US 5Y",
       "kind": "rate",
-      "level": 5.03,
+      "level": 5.021,
       "previousClose": 5.066,
-      "changeAbs": -0.03599999999999959,
-      "changePercent": -0.7106198183971495,
+      "changeAbs": -0.04499999999999993,
+      "changePercent": -0.8882747729964455,
       "intraday": []
     },
     {
@@ -3964,10 +4888,10 @@
       "symbol": "^TNX",
       "name": "US 10Y",
       "kind": "rate",
-      "level": 5.259,
+      "level": 5.244,
       "previousClose": 5.311,
-      "changeAbs": -0.0519999999999996,
-      "changePercent": -0.9790999811711467,
+      "changeAbs": -0.06700000000000017,
+      "changePercent": -1.261532668047452,
       "intraday": []
     },
     {
@@ -3975,10 +4899,10 @@
       "symbol": "^TYX",
       "name": "US 30Y",
       "kind": "rate",
-      "level": 5.623,
+      "level": 5.6,
       "previousClose": 5.665,
-      "changeAbs": -0.041999999999999815,
-      "changePercent": -0.7413945278022915,
+      "changeAbs": -0.06500000000000039,
+      "changePercent": -1.1473962930273678,
       "intraday": []
     },
     {
@@ -3986,10 +4910,10 @@
       "symbol": "ES=F",
       "name": "S&P Futures",
       "kind": "future",
-      "level": 7838.75,
+      "level": 7859.75,
       "previousClose": 7826.25,
-      "changeAbs": 12.5,
-      "changePercent": 0.15971889474524836,
+      "changeAbs": 33.5,
+      "changePercent": 0.4280466379172656,
       "intraday": []
     },
     {
@@ -3997,10 +4921,10 @@
       "symbol": "NQ=F",
       "name": "Nasdaq Futures",
       "kind": "future",
-      "level": 31185.25,
+      "level": 31108.75,
       "previousClose": 31317.75,
-      "changeAbs": -132.5,
-      "changePercent": -0.42308275658372646,
+      "changeAbs": -209,
+      "changePercent": -0.6673531783094252,
       "intraday": []
     },
     {
@@ -4008,10 +4932,10 @@
       "symbol": "DX-Y.NYB",
       "name": "Dollar (DXY)",
       "kind": "currency",
-      "level": 102.309,
+      "level": 102.231,
       "previousClose": 102.17,
-      "changeAbs": 0.1389999999999958,
-      "changePercent": 0.13604776353136516,
+      "changeAbs": 0.06099999999999284,
+      "changePercent": 0.059704414211601095,
       "intraday": []
     },
     {
@@ -4019,10 +4943,10 @@
       "symbol": "CL=F",
       "name": "WTI Crude",
       "kind": "commodity",
-      "level": 90.78,
+      "level": 91.85,
       "previousClose": 89.43,
-      "changeAbs": 1.3499999999999943,
-      "changePercent": 1.5095605501509495,
+      "changeAbs": 2.4199999999999875,
+      "changePercent": 2.7060270602705887,
       "intraday": []
     },
     {
@@ -4030,10 +4954,10 @@
       "symbol": "GC=F",
       "name": "Gold",
       "kind": "commodity",
-      "level": 4209.1,
+      "level": 4216.3,
       "previousClose": 4156.8,
-      "changeAbs": 52.30000000000018,
-      "changePercent": 1.258179368745193,
+      "changeAbs": 59.5,
+      "changePercent": 1.4313895304080062,
       "intraday": []
     }
   ],
@@ -4043,10 +4967,10 @@
       "symbol": "^FTSE",
       "name": "FTSE 100",
       "kind": "index",
-      "level": 10554.06,
+      "level": 10552.05,
       "previousClose": 10462,
-      "changeAbs": 92.05999999999949,
-      "changePercent": 0.879946472949718,
+      "changeAbs": 90.04999999999927,
+      "changePercent": 0.8607340852609373,
       "intraday": [],
       "region": "Europe"
     },
@@ -4055,10 +4979,10 @@
       "symbol": "^GDAXI",
       "name": "DAX",
       "kind": "index",
-      "level": 25156.94,
+      "level": 25087.27,
       "previousClose": 25231.2,
-      "changeAbs": -74.26000000000204,
-      "changePercent": -0.2943181457877629,
+      "changeAbs": -143.9300000000003,
+      "changePercent": -0.5704445289958475,
       "intraday": [],
       "region": "Europe"
     },
@@ -4067,10 +4991,10 @@
       "symbol": "^FCHI",
       "name": "CAC 40",
       "kind": "index",
-      "level": 7810.56,
+      "level": 7803.33,
       "previousClose": 7834.1,
-      "changeAbs": -23.539999999999964,
-      "changePercent": -0.3004812294966871,
+      "changeAbs": -30.770000000000437,
+      "changePercent": -0.3927700693123707,
       "intraday": [],
       "region": "Europe"
     },
@@ -4079,10 +5003,10 @@
       "symbol": "^STOXX50E",
       "name": "Euro Stoxx 50",
       "kind": "index",
-      "level": 6201.35,
+      "level": 6173.37,
       "previousClose": 6242.14,
-      "changeAbs": -40.789999999999964,
-      "changePercent": -0.6534617935515699,
+      "changeAbs": -68.77000000000044,
+      "changePercent": -1.1017055048428974,
       "intraday": [],
       "region": "Europe"
     },
@@ -4151,10 +5075,10 @@
       "symbol": "^GSPTSE",
       "name": "S&P/TSX",
       "kind": "index",
-      "level": 35372.93,
+      "level": 35664.62,
       "previousClose": 35502.7,
-      "changeAbs": -129.7699999999968,
-      "changePercent": -0.3655214955482169,
+      "changeAbs": 161.92000000000553,
+      "changePercent": 0.45607798843469805,
       "intraday": [],
       "region": "Americas"
     },
@@ -4163,10 +5087,10 @@
       "symbol": "^BVSP",
       "name": "Bovespa",
       "kind": "index",
-      "level": 208568.42,
+      "level": 209066.9,
       "previousClose": 192115,
-      "changeAbs": 16453.420000000013,
-      "changePercent": 8.564359888608392,
+      "changeAbs": 16951.899999999994,
+      "changePercent": 8.823829477136087,
       "intraday": [],
       "region": "Americas"
     },
@@ -4175,10 +5099,10 @@
       "symbol": "^MXX",
       "name": "IPC Mexico",
       "kind": "index",
-      "level": 64986.91,
+      "level": 66048.57,
       "previousClose": 64975.08,
-      "changeAbs": 11.830000000001746,
-      "changePercent": 0.018206980276133166,
+      "changeAbs": 1073.4900000000052,
+      "changePercent": 1.6521564883029083,
       "intraday": [],
       "region": "Americas"
     }
@@ -4875,5 +5799,5 @@
       "notes": "Series C (more than $1B in committed capital) at a $39B post-money valuation announced September 16, 2025, led by Parkway Venture Capital with NVIDIA, Brookfield, Intel Capital, Salesforce, Qualcomm and T-Mobile."
     }
   },
-  "requestId": "5c782444-02bc-4b98-b3be-717749459533"
+  "requestId": "0d6f96a4-97ee-4a4a-8a9e-e58f29ef9fe1"
 }
